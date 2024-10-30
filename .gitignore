@@ -1,0 +1,13 @@
+*
+!.gitignore
+!.gitkeep
+!README.md
+!LICENSE
+
+!*/**/
+!gh-pages/
+!gh-pages/*
+
+!*/**/*.md
+
+gh-pages/Gemfile.lock
