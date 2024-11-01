@@ -9,5 +9,6 @@
 !gh-pages/*
 
 !*/**/*.md
+!*/**/*.html
 
 gh-pages/Gemfile.lock
