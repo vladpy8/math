@@ -15,7 +15,9 @@ Every chain of shell commands shall start from the repository root
 
 #### GitHub Pages local preview run
 
-1. ```bash
+1. </br>
+
+	```bash
 	cd gh-pages
 	```
 
@@ -26,12 +28,14 @@ Every chain of shell commands shall start from the repository root
 
 1. Run Jekyll site locally
 	```bash
-	bundle exec jekyll serve --watch --livereload livereload_min_delay 10 open_url true
+	bundle exec jekyll serve --watch --livereload livereload_min_delay=10 open_url=true
 	```
 
 #### Git
 
-1. Create `gh-pages` targeted git subtree and push to remote branch (first time):
+1. Commit
+1. Push `gh-pages` targeted git subtree to origin:
+
 	```bash
-	git subtree push --prefix gh-pages origin gh-pages
+	git subtree push --prefix="gh-pages" origin gh-pages
 	```
