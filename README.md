@@ -31,10 +31,10 @@ Every chain of shell commands shall start from the repository root
 	bundle exec jekyll serve --watch --livereload livereload_min_delay=10 open_url=true
 	```
 
-#### Git
+#### GitHub Pages git
 
 1. Commit
-1. Push `gh-pages` targeted git subtree to origin:
+1. Push `gh-pages` targeted git subtree to corresponding origin branch:
 
 	```bash
 	git subtree push --prefix="gh-pages" origin gh-pages
