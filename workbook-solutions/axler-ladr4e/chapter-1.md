@@ -1,3 +1,7 @@
+## Standing assumptions
+
+## 1A
+
 ### Exercise 1A, 1
 
 $ \alpha = a_r + a_i \ i \ , a_r \in \R \ , a_i \in \R $
