@@ -1,49 +1,114 @@
+# Chapter 2. Finite-dimensional vector spaces
+
+### Linear combinations example
+
+page 28
+
+Prove that there is no solution
+
+$$ (17, -4, 5) = a_1 (2, 1, -3) + a_2 (1, -2, 4) $$
+
+---
+
+One vector equation leads to three field of numbers equations
+
+$$
+\begin{aligned}
+
+17 &= 2 a_1 + a_2 \\
+
+-4 &= a_1 - 2 a_2 \\
+
+5 &= -3 a_1 + 4 a_2
+
+\end{aligned}
+$$
+
+Adding first equation multiplied by 2 and second equation
+
+$$
+34 + (-4) = (4 a_1 + 2 a_2) + (a_1 - 2 a_2) \implies a_1 = 6
+$$
+
+Adding second equation multiplied by 2 and third equation
+
+$$
+-8 + 5 = (2 a_1 - 4 a_2) + (-3 a_1 + 4 a_2) \implies a_1 = 3
+$$
+
 ### Polynomials are vector subspace
 
 page 30
 
-Given the field $ F $ and the set of all polynomial functions
+Given the field $ F $, vector space $ F^F = \{ f : F \rightarrow F \} $ and the subset of all polynomial functions
 
+$$
+P = \{ \ p(x) \in F^F : \quad \exist \ n \in N, \quad \exist ! \ a_0, a_1, ..., a_n \in F, \quad \forall x \in F, \quad \ p(x) = \sum_{i = 0}^{n}{a_i x^i} \}
+$$
 
-$ P = \{ \ p(x) \in F^F : \exists \ n \in N, \ \exists \ a_0, a_1, ..., a_n \in F \text{ such that } \ p(x) \equiv a_0 + a_1 x + a_2 x^2 + ... + a_n x^n \ \text{ for } \forall x \in F \ \} $
-
-Prove that this set is a subspace of vector space
-
-$ F^F = \{ f : F \rightarrow F \} $
+Prove that this subset is a subspace of $ F^F $
 
 ---
 
-$ p_1(x), p_2(x) \in P , \ \ \lambda \in F $
+Let
 
-$ 0 = 0(x) \in P $
+$$
+p(x), l(x) \in P , \ \ \lambda \in F
+$$
 
-$ p_1(x) + p_2(x) = (a_0 + a_1 x + a_2 x^2 + ... + a_n x^n) + (b_0 + b_1 x + b_2 x^2 + ... + b_m x^m) $
+Additive identity holds
 
-$ = (a_0 + b_0) + (a_1 + b_1)x + (a_2 + b_2)x^2 + ... + (a_{\max(n,m)} + b_{\max(n,m)})x^{\max(n,m)} $
+$$
+\exist \ c_0 = 0 : \quad \forall x \in F, \quad 0(x) = c_0 = 0
+$$
 
-$ (p_1(x) + p_2(x)) \in P $
+$$
+0 \in P
+$$
 
-$ \lambda p_1(x) = \lambda (a_0 + a_1 x + a_2 x^2 + ... + a_n x^n) = (\lambda a_0) + (\lambda a_1)x + (\lambda a_2)x^2 + ... + (\lambda a_n)x^n $
+Addition is closed under $ P $
 
-$ \lambda p_1(x) \in P $
+$$
 
-Therefore, we have shown that the set $P$ is closed under addition and scalar multiplication, and it contains the zero polynomial. Hence, $P$ is a subspace of the vector space $F^F$.
+(p + l)(x) = p(x) + l(x) = \sum_{i=0}^{n} a_i x^i + \sum_{j=0}^{m} b_j x^j = \sum_{k=0}^{\max(n,m)} (\tilde{a}_k + \tilde{b}_k) x^k \\
+
+\tilde{a}_i = \begin{cases}
+	a_i \ \text{ if } i \in I, i \le n \\
+	0 \ \text{ else }
+\end{cases} \\
+
+\tilde{b}_j = \begin{cases}
+	b_j \ \text{ if } j \in I, j \le m \\
+	0 \ \text{ else }
+\end{cases} \\
+
+$$
+
+$$
+p + l \in P
+$$
+
+Scalar multiplication is closed under $ P $
+
+$$
+\lambda \, p_1(x) = \lambda \, \sum_{i=0}^{n} a_i x^i = \sum_{i=0}^{n} (\lambda \, a_i) x^i
+$$
+
+$$
+\lambda \, p_1 \in P
+$$
 
 
 ### Removing vector from list of linearly independent
 
 page 33
 
-$ a_1 v_1 + a_2 v_2 + ... + a_m v_m = 0 \ \Leftrightarrow \ a_1 = 0, \ a_2 = 0, \ ..., \ a_m = 0 $
-
-Imagine
-
-$ a_1' v_1 + a_2' v_2 + ... + a_{m-1}' v_{m-1} = 0 $
+$$
+a_1 v_1 + a_2 v_2 + ... + a_m v_m = 0 \ \Leftrightarrow \ a_1 = 0, \ a_2 = 0, \ ..., \ a_m = 0 \\
+a_1' v_1 + a_2' v_2 + ... + a_{m-1}' v_{m-1} = 0 \\
+a_1' v_1 + a_2' v_2 + ... + a_{m-1}' v_{m-1} + 0 \ v_m  = 0
+$$
 
 Some $ a_k' \ne 0 $
-
-Then
-
-$ a_1' v_1 + a_2' v_2 + ... + a_{m-1}' v_{m-1} + 0 \ v_m  = 0 $
 
 And some $ a_k' \ne 0 $
