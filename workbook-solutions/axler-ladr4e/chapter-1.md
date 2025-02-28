@@ -26,14 +26,14 @@ $$
 
 $ F^n $ is set of vectors over field $ F $
 
-$$ F^n = \{ x: \exist! \ x_1, x_2, \ldots, x_n \in F : x = (x_1, x_2, \ldots, x_n) \} $$
+$$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
 
 $ \forall x, y \in F^n $ and $ \lambda \in F $
 
 $$
 \begin{aligned}
 
-(x + y) &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
+x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
 
 \lambda x &= (\lambda x_1, \lambda x_2, \ldots, \lambda x_n)
 
@@ -291,12 +291,11 @@ $$
 
 Second one leads to
 
-$$
-2 |a_r| |a_i| = 1 \\
-|a_r| = |a_i| = \frac{1}{\sqrt2} \\
-$$
+$$ 2 |a_r| |a_i| = 1 $$
 
 Thus
+
+$$ |a_r| = |a_i| = \frac{1}{\sqrt2} \\ $$
 
 $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sqrt2} $$
 
@@ -358,6 +357,8 @@ $ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32
 
 ---
 
+One complex number equation leads to two real number equations
+
 $$
 \begin{aligned}
 
@@ -388,14 +389,12 @@ $$
 \end{aligned}
 $$
 
-Substituting $\lambda = 3 + 2 \, i$ in the third equation:
+Substituting $\lambda = 3 + 2 \, i$ in the left part of the third equation:
 
 $$
 \begin{aligned}
 
-(3 + 2 \, i)(-6 + 7 \, i) &= -32 - 9 \, i \\
-
-&= -18 + 21 \, i - 12 \, i - 14 \\
+(3 + 2 \, i)(-6 + 7 \, i) &= -18 + 21 \, i - 12 \, i - 14 \\
 
 &= -32 + 9 \, i \\
 
