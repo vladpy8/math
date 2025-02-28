@@ -1,6 +1,6 @@
 # Chapter 1. Vector spaces
 
-## Standing statements
+## Definitions
 
 ### Complex numbers
 
