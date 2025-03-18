@@ -74,7 +74,8 @@ $$ \forall x \in \R, \ x > 1, \ F_{-1,0}(x) < F_{-1,0}(1) $$
 
 $$
 \ln(x) - x < -1 \\
-\ln(x) < x - 1 < x
+\ln(x) < x - 1 < x \\
+1 < x < e^x
 $$
 
 Let $ \gamma \in \R, \ \gamma > \ln(3 + |\beta| + |\ln(|\alpha|)|) $
@@ -101,7 +102,7 @@ F_{\alpha, \beta}\left( \frac{3 \, e^{\gamma}}{|\alpha|} \right) &= \ln\left( \f
 
 &= \ln(3) + \gamma - \ln(|\alpha|) - 3 \, e^{\gamma} - \beta \\
 
-&> 0
+&< 0
 
 \end{aligned}
 $$
