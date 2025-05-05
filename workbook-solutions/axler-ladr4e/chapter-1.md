@@ -45,9 +45,9 @@ $$
 
 page 10
 
-### Exercise 1A.1. Commutativity of complex numbers
+### Exercise 1A.1. Addition commutativity of complex numbers
 
-page 3
+Also page 3
 
 $ \forall \alpha, \beta \in C $
 
@@ -67,9 +67,9 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.2. Additive associativity of complex numbers
+### Exercise 1A.2. Associativity of addition of complex numbers
 
-page 3
+Also page 3
 
 $ \forall \alpha, \beta, \lambda \in C $
 
@@ -92,9 +92,9 @@ $$
 $$
 
 
-### Exercise 1A.3. Multiplicative associativity of complex numbers
+### Exercise 1A.3. Associativity of multiplication of complex numbers
 
-page 3
+Also page 3
 
 $ \forall \alpha, \beta, \lambda \in C $
 
@@ -123,9 +123,9 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.4. Distributivity of addition and multiplication of complex numbers
+### Exercise 1A.4. Distributivity of multiplication over addition of complex numbers
 
-page 3
+Also page 3
 
 $ \forall \alpha, \beta, \lambda \in C $
 
@@ -152,7 +152,7 @@ $$
 
 ### Exercise 1A.5. Additive inverse of complex numbers
 
-page 3
+Also page 3
 
 $$ \forall \alpha \in C, \quad \exist \  \beta \in C : \quad \alpha + \beta = 0 $$
 
@@ -172,11 +172,9 @@ $$ b_r = -a_r, \quad b_i = -a_i $$
 
 $$ \beta = (-a_r) + (-a_i) \, i $$
 
-Verification is redundant
-
 ### Exercise 1A.6. Multiplicative inverse of complex numbers
 
-page 3
+Also page 3
 
 $$ \forall \alpha \in C, \quad \exist \  \beta \in C : \quad \alpha \, \beta = 1 $$
 
@@ -285,17 +283,21 @@ $$
 From the first equation follows
 
 $$
-|a_r| = |a_i| \\
-a_r a_i > 0
+|a_r| = |a_i|
 $$
 
 Second one leads to
 
-$$ 2 |a_r| |a_i| = 1 $$
+$$
+a_r a_i > 0 \\
+2 |a_r| |a_i| = 1
+$$
 
 Thus
 
 $$ |a_r| = |a_i| = \frac{1}{\sqrt2} \\ $$
+
+And finally
 
 $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sqrt2} $$
 
@@ -357,7 +359,7 @@ $ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32
 
 ---
 
-One complex number equation leads to two real number equations
+One complex vector equation leads to three complex number equations
 
 $$
 \begin{aligned}
@@ -403,7 +405,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.11. Additive associativity of vectors
+### Exercise 1A.11. Associativity of addition of vectors
 
 $ \forall x, y, z \in F^n $
 
@@ -427,7 +429,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.12. Multiplicative associativity of vectors
+### Exercise 1A.12. Associativity of multiplication of vectors
 
 $ \forall x \in F^n $ and $ \forall a, b \in F $
 
@@ -469,7 +471,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.14. Distributivity of vectors
+### Exercise 1A.14. Distributivity of scalar multiplication over addition of vectors
 
 $ \forall \lambda \in F $ and $ \forall x, y \in F^n $
 
@@ -493,7 +495,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.15. Distributivity of vectors
+### Exercise 1A.15. Distributivity of addition over scalar multiplication of vectors
 
 $ \forall a, b \in F $ and $ \forall x \in F^n $
 
