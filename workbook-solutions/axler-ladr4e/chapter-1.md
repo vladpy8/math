@@ -4,13 +4,13 @@
 
 ### Complex numbers
 
-$ C $ is set of complex numbers
+$ \mathbb{C} $ is set of complex numbers
 
-$$ C = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
+$$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
 $$ i^2 = -1 $$
 
-$ \forall \alpha, \beta \in C $
+$ \forall \alpha, \beta \in \mathbb{C} $
 
 $$
 \begin{aligned}
@@ -22,13 +22,13 @@ $$
 \end{aligned}
 $$
 
-### Vectors
+### Coordinate vectors $ F^n $
 
-$ F^n $ is set of vectors over field $ F $
+$ F^n $ is set of coordinate vectors over field $ F $
 
 $$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
 
-$ \forall x, y \in F^n $ and $ \lambda \in F $
+$ \forall x, y \in F^n $ and $ \forall \lambda \in F $
 
 $$
 \begin{aligned}
@@ -40,6 +40,30 @@ x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
 \end{aligned}
 $$
 
+### Function vectors $ F^S $
+
+Let $ S $ be a set of arbitrary elements
+
+$ F^S $ is set of functions
+
+$$ F^S = \{ S \rightarrow F \} $$
+
+$ \forall f, g \in F^S $, $ \forall x \in S $ and $ \forall \lambda \in F $
+
+$$
+\begin{aligned}
+
+(f + g)(x) &= f(x) + g(x) \\
+
+(\lambda f)(x) &= \lambda f(x)
+
+\end{aligned}
+$$
+
+### Vector space $ V $
+
+V is vector space over field $ F $ with operations of addition and scalar multiplication which satisfy well-defined axioms
+
 
 ## Exercises 1A
 
@@ -49,7 +73,7 @@ page 10
 
 Also page 3
 
-$ \forall \alpha, \beta \in C $
+$ \forall \alpha, \beta \in \mathbb{C} $
 
 $$ \alpha + \beta = \beta + \alpha $$
 
@@ -71,7 +95,7 @@ $$
 
 Also page 3
 
-$ \forall \alpha, \beta, \lambda \in C $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
@@ -96,7 +120,7 @@ $$
 
 Also page 3
 
-$ \forall \alpha, \beta, \lambda \in C $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$ (\alpha \beta) \lambda = \alpha (\beta \lambda) $$
 
@@ -127,7 +151,7 @@ $$
 
 Also page 3
 
-$ \forall \alpha, \beta, \lambda \in C $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$\lambda  (\alpha + \beta) = \lambda \alpha + \lambda \beta $$
 
@@ -154,7 +178,7 @@ $$
 
 Also page 3
 
-$$ \forall \alpha \in C, \quad \exist \  \beta \in C : \quad \alpha + \beta = 0 $$
+$$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
 
 $  $
 
@@ -176,7 +200,7 @@ $$ \beta = (-a_r) + (-a_i) \, i $$
 
 Also page 3
 
-$$ \forall \alpha \in C, \quad \exist \  \beta \in C : \quad \alpha \, \beta = 1 $$
+$$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
 
 ---
 
@@ -257,7 +281,7 @@ $$
 
 ### Exercise 1A.8. Square roots of $ i $
 
-Solve for  $ \alpha \in C $
+Solve for  $ \alpha \in \mathbb{C} $
 
 $$ \alpha^2 = i $$
 
@@ -334,7 +358,7 @@ $$
 
 ### Exercise 1A.9
 
-Solve for $ x \in F^4 $
+Solve for $ x \in {\R}^4 $
 
 $ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $
 
@@ -353,7 +377,7 @@ $$
 
 ### Exercise 1A.10
 
-Explain why there doesn't exist $ \lambda \in C $ such that
+Explain why there doesn't exist $ \lambda \in \mathbb{C} $ such that
 
 $ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $
 
@@ -429,7 +453,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1A.12. Associativity of multiplication of vectors
+### Exercise 1A.12. Associativity of scalar multiplication of vectors
 
 $ \forall x \in F^n $ and $ \forall a, b \in F $
 
@@ -517,4 +541,373 @@ $$
 &= a x + b x
 
 \end{aligned}
+$$
+
+## 1B Definitions of vector spaces
+
+### Proof of $ F^n $ being vector space
+
+#### 1. Commutativity of addition
+
+$ \forall x, y \in F^n $
+
+$$ x + y = y + x $$
+
+---
+
+$$
+\begin{aligned}
+
+x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
+
+&= (y_1 + x_1, y_2 + x_2, \ldots, y_n + x_n) \\
+
+&= y + x
+
+\end{aligned}
+$$
+
+#### 2. [Associativity of addition](#exercise-1a11-associativity-of-addition-of-vectors)
+
+#### 3. [Associativity of scalar multiplication](#exercise-1a12-associativity-of-scalar-multiplication-of-vectors)
+
+#### 4. Additive identity
+
+Let $ 0 \in F^n $
+
+$$ 0 = (0, 0, \ldots, 0) $$
+
+$ \forall x \in F^n $
+
+$$ x + 0 = x $$
+
+---
+
+$$
+\begin{aligned}
+
+x + 0 &= (x_1 + 0, x_2 + 0, \ldots, x_n + 0) \\
+
+&= (x_1, x_2, \ldots, x_n) \\
+
+&= x
+
+\end{aligned}
+$$
+
+#### 5. Additive inverse
+
+$$ \forall x \in F^n, \quad \exist y \in F^n, \quad x + y = 0 $$
+
+---
+
+Let
+
+$$ y = (-x_1, -x_2, \ldots, -x_n) $$
+
+Then
+
+$$
+\begin{aligned}
+
+x + y &= (x_1 + (-x_1), x_2 + (-x_2), \ldots, x_n + (-x_n)) \\
+
+&= (0, 0, \ldots, 0) \\
+
+&= 0
+
+\end{aligned}
+$$
+
+#### 6. [Multiplicative identity](#exercise-1a13-multiplicative-identity-of-vectors)
+
+#### 7. [Distributivity of scalar multiplication over addition](#exercise-1a14-distributivity-of-scalar-multiplication-over-addition-of-vectors)
+
+#### 8. [Distributivity of addition over scalar multiplication](#exercise-1a15-distributivity-of-addition-over-scalar-multiplication-of-vectors)
+
+### Proof of $ F^∞ $ being vector space
+
+Repeat proofs for $ F^n $ being vector space omitting the last element which comes after "$ \ldots $" everywhere explicit form of vector is used
+
+### Proof of $ F^S $ being vector space
+
+#### 1. Commutativity of addition
+
+$ \forall f, g \in F^S $
+
+$$ f + g = g + f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+(f + g)(x) &= f(x) + g(x) \\
+
+&= g(x) + f(x) \\
+
+&= (g + f)(x)
+
+\end{aligned}
+$$
+
+#### 2. Associativity of addition
+
+$ \forall f, g, h \in F^S $
+
+$$ (f + g) + h = f + (g + h) $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+((f + g) + h)(x) &= (f + g)(x) + h(x) \\
+&= (f(x) + g(x)) + h(x) \\
+&= f(x) + (g(x) + h(x)) \\
+&= f(x) + (g + h)(x) \\
+&= (f + (g + h))(x) \\
+
+\end{aligned}
+$$
+
+#### 3. Associativity of scalar multiplication
+
+$ \forall f \in F^S $ and $ \forall a, b \in F $
+
+$$ (a b) f = a (b f) $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+((a b) f)(x) &= (a b) f(x) \\
+
+&= a (b f(x)) \\
+
+&= (a (b f))(x)
+
+\end{aligned}
+$$
+
+#### 4. Additive identity
+
+Let $ 0 \in F^S $
+
+$$ 0(x) = 0, \quad \forall x \in S $$
+
+$ \forall f \in F^S $
+
+$$ f + 0 = f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+(f + 0)(x) &= f(x) + 0(x) \\
+
+&= f(x) + 0 \\
+
+&= f(x)
+
+\end{aligned}
+$$
+
+#### 5. Additive inverse
+
+$$ \forall f \in F^S, \quad \exist g \in F^S, \quad f + g = 0 $$
+
+---
+
+Let $ g \in F^S $
+
+$$ g(x) = -f(x), \quad \forall x \in S $$
+
+Then
+
+$$
+\begin{aligned}
+
+(f + g)(x) &= f(x) + g(x) \\
+
+&= f(x) + (-f(x)) \\
+
+&= 0 \\
+
+\end{aligned}
+$$
+
+Thus, $ f + g = 0 $.
+
+#### 6. Multiplicative identity
+
+$ \forall f \in F^S $
+
+$$ 1 f = f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+(1 f)(x) &= 1 \cdot f(x) \\
+
+&= f(x)
+
+\end{aligned}
+$$
+
+#### 7. Distributivity of scalar multiplication over addition
+
+$ \forall f, g \in F^S $ and $ \forall a \in F $
+
+$$ a (f + g) = a f + a g $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+(a (f + g))(x) &= a (f + g)(x) \\
+
+&= a (f(x) + g(x)) \\
+
+&= a f(x) + a g(x) \\
+
+&= (a f + a g)(x)
+
+\end{aligned}
+$$
+
+#### 8. Distributivity of addition over scalar multiplication
+
+$ \forall f \in F^S $ and $ \forall a, b \in F $
+
+$$ (a + b) f = a f + b f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+
+((a + b) f)(x) &= (a + b) f(x) \\
+
+&= a f(x) + b f(x) \\
+
+&= (a f + b f)(x)
+
+\end{aligned}
+$$
+
+## Exercises 1B
+
+### Exercise 1B.1 Inverse of inverse
+
+Let $ x \in V $
+
+$$ -(-x) = x $$
+
+---
+
+$$
+\begin{aligned}
+
+-(-x) &= -(-x) + 0 \\
+
+&= -(-x) + (x + (-x)) \\
+
+&= (-(-x) + (-x)) + x \\
+
+&= 0 + x \\
+
+&= x
+
+\end{aligned}
+$$
+
+### Exercise 1B.2
+
+Let $ v \in V $ and $ a \in F $
+
+If $ a v = 0 $ then either $ a = 0 $ or $ v = 0 $ (or both)
+
+---
+
+When $ a = 0 $, then according to page 15 (1.30)
+
+$$ \forall v \in V, \quad a v = 0 $$
+
+When $ a \ne 0 $, then according to page 15 (1.31)
+
+$$
+\begin{aligned}
+
+0 &= \frac{1}{a} \, 0 = \frac{1}{a} \, (a v) = (\frac{1}{a} \, a) \ v = 1 v \\
+&= v
+
+\end{aligned}
+$$
+
+### Scalar multiplier equality
+
+Let $ V $ be a vector space over field $ F $ which is not identical to $ \{0 \} $
+
+$$ \forall u \in V, \ u \neq 0, \quad a, b \in F, \quad a u = b u \rightarrow a = b $$
+
+---
+
+$$ 0 = a u + (-(b u)) = (a + (-b)) u $$
+
+Which according to [Exercise 1B.2](#exercise-1b2) leads to
+
+$$
+a + (-b) = 0 \\
+a = b
+$$
+
+
+### Exercises 1B.3
+
+Let $ v, w \in V $
+
+$$ \exist ! \ x \in V : \quad v + 3 x = w $$
+
+---
+
+Let $ y \in V $
+
+$$ v + 3 y = w $$
+
+Then
+
+$$
+\begin{aligned}
+
+0 &= w - w = (v + 3 x) - (v + 3 y) = 3 x - 3 y \\
+&= 3 (x - y) \\
+
+\end{aligned}
+$$
+
+Which according to [Exercise 1B.2](#exercise-1b2) means
+
+$$
+x - y = 0 \\
+x = y
 $$
