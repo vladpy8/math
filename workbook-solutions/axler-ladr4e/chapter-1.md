@@ -24,6 +24,8 @@ $$
 
 ### Coordinate vectors $ F^n $
 
+Let $ F $ be a field of numbers
+
 $ F^n $ is set of coordinate vectors over field $ F $
 
 $$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
@@ -42,13 +44,15 @@ $$
 
 ### Function vectors $ F^S $
 
+Let $ F $ be a field of numbers
+
 Let $ S $ be a set of arbitrary elements
 
 $ F^S $ is set of functions
 
 $$ F^S = \{ S \rightarrow F \} $$
 
-$ \forall f, g \in F^S $, $ \forall x \in S $ and $ \forall \lambda \in F $
+$ \forall f, g \in F^S $, $ \ \forall x \in S $ and $ \forall \lambda \in F $
 
 $$
 \begin{aligned}
@@ -62,10 +66,11 @@ $$
 
 ### Vector space $ V $
 
-V is vector space over field $ F $ with operations of addition and scalar multiplication which satisfy well-defined axioms
+Let $ F $ be a field of numbers
 
+Let $ V $ be a vector space over field $ F $ with operations of addition and scalar multiplication which satisfy well-defined properties 1.20 on page 12
 
-## Exercises 1A
+## Exercise 1A
 
 page 10
 
@@ -360,7 +365,7 @@ $$
 
 Solve for $ x \in {\R}^4 $
 
-$ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $
+$$ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $$
 
 ---
 $$
@@ -379,7 +384,7 @@ $$
 
 Explain why there doesn't exist $ \lambda \in \mathbb{C} $ such that
 
-$ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $
+$$ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $$
 
 ---
 
@@ -547,6 +552,8 @@ $$
 
 ### Proof of $ F^n $ being vector space
 
+[Definition of $ F^n $](#coordinate-vectors)
+
 #### 1. Commutativity of addition
 
 $ \forall x, y \in F^n $
@@ -630,6 +637,8 @@ $$
 Repeat proofs for $ F^n $ being vector space omitting the last element which comes after "$ \ldots $" everywhere explicit form of vector is used
 
 ### Proof of $ F^S $ being vector space
+
+[Definition of $ F^S $](#function-vectors)
 
 #### 1. Commutativity of addition
 
@@ -815,7 +824,7 @@ $$
 \end{aligned}
 $$
 
-## Exercises 1B
+## Exercise 1B
 
 ### Exercise 1B.1 Inverse of inverse
 
@@ -868,7 +877,7 @@ $$
 
 Let $ V $ be a vector space over field $ F $ which is not identical to $ \{0 \} $
 
-$$ \forall u \in V, \ u \neq 0, \quad a, b \in F, \quad a u = b u \rightarrow a = b $$
+$$ \forall u \in V, \ u \neq 0, \quad a, b \in F, \quad a u = b u \implies a = b $$
 
 ---
 
@@ -882,7 +891,7 @@ a = b
 $$
 
 
-### Exercises 1B.3
+### Exercise 1B.3
 
 Let $ v, w \in V $
 
@@ -911,3 +920,41 @@ $$
 x - y = 0 \\
 x = y
 $$
+
+### Exercise 1B.4
+
+Let $ V_{\empty} = \{ \} $
+
+Then $ V_{\empty} $ couldn't be a vector space because it doesn't contain an additive identity
+
+### Exercise 1B.5
+
+Let $ V_m \subseteq V $
+
+Let $ V_m $ satisfy a modified property *instead* of well-defined additive identity as stated in 1.20 on page 12
+
+$$ \forall v \in V_m \quad 0 v = 0 $$
+
+Then
+
+$$ V_m = V $$
+
+---
+
+### Exercise 1B.6
+
+
+
+Let $ \infty $ and $ -\infty $ denote two distinct objects, neither of which is in $ \R $. Define an addition and scalar multiplication on $ \R \cup \{\infty, -\infty\} $ as you could guess from the notation. Specifically, the sum and product of two real numbers is as usual, and for $ t \in \R $ define
+$$t \infty = \begin{cases} -\infty & \text{if } t < 0, \\ 0 & \text{if } t = 0, \\ \infty & \text{if } t > 0, \end{cases} \quad t (-\infty) = \begin{cases} \infty & \text{if } t < 0, \\ 0 & \text{if } t = 0, \\ -\infty & \text{if } t > 0, \end{cases}$$
+and
+$$t + \infty = \infty + t = \infty + \infty = \infty,$$
+$$t + (-\infty) = (-\infty) + t = (-\infty) + (-\infty) = -\infty,$$
+$$\infty + (-\infty) = (-\infty) + \infty = 0.$$
+With these operations of addition and scalar multiplication, is $ \R \cup \{\infty, -\infty\} $ a vector space over $ \R $? Explain.
+
+
+
+Let $ R_{∞} = R \cup \{ \infty, -\infty \} $
+
+---
