@@ -2,24 +2,24 @@
 
 ## Definitions
 
-$ F $ is field
+Let $ F $ be a field
 
-$ F^n $ is n-dimensional coordinate vector space
+Let $ S $ be an arbitrary set
 
-$ B $ is set of functions $ F^n \rightarrow F $
+Let $ F^S $ be a set of functions $ S \rightarrow F $
 
-Let $ Sol $ denote a function for set of solutions of equation
+Let $ Sol $ denote a function for a set of solutions of an equation
 
 $$
-Sol(f) = \{ x \in F^n: f(x) = 0 \} \\
-f \in B
+Sol(f) = \{ x \in S: f(x) = 0 \} \\
+f \in F^S
 $$
 
 ## Equations addition
 
-Let $ (f + g)(x) = f(x) + g(x) $
+Let $ f, g, (f + g) \in F^S $
 
-Let $ f, g, (f + g) \in B $
+Let $ (f + g)(x) = f(x) + g(x) $
 
 Then
 
@@ -29,7 +29,7 @@ $$
 
 ---
 
-For $ \forall x \in (Sol(f) \cap Sol(g)) $
+$ \forall x \in (Sol(f) \cap Sol(g)) $
 
 $$
 f(x) = 0 \\
@@ -48,15 +48,21 @@ f(x) + g(x) = 0 + 0 &= 0 \\
 \end{aligned}
 $$
 
-Which leads to $ x \in Sol(f + g) $
+Which leads to
 
----
+$$ x \in (Sol(f) \cap Sol(g)) \implies x \in Sol(f + g) $$
 
 Opposite might not be true due to the counterexample below
 
-### Counterexample of equations addition having bigger set of solutions
+---
 
-Given the $ x, y, \alpha, \beta \in F $, $ \alpha \neq 0, \beta \neq 0 $ and  system of two equations:
+### Counterexample. Equations addition having bigger set of solutions
+
+Let $ \alpha, \beta \in F, \ \alpha \neq 0, \beta \neq 0 $ be two constants
+
+Let $ x, y \in F $ be two variables
+
+Given the system of two equations:
 
 $$
 x \, y - \beta = 0 \\
