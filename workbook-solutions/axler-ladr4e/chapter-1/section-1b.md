@@ -28,12 +28,6 @@ $$
 \end{aligned}
 $$
 
-### Vector space $ V $
-
-Let $ F $ be a field of numbers
-
-Let $ V $ be a vector space over field $ F $ with operations of addition and scalar multiplication which satisfy well-defined properties 1.20 on page 12
-
 ## Section exercises and questions
 
 ### Proof of $ F^n $ being vector space
@@ -314,6 +308,8 @@ $$
 
 ### Exercise 1B.1 Inverse of inverse
 
+Let $ V $ be a vector space over field $ F $
+
 Let $ x \in V $
 
 $$ -(-x) = x $$
@@ -337,6 +333,8 @@ $$
 $$
 
 ### Exercise 1B.2
+
+Let $ V $ be a vector space over field $ F $
 
 Let $ v \in V $ and $ a \in F $
 
@@ -378,6 +376,8 @@ $$
 
 
 ### Exercise 1B.3
+
+Let $ V $ be a vector space over field $ F $
 
 Let $ v, w \in V $
 
