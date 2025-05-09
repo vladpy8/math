@@ -14,7 +14,7 @@ Let $ S $ be a set of arbitrary elements
 
 $ F^S $ is set of functions
 
-$$ F^S = \{ S \rightarrow F \} $$
+$$ F^S = \{ S \to F \} $$
 
 $ \forall f, g \in F^S $, $ \ \forall x \in S $ and $ \forall \lambda \in F $
 
@@ -385,9 +385,12 @@ $$ \exist ! \ x \in V : \quad v + 3 x = w $$
 
 ---
 
-Let $ y \in V $
+Let $ x, y \in V $
 
-$$ v + 3 y = w $$
+$$
+v + 3 x = w \\
+v + 3 y = w
+$$
 
 Then
 
@@ -415,32 +418,437 @@ Then $ V_{\empty} $ couldn't be a vector space because it doesn't contain an add
 
 ### Exercise 1B.5
 
-Let $ V_m \subseteq V $
+Let $ (V, +, \cdot) $ denote a *candidate* for a vector space $ V $ with operations of addition and scalar multiplication
 
-Let $ V_m $ satisfy a modified property *instead* of well-defined additive identity as stated in 1.20 on page 12
+Let $ A $ be the set of properties of vector spaces defined in 1.20 on page 12
 
-$$ \forall v \in V_m \quad 0 v = 0 $$
+Let $ A_m $ be a modified set of properties of vector spaces identical to $ A $ except additive inverse being replaced by
 
-Then
+$$ \forall v in V \quad 0 v = 0 $$
 
-$$ V_m = V $$
+Then $ \forall (V, +, \cdot) $
+
+$$ (V, +, \cdot) \vDash A \iff (V, +, \cdot) \vDash A_m $$
 
 ---
+
+The forward implication is proven in 1.30 on page 15
+
+The backward implication is
+
+$$ (V, +, \cdot) \vDash A_m \implies (V, +, \cdot) \vDash A $$
+
+$ \forall v \in V $
+
+$$
+\begin{aligned}
+
+0 &= 0 v = (1 + (-1)) v \\
+&= v + (-1) v
+
+\end{aligned}
+$$
+
+Thus
+
+$$ \forall v \in V, \quad \exist \ w \in V, \quad w = (-1) v : \quad v + w = 0 $$
 
 ### Exercise 1B.6
 
+Let $ \R_{\infty} = \R \cup \{\infty, -\infty\} $
 
+Let addition on $ \R_{\infty} $ for $ \R \subseteq \R_{\infty} $ be defined as usual. Define addition on $ \R_{\infty} $ with infinity elements
 
-Let $ \infty $ and $ -\infty $ denote two distinct objects, neither of which is in $ \R $. Define an addition and scalar multiplication on $ \R \cup \{\infty, -\infty\} $ as you could guess from the notation. Specifically, the sum and product of two real numbers is as usual, and for $ t \in \R $ define
-$$t \infty = \begin{cases} -\infty & \text{if } t < 0, \\ 0 & \text{if } t = 0, \\ \infty & \text{if } t > 0, \end{cases} \quad t (-\infty) = \begin{cases} \infty & \text{if } t < 0, \\ 0 & \text{if } t = 0, \\ -\infty & \text{if } t > 0, \end{cases}$$
-and
-$$t + \infty = \infty + t = \infty + \infty = \infty,$$
-$$t + (-\infty) = (-\infty) + t = (-\infty) + (-\infty) = -\infty,$$
-$$\infty + (-\infty) = (-\infty) + \infty = 0.$$
-With these operations of addition and scalar multiplication, is $ \R \cup \{\infty, -\infty\} $ a vector space over $ \R $? Explain.
+$ \forall t \in \R $
 
+$$
+\begin{aligned}
+t + \infty &= \infty + t = \infty + \infty = \infty \\
+t + (-\infty) &= (-\infty) + t = (-\infty) + (-\infty) = -\infty \\
+\infty + (-\infty) &= (-\infty) + \infty = 0
+\end{aligned}
+$$
 
+Let scalar multiplication on $ \R_{\infty} $ for $ \R \subseteq \R_{\infty} $ be defined as usual. Define scalar multiplication on $ \R_{\infty} $ with infinity elements
 
-Let $ R_{∞} = R \cup \{ \infty, -\infty \} $
+$ \forall t \in \R $
+
+$$
+\begin{aligned}
+
+t \cdot \infty &= \begin{cases}
+	-\infty & \text{if} \ t < 0 \\
+	0 & \text{if} \ t = 0 \\
+	\infty & \text{if} \ t > 0
+\end{cases}
+
+\\
+\\
+
+t \cdot (-\infty) &= \begin{cases}
+	\infty & \text{if} \ t < 0 \\
+	0 & \text{if} \ t = 0 \\
+	-\infty & \text{if} \ t > 0
+\end{cases}
+
+\end{aligned}
+$$
+
+Then $ \R_{\infty} $ is not a vector space
 
 ---
+
+Associativity of addition doesn't hold
+
+$ \forall t \in \R $
+
+$$
+\begin{aligned}
+
+0 &= \infty + (-\infty) = (t + \infty) + (-\infty) \\
+&= t + (\infty + (-\infty)) = t + 0 \\
+&= t
+
+\end{aligned}
+$$
+
+### Exercise 1B.7
+
+Let $ S $ be an arbitrary nonempty set
+
+Let $ V $ be a vector space over $ F $
+
+Let $ V^S $ be a set of functions $ { S \to V } $
+
+Define addition on $ V^S $
+
+$$ \forall f, g \in V^S, \quad \forall x \in S, \quad (f + g)(x) = f(x) + g(x) $$
+
+
+Define scalar multiplication on $ V^S $
+
+$$ \forall \lambda \in F, \quad \forall f \in V^S, \quad \forall x \in S, \quad (\lambda f)(x) = \lambda f(x) $$
+
+The $ V^S $ is a vector space over $ F $
+
+---
+
+#### 1. Commutativity of addition
+
+$ \forall f, g \in V^S $
+
+$$ f + g = g + f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+(f + g)(x) &= f(x) + g(x) \\
+&= g(x) + f(x) \\
+&= (g + f)(x)
+\end{aligned}
+$$
+
+#### 2. Associativity of addition
+
+$ \forall f, g, h \in V^S $
+
+$$ (f + g) + h = f + (g + h) $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+((f + g) + h)(x) &= (f + g)(x) + h(x) \\
+&= (f(x) + g(x)) + h(x) \\
+&= f(x) + (g(x) + h(x)) \\
+&= f(x) + (g + h)(x) \\
+&= (f + (g + h))(x)
+\end{aligned}
+$$
+
+#### 3. Associativity of scalar multiplication
+
+$ \forall f \in V^S $ and $ \forall a, b \in F $
+
+$$ (a b) f = a (b f) $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+((a b) f)(x) &= (a b) f(x) \\
+&= a (b f(x)) \\
+&= (a (b f))(x)
+\end{aligned}
+$$
+
+
+#### 4. Additive identity
+
+Let $ 0 \in V^S $
+
+$$ 0(x) = 0, \quad \forall x \in S $$
+
+$ \forall f \in V^S $
+
+$$ f + 0 = f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+(f + 0)(x) &= f(x) + 0(x) \\
+&= f(x) + 0 \\
+&= f(x)
+\end{aligned}
+$$
+
+#### 4. Additive inverse
+
+$$ \forall f \in V^S, \quad \exist g \in V^S, \quad f + g = 0 $$
+
+---
+
+Let $ g \in V^S $
+
+$$ g(x) = -f(x), \quad \forall x \in S $$
+
+Then
+
+$$
+\begin{aligned}
+(f + g)(x) &= f(x) + g(x) \\
+&= f(x) + (-f(x)) \\
+&= 0 \\
+\end{aligned}
+$$
+
+Thus, $ f + g = 0 $
+
+#### 5. Multiplicative identity
+
+$ \forall f \in V^S $
+
+$$ 1 f = f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+(1 f)(x) &= 1 \cdot f(x) \\
+&= f(x)
+\end{aligned}
+$$
+
+#### 6. Distributivity of scalar multiplication over addition
+
+$ \forall f, g \in V^S $ and $ \forall a \in F $
+
+$$ a (f + g) = a f + a g $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+(a (f + g))(x) &= a (f + g)(x) \\
+&= a (f(x) + g(x)) \\
+&= a f(x) + a g(x) \\
+&= (a f + a g)(x)
+\end{aligned}
+$$
+
+#### 7. Distributivity of addition over scalar multiplication
+
+$ \forall f \in V^S $ and $ \forall a, b \in F $
+
+$$ (a + b) f = a f + b f $$
+
+---
+
+$ \forall x \in S $
+
+$$
+\begin{aligned}
+((a + b) f)(x) &= (a + b) f(x) \\
+&= a f(x) + b f(x) \\
+&= (a f + b f)(x)
+\end{aligned}
+$$
+
+### Exercise 1B.8
+
+Let $ V_C = V \times V $
+
+Denote $ (u, v) \in V_C $ as $ u + i \, v $
+
+Define addition on $ V_C $
+
+$$ \forall u_1, v_1, u_2, v_2 \in V, \quad (u_1 + i \, v_1) + (u_2 + i \, v_2) = (u_1 + u_2) + i \, (v_1 + v_2) $$
+
+Define complex scalar multiplication on $ V_C $
+
+$$ \forall a, b \in \R, \quad \forall u, v \in V, \quad (a + b \, i)(u + i \, v) = (au - bv) + i \, (av + bu) $$
+
+The $ V_C $ is a complex vector space
+
+---
+
+#### 1. Commutativity of addition
+
+$ \forall u_1, v_1, u_2, v_2 \in V $
+
+$$ (u_1 + i \, v_1) + (u_2 + i \, v_2) = (u_2 + i \, v_2) + (u_1 + i \, v_1) $$
+
+---
+
+$$
+\begin{aligned}
+(u_1 + i \, v_1) + (u_2 + i \, v_2) &= (u_1 + u_2) + i \, (v_1 + v_2) \\
+&= (u_2 + u_1) + i \, (v_2 + v_1) \\
+&= (u_2 + i \, v_2) + (u_1 + i \, v_1)
+\end{aligned}
+$$
+
+#### 2. Associativity of addition
+
+$ \forall u_1, v_1, u_2, v_2, u_3, v_3 \in V $
+
+$$ ((u_1 + i \, v_1) + (u_2 + i \, v_2)) + (u_3 + i \, v_3) = (u_1 + i \, v_1) + ((u_2 + i \, v_2) + (u_3 + i \, v_3)) $$
+
+---
+
+$$
+\begin{aligned}
+((u_1 + i \, v_1) + (u_2 + i \, v_2)) + (u_3 + i \, v_3) &= ((u_1 + u_2) + i (v_1 + v_2)) + (u_3 + i \, v_3) \\
+&= ((u_1 + u_2) + u_3) + i \, ((v_1 + v_2) + v_3) \\
+&= (u_1 + (u_2 + u_3)) + i \, (v_1 + (v_2 + v_3)) \\
+&= (u_1 + iv_1) + ((u_2 + u_3) + i \, (v_2 + v_3)) \\
+&= (u_1 + iv_1) + ((u_2 + iv_2) + (u_3 + iv_3))
+\end{aligned}
+$$
+
+#### 3. Associativity of scalar multiplication
+
+$ \forall a, b, c, d \in \R, \forall u, v \in V $
+
+$$ ((a + b \, i)(c + d \, i))(u + i \, v) = (a + b \, i)((c + d \, i)(u + i \, v)) $$
+
+---
+
+$$
+\begin{aligned}
+((a + b \, i)(c + d \, i))(u + i \, v) &= ((ac - bd) + (ad + bc) \, i)(u + i \, v) \\
+&= ((ac - bd)u - (ad + bc)v) + i \, ((ac - bd)v + (ad + bc)u) \\
+&= (acu - adv - bdu - bcv) + i \, (acv + adu - bdv + bcu) \\
+&= (a(cu - dv) - b(du + cv)) + i \, (a(cv + du) + b(cu - dv)) \\
+&= (a + b \, i)((cu - dv) + i \, (cv + du)) \\
+&= (a + b \, i)((c + d \, i)(u + i \, v))
+\end{aligned}
+$$
+
+#### 4. Additive identity
+
+Let $ 0 \in V_C $
+
+$$ 0 = (0, 0) = 0 + i \, 0 $$
+
+$ \forall u, v \in V_C $
+
+$$ u + i \, v + 0 = u + i \, v $$
+
+---
+
+$$
+\begin{aligned}
+(u + i \, v) + 0 &= (u + i \, v) + (0 + i \, 0) \\
+&= (u + 0) + i \, (v + 0) \\
+&= u + i \, v
+\end{aligned}
+$$
+
+#### 5. Additive inverse
+
+$$ \forall u, v \in V, \quad \exist \, w, p \in V, \quad u + i \, v + w + i \, p = 0 $$
+
+---
+
+Let
+
+$$
+w = -u \\
+p = -v
+$$
+
+Then
+
+$$
+\begin{aligned}
+(u + i \, v) + ((-u) + i \, (-v)) &= (u - u) + i \, (v - v) \\
+&= 0 + i \, 0 \\
+&= 0
+\end{aligned}
+$$
+
+#### 6. Multiplicative identity
+
+$ \forall u, v \in V_C $
+
+$$ (1 + 0 \, i) (u + i \, v) = u + i \, v $$
+
+---
+
+$$
+\begin{aligned}
+(1 + 0 \, i)(u + i \, v) &= (1 \cdot u - 0 \cdot v) + i \, (1 \cdot v + 0 \cdot u) \\
+&= u + i \, v
+\end{aligned}
+$$
+
+#### 7. Distributivity of scalar multiplication over addition
+
+$ \forall u_1, v_1, u_2, v_2 \in V_C $ and $ a, b \in \R $
+
+$$ (a + b \, i) ((u_1 + i \, v_1) + (u_2 + i \, v_2)) = (a + b \, i)(u_1 + i \, v_1) + (a + b \, i)(u_2 + i \, v_2) $$
+
+---
+
+$$
+\begin{aligned}
+((a + b \, i) ((u_1 + i \, v_1) + (u_2 + i \, v_2))) &= (a + b \, i)((u_1 + u_2) + i \, (v_1 + v_2)) \\
+&= (a(u_1 + u_2) - b(v_1 + v_2)) + i \, (a(v_1 + v_2) + b(u_1 + u_2)) \\
+&= (a u_1 + a u_2 - b v_1 - b v_2) + i \, (a v_1 + a v_2 + b u_1 + b u_2) \\
+&= ((a u_1 - b v_1) + i \, (a v_1 + b u_1)) + ((a u_2 - b v_2) + i \, (a v_2 + b u_2)) \\
+&= (a + b \, i)(u_1 + i \, v_1) + (a + b \, i)(u_2 + i \, v_2)
+\end{aligned}
+$$
+
+#### 8. Distributivity of addition over scalar multiplication
+
+$ \forall u, v \in V_C $ and $ a, b, c, d \in \R $
+
+$$ ((a + b \, i) + (c + d \, i))(u + i \, v) = (a + b \, i)(u + i \, v) + (c + d \, i)(u + i \, v) $$
+
+---
+
+$$
+\begin{aligned}
+((a + b \, i) + (c + d \, i))(u + i \, v) &= ((a + c) + (b + d) \, i)(u + i \, v) \\
+&= ((a + c) u - (b + d) v) + i \, ((a + c) v + (b + d) u) \\
+&= (a u - b v + c u - d v) + i \, (a v + b u + c v + d u) \\
+&= ((a u - b v) + i \, (a v + b u)) + ((c u - d v) + i \, (c v + d u)) \\
+&= (a + b \, i)(u + i \, v) + (c + d \, i)(u + i \, v)
+\end{aligned}
+$$
