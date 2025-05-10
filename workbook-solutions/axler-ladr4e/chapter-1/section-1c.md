@@ -4,7 +4,7 @@
 
 page 24
 
-### Exercise 1C.1. Identifying Subspaces in $F^3$
+### Exercise 1C.1
 
 #### Part a
 
@@ -46,7 +46,7 @@ $$ U_d = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 = 5x_3 \}. $$
 
 TODO prove or disprove $ U_d $ is a subspace of $ F^3 $
 
-### Exercise 1C.2. Verification of Subspace Assertions in Example 1.35
+### Exercise 1C.2
 
 #### Part a
 
@@ -106,7 +106,7 @@ Then $ U_e $ is a subspace of $ \mathbb{C}^{\infty} $
 
 ---
 
-### Exercise 1C.3. Differentiable Functions as a Subspace
+### Exercise 1C.3. Differentiable functions as a Subspace
 
 Let $ U \subseteq \R^{(-4,4)} $.
 $$ U = \{ f \in \R^{(-4,4)} : f \text{ is differentiable and } f'(-1)=3f(2) \} $$

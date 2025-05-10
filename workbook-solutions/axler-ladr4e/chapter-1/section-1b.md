@@ -306,7 +306,7 @@ $$
 
 ## Exercises 1B
 
-### Exercise 1B.1 Inverse of inverse
+### Exercise 1B.1. Inverse of inverse
 
 Let $ V $ be a vector space over field $ F $
 
@@ -410,7 +410,7 @@ x - y = 0 \\
 x = y
 $$
 
-### Exercise 1B.4
+### Exercise 1B.4. Empty set is not a vector space
 
 Let $ V_{\empty} = \{ \} $
 
@@ -512,7 +512,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1B.7
+### Exercise 1B.7. $ V^S $ is a vector space
 
 Let $ S $ be an arbitrary nonempty set
 
@@ -688,7 +688,7 @@ $$
 \end{aligned}
 $$
 
-### Exercise 1B.8
+### Exercise 1B.8. Complexification of vector space
 
 Let $ V_C = V \times V $
 
