@@ -1,6 +1,9 @@
 # Gemini prompt for extracting exercises
+
 This document outlines the preferred style for transcribing mathematics exercises and embedded tasks from a source (e.g., a textbook) into a markdown format suitable for further work (e.g., adding solutions).
+
 ## I. General document structure
+
 1.	Main heading:
 	Each section file should begin with a top-level heading indicating the chapter, section number, and section title.
 	*	Example: `# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.`
@@ -14,14 +17,18 @@ This document outlines the preferred style for transcribing mathematics exercise
 	*	This can be followed by a brief, plain English description or context for the term on its own line, especially for generally understood concepts (e.g., '$ \mathbb{C} $ is set of complex numbers'). This description is not a "Let" statement.
 	*	"Let" statements should be reserved for defining specific objects or notations within the scope of a particular task or example, not for fundamental mathematical entities like $\mathbb{C}$ or $\R$ unless introducing a specific local notation for them (see also Section III.4. "Let" statements).
 	*	The formal mathematical definition using LaTeX (`$$...$$`) should then follow.
+
 ## II. Content focus (applies to all items)
+
 1.	Accuracy:
 	The rewritten task must accurately reflect the original problem or statement from the source.
 2.	Completeness (of problem):
 	Ensure all necessary information from the statement is included.
 3.	No solutions:
 	The solution part after the `---` must be left blank. A "TODO" placeholder must be added on the line following the `---` (see III.6 and IV.7).
+
 ## III. Individual exercise formatting (formal end-of-section exercises)
+
 1.	Overall section page reference:
 	*	Include the page number from the source book on the line following the `## Exercises [Section Number]` heading. This indicates where the set of exercises begins.
 		*	Example:
@@ -73,6 +80,14 @@ This document outlines the preferred style for transcribing mathematics exercise
 			```
 		*	Example (imperative if needed): "Solve for $x \in \R^4$."
 	*	**Ancillary Page References:** If a specific formal exercise in the source text refers to another page for context or related information (distinct from the main page reference for the exercise set), this reference (e.g., "Also page X") should be included on a new line directly following the exercise problem statement, before the `---` separator.
+	*	**Verification of Assertions in Examples:**
+		If an exercise asks to "Verify all assertions in Example X.Y" or similar:
+		1.	The main exercise heading should reflect this, e.g., "### Exercise 1C.2. Verification of subspace examples".
+		2.	Under this heading, for each distinct assertion or part (a, b, c, etc.) within the referenced Example X.Y in the source text:
+			*	Create a `#### Part [original letter/number if any, or sequential if not]` subheading. If the original example had parts (a), (b), (c), use those. If the example contained multiple distinct assertions without explicit labels, label them sequentially as `#### Part 1`, `#### Part 2`, etc.
+			*	Explicitly state the assertion from Example X.Y that needs to be verified. This might involve quoting or paraphrasing the assertion.
+			*	Follow with `---` and `TODO`.
+		3.	If the referenced Example X.Y itself defines specific sets or conditions relevant to the assertions, these definitions should be stated once before the first "Part" subheading of this exercise, using "Let" statements and LaTeX as appropriate.
 5.	Solution separator:
 	*	Use a markdown horizontal rule (`---`) to clearly separate the problem statement from the area where the solution will be written.
 6.	Solution placeholder:
@@ -82,17 +97,23 @@ This document outlines the preferred style for transcribing mathematics exercise
 		---
 		TODO
 		```
+
 ## IV. Handling embedded tasks (verifications, proofs, etc. from main text)
+
 This section applies to questions, theorems, or statements within the main explanatory text of a book section that are explicitly or implicitly left for the reader to verify, prove, or solve. These should be grouped under a heading like `## Embedded tasks` (or similar) which appears *before* the `## Exercises [Section Number]` heading.
+
 1.	Avoid duplication - prefer formal exercises:
 	*	Before transcribing an embedded task, check if it is identical or substantially the same as a formal exercise at the end of the section.
 	*	If a substantial overlap exists, **do not** create a separate entry for the embedded task.
 	*	Instead, ensure the corresponding formal exercise (under `## Exercises [Section Number]`) includes a reference to the page where this task was mentioned in the text, as described in Section III.2.
+
 2.	Order of appearance:
 	If an embedded task is unique (not duplicated as a formal exercise), it should be listed and formatted in the order it appears within the source text.
+
 3.	Identification:
 	*	Look for phrases such as "as you should verify", "the proof is left to the reader/exercise", "the reader can verify", "you should verify", "show that...", etc.
 	*	Identify statements presented as facts where the justification is explicitly deferred to the reader.
+
 4.	Heading for embedded tasks:
 	*	Use a level-3 heading (`###`).
 	*	Provide a very short, declarative description of what the task is about (e.g., `### Commutativity of complex multiplication`, `### $F^S$ is a vector space`).
@@ -112,9 +133,11 @@ This section applies to questions, theorems, or statements within the main expla
 		### Commutativity of complex multiplication
 		Page 3
 		```
+
 5.	Structure and formatting:
 	*	Follow the same detailed formatting guidelines as for formal exercises (Section III.4 for problem statement, Section V for mathematical notation), including the double newline separation.
 	*	For internal references: If an embedded task refers to a previous exercise number or a clearly named definition from the source text that has already been transcribed in the current or previous sections, use a textual reference (e.g., "(see Exercise 1A.11)" or "(referencing the definition of complex numbers in Section 1A)").
+
 6.	Multi-part embedded tasks:
 	*	Follow the same guidelines as for multi-part formal exercises (see Section III.3). The primary task statement can appear directly under the `###` heading if it's the first "part" of a multi-component task.
 		*	Example (for verifying Example 1.25 from the book):
@@ -135,9 +158,12 @@ This section applies to questions, theorems, or statements within the main expla
 			---
 			TODO
 			```
+
 7.	Solution separator and placeholder:
 	*	Follow the same guidelines as for formal exercises (Section III.5 and **III.6 regarding mandatory "TODO"**).
+
 ## V. Mathematical notation and formatting (applies to all items)
+
 1.	LaTeX for all math:
 	All mathematical symbols, variables, expressions, equations, and set definitions must be rendered using LaTeX.
 	*	Use inline LaTeX (`$...$`) for symbols within text.
