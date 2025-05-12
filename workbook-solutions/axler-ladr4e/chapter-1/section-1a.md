@@ -50,7 +50,7 @@ $$
 
 page 10
 
-### Exercise 1A.1. Addition commutativity of complex numbers
+### Exercise 1A.1. Commutativity of addition of complex numbers
 
 Also page 3
 
@@ -160,8 +160,6 @@ $$
 Also page 3
 
 $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
-
-$  $
 
 ---
 

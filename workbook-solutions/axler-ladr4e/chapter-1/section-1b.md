@@ -28,7 +28,7 @@ $$
 \end{aligned}
 $$
 
-## Section exercises and questions
+## Embedded tasks
 
 ### Proof of $ F^n $ being vector space
 
