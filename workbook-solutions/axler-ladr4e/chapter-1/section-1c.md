@@ -1,10 +1,12 @@
-# Chapter 1. Vector spaces. <br>Section 1C. Subspaces.
+# Chapter 1. Vector spaces. <br>Section 1C. Subspaces
 
 ## Exercises 1C
 
-page 24
+Page 24
 
 ### Exercise 1C.1
+
+Page 24
 
 #### Part a
 
@@ -14,8 +16,6 @@ $$ U_a = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2x_2 + 3x_3 = 0 \}. $$
 
 ---
 
-TODO prove or disprove $ U_a $ is a subspace of $ F^3 $
-
 #### Part b
 
 Let $ U_b \subseteq F^3 $
@@ -23,8 +23,6 @@ Let $ U_b \subseteq F^3 $
 $$ U_b = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2x_2 + 3x_3 = 4 \}. $$
 
 ---
-
-TODO prove or disprove $ U_b $ is a subspace of $ F^3 $
 
 #### Part c
 
@@ -34,8 +32,6 @@ $$ U_c = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 x_2 x_3 = 0 \}. $$
 
 ---
 
-TODO prove or disprove $ U_c $ is a subspace of $ F^3 $
-
 #### Part d
 
 Let $ U_d \subseteq F^3 $
@@ -44,9 +40,9 @@ $$ U_d = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 = 5x_3 \}. $$
 
 ---
 
-TODO prove or disprove $ U_d $ is a subspace of $ F^3 $
-
 ### Exercise 1C.2
+
+Page 24
 
 #### Part a
 
@@ -78,7 +74,7 @@ Let $ U_c \subseteq \R^{\R} $
 
 $$ U_c = \{ f \in \R^{\R} : f \ \text{is differentiable on} \ \R \} $$
 
-Prove that $ U_c $ is a subspace of $ \R^{\R} $
+Then $ U_c $ is a subspace of $ \R^{\R} $
 
 ---
 
@@ -92,7 +88,7 @@ $$ U_d = \{ f \in \R^{(0,3)} : f \ \text{is differentiable on} \ (0,3) \ \text{a
 
 Then
 
-$$ U_d \, \text{is a subspace of} \, V_d \iff b = 0 $$
+$$ U_d \, \text{is a subspace of} \, \R^{(0,3)} \iff b = 0 $$
 
 ---
 
