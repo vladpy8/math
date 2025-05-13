@@ -1,9 +1,5 @@
 # Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.
 
-TODO:
-1. Fix references
-1. Add references
-
 ## Definitions
 
 ### Complex numbers
@@ -48,17 +44,19 @@ $$
 
 ## Exercises 1A
 
-page 10
+Reference page 10
 
 ### Exercise 1A.1. Commutativity of addition of complex numbers
 
-Also page 3
+Reference page 3
 
 $ \forall \alpha, \beta \in \mathbb{C} $
 
 $$ \alpha + \beta = \beta + \alpha $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -72,15 +70,19 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.2. Associativity of addition of complex numbers
 
-Also page 3
+Reference page 3
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -96,16 +98,20 @@ $$
 \end{aligned}
 $$
 
+</details>
 
 ### Exercise 1A.3. Associativity of multiplication of complex numbers
 
-Also page 3
+Reference page 3
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$ (\alpha \beta) \lambda = \alpha (\beta \lambda) $$
 
----
+<details>
+
+<summary>Proof</summary>
+
 $$
 \begin{aligned}
 
@@ -128,15 +134,20 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.4. Distributivity of multiplication over addition of complex numbers
 
-Also page 3
+Reference page 3
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $
 
 $$\lambda  (\alpha + \beta) = \lambda \alpha + \lambda \beta $$
 
----
+<details>
+
+<summary>Proof</summary>
+
 $$
 \begin{aligned}
 
@@ -155,13 +166,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.5. Additive inverse of complex numbers
 
-Also page 3
+Reference page 3
 
 $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$ \alpha + \beta = (a_r + b_r) + (a_i + b_i) \, i = 0 $$
 
@@ -175,13 +190,17 @@ $$ b_r = -a_r, \quad b_i = -a_i $$
 
 $$ \beta = (-a_r) + (-a_i) \, i $$
 
+</details>
+
 ### Exercise 1A.6. Multiplicative inverse of complex numbers
 
-Also page 3
+Reference page 3
 
 $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$ \alpha \beta = a_r b_r - a_i b_i + (a_r b_i + a_i b_r) \, i = 1 + 0 \, i $$
 
@@ -223,13 +242,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.7
 
 $ \alpha = \frac{-1 + \sqrt{3} \, i}{2} $
 
-Prove that $ \alpha ^3  = 1 $
+$$ \alpha ^3 = 1 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -258,13 +281,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.8. Square roots of $ i $
 
 Solve for  $ \alpha \in \mathbb{C} $
 
 $$ \alpha^2 = i $$
 
----
+<details>
+
+<summary>Solution</summary>
 
 $$
 \begin{aligned}
@@ -335,13 +362,18 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.9
 
 Solve for $ x \in {\R}^4 $
 
 $$ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $$
 
----
+<details>
+
+<summary>Solution</summary>
+
 $$
 \begin{aligned}
 
@@ -354,13 +386,17 @@ x &= \left( \frac{1}{2}, 6, -\frac{7}{2}, \frac{1}{2} \right)
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.10
 
 Explain why there doesn't exist $ \lambda \in \mathbb{C} $ such that
 
 $$ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $$
 
----
+<details>
+
+<summary>Explanation</summary>
 
 One complex vector equation leads to three complex number equations
 
@@ -408,13 +444,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.11. Associativity of addition of vectors
 
 $ \forall x, y, z \in F^n $
 
 $$ (x + y) + z = x + (y + z) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -432,13 +472,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.12. Associativity of scalar multiplication of vectors
 
 $ \forall x \in F^n $ and $ \forall a, b \in F $
 
 $$ (a b) x = a (bx) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -454,13 +498,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.13. Multiplicative identity of vectors
 
 $ \forall x \in F^n $
 
 $$ 1 x = x $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -474,13 +522,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.14. Distributivity of scalar multiplication over addition of vectors
 
 $ \forall \lambda \in F $ and $ \forall x, y \in F^n $
 
 $$ \lambda (x + y) = \lambda x + \lambda y $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -498,13 +550,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1A.15. Distributivity of addition over scalar multiplication of vectors
 
 $ \forall a, b \in F $ and $ \forall x \in F^n $
 
 $$ (a + b) x = ax + bx $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -521,3 +577,5 @@ $$
 
 \end{aligned}
 $$
+
+</details>
