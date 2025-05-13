@@ -246,7 +246,11 @@ $$
 
 ### Exercise 1A.7
 
-$ \alpha = \frac{-1 + \sqrt{3} \, i}{2} $
+Let
+
+$$ \alpha = \frac{-1 + \sqrt{3} \, i}{2} $$
+
+Then
 
 $$ \alpha ^3 = 1 $$
 
@@ -285,7 +289,7 @@ $$
 
 ### Exercise 1A.8. Square roots of $ i $
 
-Solve for  $ \alpha \in \mathbb{C} $
+Solve for $ \alpha \in \mathbb{C} $
 
 $$ \alpha^2 = i $$
 
