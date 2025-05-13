@@ -1,203 +1,284 @@
-# Gemini Transcription Prompt: Mathematics
+# Gemini exercises extraction prompt
 
-## 0. Core Principles
+This document is a set of imperative instructions Gemini must follow to extract definitions, tasks and exercises from math workbook. The instructions are designed to ensure the transcription is accurate, complete, and adheres to a specific format.
 
-* **Fidelity:** Transcription must accurately and completely reflect the source material for the specified section(s) only.
-* **Output:** Markdown format. No solutions; leave area after `---` blank.
-* **Whitespace (CRITICAL):** Exactly one blank line (double newline) must separate every distinct logical block (headings, page numbers, "Let" statements, prose lines, `$$...$$` blocks, `---` separators). No multiple blank lines.
+If provided, Gemini must focus on the content of the specific chapter or sections of the workbook
 
-## 1. Document Structure
+## 0. Precision over speed
 
-1.  **Main Heading:** `# Chapter [Num]. [Title]. <br>Section [Num]. [Title].`
-	* Example:
-		```markdown
-		# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.
-		```
-2.  **Content Blocks (H2 Headings, In Order):** `## Definitions`, `## Embedded tasks`, `## Exercises [SectionNum]`.
-	* Example:
-		```markdown
-		## Exercises 1C
-		```
+Gemini must prioritize accuracy and precision over speed. The goal is to ensure that the extracted content is correct, complete, and adheres to the specified format. If Gemini encounters any uncertainty or ambiguity in the text, it should take the time to clarify, verify and reiterate before proceeding.
 
-## 2. Transcribing Definitions
+This is especially important with regard to points 1.2 and 1.4 of the style guide.
 
-1.  **Heading:** `### [Term Name]`
-2.  **Context (Optional):** Single line of plain English if term is broad (e.g., "$ \mathbb{C} $ is set of complex numbers.").
-3.  **Page Reference:** On line after heading/context.
-4.  **Prerequisites ("Let" statements):** Introduce necessary objects/variables before the main definition, each on its own line, using concise math notation (see Section 5).
-	* Example:
-		```markdown
-		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
-		```
-5.  **Introductory Prose:** Minimal (e.g., "The [term] is"), on its own line.
-6.  **Formal LaTeX Definition:**
-	* Use one comprehensive `$$ ... $$` block if possible, encoding properties symbolically (set-builder, quantifiers). Minimize redundant prose. The properties defining the term should be encoded within this LaTeX block rather than reiterated in prose if the LaTeX is sufficiently expressive and clear.
-	* Structure multiple aspects (e.g., structure & operations) within one `$$...$$` block using `aligned`, `\\`, `\quad` (see Section 5.1).
-	* **Example (Symbolic Definition - Direct Sum):**
-		```markdown
-		### Direct sum
+## 1. Markdown and MathJax style guide
 
-		Page 21
+### 1.0. Examples
 
-		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
+#### 1.0.1. Example
 
-		The direct sum of $ V_1, \dots, V_m $ is
-		$$V_1 \oplus \dots \oplus V_m = \{ v \in V: \quad \exist ! \ v_1 \in V_1, \dots v_m \in V_m, \quad v = v_1 + \dots + v_m \}$$
-		```
-	* **Example (Structure and Operations - Complex Numbers):**
-		```markdown
-		### Complex numbers
+```markdown
 
-		$ \mathbb{C} $ is set of complex numbers.
+### Complex numbers
 
-		Page 2
+$ \mathbb{C} $ is the set of complex numbers:
 
-		$$\mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \}$$
+$$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
-		where $ i^2 = -1 $.
+$$ i^2 = -1 $$
 
-		$ \forall \alpha, \beta \in \mathbb{C} $, let $ \alpha = a_r + a_i \, i $ and $ \beta = b_r + b_i \, i $.
+$ \forall \alpha, \beta \in \mathbb{C} $
 
-		Addition and multiplication on $ \mathbb{C} $ are defined by
-		$$
-		\begin{aligned}
-		\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
-		\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
-		\end{aligned}
-		$$
-		```
+$$
+\begin{aligned}
 
-## 3. Transcribing Formal Exercises
+\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
 
-1.  **Section Page Reference:** After `## Exercises [SectionNum]` heading. Example:
-	```markdown
-	## Exercises 1C
+\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
 
-	Page 24
-	```
-2.  **Exercise Heading:** `### Exercise [Section].[Num]` (Optional: `. [Descriptive Title]`). Page ref on next line. Example:
-	```markdown
-	### Exercise 1A.1. Commutativity of addition
+\end{aligned}
+$$
 
-	Page 3
-	```
-3.  **Multi-part:** Use `#### Part [label]` or `#### [Descriptive Sub-heading]`.
-4.  **Problem Statement Formatting:**
-	* **Quantifiers First:** LaTeX lines with quantifiers (e.g., `$ \forall \alpha, \beta \in \mathbb{C} $`) *must* be the very first part.
-	* **"Let" Statements:** For local items, concise, each on its own line.
-		* Example:
-			```markdown
-			Let $ U_a \subseteq F^3 $.
-			```
-	* **Mathematical Definitions within Problems (Symbolic Set Definitions):** When a "Let" statement introduces a set $U$ (or any mathematical object) whose elements $f$ (or $x, v$, etc.) are described by properties (e.g., "$f$ is differentiable on an interval and satisfies a condition $f'(a) = K f(b)$"), these properties *must* be incorporated directly into the set-builder notation for $U$ within a display LaTeX block (`$$ ... $$`). The prose describing these properties should not be repeated outside the LaTeX block if the LaTeX definition is complete. The subsequent "Then [proposition]" or task statement will then refer to $U$ as defined.
-		* Example:
-			```markdown
-			Let $ U \subseteq \R^{(-4, 4)} $.
+```
 
-			$$U = \{ f \in \R^{(-4,4)} : f \ \text{is differentiable on} \ (-4,4) \ \text{and} \ f'(-1) = 3 f(2) \}$$
-			```
-		* For multiple related definitions, use separate blocks or `\\` and `\quad` within one. Example:
-			```markdown
-			Let
-			$$
-			U = \{ (x,0,0) \in F^3 : x \in F \} \\
-			W = \{ (0,y,0) \in F^3 : y \in F \}
-			$$
-			```
-	* **Given Conditions:** List explicitly.
-	* **Core Task Wording:**
-		* Proofs/Verifications: State proposition declaratively. Omit "Show that...".
-			* Example:
-				```markdown
-				### Exercise 1A.1. Commutativity of addition
+#### 1.0.2. Example
 
-				Page 3
+```markdown
 
-				$ \forall \alpha, \beta \in \mathbb{C} $
+### Commutativity of addition of complex numbers
 
-				$$\alpha + \beta = \beta + \alpha$$
-				---
-				```
-		* Other Imperatives: Retain "Find...", "Determine if...". For "Determine if...", define set, task is implied.
-			* Example:
-				```markdown
-				### Exercise 1C.1
+$ \forall \alpha, \beta \in \mathbb{C} $
 
-				Page 24
+$$ \alpha + \beta = \beta + \alpha $$
 
-				#### Part a
+<details>
 
-				Let $ U_a \subseteq F^3 $.
+<summary>Proof</summary>
 
-				$$U_a = \{ (x_1, x_2, x_3) \in F^3 : x_1 + 2x_2 + 3x_3 = 0 \}$$
-				---
-				```
-	* Ancillary Page Refs: Before `---`.
-	* "Verify Assertions in Example X.Y": Main heading, then `Example X.Y` ref, then `#### Part [label]` for each assertion with its "Let" statements and declarative statement.
-5.  **Separator:** `---` (followed by blank line).
+$$
+\begin{aligned}
 
-## 4. Transcribing Embedded Tasks
+\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
 
-1.  **No Duplication:** Omit if explicitly covered by a formal exercise.
-2.  **Order:** List in source order.
-3.  **Heading:** `### [Source Type] [Num]. [Declarative Description]` (if applicable, else just description). Page ref on next line.
-	* Example:
-		```markdown
-		### Example 1.37. Verification of sum of subspaces in $ F^3 $
+&= (b_r + a_r) + (b_i + a_i) \, i \\
 
-		Page 20
-		```
-4.  **Structure:** Follow formal exercise structure (3.4), using symbolic definitions (Section 2.6, 3.4).
-5.  **Multi-part:** Main proposition, `---`, then `#### [Part Title]`, statement, `---` for sub-tasks.
-	* Example (Theorem Verification):
-		```markdown
-		### Theorem 1.40. Verification that sum of subspaces is a subspace
+&= \beta + \alpha
 
-		Page 21
+\end{aligned}
+$$
 
-		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
+</details>
 
-		Then $ V_1 + \dots + V_m $ is a subspace of $ V $.
-		---
+```
 
-		#### $ V_1 + \dots + V_m $ contains additive identity
-		---
-		```
-6.  **Separator:** `---` (followed by blank line).
+#### 1.0.3. Example
 
-## 5. Mathematical Notation and Formatting
+This is a bad example of a statement:
 
-### 5.1. LaTeX Requirements
-* **(a) Padding:** Single space inside delimiters: `$ ... $` and `$$ ... $$`.
-	* Examples: `$ x \in \R $`, `$$ U = \{ x \in \R \} $$`
-* **(b) Internal Spacing:** Use `\quad` for major logical separations (e.g., conditions in set-builder); `\,` for minor (e.g., `$a_i \, i$`).
-	* Example (`\quad`): `$$ \{ v \in V: \quad \exist ! \ v_1 \in V_1, \quad v = v_1 + v_m \} $$`
-* **(c) Line Breaks (`\\`):** For multi-part definitions/equations in one `$$...$$` block.
-	* Example:
-		```markdown
-		Let
-		$$
-		U = \{ (x,0,0) \in F^3 : x \in F \} \\
-		W = \{ (0,y,0) \in F^3 : y \in F \}
-		$$
-		```
-* **(d) Alignment (`aligned`):** For multi-step derivations or related operations.
-	* Example:
-		```markdown
-		$$
-		\begin{aligned}
-		\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
-		\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
-		\end{aligned}
-		$$
-		```
-* **(e) Symbolic Language:** Use standard LaTeX symbols (`\mathbb{C}`, `\iff`, `\exist !`, `\forall`) over verbose English.
+```markdown
 
-### 5.2. Conciseness
-* Prioritize symbolic representation.
-* **Definitions:** After minimal "Let"s and intro prose, use one comprehensive `$$ ... $$` block for the full symbolic definition, incorporating properties into the set-builder notation or symbolic statement itself. Avoid redundant prose.
-* **"Let" Statements:** Use concise forms: `Let $ U \subseteq F^3 $.`
+Suppose that $ b \in \R $. Show that the set of continuous real-valued functions $ f $ on the interval $ [0,1] $ such that $ \int_0^1 f = b $ is a subspace of $ R^{[0,1]} $ if and only if $ b = 0 $.
 
-### 5.3. Source References & Hints
-* **Internal References:** If an item refers to another example/page, note it (e.g., `(see Example 1.35)`).
-* **Hints/Notes:** Italicized, on own line(s) before `---`. Example: `*Hint: ...*`
+```
+
+It is not declarative. It doesn't use MathJax notation. It is not compact. It doesn't use the newlines style. It doesn't use the details section.
+
+It must be rewritten as:
+
+```markdown
+
+Let $ b \in \R $.
+
+Let $ U \subseteq \R^{[0,1]} $:
+
+$$ U = \{ f \in \R^{[0,1]} : f \ \text{is continuous on} \ (0,1) \ \text{and} \ \int_0^1 f = b \} $$
+
+Then
+
+$$ U \, \text{is a subspace of} \, \R^{[0,1]} \iff b = 0 $$
+
+<details>
+
+<summary>Proof</summary>
+
+...
+
+</details>
+
+```
+
+(As an important note, $ U \subseteq \R^{[0,1]} $ means that $ U $ is a set of real-valued functions)
+
+### 1.1. Newlines
+
+Put double newlines after every logically separate piece of content, such as, but not limited to:
+- Headings
+- A sequence of plain text sentences
+- MathJax block expressions `$$...$$`
+- MathJax inline expressions `$...$` if they are not part of a sentence
+- Inside complicated multiline MathJax blocks with `\\`
+
+Each coherent logical block of text and code must be separated by a double newline. Break lines only at the end of a sentence or at the end of a logical block.
+
+Singular newline notation is allowed inside display MathJax blocks to break lines long enough to fit the screen.
+
+### 1.2. Fewer words, more math
+
+### 1.2.1. Symbols
+
+Use MathJax and generally accepted math symbols instead of plain text words wherever possible. Math symbols might include, but are not limited to:
+- $ \forall $ for "for all"
+- $ \exists $ for "there exists"
+- $ \in $ for "is an element of"
+- $ \subseteq $ for "is a subset of"
+- $ \{ .. \} $ for "set notation"
+- $ : $ for "such that"
+
+#### 1.2.2. Statements
+
+Pursue, reiterate and achieve the greatest proportion of math symbols to plain text words possible. Ideally, the result is devoid of plain text words.
+
+If some definition, theorem, task, exercise or generally any statement might be rewritten in a mathematical way, do it. This might include entire statements, comprising multiple sentences, or even paragraphs.
+
+Smaller statements and inline symbols must be built with inline MathJax `$...$` notation in combination with only a few words. For larger statements potentially spanning multiple lines, use display MathJax `$$...$$` notation.
+
+Compress multiple statements into one display MathJax block if achievable.
+
+For example, this statement is a good candidate for rewriting:
+
+```markdown
+
+The sum of $ V_1, V_2, \dots, V_m $, denoted by $ V_1 + V_2 + \dots + V_m $, is the set of all possible sums of elements of $ V_1, V_2, \dots, V_m $.
+
+```
+
+It might be rewritten as:
+
+```markdown
+
+Define the sum of $ V_1, V_2, \dots, V_m $:
+
+$$
+
+V_1 + V_2 + \dots + V_m = \{
+	v_1 + v_2 + \dots + v_m :
+	\quad v_1 \in V_1, v_2 \in V_2, \dots, v_m \in V_m
+\}
+
+$$
+
+```
+
+This leverages the use of set building notation and the colon $ : $ symbol. Moreover, it is less verbose, and properly employs the newlines style.
+
+This example is a good candidate for rewriting as well:
+
+```markdown
+
+Let $ \alpha = \frac{-1 + \sqrt{3}i}{2} $.
+Then $ \alpha $ is a cube root of $ 1 $ (meaning that its cube equals $ 1 $).
+
+```
+
+It might be rewritten as:
+
+```markdown
+
+Let
+
+$$ \alpha = \frac{-1 + \sqrt{3} \, i}{2} $$
+
+Then
+
+$$ \alpha ^3 = 1 $$
+
+```
+
+### 1.3. Details section
+
+Use details sections to hide the proof of theorems, solutions of exercises or tasks, explanations, etc.
+
+```markdown
+
+<details>
+
+<summary>Proof</summary>
+
+...
+
+</details>
+
+```
+
+### 1.4. Declarative presentation
+
+Use a declarative presentation of theorems, definitions, exercises, etc. Use imperative presentation only when it is unavoidable.
+
+Such statements as "Prove that ..." or "Show that ..." are not declarative and should be avoided. For example, this statement is a good candidate for rewriting:
+
+```markdown
+
+Prove that for each complex number there exists a multiplicative inverse.
+
+```
+
+It might be rewritten as:
+
+```markdown
+
+$$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
+
+<details>
+
+<summary>Proof</summary>
+
+...
+
+</details>
+
+```
+
+This example is a good candidate for rewriting. However it is impossible to rewrite it in a declarative way:
+
+```markdown
+
+Find two distinct square roots of $ i $.
+
+```
+
+The following statement might be used instead:
+
+```markdown
+
+Solve for $ \alpha \in \mathbb{C} $
+
+$$ \alpha^2 = i $$
+
+```
+
+### 1.5. Specifics
+
+1. Whenever a list consists of an unspecified number of items, write it explicitly with the first, second, and last items. For example, $ x_1, x_2, \dots, x_n $.
+
+## 2. Extraction of exercises and tasks
+
+### 2.0. Output format
+
+Output must be presented as one or multiple files with the extracted content in the markdown format with MathJax expressions. The output must follow the style guide above in point 1.
+
+### 2.1. Extraction goal
+
+The main focus of the extraction is on the exercises and tasks.
+
+Exercises are the list of problems, tasks, or questions at the end of the chapter or section. They are usually presented in a numbered list format.
+
+Tasks is a broader term, but in terms of the extraction, it is used to refer to the exercises that are incorporated into the text of the chapter or section. They are usually what the reader is asked to do in the text. They might be presented with phrases such as "Reader should verify that ..." or "Reader can show that ...".
+
+Together with exercises and tasks, Gemini must also extract the definitions that are actively referenced in multiple exercises and tasks.
+
+### 2.2. Output top-level structure
+
+Put each section of the book under corresponding heading in the format: `# Chapter [Number]. [Title]. <br>Section [Number]. [Title].`
+
+Definitions come first in the section under the heading `## Definitions`, if present. They are followed by tasks under the heading `## Tasks`. Finally, exercises come last under the heading `## Exercises [SectionNum]`.
+
+### 2.3. Definitions
