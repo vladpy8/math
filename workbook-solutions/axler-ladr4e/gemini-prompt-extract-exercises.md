@@ -1,214 +1,203 @@
-# Gemini prompt for extracting exercises
+# Gemini Transcription Prompt: Mathematics
 
-This document outlines the preferred style for transcribing mathematics exercises and embedded tasks from a source (e.g., a textbook) into a markdown format suitable for further work (e.g., adding solutions).
+## 0. Core Principles
 
-## I. General document structure
+* **Fidelity:** Transcription must accurately and completely reflect the source material for the specified section(s) only.
+* **Output:** Markdown format. No solutions; leave area after `---` blank.
+* **Whitespace (CRITICAL):** Exactly one blank line (double newline) must separate every distinct logical block (headings, page numbers, "Let" statements, prose lines, `$$...$$` blocks, `---` separators). No multiple blank lines.
 
-1.    Main heading:
-	Each section file should begin with a top-level heading indicating the chapter, section number, and section title.
-	* Example: `# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.`
-2.    Subheadings for content blocks (order matters):
-	* Use `## Definitions` for restating relevant definitions from the section, if any.
-	* Use `## Embedded tasks` for tasks extracted from the main body of the section. These should appear before the formal end-of-section exercises.
-	* Use `## Exercises [Section Number]` for the main block of formal, numbered exercises from the end of a book section.
-		* Example: `## Exercises 1C`
-3.    Structure within `## Definitions` section:
-	* Each defined term should be introduced with a `### [Term Name]` subheading.
-	* This can be followed by a brief, plain English description or context for the term on its own line, especially for generally understood concepts (e.g., '$ \mathbb{C} $ is the set of complex numbers'). This description is not a "Let" statement.
-	* "Let" statements should be reserved for defining specific objects or notations within the scope of a particular task or example, not for fundamental mathematical entities like $\mathbb{C}$ or $\R$ unless introducing a specific local notation for them (see also Section III.4. "Let" statements).
-	* The formal mathematical definition using LaTeX (`$$...$$`) should then follow.
+## 1. Document Structure
 
-## II. Content focus (applies to all items)
-
-1.    Accuracy:
-	The rewritten task must accurately reflect the original problem or statement from the source.
-2.    Completeness (of problem):
-	Ensure all necessary information from the statement is included.
-3.    No solutions:
-	The solution part after the `---` must be left blank. A "TODO" placeholder must be added on the line following the `---` (see III.6 and IV.7).
-
-## III. Individual exercise formatting (formal end-of-section exercises)
-
-1.    Overall section page reference:
-	* Include the page number from the source book on the line following the `## Exercises [Section Number]` heading. This indicates where the set of exercises begins.
-		* Example:
-			```markdown
-			## Exercises 1C
-			Page 24
-			```
-2.    Exercise heading:
-	* Default format: `### Exercise [Section].[Number]`
-	* **Descriptive title (Optional):** A short, descriptive title reflecting the core mathematical concept *may* be added after the exercise number (e.g., "### Exercise X.Y. Descriptive Title"). If a descriptive title is not obvious or the exercise consists of multiple distinct definitional parts (like defining multiple sets to check for a property), it should be omitted.
-	* **Page Reference:** The page number from the source book where the specific exercise begins *must* be placed on a new line immediately following the exercise heading.
-		* Example (without descriptive title):
-			```markdown
-			### Exercise 1A.7
-			Page 10
-			```
-		* Example (with descriptive title):
-			```markdown
-			### Exercise 1A.1. Commutativity of addition
-			Page 3
-			```
-
-3.    Multi-part exercises:
-	* If an exercise has distinct parts explicitly enumerated in the source (e.g., a, b, c, or 1, 2, 3), each part should be introduced with a level-4 heading. Format: `#### Part [letter/number]` using the same enumeration style as the source.
-		* Example: `#### Part a` or `#### Part 1`
-	* If the source does not use explicit enumeration for sub-tasks but the task naturally breaks down into distinct components (e.g., proving several related statements or answering distinct questions within one exercise number), descriptive level-4 headings *can be used instead of* `Part [letter/number]`, provided they clearly delineate these components and improve readability (e.g., `#### Additive identity of $F^S$`).
-
-4.    Problem statement:
-	* **Quantifier statements (Strict Placement):** If an exercise or task in the source begins with a universal or existential quantification of variables (e.g., "$ \forall \alpha, \beta \in \mathbb{C} $"), this LaTeX line *must* be the very first part of the problem statement, preceding any other prose or "Let" statements for that exercise.
-	* **"Let" statements (Contextual Use):**
-		* Use "Let" statements primarily for introducing variables, sets, functions, or parameters that are specific to the immediate context of a single exercise or a sub-part of an exercise. For multi-part exercises where each part deals with a distinct set, define each set using a "Let" statement and appropriate notation (e.g., `Let $U_a \subseteq F^3$`).
-		* Clearly define the parent set or type for each object introduced with "Let".
-		* Example: `Let $ U_a \subseteq F^3 $.`
-		* Example: `Let $ b \in F $.`
-	* Mathematical definitions:
-		Define sets, functions, or specific conditions using standard mathematical notation, primarily set-builder notation, enclosed in display LaTeX (`$$...$$`).
-		* Example: `$$ U_a = \{ (x_1, x_2, x_3) \in F^3 : x_1 + 2x_2 + 3x_3 = 0 \} $$`
-	* Given conditions:
-		If there are explicit conditions or premises for the exercise, list them clearly. Numbered lists can be used if appropriate.
-		* Example:
-			```markdown
-			Given:
-			1.    $ \forall u, v \in U \implies u+v \in U $
-			2.    $ \forall u \in U \implies -u \in U $
-			```
-	* **Core task:**
-		* If an exercise heading or main exercise statement clearly describes a property to be proven or verified (e.g., "Commutativity of X", "Verify assertions in Example X.Y"), the core task for each part should directly state the mathematical proposition as a LaTeX equation or a structured "Then [proposition]" statement, omitting imperative phrases like "Show that", "Prove that", or "Verify that". The context of it being an exercise implies these actions. This applies to "Prove that", "Show that", and "Verify that" (when verification implies proof).
-			* Example (declarative for proof/verification):
-				```markdown
-				### Exercise 1A.1. Commutativity of addition
-				Page 3
-				$ \forall \alpha, \beta \in \mathbb{C} $
-				$$\alpha + \beta = \beta + \alpha$$
-				```
-			* Example (declarative for verification from an example part):
-				```markdown
-				### Exercise 1C.2
-				Page 24
-				#### Part a
-				Let $ b \in F $.
-				Let $ U_a \subseteq F^4 $.
-				$$U_a = \{ (x_1, x_2, x_3, x_4) \in F^4 : x_3 = 5x_4 + b  \}$$
-				Then
-				$$U_a \ \text{is a subspace of} \ F^4 \iff b = 0$$
-				```
-		* Retain imperatives for tasks that are not proofs or direct verifications of propositions, such as "Solve for x...", "Find...", "Determine if...", "List...", "Describe... (if not asking for a proof)", or similar action-oriented tasks.
-			* For "Determine if..." tasks involving a set, the set should be defined using "Let" and display LaTeX. The determination task is usually implied by the main exercise heading or part description and does not need to be restated.
-				* Example (implied "Determine if"):
-					```markdown
-					### Exercise 1C.1
-					Page 24
-					#### Part a
-					Let $ U_a \subseteq F^3 $.
-					$$U_a = \{ (x_1, x_2, x_3) \in F^3 : x_1 + 2x_2 + 3x_3 = 0 \}$$
-					---
-					```
-	* **Ancillary Page References:** If a specific formal exercise in the source text refers to another page for context or related information (distinct from the main page reference for the exercise set), this reference (e.g., "Also page X") should be included on a new line directly following the exercise problem statement, before the `---` separator.
-	* **Verification of Assertions in Examples:**
-		If an exercise asks to "Verify all assertions in Example X.Y" or similar:
-		1.  The main exercise heading should be `### Exercise [Section].[Number]` (optionally with a title like "Verification of examples from [SourceReference]").
-		2.  Under this heading, for each distinct assertion or part (a, b, c, etc.) within the referenced Example X.Y in the source text:
-			* Create a `#### Part [original letter/number if any, or sequential if not]` subheading. If the original example had parts (a), (b), (c), use those. If the example contained multiple distinct assertions without explicit labels, label them sequentially as `#### Part 1`, `#### Part 2`, etc.
-			* Use "Let" statements to define any specific sets, variables, or conditions from that part of the example.
-			* State the assertion to be verified declaratively using LaTeX or structured "Then [proposition]" format.
-			* Follow with `---` and `TODO`.
-		3.  If the referenced Example X.Y itself defines general sets or conditions relevant to *all* its assertions, these definitions should be stated once before the first "Part" subheading of this exercise, using "Let" statements and LaTeX as appropriate.
-
-5.    Solution separator:
-	* Use a markdown horizontal rule (`---`) to clearly separate the problem statement from the area where the solution will be written.
-6.    Solution placeholder:
-	* **Mandatory "TODO" Placeholder:** A placeholder "TODO" *must* be added on the line immediately following the `---`.
+1.  **Main Heading:** `# Chapter [Num]. [Title]. <br>Section [Num]. [Title].`
 	* Example:
 		```markdown
-		---
-		TODO
+		# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.
 		```
-
-## IV. Handling embedded tasks (verifications, proofs, etc. from main text)
-
-This section applies to questions, theorems, or statements within the main explanatory text of a book section that are explicitly or implicitly left for the reader to verify, prove, or solve. These should be grouped under a heading like `## Embedded tasks` (or similar) which appears *before* the `## Exercises [Section Number]` heading.
-
-1.    Avoid duplication - prefer formal exercises:
-	* Before transcribing an embedded task, check if it is identical or substantially the same as a formal exercise at the end of the section.
-	* If a substantial overlap exists, **do not** create a separate entry for the embedded task.
-	* Instead, if the formal exercise is being transcribed, and it clearly references the embedded task's context (e.g. "Verify assertions in Example X.Y"), then the embedded task is considered covered by the formal exercise.
-
-2.    Order of appearance:
-	If an embedded task is unique (not duplicated as a formal exercise), it should be listed and formatted in the order it appears within the source text.
-
-3.    Identification:
-	* Look for phrases such as "as you should verify", "the proof is left to the reader/exercise", "the reader can verify", "you should verify", "show that...", etc.
-	* Identify statements presented as facts where the justification is explicitly deferred to the reader.
-
-4.    Heading for embedded tasks:
-	* Use a level-3 heading (`###`).
-	* Provide a very short, declarative description of what the task is about (e.g., `### Commutativity of complex multiplication`, `### $F^S$ is a vector space`).
-	* Place the page number from the source text on the line *following* this heading (using uppercase "Page").
-	* If the task directly relates to a numbered Example, Theorem, Proposition, Lemma, Corollary, or a specific unnumbered statement in the book, add this reference on a new line below the page number. Use a format like `Example 1.25` or `Theorem 3.2`.
-	* Examples:
+2.  **Content Blocks (H2 Headings, In Order):** `## Definitions`, `## Embedded tasks`, `## Exercises [SectionNum]`.
+	* Example:
 		```markdown
-		### $F^n$ is a vector space
-		Page 12
-		```
-		```markdown
-		### $F^S$ is a vector space
-		Page 14
-		Example 1.25
-		```
-		```markdown
-		### Commutativity of complex multiplication
-		Page 3
+		## Exercises 1C
 		```
 
-5.    Structure and formatting:
-	* Follow the same detailed formatting guidelines as for formal exercises (Section III.4 for problem statement, Section V for mathematical notation), including the double newline separation. Prefer declarative statements for proofs/verifications.
-	* For internal references: If an embedded task refers to a previous exercise number or a clearly named definition from the source text that has already been transcribed in the current or previous sections, use a textual reference (e.g., "(see Exercise 1A.11)" or "(referencing the definition of complex numbers in Section 1A)").
+## 2. Transcribing Definitions
 
-6.    Multi-part embedded tasks:
-	* Follow the same guidelines as for multi-part formal exercises (see Section III.3). The primary task statement can appear directly under the `###` heading if it's the first "part" of a multi-component task.
-		* Example (for verifying Example 1.25 from the book):
+1.  **Heading:** `### [Term Name]`
+2.  **Context (Optional):** Single line of plain English if term is broad (e.g., "$ \mathbb{C} $ is set of complex numbers.").
+3.  **Page Reference:** On line after heading/context.
+4.  **Prerequisites ("Let" statements):** Introduce necessary objects/variables before the main definition, each on its own line, using concise math notation (see Section 5).
+	* Example:
+		```markdown
+		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
+		```
+5.  **Introductory Prose:** Minimal (e.g., "The [term] is"), on its own line.
+6.  **Formal LaTeX Definition:**
+	* Use one comprehensive `$$ ... $$` block if possible, encoding properties symbolically (set-builder, quantifiers). Minimize redundant prose. The properties defining the term should be encoded within this LaTeX block rather than reiterated in prose if the LaTeX is sufficiently expressive and clear.
+	* Structure multiple aspects (e.g., structure & operations) within one `$$...$$` block using `aligned`, `\\`, `\quad` (see Section 5.1).
+	* **Example (Symbolic Definition - Direct Sum):**
+		```markdown
+		### Direct sum
+
+		Page 21
+
+		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
+
+		The direct sum of $ V_1, \dots, V_m $ is
+		$$V_1 \oplus \dots \oplus V_m = \{ v \in V: \quad \exist ! \ v_1 \in V_1, \dots v_m \in V_m, \quad v = v_1 + \dots + v_m \}$$
+		```
+	* **Example (Structure and Operations - Complex Numbers):**
+		```markdown
+		### Complex numbers
+
+		$ \mathbb{C} $ is set of complex numbers.
+
+		Page 2
+
+		$$\mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \}$$
+
+		where $ i^2 = -1 $.
+
+		$ \forall \alpha, \beta \in \mathbb{C} $, let $ \alpha = a_r + a_i \, i $ and $ \beta = b_r + b_i \, i $.
+
+		Addition and multiplication on $ \mathbb{C} $ are defined by
+		$$
+		\begin{aligned}
+		\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
+		\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
+		\end{aligned}
+		$$
+		```
+
+## 3. Transcribing Formal Exercises
+
+1.  **Section Page Reference:** After `## Exercises [SectionNum]` heading. Example:
+	```markdown
+	## Exercises 1C
+
+	Page 24
+	```
+2.  **Exercise Heading:** `### Exercise [Section].[Num]` (Optional: `. [Descriptive Title]`). Page ref on next line. Example:
+	```markdown
+	### Exercise 1A.1. Commutativity of addition
+
+	Page 3
+	```
+3.  **Multi-part:** Use `#### Part [label]` or `#### [Descriptive Sub-heading]`.
+4.  **Problem Statement Formatting:**
+	* **Quantifiers First:** LaTeX lines with quantifiers (e.g., `$ \forall \alpha, \beta \in \mathbb{C} $`) *must* be the very first part.
+	* **"Let" Statements:** For local items, concise, each on its own line.
+		* Example:
 			```markdown
-			### $F^S$ is a vector space
-			Page 14
-			Example 1.25
-			Let $S$ be a nonempty set.
-			Let $F^S$ be the set of functions from $S$ to $F$ with addition and scalar multiplication defined as:
-			$$(f+g)(x) = f(x) + g(x)$$		$$(\lambda f)(x) = \lambda f(x)$$
-			$\forall f, g \in F^S, \forall x \in S, \forall \lambda \in F$.
-
-			$F^S$ is a vector space over $F$.
-			---
-			TODO
-
-			#### Additive identity of $F^S$
-			Let $0_{F^S}: S \to F$ be defined by $0_{F^S}(x) = 0$ for all $x \in S$.
-
-			$0_{F^S}$ is the additive identity of $F^S$.
-			---
-			TODO
+			Let $ U_a \subseteq F^3 $.
 			```
+	* **Mathematical Definitions within Problems (Symbolic Set Definitions):** When a "Let" statement introduces a set $U$ (or any mathematical object) whose elements $f$ (or $x, v$, etc.) are described by properties (e.g., "$f$ is differentiable on an interval and satisfies a condition $f'(a) = K f(b)$"), these properties *must* be incorporated directly into the set-builder notation for $U$ within a display LaTeX block (`$$ ... $$`). The prose describing these properties should not be repeated outside the LaTeX block if the LaTeX definition is complete. The subsequent "Then [proposition]" or task statement will then refer to $U$ as defined.
+		* Example:
+			```markdown
+			Let $ U \subseteq \R^{(-4, 4)} $.
 
-7.    Solution separator and placeholder:
-	* Follow the same guidelines as for formal exercises (Section III.5 and **III.6 regarding mandatory "TODO"**).
+			$$U = \{ f \in \R^{(-4,4)} : f \ \text{is differentiable on} \ (-4,4) \ \text{and} \ f'(-1) = 3 f(2) \}$$
+			```
+		* For multiple related definitions, use separate blocks or `\\` and `\quad` within one. Example:
+			```markdown
+			Let
+			$$
+			U = \{ (x,0,0) \in F^3 : x \in F \} \\
+			W = \{ (0,y,0) \in F^3 : y \in F \}
+			$$
+			```
+	* **Given Conditions:** List explicitly.
+	* **Core Task Wording:**
+		* Proofs/Verifications: State proposition declaratively. Omit "Show that...".
+			* Example:
+				```markdown
+				### Exercise 1A.1. Commutativity of addition
 
-## V. Mathematical notation and formatting (applies to all items)
+				Page 3
 
-1.    LaTeX for all math:
-	All mathematical symbols, variables, expressions, equations, and set definitions must be rendered using LaTeX.
-	* Use inline LaTeX (`$...$`) for symbols within text.
-	* Use display LaTeX (`$$...$$`) for standalone equations or definitions, especially for set-builder notation. Periods or other sentence punctuation should appear *outside* these delimiters (e.g., `... $F^n$.` or `...formula \}$. $$ .`).
-	* Prefer simpler, standard LaTeX notation where possible (e.g., `\R` is generally preferred over `\mathbb{R}` if both render acceptably and `\R` is consistently used). For complex numbers, `\mathbb{C}` should be used consistently. Avoid overly specific or obscure LaTeX commands if standard alternatives exist and are clear.
-2.    Conciseness:
-	Prioritize mathematical symbols and notation over verbose English descriptions.
-	* Example: Use $U \subseteq F^3$ instead of "Let U be a subset of F^3". (This applies to prose; "Let" statements for definitions are still used as per III.4).
-3.    Clarity and readability:
-	* **Rigorous Use of Double Newlines:** Each sentence, header, list item, "Let" statement, mathematical definition (`$$...$$`), and generally each distinct piece of content in the output *must* be separated from the next by two newlines. This applies unless the content is part of a single, continuous LaTeX block that uses its own internal line breaking (e.g., an `aligned` environment with `\\`).
-	* Ensure mathematical definitions in `$$...$$` are typically on their own line(s) for better readability, surrounded by double newlines.
-4.    References to source material (within problem description):
-	* If a formal exercise or embedded task refers to a specific example or page in the source book (beyond the main page reference for the exercise set/embedded task itself), include this reference within the problem description.
-	* Example: `(see Example 1.35)` in the problem description. (See also Section III.4 regarding ancillary page references for formal exercises).
-5.    Hints and notes:
-	* If the source book provides a hint or a special note for an exercise, include it, typically italicized.
-	* Example: `*This exercise is surprisingly harder than Exercise 12...*`
+				$ \forall \alpha, \beta \in \mathbb{C} $
+
+				$$\alpha + \beta = \beta + \alpha$$
+				---
+				```
+		* Other Imperatives: Retain "Find...", "Determine if...". For "Determine if...", define set, task is implied.
+			* Example:
+				```markdown
+				### Exercise 1C.1
+
+				Page 24
+
+				#### Part a
+
+				Let $ U_a \subseteq F^3 $.
+
+				$$U_a = \{ (x_1, x_2, x_3) \in F^3 : x_1 + 2x_2 + 3x_3 = 0 \}$$
+				---
+				```
+	* Ancillary Page Refs: Before `---`.
+	* "Verify Assertions in Example X.Y": Main heading, then `Example X.Y` ref, then `#### Part [label]` for each assertion with its "Let" statements and declarative statement.
+5.  **Separator:** `---` (followed by blank line).
+
+## 4. Transcribing Embedded Tasks
+
+1.  **No Duplication:** Omit if explicitly covered by a formal exercise.
+2.  **Order:** List in source order.
+3.  **Heading:** `### [Source Type] [Num]. [Declarative Description]` (if applicable, else just description). Page ref on next line.
+	* Example:
+		```markdown
+		### Example 1.37. Verification of sum of subspaces in $ F^3 $
+
+		Page 20
+		```
+4.  **Structure:** Follow formal exercise structure (3.4), using symbolic definitions (Section 2.6, 3.4).
+5.  **Multi-part:** Main proposition, `---`, then `#### [Part Title]`, statement, `---` for sub-tasks.
+	* Example (Theorem Verification):
+		```markdown
+		### Theorem 1.40. Verification that sum of subspaces is a subspace
+
+		Page 21
+
+		Let $ V_1, \dots, V_m $ be subspaces of $ V $.
+
+		Then $ V_1 + \dots + V_m $ is a subspace of $ V $.
+		---
+
+		#### $ V_1 + \dots + V_m $ contains additive identity
+		---
+		```
+6.  **Separator:** `---` (followed by blank line).
+
+## 5. Mathematical Notation and Formatting
+
+### 5.1. LaTeX Requirements
+* **(a) Padding:** Single space inside delimiters: `$ ... $` and `$$ ... $$`.
+	* Examples: `$ x \in \R $`, `$$ U = \{ x \in \R \} $$`
+* **(b) Internal Spacing:** Use `\quad` for major logical separations (e.g., conditions in set-builder); `\,` for minor (e.g., `$a_i \, i$`).
+	* Example (`\quad`): `$$ \{ v \in V: \quad \exist ! \ v_1 \in V_1, \quad v = v_1 + v_m \} $$`
+* **(c) Line Breaks (`\\`):** For multi-part definitions/equations in one `$$...$$` block.
+	* Example:
+		```markdown
+		Let
+		$$
+		U = \{ (x,0,0) \in F^3 : x \in F \} \\
+		W = \{ (0,y,0) \in F^3 : y \in F \}
+		$$
+		```
+* **(d) Alignment (`aligned`):** For multi-step derivations or related operations.
+	* Example:
+		```markdown
+		$$
+		\begin{aligned}
+		\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
+		\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
+		\end{aligned}
+		$$
+		```
+* **(e) Symbolic Language:** Use standard LaTeX symbols (`\mathbb{C}`, `\iff`, `\exist !`, `\forall`) over verbose English.
+
+### 5.2. Conciseness
+* Prioritize symbolic representation.
+* **Definitions:** After minimal "Let"s and intro prose, use one comprehensive `$$ ... $$` block for the full symbolic definition, incorporating properties into the set-builder notation or symbolic statement itself. Avoid redundant prose.
+* **"Let" Statements:** Use concise forms: `Let $ U \subseteq F^3 $.`
+
+### 5.3. Source References & Hints
+* **Internal References:** If an item refers to another example/page, note it (e.g., `(see Example 1.35)`).
+* **Hints/Notes:** Italicized, on own line(s) before `---`. Example: `*Hint: ...*`
