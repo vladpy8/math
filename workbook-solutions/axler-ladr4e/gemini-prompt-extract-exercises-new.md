@@ -1,14 +1,14 @@
 # Gemini exercises extraction prompt
 
-This document is set of imperative instruction Gemini must follow to extract definitions, tasks and exercises from math workbook. The instructions are designed to ensure the transcription is accurate, complete, and adheres to a specific format.
+This document is a set of imperative instructions Gemini must follow to extract definitions, tasks and exercises from math workbook. The instructions are designed to ensure the transcription is accurate, complete, and adheres to a specific format.
 
 If provided, Gemini must focus on the content of the specific chapter or sections of the workbook
 
 ## 0. Precision over speed
 
-Gemini must prioritize accuracy and precision over speed. The goal is to ensure that the extracted content is correct, complete, and adheres to the specified format. If Gemini encounters any uncertainty or ambiguity in the text, it should take the time to clarify, verify or reiterate before proceeding.
+Gemini must prioritize accuracy and precision over speed. The goal is to ensure that the extracted content is correct, complete, and adheres to the specified format. If Gemini encounters any uncertainty or ambiguity in the text, it should take the time to clarify, verify and reiterate before proceeding.
 
-It is especially important in regards to points 1.2 and 1.4 of the style guide.
+This is especially important with regard to points 1.2 and 1.4 of the style guide.
 
 ## 1. Markdown and MathJax style guide
 
@@ -20,7 +20,7 @@ It is especially important in regards to points 1.2 and 1.4 of the style guide.
 
 ### Complex numbers
 
-$ \mathbb{C} $ is set of complex numbers
+$ \mathbb{C} $ is the set of complex numbers:
 
 $$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
@@ -72,15 +72,15 @@ $$
 
 #### 1.0.3. Example
 
-This is bad example of a statement:
+This is a bad example of a statement:
 
 ```markdown
 
-Suppose that $ b \in \R $. Show that set of continuous real-valued functions $ f $ on the interval $ [0,1] $ such that $ \int_0^1 f = b $ is a subspace of $ R^{[0,1]} $ if and only if $ b = 0 $.
+Suppose that $ b \in \R $. Show that the set of continuous real-valued functions $ f $ on the interval $ [0,1] $ such that $ \int_0^1 f = b $ is a subspace of $ R^{[0,1]} $ if and only if $ b = 0 $.
 
 ```
 
-It is not declarative. It doesn't use MathJax notation. It is not compact. It doesn't use newlines style. It doesn't use details section.
+It is not declarative. It doesn't use MathJax notation. It is not compact. It doesn't use the newlines style. It doesn't use the details section.
 
 It must be rewritten as:
 
@@ -106,13 +106,13 @@ $$ U \, \text{is a subspace of} \, \R^{[0,1]} \iff b = 0 $$
 
 ```
 
-(As an important note, $ U \subseteq \R^{[0,1]} $ means that $ U $ is set of real-valued functions)
+(As an important note, $ U \subseteq \R^{[0,1]} $ means that $ U $ is a set of real-valued functions)
 
 ### 1.1. Newlines
 
 Put double newlines after every logically separate piece of content, such as, but not limited to:
 - Headings
-- Sequence of plain text sentences
+- A sequence of plain text sentences
 - MathJax block expressions `$$...$$`
 - MathJax inline expressions `$...$` if they are not part of a sentence
 - Inside complicated multiline MathJax blocks with `\\`
@@ -121,7 +121,7 @@ Each coherent logical block of text and code must be separated by a double newli
 
 Singular newline notation is allowed inside display MathJax blocks to break lines long enough to fit the screen.
 
-### 1.2. Less words, more math (LWMM)
+### 1.2. Fewer words, more math
 
 ### 1.2.1. Symbols
 
@@ -135,15 +135,15 @@ Use MathJax and generally accepted math symbols instead of plain text words wher
 
 #### 1.2.2. Statements
 
-Pursue, reiterate and achieve the greatest proportion of math symbols to plain text words possible. Ideally if the result is devoid of plain text words.
+Pursue, reiterate and achieve the greatest proportion of math symbols to plain text words possible. Ideally, the result is devoid of plain text words.
 
-If some definition, theorem, task, exercise or generally any statement might be rewritten in a mathematical way, do it. This might include entire statements, comprising of multiple sentences, or even paragraphs.
+If some definition, theorem, task, exercise or generally any statement might be rewritten in a mathematical way, do it. This might include entire statements, comprising multiple sentences, or even paragraphs.
 
-Smaller statements and inline symbols must be built with inline MathJax `$...$` notation in combination with only few words. For larger statements potentially spanning multiple lines, use display MathJax `$$...$$` notation.
+Smaller statements and inline symbols must be built with inline MathJax `$...$` notation in combination with only a few words. For larger statements potentially spanning multiple lines, use display MathJax `$$...$$` notation.
 
 Compress multiple statements into one display MathJax block if achievable.
 
-For example, the statement is considered to be a good candidate for rewriting:
+For example, this statement is a good candidate for rewriting:
 
 ```markdown
 
@@ -168,7 +168,7 @@ $$
 
 ```
 
-Which leverages use of set building notation and the colon $ : $ symbol. Moreover, it is more compact and less verbose and properly employs newlines style.
+This leverages the use of set building notation and the colon $ : $ symbol. Moreover, it is less verbose, and properly employs the newlines style.
 
 This example is a good candidate for rewriting as well:
 
@@ -211,9 +211,9 @@ Use details sections to hide the proof of theorems, solutions of exercises or ta
 
 ### 1.4. Declarative presentation
 
-Use declarative presentation of theorems, definitions, exercises, etc. Use imperative presentation only when it is unavoidable.
+Use a declarative presentation of theorems, definitions, exercises, etc. Use imperative presentation only when it is unavoidable.
 
-Such statements as "Prove that ..." or "Show that ..." are not declarative and should be avoided. For example, the statement is good candidate for rewriting:
+Such statements as "Prove that ..." or "Show that ..." are not declarative and should be avoided. For example, this statement is a good candidate for rewriting:
 
 ```markdown
 
@@ -237,7 +237,7 @@ $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \
 
 ```
 
-This example is a good candidate for rewriting, however it is impossible to rewrite it in a declarative way:
+This example is a good candidate for rewriting. However it is impossible to rewrite it in a declarative way:
 
 ```markdown
 
@@ -257,7 +257,7 @@ $$ \alpha^2 = i $$
 
 ### 1.5. Specifics
 
-1. Whenever a lists consists of unspecified number of items write it explicitly with first, second and last items. For example $ x_1, x_2, \dots, x_n $
+1. Whenever a list consists of an unspecified number of items, write it explicitly with the first, second, and last items. For example, $ x_1, x_2, \dots, x_n $.
 
 ## 2. Extraction of exercises and tasks
 
@@ -269,9 +269,9 @@ Output must be presented as one or multiple files with the extracted content in 
 
 The main focus of the extraction is on the exercises and tasks.
 
-Exercises are the end of the chapter or section list of problems, tasks or questions. They are usually presented in a numbered list format.
+Exercises are the list of problems, tasks, or questions at the end of the chapter or section. They are usually presented in a numbered list format.
 
-Tasks is more broader term, but in terms of the extraction, it is used to refer to the exercises that are incorporated into the text of the chapter or section. They are usually is what the reader is asked to do in the text. They might be presented with phrases such as "Reader should verify that ..." or "Reader can show that ...".
+Tasks is a broader term, but in terms of the extraction, it is used to refer to the exercises that are incorporated into the text of the chapter or section. They are usually what the reader is asked to do in the text. They might be presented with phrases such as "Reader should verify that ..." or "Reader can show that ...".
 
 Together with exercises and tasks, Gemini must also extract the definitions that are actively referenced in multiple exercises and tasks.
 
@@ -282,4 +282,3 @@ Put each section of the book under corresponding heading in the format: `# Chapt
 Definitions come first in the section under the heading `## Definitions`, if present. They are followed by tasks under the heading `## Tasks`. Finally, exercises come last under the heading `## Exercises [SectionNum]`.
 
 ### 2.3. Definitions
-
