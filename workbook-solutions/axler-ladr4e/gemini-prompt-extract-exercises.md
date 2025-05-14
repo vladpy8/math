@@ -117,6 +117,8 @@ Most illustrative examples are:
 
 2. Never capitalize words after first in a sentence.
 
+3. Don't put dots after MathJax blocks and in headings.
+
 ### 1.7. Examples
 
 The good examples presented below comply with the style guidelines. Use them as a reference for clarification and derivation of additional implicit guidelines and rules, if necessary.
@@ -349,7 +351,7 @@ Inside each of these groups, present the content in the order of appearance in t
 
 Exercises are typically lists of problems or questions at the end of a chapter or section, usually numbered.
 
-The entire exercises section (e.g., `## Exercises 1A`) must contain one page reference to the page in the source text where this block of exercises begins. Use the format: `Reference page [Number]`. Place it after the section heading.
+The entire exercises section (e.g., `## Exercises 1A`) must contain one page reference to the page in the source text where this block of exercises begins. Use the format: `Reference page [Number]`, where `[Number]` is corresponding page number in the source text. Place it after the section heading.
 
 Start each exercise with a heading in the format: `### Exercise [Section Number]. [Title]`.
 
@@ -375,19 +377,35 @@ Extract definitions if they are actively referenced in multiple exercises/tasks 
 
 Each definition is presented with a heading in the format: `### Definition [Title]`. The `[Title]` should be very short, descriptive, compact, and declarative.
 
-A page reference to where the definition appears in the source text should be included immediately after the title, in the format `Reference page [Number]`.
+A page reference to where the definition appears in the source text should be included immediately after the title, in the format `Reference page [Number]`, where `[Number]` is corresponding page number in the source text.
 
 ### 2.6. Avoid tasks duplication
 
 Tasks and exercises must not be duplicated. If a task found in the main text is identical to (or has complete overlap with) an exercise in the formal exercises section, omit the task.
 
-In case of such duplication, if the task's original location in the text provides useful context not present in the exercises section, you may add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`.
+In case of such duplication, add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`, where `[Number]` is corresponding page number in the source text.
 
-### 2.7. Examples
+### 2.7. Multi-part tasks and exercises
+
+If a task or exercise consists of multiple parts, each part must be presented as a separate item under its own subheading.
+
+Use original labels either letters (e.g., a, b) or numbers (e.g., 1, 2) if they are provided in the source text. In this case use the format: `#### [Label]. [Title]`, where
+1. `[Label]` is the label of the part, capitalized
+2. `[Title]` is a short, descriptive, compact, and declarative title. It must be omitted if the part is a routine application or a multi-part question without a single unifying theme.
+
+If no labels are provided, use numeric enumeration in order of appearance. And apply the same format: `#### [Number]. [Title]` as described above.
+
+In case of absence of explicit labels, tasks should be divided into parts if they contain clear identifiable subtasks or questions. Such as distinguishable properties or statements to be proven.
+
+For each part comply with the same rules and guidelines as for the main task or exercise. This includes the use of page references, titles, and the overall structure.
+
+For nested proofs or solutions, use the same details section format as described in Section 1.3. The content of the details section must adhere to the same style guidelines as the main text.
+
+### 2.8. Examples
 
 The good examples presented below comply with the style guidelines. Use them as a reference for clarification and derivation of additional implicit guidelines and rules, if necessary.
 
-#### 2.7.1. Example. Key section fragments
+#### 2.8.1. Example. Key section fragments
 
 ##### Good example
 
@@ -460,5 +478,108 @@ $$
 </details>
 
 ... (omitted) ...
+
+```
+
+#### 2.8.2. Example. Multi-part exercise
+
+##### Bad example
+
+It doesn't contain double newline after the heading
+
+`Reference page 14 (Task)` is incorrect here, since there is no duplicating tasks on the page 14 of the source text.
+
+This statement is very shallow in terms of mathematical content. It is not declarative and contains unnecessary explanations. It also does not follow the newlines and spacing styles.
+
+In spite of the fact that there are clear set-in-stone properties to be proven, the statement is not split into parts.
+
+```markdown
+
+### Exercise 1B.7. $ V^S $ is a vector space
+Reference page 14 (Task)
+
+Let $ S $ be a nonempty set. Let $ V^S $ denote the set of functions from S to V.
+Define a natural addition and scalar multiplication on $ V^S $.
+$ V^S $ is a vector space with these definitions.
+
+<details><summary>Proof</summary>
+
+</details>
+
+```
+
+##### Good example
+
+This statement is closer to the style guidelines.
+
+Since statement contains clear properties, each of them is assigned a separate block with a title and empty details section.
+
+```markdown
+
+### Exercise 1B.7. $ V^S $ is a vector space
+
+Let $ S $ be an arbitrary nonempty set.
+
+Let $ V $ be a vector space over $ F $.
+
+Let $ V^S $ be a set of functions $ { S \to V } $.
+
+Define addition on $ V^S $:
+
+$$ \forall f, g \in V^S, \quad \forall x \in S, \quad (f + g)(x) = f(x) + g(x) $$
+
+Define scalar multiplication on $ V^S $:
+
+$$
+\forall \lambda \in F, \quad
+\forall f \in V^S, \quad
+\forall x \in S, \quad (\lambda f)(x) = \lambda f(x)
+$$
+
+The $ V^S $ is a vector space over $ F $
+
+<details>
+
+<summary>Proof</summary>
+
+#### 1. Commutativity of addition
+
+... (omitted) ...
+
+<details>
+
+<summary>Proof</summary>
+
+... (omitted) ...
+
+</details>
+
+#### 2. Associativity of addition
+
+... (omitted) ...
+
+<details>
+
+<summary>Proof</summary>
+
+... (omitted) ...
+
+</details>
+
+... (omitted) ...
+
+#### 7. Distributivity of addition over scalar multiplication
+
+... (omitted) ...
+
+<details>
+
+<summary>Proof</summary>
+
+... (omitted) ...
+
+</details>
+
+</details>
 
 ```
