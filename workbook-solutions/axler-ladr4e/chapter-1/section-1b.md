@@ -1,18 +1,14 @@
 # Chapter 1. Vector spaces.<br>Section 1B. Definitions of vector spaces
 
-TODO:
-1. Fix references
-1. Add references
-
 ## Definitions
 
 ### Function vectors $ F^S $
 
-Let $ F $ be a field of numbers
+Let $ F $ be a field of numbers.
 
-Let $ S $ be a set of arbitrary elements
+Let $ S $ be a set of arbitrary elements.
 
-$ F^S $ is set of functions
+$ F^S $ is set of functions:
 
 $$ F^S = \{ S \to F \} $$
 
@@ -28,11 +24,17 @@ $$
 \end{aligned}
 $$
 
-## Embedded tasks
+## Tasks
 
-### Proof of $ F^n $ being vector space
+### $ F^n $ is a vector space
 
-[Definition of $ F^n $](#coordinate-vectors)
+Reference page 13
+
+(Put proper reference here)
+
+<details>
+
+<summary>Proof</summary>
 
 #### 1. Commutativity of addition
 
@@ -40,7 +42,9 @@ $ \forall x, y \in F^n $
 
 $$ x + y = y + x $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -54,9 +58,15 @@ x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
 \end{aligned}
 $$
 
-#### 2. [Associativity of addition](#exercise-1a11-associativity-of-addition-of-vectors)
+</details>
 
-#### 3. [Associativity of scalar multiplication](#exercise-1a12-associativity-of-scalar-multiplication-of-vectors)
+#### 2. Associativity of addition
+
+(Put proper reference here)
+
+#### 3. Associativity of scalar multiplication
+
+(Put proper reference here)
 
 #### 4. Additive identity
 
@@ -68,7 +78,9 @@ $ \forall x \in F^n $
 
 $$ x + 0 = x $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -82,11 +94,15 @@ x + 0 &= (x_1 + 0, x_2 + 0, \ldots, x_n + 0) \\
 \end{aligned}
 $$
 
+</details>
+
 #### 5. Additive inverse
 
 $$ \forall x \in F^n, \quad \exist y \in F^n, \quad x + y = 0 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 Let
 
@@ -106,19 +122,37 @@ x + y &= (x_1 + (-x_1), x_2 + (-x_2), \ldots, x_n + (-x_n)) \\
 \end{aligned}
 $$
 
-#### 6. [Multiplicative identity](#exercise-1a13-multiplicative-identity-of-vectors)
+</details>
 
-#### 7. [Distributivity of scalar multiplication over addition](#exercise-1a14-distributivity-of-scalar-multiplication-over-addition-of-vectors)
+#### 6. Multiplicative identity
 
-#### 8. [Distributivity of addition over scalar multiplication](#exercise-1a15-distributivity-of-addition-over-scalar-multiplication-of-vectors)
+(Put proper reference here)
+
+#### 7. Distributivity of scalar multiplication over addition
+
+(Put proper reference here)
+
+#### 8. Distributivity of addition over scalar multiplication
+
+(Put proper reference here)
+
+</details>
 
 ### Proof of $ F^∞ $ being vector space
+
+Reference page 13
 
 Repeat proofs for $ F^n $ being vector space omitting the last element which comes after "$ \ldots $" everywhere explicit form of vector is used
 
 ### Proof of $ F^S $ being vector space
 
-[Definition of $ F^S $](#function-vectors)
+Reference page 14
+
+(Put proper reference here)
+
+<details>
+
+<summary>Proof</summary>
 
 #### 1. Commutativity of addition
 
@@ -126,7 +160,9 @@ $ \forall f, g \in F^S $
 
 $$ f + g = g + f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -142,13 +178,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 2. Associativity of addition
 
 $ \forall f, g, h \in F^S $
 
 $$ (f + g) + h = f + (g + h) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -164,13 +204,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 3. Associativity of scalar multiplication
 
 $ \forall f \in F^S $ and $ \forall a, b \in F $
 
 $$ (a b) f = a (b f) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -186,6 +230,8 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 4. Additive identity
 
 Let $ 0 \in F^S $
@@ -196,7 +242,9 @@ $ \forall f \in F^S $
 
 $$ f + 0 = f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -212,11 +260,15 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 5. Additive inverse
 
 $$ \forall f \in F^S, \quad \exist g \in F^S, \quad f + g = 0 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 Let $ g \in F^S $
 
@@ -238,13 +290,17 @@ $$
 
 Thus, $ f + g = 0 $.
 
+</details>
+
 #### 6. Multiplicative identity
 
 $ \forall f \in F^S $
 
 $$ 1 f = f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -258,13 +314,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 7. Distributivity of scalar multiplication over addition
 
 $ \forall f, g \in F^S $ and $ \forall a \in F $
 
 $$ a (f + g) = a f + a g $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -282,13 +342,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 8. Distributivity of addition over scalar multiplication
 
 $ \forall f \in F^S $ and $ \forall a, b \in F $
 
 $$ (a + b) f = a f + b f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -304,33 +368,35 @@ $$
 \end{aligned}
 $$
 
+</details>
+
+</details>
+
 ## Exercises 1B
 
 ### Exercise 1B.1. Inverse of inverse
 
-Let $ V $ be a vector space over field $ F $
+Let $ V $ be a vector space over field $ F $.
 
-Let $ x \in V $
+Let $ x \in V $.
 
 $$ -(-x) = x $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
-
 -(-x) &= -(-x) + 0 \\
-
 &= -(-x) + (x + (-x)) \\
-
 &= (-(-x) + (-x)) + x \\
-
 &= 0 + x \\
-
 &= x
-
 \end{aligned}
 $$
+
+</details>
 
 ### Exercise 1B.2
 
@@ -340,7 +406,9 @@ Let $ v \in V $ and $ a \in F $
 
 If $ a v = 0 $ then either $ a = 0 $ or $ v = 0 $ (or both)
 
----
+<details>
+
+<summary>Proof</summary>
 
 When $ a = 0 $, then according to page 15 (1.30)
 
@@ -357,13 +425,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Scalar multiplier equality
 
 Let $ V $ be a vector space over field $ F $ which is not identical to $ \{0 \} $
 
 $$ \forall u \in V, \ u \neq 0, \quad a, b \in F, \quad a u = b u \implies a = b $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$ 0 = a u + (-(b u)) = (a + (-b)) u $$
 
@@ -374,6 +446,7 @@ a + (-b) = 0 \\
 a = b
 $$
 
+</details>
 
 ### Exercise 1B.3
 
@@ -383,7 +456,9 @@ Let $ v, w \in V $
 
 $$ \exist ! \ x \in V : \quad v + 3 x = w $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 Let $ x, y \in V $
 
@@ -410,6 +485,8 @@ x - y = 0 \\
 x = y
 $$
 
+</details>
+
 ### Exercise 1B.4. Empty set is not a vector space
 
 Let $ V_{\empty} = \{ \} $
@@ -418,9 +495,9 @@ Then $ V_{\empty} $ couldn't be a vector space because it doesn't contain an add
 
 ### Exercise 1B.5
 
-Let $ (V, +, \cdot) $ denote a *candidate* for a vector space $ V $ with operations of addition and scalar multiplication
+Let $ (V, +, \cdot) $ denote a *candidate* for a vector space $ V $ with operations of addition and scalar multiplication.
 
-Let $ A $ be the set of properties of vector spaces defined in 1.20 on page 12
+Let $ A $ be the set of properties of vector spaces defined in 1.20 on page 12.
 
 Let $ A_m $ be a modified set of properties of vector spaces identical to $ A $ except additive inverse being replaced by
 
@@ -430,7 +507,9 @@ Then $ \forall (V, +, \cdot) $
 
 $$ (V, +, \cdot) \vDash A \iff (V, +, \cdot) \vDash A_m $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 The forward implication is proven in 1.30 on page 15
 
@@ -452,6 +531,8 @@ $$
 Thus
 
 $$ \forall v \in V, \quad \exist \ w \in V, \quad w = (-1) v : \quad v + w = 0 $$
+
+</details>
 
 ### Exercise 1B.6
 
@@ -496,7 +577,9 @@ $$
 
 Then $ \R_{\infty} $ is not a vector space
 
----
+<details>
+
+<summary>Proof</summary>
 
 Associativity of addition doesn't hold
 
@@ -512,26 +595,33 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 ### Exercise 1B.7. $ V^S $ is a vector space
 
-Let $ S $ be an arbitrary nonempty set
+Let $ S $ be an arbitrary nonempty set.
 
-Let $ V $ be a vector space over $ F $
+Let $ V $ be a vector space over $ F $.
 
-Let $ V^S $ be a set of functions $ { S \to V } $
+Let $ V^S $ be a set of functions $ { S \to V } $.
 
-Define addition on $ V^S $
+Define addition on $ V^S $:
 
 $$ \forall f, g \in V^S, \quad \forall x \in S, \quad (f + g)(x) = f(x) + g(x) $$
 
+Define scalar multiplication on $ V^S $:
 
-Define scalar multiplication on $ V^S $
-
-$$ \forall \lambda \in F, \quad \forall f \in V^S, \quad \forall x \in S, \quad (\lambda f)(x) = \lambda f(x) $$
+$$
+\forall \lambda \in F, \quad
+\forall f \in V^S, \quad
+\forall x \in S, \quad (\lambda f)(x) = \lambda f(x)
+$$
 
 The $ V^S $ is a vector space over $ F $
 
----
+<details>
+
+<summary>Proof</summary>
 
 #### 1. Commutativity of addition
 
@@ -539,7 +629,9 @@ $ \forall f, g \in V^S $
 
 $$ f + g = g + f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -551,13 +643,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 2. Associativity of addition
 
 $ \forall f, g, h \in V^S $
 
 $$ (f + g) + h = f + (g + h) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -571,13 +667,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 3. Associativity of scalar multiplication
 
 $ \forall f \in V^S $ and $ \forall a, b \in F $
 
 $$ (a b) f = a (b f) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -589,6 +689,7 @@ $$
 \end{aligned}
 $$
 
+</details>
 
 #### 4. Additive identity
 
@@ -600,7 +701,9 @@ $ \forall f \in V^S $
 
 $$ f + 0 = f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -612,11 +715,15 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 4. Additive inverse
 
 $$ \forall f \in V^S, \quad \exist g \in V^S, \quad f + g = 0 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 Let $ g \in V^S $
 
@@ -634,13 +741,17 @@ $$
 
 Thus, $ f + g = 0 $
 
+</details>
+
 #### 5. Multiplicative identity
 
 $ \forall f \in V^S $
 
 $$ 1 f = f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -651,13 +762,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 6. Distributivity of scalar multiplication over addition
 
 $ \forall f, g \in V^S $ and $ \forall a \in F $
 
 $$ a (f + g) = a f + a g $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -670,13 +785,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 7. Distributivity of addition over scalar multiplication
 
 $ \forall f \in V^S $ and $ \forall a, b \in F $
 
 $$ (a + b) f = a f + b f $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $ \forall x \in S $
 
@@ -688,23 +807,33 @@ $$
 \end{aligned}
 $$
 
+</details>
+
+</details>
+
 ### Exercise 1B.8. Complexification of vector space
 
-Let $ V_C = V \times V $
+Let $ V_C = V \times V $.
 
-Denote $ (u, v) \in V_C $ as $ u + i \, v $
+Denote $ (u, v) \in V_C $ as $ u + i \, v $.
 
-Define addition on $ V_C $
+Define addition on $ V_C $:
 
 $$ \forall u_1, v_1, u_2, v_2 \in V, \quad (u_1 + i \, v_1) + (u_2 + i \, v_2) = (u_1 + u_2) + i \, (v_1 + v_2) $$
 
-Define complex scalar multiplication on $ V_C $
+Define complex scalar multiplication on $ V_C $:
 
-$$ \forall a, b \in \R, \quad \forall u, v \in V, \quad (a + b \, i)(u + i \, v) = (au - bv) + i \, (av + bu) $$
+$$
+\forall a, b \in \R, \quad
+\forall u, v \in V, \quad
+(a + b \, i)(u + i \, v) = (au - bv) + i \, (av + bu)
+$$
 
-The $ V_C $ is a complex vector space
+The $ V_C $ is a complex vector space.
 
----
+<details>
+
+<summary>Proof</summary>
 
 #### 1. Commutativity of addition
 
@@ -712,7 +841,9 @@ $ \forall u_1, v_1, u_2, v_2 \in V $
 
 $$ (u_1 + i \, v_1) + (u_2 + i \, v_2) = (u_2 + i \, v_2) + (u_1 + i \, v_1) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -722,13 +853,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 2. Associativity of addition
 
 $ \forall u_1, v_1, u_2, v_2, u_3, v_3 \in V $
 
 $$ ((u_1 + i \, v_1) + (u_2 + i \, v_2)) + (u_3 + i \, v_3) = (u_1 + i \, v_1) + ((u_2 + i \, v_2) + (u_3 + i \, v_3)) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -740,13 +875,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 3. Associativity of scalar multiplication
 
 $ \forall a, b, c, d \in \R, \forall u, v \in V $
 
 $$ ((a + b \, i)(c + d \, i))(u + i \, v) = (a + b \, i)((c + d \, i)(u + i \, v)) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -759,6 +898,8 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 4. Additive identity
 
 Let $ 0 \in V_C $
@@ -769,7 +910,9 @@ $ \forall u, v \in V_C $
 
 $$ u + i \, v + 0 = u + i \, v $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -779,11 +922,15 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 5. Additive inverse
 
 $$ \forall u, v \in V, \quad \exist \, w, p \in V, \quad u + i \, v + w + i \, p = 0 $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 Let
 
@@ -802,13 +949,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 6. Multiplicative identity
 
 $ \forall u, v \in V_C $
 
 $$ (1 + 0 \, i) (u + i \, v) = u + i \, v $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -817,13 +968,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 7. Distributivity of scalar multiplication over addition
 
 $ \forall u_1, v_1, u_2, v_2 \in V_C $ and $ a, b \in \R $
 
 $$ (a + b \, i) ((u_1 + i \, v_1) + (u_2 + i \, v_2)) = (a + b \, i)(u_1 + i \, v_1) + (a + b \, i)(u_2 + i \, v_2) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -835,13 +990,17 @@ $$
 \end{aligned}
 $$
 
+</details>
+
 #### 8. Distributivity of addition over scalar multiplication
 
 $ \forall u, v \in V_C $ and $ a, b, c, d \in \R $
 
 $$ ((a + b \, i) + (c + d \, i))(u + i \, v) = (a + b \, i)(u + i \, v) + (c + d \, i)(u + i \, v) $$
 
----
+<details>
+
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -852,3 +1011,7 @@ $$
 &= (a + b \, i)(u + i \, v) + (c + d \, i)(u + i \, v)
 \end{aligned}
 $$
+
+</details>
+
+</details>

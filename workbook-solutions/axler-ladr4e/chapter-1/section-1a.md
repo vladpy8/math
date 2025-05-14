@@ -6,7 +6,7 @@
 
 Reference page 2
 
-$ \mathbb{C} $ is set of complex numbers.
+$ \mathbb{C} $ is set of complex numbers:
 
 $$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
