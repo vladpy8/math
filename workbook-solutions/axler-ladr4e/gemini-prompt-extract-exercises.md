@@ -105,6 +105,8 @@ Place MathJax spacing commands such as `\,`, `\ ` and `\quad` judiciously betwee
 
 Determine the spacing based on mathematical typesetting conventions and visual appearance of both source code and rendered output.
 
+Place whitespaces between MathJax symbols for source code readability.
+
 Most illustrative examples are:
 - Example 1.7.2
 - Example 1.7.3
@@ -112,6 +114,8 @@ Most illustrative examples are:
 ### 1.6. Specifics
 
 1. Whenever a list consists of an unspecified number of items, write it explicitly with the first, second, and last items, using ellipsis. For example, `$ x_1, x_2, \dots, x_n $`.
+
+2. Never capitalize words after first in a sentence.
 
 ### 1.7. Examples
 
@@ -151,13 +155,13 @@ $$
 
 ##### Bad example
 
-This statement is too verbose and contains excessive wording that might be rewritten in a more mathematical way. It is not declarative and contains unnecessary explanations. It also does not follow the newlines style.
+This statement is too verbose and contains excessive wording that might be rewritten in a more mathematical way. It is not declarative and contains unnecessary explanations. It also does not follow the newlines and spacing styles.
 
 ```markdown
 
 ### Prove that addition of complex numbers is distributive
 
-Suppose that $ \alpha, \beta, \lambda \in \mathbb{C} $. Then $ \lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta $.
+Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) = \lambda\alpha +\lambda\beta$.
 
 ... (proof omitted) ...
 
@@ -170,6 +174,8 @@ This definition is made to follow the style guidelines. It is compact, declarati
 A long line in the first MathJax block is split by single newlines so that the source code fits the screen.
 
 A long line in the second MathJax block is split by double newlines so that the rendered output fits the screen. Alignment is used in order to make it more readable and interconnected across lines.
+
+Whitespaces style adherence ensures readability of the source code.
 
 ```markdown
 
@@ -376,3 +382,83 @@ A page reference to where the definition appears in the source text should be in
 Tasks and exercises must not be duplicated. If a task found in the main text is identical to (or has complete overlap with) an exercise in the formal exercises section, omit the task.
 
 In case of such duplication, if the task's original location in the text provides useful context not present in the exercises section, you may add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`.
+
+### 2.7. Examples
+
+The good examples presented below comply with the style guidelines. Use them as a reference for clarification and derivation of additional implicit guidelines and rules, if necessary.
+
+#### 2.7.1. Example. Key section fragments
+
+##### Good example
+
+The key fragments presented here comply with the style guidelines. They are compact, declarative, and use MathJax blocks to represent the key mathematical statements.
+
+```markdown
+
+# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.
+
+## Definitions
+
+### Complex numbers
+
+... (omitted) ...
+
+### Coordinate vectors $ F^n $
+
+Reference page 6
+
+Let $ F $ be a field of numbers.
+
+$ F^n $ is set of coordinate vectors over field $ F $.
+
+$$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
+
+$ \forall x, y \in F^n $ and $ \forall \lambda \in F $
+
+$$
+\begin{aligned}
+
+x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
+
+\lambda x &= (\lambda x_1, \lambda x_2, \ldots, \lambda x_n)
+
+\end{aligned}
+$$
+
+## Exercises 1A
+
+Reference page 10
+
+... (omitted) ...
+
+### Exercise 1A.2. Associativity of addition of complex numbers
+
+Reference page 3 (Task)
+
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
+
+$$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
+
+<details>
+
+<summary>Proof</summary>
+
+$$
+\begin{aligned}
+
+(\alpha + \beta) + \lambda &= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
+
+&= ((a_r + b_r) + l_r) + ((a_i + b_i) + l_i) \, i \\
+
+&= (a_r + (b_r + l_r)) + (a_i + (b_i + l_i)) \, i \\
+
+&= \alpha + (\beta + \lambda)
+
+\end{aligned}
+$$
+
+</details>
+
+... (omitted) ...
+
+```
