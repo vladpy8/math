@@ -2,7 +2,7 @@
 
 This document is a set of imperative instructions as well as guidelines that Gemini must follow to extract definitions, tasks, and exercises from a math workbook.
 
-If provided, Gemini must focus on the content of the specific chapter(s) or section(s) of the workbook, reading only the specified section(s) and ignoring the rest of the workbook.
+If provided, Gemini must focus on the content of the specific exercise(s), task(s), section(s) or chapter(s) of the workbook, reading only the specified fragments and ignoring the rest of the workbook.
 
 ## 0. Precision over speed
 
