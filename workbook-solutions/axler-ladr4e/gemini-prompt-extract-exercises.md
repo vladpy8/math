@@ -112,7 +112,7 @@ The good examples presented below comply with the style guidelines. Use them as 
 
 ##### Good example
 
-This definition is compact and declarative. It leverages math symbols, employs MathJax blocks to represent major interconnected definitions and properties. It follows style guidelines. Yet it contains all the necessary information, including the components, representation, imaginary unit, addition and multiplication.
+This definition is compact and declarative. It leverages math symbols, employs MathJax blocks to represent major interconnected definitions and properties. It follows style guidelines. Yet, it contains all the necessary information, including the components, representation, imaginary unit, addition, and multiplication.
 
 ```markdown
 
@@ -154,7 +154,7 @@ Suppose that $ \alpha, \beta, \lambda \in \mathbb{C} $. Then $ \lambda (\alpha +
 
 ##### Good example
 
-This definition is more compact and declarative. It compresses the property declaration into one MathJax block and omits excessive wording. It also properly employs newlines style.
+This definition is more compact and declarative. It compresses the property declaration into one MathJax block and omits excessive wording. It also properly employs the newlines style.
 
 ```markdown
 
@@ -242,22 +242,22 @@ $$
 |a_r| = |a_i|
 $$
 
-Second one leads to
+The second one leads to
 
 $$
 a_r a_i > 0 \\
 2 |a_r| |a_i| = 1
 $$
 
-Thus
+Thus,
 
 $$ |a_r| = |a_i| = \frac{1}{\sqrt2} \\ $$
 
-And finally
+And finally,
 
 $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sqrt2} $$
 
-The square roots of $ i $ are
+The square roots of $ i $ are:
 
 $$
 \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad \
