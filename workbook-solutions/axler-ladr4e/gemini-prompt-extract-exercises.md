@@ -27,13 +27,13 @@ Each coherent logical block of text and code must be separated by a double newli
 
 MathJax blocks might be incorporated into sentences, but they must be presented at the end of the sentence and separated by a double newline from the rest of the text.
 
-Singular newline notation is allowed inside MathJax blocks to break lines long enough to fit the screen or in certain cases after `\\` if the entire MathJax block is compact enough to be represented in one screen with only a few line breaks.
+Singular newline notation is allowed inside MathJax blocks to break lines long enough to fit the screen or in certain cases after `\\` if the entire MathJax block is compact enough to be represented on one screen with only a few line breaks.
 
 ### 1.2. Compactness. Fewer words, more math
 
-### 1.2.1. Symbols
+#### 1.2.1. Symbols
 
-Use MathJax and generally accepted math symbols instead of plain text words wherever possible. Math symbols might include, but are not limited to:
+Use MathJax and generally accepted math symbols instead of plain text words wherever possible. Prioritize standard mathematical notation. Math symbols might include, but are not limited to:
 - `$ \forall $` for "for all"
 - `$ \exists $` for "there exists"
 - `$ \in $` for "is an element of"
@@ -43,13 +43,13 @@ Use MathJax and generally accepted math symbols instead of plain text words wher
 
 #### 1.2.2. Statements
 
-Pursue, reiterate, and achieve the greatest proportion of math symbols to plain text words possible. Ideally, the result is devoid of plain text words.
+Pursue, reiterate, and achieve the greatest proportion of math symbols to plain text words possible. Ideally, the core mathematical statement is devoid of unnecessary explanatory prose.
 
-If some definition, theorem, task, exercise, or generally any statement might be rewritten in a mathematical way, do it. This might include entire statements, comprising multiple sentences, or even paragraphs.
+If a definition, theorem, task, exercise, or generally any statement can be rewritten in a more direct mathematical way without loss of meaning or necessary context, do so. This might include entire statements, comprising multiple sentences, or even paragraphs.
 
-Smaller statements and inline symbols must be built with MathJax inline notation `$...$` in combination with only a few words. For larger statements potentially spanning multiple lines, use MathJax block notation `$$...$$`.
+Smaller statements and inline symbols must be built with MathJax inline notation `$...$` in combination with minimal surrounding words. For larger statements potentially spanning multiple lines, use MathJax block notation `$$...$$`.
 
-Compress multiple statements into one MathJax block if achievable.
+Compress multiple related mathematical statements into one MathJax block if achievable.
 
 Most illustrative examples are:
 - Example 1.7.1
@@ -72,13 +72,22 @@ Use details sections to hide the proof of theorems, solutions of exercises or ta
 
 ```
 
+The content of the details section must adhere to the same style guidelines as the main text.
+
+Details might be nested within other details sections.
+
+Possible summary titles are, but not limited to:
+- Proof
+- Solution
+- Explanation
+
 ### 1.4. Declarative presentation
 
 Use a declarative presentation of theorems, definitions, exercises, statements, plain text sentences, etc. Use imperative presentation only when it is unavoidable.
 
-Omit redundant pieces of content, such as hints, examples, and explanations, if they do not add value to the statement and forbid the extraction in declarative and compact mathematical form.
+Omit redundant pieces of content, such as introductory phrases, hints, examples within the main text, and explanations if they are not integral to understanding the problem statement of an exercise or the core definition, theorem itself. The focus is on extracting the formal statement.
 
-Such statements as "Prove that ..." or "Show that ..." are not declarative and should be avoided.
+Statements such as "Prove that ..." or "Show that ..." are not declarative and should generally be rephrased into a direct assertion of the property to be proven. For example, instead of "Prove that $A=B$", state "$$ A=B $$". The proof itself will be hidden in a details section.
 
 Most illustrative examples are:
 - Example 1.7.1
@@ -89,12 +98,12 @@ Most illustrative examples are:
 
 Use tabs for indentation.
 
-Place MathJax spacing with `\,`, `\ `, and `\quad` between very special math symbols and the rest of the expression if necessary. This might include, but is not limited to:
-- `\` for `\exist` or `\exist !`
-- `\,` for complex `i`
-- `\quad` for `:`
+Place MathJax spacing commands such as `\,`, `\ ` and `\quad` judiciously between special math symbols and the rest of the expression if necessary for visual clarity. This might include, but is not limited to:
+- `\` (backslash-space) for `\exists` or `\exists !`
+- `\,` (thin space) for complex `i` or before differentials like `dx`
+- `\quad` (quad space) for separating conditions or logical parts within a single MathJax line.
 
-Determine the spacing based on the context of the expression, as well as visual appearance.
+Determine the spacing based on mathematical typesetting conventions and visual appearance of both source code and rendered output.
 
 Most illustrative examples are:
 - Example 1.7.2
@@ -102,7 +111,7 @@ Most illustrative examples are:
 
 ### 1.6. Specifics
 
-1. Whenever a list consists of an unspecified number of items, write it explicitly with the first, second, and last items. For example, `$ x_1, x_2, \dots, x_n $`.
+1. Whenever a list consists of an unspecified number of items, write it explicitly with the first, second, and last items, using ellipsis. For example, `$ x_1, x_2, \dots, x_n $`.
 
 ### 1.7. Examples
 
@@ -142,6 +151,8 @@ $$
 
 ##### Bad example
 
+This statement is too verbose and contains excessive wording that might be rewritten in a more mathematical way. It is not declarative and contains unnecessary explanations. It also does not follow the newlines style.
+
 ```markdown
 
 ### Prove that addition of complex numbers is distributive
@@ -154,7 +165,11 @@ Suppose that $ \alpha, \beta, \lambda \in \mathbb{C} $. Then $ \lambda (\alpha +
 
 ##### Good example
 
-This definition is more compact and declarative. It compresses the property declaration into one MathJax block and omits excessive wording. It also properly employs the newlines style.
+This definition is made to follow the style guidelines. It is compact, declarative, and uses MathJax blocks to represent the mathematical statement. It also includes a details section for the proof.
+
+A long line in the first MathJax block is split by single newlines so that the source code fits the screen.
+
+A long line in the second MathJax block is split by double newlines so that the rendered output fits the screen. Alignment is used in order to make it more readable and interconnected across lines.
 
 ```markdown
 
@@ -206,6 +221,12 @@ Find distinct square roots of $ i $.
 ```
 
 ##### Good example
+
+Imperative command here is shortened and most of the statement is rewritten in a declarative and mathematical way.
+
+Many MathJax block expressions are natural continuation of the preceding sentences, but with double newline separator.
+
+Title is compact and declarative and essentially contains the main statement of the exercise.
 
 ```markdown
 
@@ -298,54 +319,60 @@ $$
 
 ### 2.0. Output format
 
-Present the output as one file with the extracted content in the Markdown format with MathJax expressions. The output must follow the style guidelines in point 1.
+Present output as one file with the extracted content in Markdown format with MathJax expressions. The output must follow the style guidelines in Section 1 of this prompt.
 
 ### 2.1. Extraction goal
 
 The main focus of the extraction is on the exercises and tasks.
 
-Omit solutions, proofs, and explanations. The goal is to extract the exercises and tasks only.
+Omit solutions, proofs, and detailed explanations from the main visible body of the extracted item. The goal is to extract the problem statements or definitions themselves in a clean, declarative, and compact mathematical form.
 
-Leave empty details sections that are designated for solutions and proofs.
+Leave empty details sections `<details><summary>Proof</summary>\n\n</details>`, which are designated for solutions, proofs, or extended explanations.
 
-Some of the pieces of content might be omitted if they are not relevant to the exercises and tasks, and forbid the extraction in compact and declarative mathematical form.
+Some pieces of textual content might be omitted if they are not relevant to the formal statement of exercises, tasks, or definitions, and if their inclusion would prevent extraction in a compact and declarative mathematical form.
 
 ### 2.2. Output top-level structure
 
-Each piece of the extracted information belongs to a specific chapter or section of the book. Put it under the corresponding heading in the format: `# Chapter [Number]. [Title]. <br>Section [Number]. [Title].`
+Each piece of extracted information should belong to a specific chapter or section of the book. Put it under the corresponding heading in the format: `# Chapter [Number]. [Title]. <br>Section [Number]. [Title].`.
 
-Definitions come first in the section under the heading `## Definitions`, if present. They are followed by tasks under the heading `## Tasks`, if present. Finally, exercises come last under the heading `## Exercises [Section Number]`.
+Definitions come first in the section under the heading `## Definitions`, if present. They are followed by tasks under the heading `## Tasks`, if any. Finally, exercises come last under the heading `## Exercises [Section Number]`.
 
 Inside each of these groups, present the content in the order of appearance in the source material.
 
 ### 2.3. Exercises
 
-Exercises are the list of problems, tasks, or questions at the end of the chapter or section. They are usually presented in a numbered list format, in the form of open questions or problems to solve.
+Exercises are typically lists of problems or questions at the end of a chapter or section, usually numbered.
 
-The entire exercises section under a level 2 heading must contain one page reference to the beginning of the exercises section in the source text, in the format `Reference page [Number]`. Put it at the beginning of the section, after the heading.
+The entire exercises section (e.g., `## Exercises 1A`) must contain one page reference to the page in the source text where this block of exercises begins. Use the format: `Reference page [Number]`. Place it after the section heading.
 
-Start each exercise with a heading in the format: `### Exercise [Section].[Number]. [Title]`. The title should be compact, declarative, and descriptive. It is optional and should be present only if the exercise is general enough to have a title.
+Start each exercise with a heading in the format: `### Exercise [Section Number]. [Title]`.
 
-If an exercise references theorems, examples, or statements that are critical for the solution of the task, then extract the corresponding content together with the exercise.
+1. The `[Title]` should be compact, declarative, and descriptive.
+2. A title is optional. Include it if the exercise introduces a named concept or addresses a distinct, general problem type. If it's a routine application or a multi-part question without a single unifying theme, the title may be omitted.
+3. If the book provides a clear, concise title for an exercise, adapt it.
 
-Each exercise must present the minimum sufficient information to understand and solve it.
+If an exercise references specific theorems, examples, or definitions from the text that are essential for understanding the problem statement itself or its immediate context, then extract the corresponding referenced content along with the exercise.
+
+Each exercise must present the minimum sufficient information needed to understand and solve it.
 
 ### 2.4. Tasks
 
-A task is a broader term, but in terms of the extraction, it is used to refer to exercises that are incorporated into the text of the chapter or section and differ from the exercises at the end of the chapter or section. They are usually what the reader is asked to do in the text and might be presented with phrases such as "Reader should verify that ..." or "Reader can show that ...".
+A "task" refers to an exercise or problem that is incorporated into the main text of a chapter or section, rather than being part of a formal numbered list at the end. These are often phrased as suggestions or checks for the reader (e.g., "The reader should verify that...", "One can show that...").
 
-Present tasks with a heading in the format: `### [Title]`. The title should be very short, declarative, and descriptive. Ensure it is as short as possible but still descriptive enough to understand the task. It must be compact and declarative.
+Present tasks with a heading in the format: `### [Title]`. The `[Title]` should be very short, descriptive, compact and declarative. It must capture the main statement or property the task is about.
 
-For each task, place a page reference to the beginning of the task in the source text. Comply with the format `Reference page [Number]`. It must be at the beginning of the task.
+For each task, place a page reference to its location in the source text. Use the format `Reference page [Number]`. This must appear at the beginning of the task.
 
 ### 2.5. Definitions
 
-Together with exercises and tasks, definitions might also be extracted if they are actively referenced in multiple exercises and tasks and are an essential part of proofs, solutions, and explanations.
+Extract definitions if they are actively referenced in multiple exercises/tasks or are crucial for stating the extracted problems.
 
-Each definition is presented with a heading in the format: `### Definition [Title]`. The title should be very short, descriptive, compact, and declarative.
+Each definition is presented with a heading in the format: `### Definition [Title]`. The `[Title]` should be very short, descriptive, compact, and declarative.
+
+A page reference to where the definition appears in the source text should be included immediately after the title, in the format `Reference page [Number]`.
 
 ### 2.6. Avoid tasks duplication
 
-Tasks and exercises must not be duplicated. If a task is already present in the exercises section, or there is complete overlap between the task and an exercise, omit the task.
+Tasks and exercises must not be duplicated. If a task found in the main text is identical to (or has complete overlap with) an exercise in the formal exercises section, omit the task.
 
-In case of duplication, put the page reference of the beginning of the task in the source text. Put it in the beginning of the exercise. Comply with the format `Reference page [Number]`.
+In case of such duplication, if the task's original location in the text provides useful context not present in the exercises section, you may add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`.
