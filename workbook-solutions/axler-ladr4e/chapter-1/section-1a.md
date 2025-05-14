@@ -4,9 +4,13 @@
 
 ### Complex numbers
 
-$ \mathbb{C} $ is set of complex numbers
+Reference page 2
+
+$ \mathbb{C} $ is set of complex numbers.
 
 $$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
+
+The imaginary unit $ i $ satisfies:
 
 $$ i^2 = -1 $$
 
@@ -24,9 +28,11 @@ $$
 
 ### Coordinate vectors $ F^n $
 
-Let $ F $ be a field of numbers
+Reference page 6
 
-$ F^n $ is set of coordinate vectors over field $ F $
+Let $ F $ be a field of numbers.
+
+$ F^n $ is set of coordinate vectors over field $ F $.
 
 $$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
 
@@ -48,9 +54,9 @@ Reference page 10
 
 ### Exercise 1A.1. Commutativity of addition of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
-$ \forall \alpha, \beta \in \mathbb{C} $
+$ \forall \alpha, \beta \in \mathbb{C} $:
 
 $$ \alpha + \beta = \beta + \alpha $$
 
@@ -74,9 +80,9 @@ $$
 
 ### Exercise 1A.2. Associativity of addition of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
-$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
 
 $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
@@ -102,9 +108,9 @@ $$
 
 ### Exercise 1A.3. Associativity of multiplication of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
-$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
 
 $$ (\alpha \beta) \lambda = \alpha (\beta \lambda) $$
 
@@ -138,9 +144,9 @@ $$
 
 ### Exercise 1A.4. Distributivity of multiplication over addition of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
-$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
+$ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
 
 $$\lambda  (\alpha + \beta) = \lambda \alpha + \lambda \beta $$
 
@@ -170,7 +176,7 @@ $$
 
 ### Exercise 1A.5. Additive inverse of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
 $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
 
@@ -194,7 +200,7 @@ $$ \beta = (-a_r) + (-a_i) \, i $$
 
 ### Exercise 1A.6. Multiplicative inverse of complex numbers
 
-Reference page 3
+Reference page 3 (Task)
 
 $$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
 
