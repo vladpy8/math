@@ -335,8 +335,6 @@ The main focus of the extraction is on the exercises and tasks.
 
 Omit solutions, proofs, and detailed explanations from the main visible body of the extracted item. The goal is to extract the problem statements or definitions themselves in a clean, declarative, and compact mathematical form.
 
-Leave empty details sections `<details><summary>Proof</summary>\n\n</details>`, which are designated for solutions, proofs, or extended explanations.
-
 Some pieces of textual content might be omitted if they are not relevant to the formal statement of exercises, tasks, or definitions, and if their inclusion would prevent extraction in a compact and declarative mathematical form.
 
 ### 2.2. Output top-level structure
@@ -401,11 +399,17 @@ For each part comply with the same rules and guidelines as for the main task or 
 
 For nested proofs or solutions, use the same details section format as described in Section 1.3. The content of the details section must adhere to the same style guidelines as the main text.
 
-### 2.8. Examples
+See the "Example 2.9.2" for a good illustration of a multi-part exercise.
+
+### 2.8 No solutions
+
+Do not include solutions, proofs, or detailed explanations. Leave empty details sections `<details><summary>Proof</summary>\n\n</details>`, which are designated for solutions, proofs, or extended explanations.
+
+### 2.9. Examples
 
 The good examples presented below comply with the style guidelines. Use them as a reference for clarification and derivation of additional implicit guidelines and rules, if necessary.
 
-#### 2.8.1. Example. Key section fragments
+#### 2.9.1. Example. Key section fragments
 
 ##### Good example
 
@@ -461,27 +465,13 @@ $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
 <summary>Proof</summary>
 
-$$
-\begin{aligned}
-
-(\alpha + \beta) + \lambda &= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
-
-&= ((a_r + b_r) + l_r) + ((a_i + b_i) + l_i) \, i \\
-
-&= (a_r + (b_r + l_r)) + (a_i + (b_i + l_i)) \, i \\
-
-&= \alpha + (\beta + \lambda)
-
-\end{aligned}
-$$
-
 </details>
 
 ... (omitted) ...
 
 ```
 
-#### 2.8.2. Example. Multi-part exercise
+#### 2.9.2. Example. Multi-part exercise
 
 ##### Bad example
 
@@ -502,7 +492,9 @@ Let $ S $ be a nonempty set. Let $ V^S $ denote the set of functions from S to V
 Define a natural addition and scalar multiplication on $ V^S $.
 $ V^S $ is a vector space with these definitions.
 
-<details><summary>Proof</summary>
+<details>
+
+<summary>Proof</summary>
 
 </details>
 
