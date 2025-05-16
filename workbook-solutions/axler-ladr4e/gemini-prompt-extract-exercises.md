@@ -2,10 +2,13 @@
 
 ## 0. Command
 
-Read the following instructions carefully. They are imperative and must be followed strictly.
+Read this prompt carefully and follow the instructions.
 
-Execute one of the following commands:
-- Extract exercises, tasks, and definitions from the math workbook.
+Prioritize [precision over speed](#1-precision-over-speed).
+
+Adhere to the [style guidelines](#2-style-guidelines).
+
+Execute [extraction of exercises and tasks](#3-extraction-of-exercises-and-tasks) from the source text.
 
 If provided, focus on the content of the specific exercise(s), task(s), section(s) or chapter(s) of the source text, reading only the specified fragments and ignoring the rest of the source text.
 
@@ -17,7 +20,7 @@ If there is ambiguity in the text encountered, take the time to clarify.
 
 Reiterate as many times as necessary to ensure compliance with the guidelines and rules.
 
-## 2. Markdown and MathJax style guidelines
+## 2. Style guidelines
 
 ### 2.1. Reusable terms
 
@@ -30,15 +33,15 @@ A **statement** refers to a piece of content, such as, but not limited to:
 
 MathJax blocks might be incorporated into statements, but they must be presented at the end of the statement.
 
-MathJax inline expressions `$ ... $` might be incorporated into every part of the statement.
+MathJax inline expressions `$ ... $` might be incorporated into any part of the statement.
 
-An **expression** is logically and syntactically separate piece of statement.
+An **expression** is a logically and syntactically separate piece of a statement.
 
-Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub statements, each of which is considered to be a separate statement.
+Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub-statements, each of which is considered to be a separate statement.
 
 #### 2.1.2. Words
 
-**Words** or **Wording** refers to plain text prose that is not part of a MathJax or Markdown expressions or commands.
+**Words** or **Wording** refers to plain text prose that is not part of MathJax or Markdown expressions or commands.
 
 #### 2.1.3. Math symbols
 
@@ -58,19 +61,19 @@ Some statements are *explicitly* defined in this prompt to be **complex statemen
 
 #### 2.2.1 Newlines
 
-Put double newlines after every statement. Except at the end of the document. Put single newline there.
+Put double newlines after every statement, except at the end of the document where a single newline should be used.
 
-Put single newline before MathJax block if it is part of a statement at the end of it.
+Put a single newline before a MathJax block if it is part of a statement and appears at the end of it.
 
-If rendered output of MathJax blocks is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This might be applied after such symbols as, but not limited to:
+If the rendered output of MathJax blocks is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This might be applied after such symbols as, but not limited to:
 - `$ : \\ $`
 - `$ , \\ $`
 - logical end of expression
 - or before `$ \\ = $ `
 
-Special notation might be used, such as `\begin{aligned} .. \end{aligned}` for better readability. Judge based on the context. Most frequent scenario might include long equations, where the first and the last lines are short and represent essence of an equation.
+Special notation might be used, such as `\begin{aligned} .. \end{aligned}` for better readability. Judge based on the context. The most frequent scenario might include long equations where the first and last lines are short and represent the essence of an equation.
 
-If either, the source code of MathJax block is too wide to fit the screen, or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines after special symbols, such as, but not limited to:
+If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines after special symbols, such as, but not limited to:
 - `$$`
 - `\\`
 - `:`, `: \quad`, `: \`
@@ -79,7 +82,7 @@ If either, the source code of MathJax block is too wide to fit the screen, or it
 - last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
-If source code of MathJax block consists of more than 7 lines, replace single newlines with double newlines inside it. Also replace newline with double one before MathJax block if it is part of a statement at the end of it.
+If the source code of a MathJax block consists of more than 7 lines, replace single newlines with double newlines inside it. Also, replace the newline with a double newline before a MathJax block if it is part of a statement and appears at the end of it.
 
 #### 2.2.2. Spacing and indentation
 
@@ -87,17 +90,17 @@ Use tabs for indentation.
 
 Place spaces inside MathJax inline expressions between `$` and the expression itself.
 
-Place spaces inside MathJax block expressions between `$$` and the expression itself, if newlines rules are not applied.
+Place spaces inside MathJax block expressions between `$$` and the expression itself, if newline rules are not applied.
 
 Place spaces between MathJax symbols.
 
-Place rendered MathJax symbols for spacing for better readability between special math symbols and the rest of the expression. This might include, but is not limited to:
+Place rendered MathJax symbols for spacing to improve readability between special math symbols and the rest of the expression. This might include, but is not limited to:
 - `$ \exist \ $`
 - `$ \forall \, $`
 - `$ : \quad $`
 - `$ , \quad $`
 
-For very special math terms, such as, but not limited to, imaginary unit `$ i $`, use `$ \, $` between the unit and rest of the expression in case of operations with it.
+For very special math terms, such as, but not limited to, the imaginary unit `$ i $`, use `$ \, $` between the unit and the rest of the expression in case of operations involving it.
 
 #### 2.2.3. Dots
 
@@ -107,13 +110,13 @@ Don't put dots after Markdown headings.
 
 #### 2.2.4. Capitalization
 
-Never capitalize words after first in a statement, except for well-known names or words that are always capitalized, such as, but not limited to:
+Never capitalize words after the first word in a statement, except for proper nouns or words that are always capitalized, such as, but not limited to:
 - People names
 - Names of theorems
 
 #### 2.2.5. Details section
 
-Use details sections to hide the proof of theorems, solutions of exercises or tasks, explanations, etc.
+Use details sections to hide proofs of theorems, solutions of exercises or tasks, explanations, etc.
 
 ```markdown
 
@@ -126,16 +129,16 @@ Use details sections to hide the proof of theorems, solutions of exercises or ta
 
 ```
 
-Consider details as a complex statement. Internals of the details consist of one or more internal sub statements.
+Consider a details section as a complex statement. The internals of the details section consist of one or more internal sub-statements.
 
 Possible details summary titles are, but not limited to:
 - Proof
 - Solution
 - Explanation
 
-#### 2.2.6. Elipsis
+#### 2.2.6. Ellipsis
 
-Use ellipsis `...` to indicate that the content is omitted.
+Use an ellipsis `...` to indicate that content is omitted.
 
 ### 2.3. Compactness and declarative presentation.
 
@@ -145,29 +148,29 @@ Use math symbols instead of words wherever possible.
 
 #### 2.3.2. Compact statements
 
-Reduce size and quantity of the statements as much as possible.
+Reduce the size and quantity of statements as much as possible.
 
 Merge statements if they are closely related and might be expressed in a single statement. Merge as many statements as possible.
 
-Remove words from the statements, use math symbols, MathJax inline and block expressions instead. Few words are permitted in the beginning of the statement, or in the course of it if they are absolutely necessary.
+Remove words from statements. Use math symbols and MathJax inline and block expressions instead. Few words are permitted at the beginning of a statement, or in the course of it if they are absolutely necessary.
 
-Consider MathJax `$ \text{} $` expression as a plain text one.
+Consider a MathJax `$ \text{} $` expression as a plain text one.
 
-Ideal statement consists of no words or very few words in the beginning and MathJax block expression encompassing multiple interconnected expressions in the end.
+An ideal statement consists of no words or very few words at the beginning, and a MathJax block expression encompassing multiple interconnected expressions at the end.
 
 #### 2.3.3. Declarative statements and expressions
 
-Avoid imperative statements, expressions, and wording. Imperative usually bears the meaning of actions, commands, or instructions.
+Avoid imperative statements, expressions, and wording. The "imperative" usually conveys actions, commands, or instructions.
 
-Expression like "[Action] the [Result]" is less preferable than "[Result]". This might include, but not limited to:
+An expression like "[Action] the [Result]" is less preferable than "[Result]". This might include, but is not limited to:
 - "[Prove] the [Theorem]" => "[Theorem]"
 - "[Show] that [Property] holds" => "[Property]"
 - "[Verify] the [Equality]" => "[Equality]"
 - "[Explain] the [Result]" => "[Result]"
 
-The actual proof, solution, explanation, is or will be declared in the details section.
+The actual proof, solution, or explanation is or will be declared in the details section.
 
-However, imperative commands might be unavoidable wherever the final expression is not known yet, must stay hidden in the details section, or is extremely long spanning multiple hard to merge statements. Then "[Action] the [Result]" might still be rephrased as short as possible. This might include, but not limited to:
+However, imperative commands might be unavoidable wherever the final expression is not known yet, must stay hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. Then, "[Action] the [Result]" might still be rephrased to be as short as possible. This might include, but not limited to:
 - "[Find] the solution for [Equation]" => "Solve [Equation]"
 - "[Find] the [Variables] when [Expression] is true" => "Solve for [Variables]: [Expression]"
 - "[Verify] if the [Property] holds" => "Verify [Property]"
@@ -178,35 +181,35 @@ Some imperative commands might look declarative, but still must be avoided. This
 
 ### 2.4. Common types of statements
 
-This sections describes only the most common types of statements. It is not exhaustive and does not cover all possible cases.
+This section describes only the most common types of statements. It is not exhaustive and does not cover all possible cases.
 
-Emerge with new types of statements, modify existing ones, change wording, punctuation, spacing, newlines and formatting according to the context and this style guidelines.
+Evolve new types of statements, modify existing ones, and change wording, punctuation, spacing, newlines, and formatting according to the context and these style guidelines.
 
 #### 2.4.1. Definitions
 
-Statements of this type introduce either a new concept, or reference well-known ones.
+Statements of this type introduce either a new concept or reference well-known ones.
 
-Express references of well-known concepts using the following structures:
+Express references to well-known concepts using the following structures:
 - "[Notation] [Short-description]: [Core-definition]"
 - "[Notation] [Short-description]"
 - "[Short-description]: [Core-definition]"
 
-Express definitions of a new concepts using the following structures:
+Express definitions of new concepts using the following structures:
 - "Define [Notation] [Short-description]: [Core-definition]"
 - "Define [Notation]: [Core-definition]"
 - "[Short-description]: [Core-definition]"
 
-"[Notation]" is symbolic representation of the concept using MathJax inline expression.
+"[Notation]" is a symbolic representation of the concept using a MathJax inline expression.
 
-"[Short-description]" is short plain text expression naming or framing the concept.
+"[Short-description]" is a short plain text expression naming or framing the concept.
 
-"[Core-definition]" is formal definition of the concept using MathJax block expression. It might consists of set builder notion, declaring the set of objects together with their properties, representation and possible operations.
+"[Core-definition]" is a formal definition of the concept using a MathJax block expression. It might consist of set builder notation, declaring the set of objects along with their properties, representation, and possible operations.
 
 Omit "[Core-definition]" for well-known concepts based on the context. For example, when key properties are not relevant and unlikely to be referenced.
 
 #### 2.4.2. Variables declarations
 
-Statements of this type introduce variables - symbolic representation of mathematical objects of interest. Variables might represent some auxiliary, intermediate, preconditioned or scope objects.
+Statements of this type introduce variables – symbolic representations of mathematical objects of interest. Variables might represent some auxiliary, intermediate, preconditioned, or scope objects.
 
 Declare variables using the following structures:
 - "Let [Notation]: [Core-definition]"
@@ -214,9 +217,9 @@ Declare variables using the following structures:
 - "Set [Core-definition]"
 - "[Core-definition]"
 
-"[Notation]" and "[Core-definition]" are same as in the (Definitions)[#2.4.1] section, except they are less general and thus more tied to the context.
+"[Notation]" and "[Core-definition]" are the same as in the [Definitions](#2-4-1-definitions) section, except they are less general and thus more tied to the context.
 
-"[Core-definition]" in case of variables might be represented by MathJax inline expression, if it is very short and simple, such as, but not limited to:
+"[Core-definition]", in the case of variables, might be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
 - `$ a = value $`
 - `$ a, b \in Set $`
 - `$ \forall c, d \in Set $`
@@ -233,21 +236,23 @@ The good examples comply with the style guidelines. Use them as a reference and 
 
 This definition is compact and declarative.
 
-Each statement uses few words in the beginning and MathJax block expression at the end.
+Each statement uses few words at the beginning and a MathJax block expression at the end.
 
-First MathJax block is a definition of complex numbers. It uses set builder notation to declare the set of complex numbers and their representation.
+The first MathJax block is the definition of the imaginary unit $ i $.
 
-The second MathJax block simply describes the properties of the imaginary unit $ i $.
+The second MathJax block is a definition of complex numbers. It uses set builder notation to declare the set of complex numbers and their representation.
+
+The third MathJax block describes the operations of addition and multiplication of complex numbers.
 
 ```markdown
 
 ### Complex numbers
 
-$ \mathbb{C} $ is set of complex numbers:
-$$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
-
 The imaginary unit $ i $ satisfies:
 $$ i^2 = -1 $$
+
+$ \mathbb{C} $ is set of complex numbers:
+$$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
 $ \forall \alpha, \beta \in \mathbb{C} $:
 $$
@@ -259,7 +264,7 @@ $$
 
 ```
 
-#### 2.5.2. Example. Commutativity of addition of complex numbers
+#### 2.5.2. Example. Distributivity of multiplication over addition of complex numbers
 
 ##### Bad example
 
@@ -267,7 +272,7 @@ This statement is too verbose and contains excessive wording.
 
 It is not declarative and contains unnecessary explanations.
 
-It does not follow the newlines and spacing styles.
+It does not follow the newline and spacing styles.
 
 ```markdown
 
@@ -281,13 +286,11 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 ##### Good example
 
-This definition is compact, declarative, and uses MathJax blocks to represent the mathematical statement. It also includes a details section for the proof.
+This example is compact, declarative, and uses MathJax blocks to represent the mathematical statement. It also includes a details section for the proof.
 
 A long line in the first MathJax block is split by single newlines so that the source code fits the screen.
 
-A long line in the second MathJax block is split by double newlines so that the rendered output fits the screen. Alignment is used in order to make it more readable and interconnected across lines.
-
-Whitespaces style adherence ensures readability of the source code.
+A long line in the second MathJax block is split by double newlines so that the rendered output fits the screen. Alignment is used to make it more readable and interconnected across lines.
 
 ```markdown
 
@@ -339,11 +342,11 @@ Find distinct square roots of $ i $.
 
 ##### Good example
 
-Imperative command here is short and most of the statement is written in a compact and declarative way.
+The imperative command here is short, and most of the statement is written in a compact and declarative way.
 
-Many MathJax block expressions are natural continuation of the preceding sentences, but with double newline separator.
+Many MathJax block expressions are natural continuations of the preceding sentences but are separated by a double newline.
 
-Title is compact and declarative and essentially contains the main statement of the exercise.
+The title is compact and declarative and essentially contains the main statement of the exercise.
 
 ```markdown
 
@@ -438,7 +441,7 @@ The source text is the original text from which the exercises, tasks, and defini
 
 ### 3.1. Output format
 
-Present output as one file with the extracted content in Markdown format with MathJax expressions. The output must follow the style guidelines in Section 1 of this prompt.
+Present the output as one file containing the extracted content in Markdown format with MathJax expressions. The output must follow the style guidelines in Section 2 of this prompt.
 
 ### 3.2. Extraction goal
 
@@ -453,13 +456,13 @@ Some pieces of textual content might be omitted if they are not relevant to the 
 
 #### 2.2.1. `[Title]`
 
-Title of the exercise, task, subtask or definitions.
+Title of the exercise, task, subtask, or definition.
 
-Title must be compact, declarative, and descriptive. It should be a short phrase that captures the essence of the exercise or task with no unnecessary wording.
+The title must be compact, declarative, and descriptive. It should be a short phrase that captures the essence of the exercise or task with no unnecessary wording.
 
-If title is provided by the source text, adapt it to the style guidelines. If no title is provided, create one based on the content of the exercise or task.
+If a title is provided by the source text, adapt it to the style guidelines. If no title is provided, create one based on the content of the exercise or task.
 
-### 2.2. Output top-level structure
+### 3.2. Output top-level structure
 
 Each piece of extracted information should belong to a specific chapter or section of the book. Put it under the corresponding heading in the format: `# Chapter [Number]. [Title]. <br>Section [Number]. [Title].`.
 
@@ -467,11 +470,11 @@ Definitions come first in the section under the heading `## Definitions`, if pre
 
 Inside each of these groups, present the content in the order of appearance in the source material.
 
-### 2.3. Exercises
+### 3.3. Exercises
 
 Exercises are typically lists of problems or questions at the end of a chapter or section, usually numbered.
 
-The entire exercises section (e.g., `## Exercises 1A`) must contain one page reference to the page in the source text where this block of exercises begins. Use the format: `Reference page [Number]`, where `[Number]` is corresponding page number in the source text. Place it after the section heading.
+The entire exercises section (e.g., `## Exercises 1A`) must contain a page reference to the page in the source text where this block of exercises begins. Use the format: `Reference page [Number]`, where `[Number]` is the corresponding page number in the source text. Place it after the section heading.
 
 Start each exercise with a heading in the format: `### Exercise [Section Number]. [Title]`.
 
@@ -483,61 +486,63 @@ If an exercise references specific theorems, examples, or definitions from the t
 
 Each exercise must present the minimum sufficient information needed to understand and solve it.
 
-### 2.4. Tasks
+### 3.4. Tasks
 
 A "task" refers to an exercise or problem that is incorporated into the main text of a chapter or section, rather than being part of a formal numbered list at the end. These are often phrased as suggestions or checks for the reader (e.g., "The reader should verify that...", "One can show that...").
 
-Present tasks with a heading in the format: `### [Title]`. The `[Title]` should be very short, descriptive, compact and declarative. It must capture the main statement or property the task is about.
+Present tasks with a heading in the format: `### [Title]`. The `[Title]` should be very short, descriptive, compact, and declarative. It must capture the main statement or property the task is about.
 
 For each task, place a page reference to its location in the source text. Use the format `Reference page [Number]`. This must appear at the beginning of the task.
 
-### 2.5. Definitions
+### 3.5. Definitions
 
 Extract definitions if they are actively referenced in multiple exercises/tasks or are crucial for stating the extracted problems.
 
 Each definition is presented with a heading in the format: `### Definition [Title]`. The `[Title]` should be very short, descriptive, compact, and declarative.
 
-A page reference to where the definition appears in the source text should be included immediately after the title, in the format `Reference page [Number]`, where `[Number]` is corresponding page number in the source text.
+A page reference to where the definition appears in the source text should be included immediately after the title, in the format `Reference page [Number]`, where `[Number]` is the corresponding page number in the source text.
 
-### 2.6. Avoid tasks duplication
+### 3.6. Avoid task duplication
 
-Tasks and exercises must not be duplicated. If a task found in the main text is identical to (or has complete overlap with) an exercise in the formal exercises section, omit the task.
+Tasks and exercises must not be duplicated.
 
-In case of such duplication, add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`, where `[Number]` is corresponding page number in the source text.
+If a task found in the main text is identical to (or has complete overlap with) an exercise in the formal exercises section, omit the task.
 
-### 2.7. Multi-part tasks and exercises
+In the case of such duplication, add a page reference to the task's location at the beginning of the corresponding exercise. Use the format: `Reference page [Number] (Task)`, where `[Number]` is the corresponding page number in the source text.
+
+### 3.7. Multi-part tasks and exercises
 
 If a task or exercise consists of multiple parts, each part must be presented as a separate item under its own subheading.
 
-Use original labels either letters (e.g., A, B) or numbers (e.g., 1, 2) if they are provided in the source text. In this case use the format: `#### [Label]. [Title]`, where
+Use original labels, either letters (e.g., A, B) or numbers (e.g., 1, 2), if they are provided in the source text. In this case, use the format: `#### [Label]. [Title]`, where:
 1. `[Label]` is the label of the part, capitalized
 2. `[Title]` is a short, descriptive, compact, and declarative title. It must be omitted if the part is a routine application or a multi-part question without a single unifying theme.
 
-If `[Label]` is a letter make sure to capitalize it and use only letter itself, without any additional symbols or punctuation. For example, `#### A. [Title]`.
+If `[Label]` is a letter, ensure it is capitalized and use only the letter itself, without any additional symbols or punctuation. For example, `#### A. [Title]`.
 
-If no labels are provided, use numeric enumeration in order of appearance. And apply the same format: `#### [Number]. [Title]` as described above.
+If no labels are provided, use numeric enumeration in order of their appearance. Then apply the same format: `#### [Number]. [Title]`, as described above.
 
-In case of absence of explicit labels, tasks should be divided into parts if they contain clear identifiable subtasks or questions. Such as distinguishable properties or statements to be proven.
+In the absence of explicit labels, tasks should be divided into parts if they contain clearly identifiable subtasks or questions. These could be distinguishable properties or statements to be proven.
 
-For each subtask comply with the same rules and guidelines as for the main task or exercise. This includes the use of page references, titles, and the overall structure.
+For each subtask, comply with the same rules and guidelines as for the main task or exercise. This includes the use of page references, titles, and the overall structure.
 
-For nested proofs or solutions, use the same details section format as described in Section 1.3. The content of the details section must adhere to the same style guidelines as the main text.
+For nested proofs or solutions, use the same details section format as described in Section 2.2.5. The content of the details section must adhere to the same style guidelines as the main text.
 
-See the Example 2.9.2 for a good illustration of a multi-part exercise.
+See Example 3.10.2 for a good illustration of a multi-part exercise.
 
-### 2.8 No solutions
+### 3.8 No solutions
 
 Do not include solutions, proofs, or detailed explanations. Leave empty details sections `<details><summary>Proof</summary>\n\n</details>`, which are designated for solutions, proofs, or extended explanations.
 
-### 2.9. Do not follow the source
+### 3.9. Do not follow the source
 
-Do not follow the source text in terms of formatting, structure, or content. It is top priority to follow the style guidelines and rules outlined in this document.
+Do not follow the source text in terms of formatting, structure, or content. It is a top priority to follow the style guidelines and rules outlined in this document.
 
-### 2.10. Examples
+### 3.10. Examples
 
 The good examples presented below comply with the style guidelines. Use them as a reference for clarification and derivation of additional implicit guidelines and rules, if necessary.
 
-#### 2.10.1. Example. Key section fragments
+#### 3.10.1. Example. Key section fragments
 
 ##### Good example
 
@@ -598,15 +603,15 @@ $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
 ```
 
-#### 2.10.2. Example. Multi-part exercise
+#### 3.10.2. Example. Multi-part exercise
 
 ##### Bad example
 
-It doesn't contain double newline after the heading
+It doesn't contain a double newline after the heading.
 
-`Reference page 14 (Task)` is incorrect here, since there is no duplicating tasks on the page 14 of the source text.
+`Reference page 14 (Task)` is incorrect here, since there are no duplicating tasks on page 14 of the source text.
 
-This statement is very shallow in terms of mathematical content. It is not declarative and contains unnecessary explanations. It also does not follow the newlines and spacing styles.
+This statement is very shallow in terms of mathematical content. It is not declarative and contains unnecessary explanations. It also does not follow the newline and spacing styles.
 
 In spite of the fact that there are clear set-in-stone properties to be proven, the statement is not split into parts.
 
