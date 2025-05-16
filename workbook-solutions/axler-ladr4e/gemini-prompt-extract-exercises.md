@@ -427,6 +427,111 @@ $$
 
 ```
 
+
+
+## 3. Extraction and Formatting Guidelines
+
+This section provides specific instructions for extracting and formatting definitions, tasks, and exercises from the source text. All extracted content must rigorously follow these guidelines and the global [Style Guidelines](#2-style-guidelines).
+
+### 3.1. General Principles
+
+The primary **Extraction Goal** is to capture exercises, tasks, and definitions that are essential for understanding or solving these problems. Problem statements and definitions should be presented in a clean, declarative, and mathematically compact form. To achieve this, verbose explanations or extended derivations present in the source should generally be omitted from the main visible body of the extracted items, unless they are integral to the problem statement itself. Solutions, proofs, and detailed explanations associated with an item must be placed within "details" sections, as specified in Section 3.3.5. Textual content from the source may be omitted if it is not directly relevant to the formal statement of an exercise, task, or definition, or if its inclusion would impede a compact and declarative presentation.
+
+Regarding **Adherence to Prompt Style**, this document's guidelines, including those in [Section 2](#2-style-guidelines), take absolute precedence over the formatting, structure, or wording of the source text.
+
+### 3.2. Reusable Components and Statement Definitions
+
+The following components and specific **complex statement** types are integral to the extraction process.
+
+#### 3.2.1. [Title] Component
+
+A **`[Title]`** is a short, declarative, and descriptive phrase that captures the essence of the item (exercise, task, definition, or sub-part). It must contain no unnecessary wording.
+-   If the source text provides a clear and concise title (e.g., for a named theorem or a specifically titled exercise), adapt it to meet these style guidelines.
+-   If no title is provided, create one based on the item's content.
+-   A `[Title]` is optional for Exercises and multi-part items under specific conditions detailed in Sections 3.2.5 and 3.3.3.
+
+#### 3.2.2. Page Reference Statement
+
+A **Page Reference Statement** is a specific type of statement used to indicate the location of the original content in the source text.
+It must use one of the following formats:
+-   `Reference page [Number]`
+-   `Reference page [Number] (Task)` (This format is used specifically for exercises that duplicate an in-text task, as described in Section 3.3.4).
+Replace `[Number]` with the corresponding page number from the source text. This statement is considered a separate statement and must be followed by a double newline. Its placement is specified for each content type.
+
+#### 3.2.3. Definition Statement
+
+A **Definition Statement** is a **complex statement** that introduces a mathematical definition.
+Definitions should be extracted if they are actively referenced in multiple exercises or tasks within the current section, or if they are crucial for understanding or stating the extracted problems.
+The content and order for a Definition Statement are:
+1.  A heading of the format `### Definition [Title]`. The `[Title]` should be derived from the source's named definition (e.g., if the source states "Definition 1.1 Complex Numbers", the title could be 'Complex Numbers'). If the source provides a numbered definition without a descriptive name, use the concept being defined as the `[Title]`.
+2.  A Page Reference Statement, placed immediately after the heading.
+3.  The definition's core content. This core content is composed of one or more statements as defined in [Section 2.1.1](#2-1-1-statements-and-expressions), structured according to the guidelines in [Section 2.4.1](#2-4-1-definitions), and should be extracted from the source.
+
+#### 3.2.4. Task Statement
+
+A **Task Statement** is a **complex statement** representing an exercise, problem, or specific instruction (such as 'prove that P', 'verify that X', 'show that Y', 'explain why Z', or implicit directives like 'as you should verify...' or 'the reader can/should check/demonstrate...') found within the main narrative of the source text, rather than from a formal list of exercises.
+The content and order for a Task Statement are:
+1.  A heading of the format `### [Title]`. The `[Title]` must be very short, descriptive, compact, and declarative, typically capturing the main mathematical property or assertion.
+2.  A Page Reference Statement, placed immediately after the heading.
+3.  The task's core problem description. This description consists of one or more statements (as defined in [Section 2.1.1](#2-1-1-statements-and-expressions)) rephrased from the source into a declarative and compact mathematical form.
+4.  A "details" section containing the extracted proof, solution, or explanation, as specified in Section 3.3.5.
+
+For handling multi-part tasks, refer to Section 3.3.3.
+
+#### 3.2.5. Exercise Statement
+
+An **Exercise Statement** is a **complex statement** representing a problem or question, typically from a formal numbered list at the end of a chapter or section in the source text.
+The content and order for an Exercise Statement are:
+1.  A heading of the format `### Exercise [Section Number].[Optional Title]`. `[Section Number]` refers to its designation in the source (e.g., 1A, 2.3). The `[Optional Title]` part (including the preceding period) should be omitted if the exercise is a routine application or lacks a single unifying theme. If omitted, the format is `### Exercise [Section Number]`.
+2.  A Page Reference Statement (only if the exercise duplicates a task, see Section 3.3.4).
+3.  The exercise's core problem description. This description consists of one or more statements (as defined in [Section 2.1.1](#2-1-1-statements-and-expressions)) presenting the minimum sufficient information needed to understand and attempt the problem.
+4.  A "details" section containing the extracted proof or solution, as specified in Section 3.3.5.
+If an exercise critically references specific theorems, examples, or definitions, ensure this referenced content is extracted (as a Definition Statement, etc.) and placed appropriately, typically before the exercise itself or within the section's "Definitions" block if broadly applicable. For handling multi-part exercises, refer to Section 3.3.3.
+
+### 3.3. Output Structure and Content Application
+
+#### 3.3.1. Top-Level Document Structure
+
+All extracted content must be organized into a single Markdown file.
+Individual pieces of information must be grouped by their chapter and section in the source text, using a main heading of the format:
+`# Chapter [Number]. [Title]. <br>Section [Number]. [Title].`
+Within each such section, the content must be ordered under these specific second-level headings:
+1.  `## Definitions` (containing all Definition Statements for that section, if any).
+2.  `## Tasks` (containing all Task Statements for that section, if any).
+3.  `## Exercises [Section Number]` (e.g., `## Exercises 1A`, containing all Exercise Statements for that specific source exercise section).
+Individual items within these blocks (Definitions, Tasks, Exercises) must appear in the same order as they do in the source material.
+
+#### 3.3.2. Specifics for Exercises Sections
+
+The collection of all Exercise Statements from a particular numbered exercise section in the source must be grouped under a heading of the format `## Exercises [Section Number]`. Immediately following this heading, a Page Reference Statement must be included to indicate the page in the source text where this block of exercises begins.
+
+#### 3.3.3. Handling Multi-Part Items
+
+If a Task Statement or Exercise Statement consists of multiple distinct parts, each part must be presented as a separate item under its own subheading using the format `#### [Label]. [Optional Title]`.
+-   **`[Label]`**: If the source provides labels (e.g., A, B, or 1, 2), use them. Letter labels must be capitalized and consist only of the letter itself. If no labels are provided in the source, use numeric enumeration (1, 2, ...) in order of appearance.
+-   **`[Optional Title]`**: A title for a sub-part is optional and should be omitted if the part is a routine application or does not have a clear, unifying theme distinct from other parts. If omitted, the format is `#### [Label]`.
+Each sub-part is a complete statement and must be followed by its own "details" section containing the extracted proof/solution (see Section 3.3.5). A task or exercise should be divided into parts if it contains clearly identifiable sub-tasks or distinct questions, such as distinguishable properties or statements to be proven, even if not explicitly labeled in the source. Each sub-part must comply with all style guidelines.
+
+#### 3.3.4. Avoiding Duplication (Tasks vs. Exercises)
+
+No task or exercise should be duplicated. If a task found in the main text is identical to, or has complete overlap with, an exercise in a formal exercise list, then the task must be omitted from extraction. In this case, a Page Reference Statement of the format `Reference page [Number] (Task)` must be placed at the beginning of the corresponding Exercise Statement (immediately after its `###` heading), where `[Number]` is the page where the duplicated task appeared.
+
+#### 3.3.5. Solutions, Proofs, and Explanations (Details Sections)
+
+All solutions, proofs, or detailed explanations associated with an extracted item must be placed *inside* a "details" section, as described in [Section 2.2.5](#2-2-5-details-section). The content within the "details" section must itself adhere to all [Style Guidelines](#2-style-guidelines) from Section 2, including formatting of paragraphs, MathJax, newlines, etc.
+The standard summary titles are "Proof", "Solution", or "Explanation". For example: `<details><summary>Proof</summary> ...extracted proof content... </details>`.
+The "details" section as a whole is a **complex statement** and should be followed by a double newline, unless it is the last statement in the document.
+
+### 3.4. Self-Correction and Final Review
+
+Before finalizing output, rigorously review all extracted content. Verify precision in mathematical transcription; strict adherence to all [Style Guidelines](#2-style-guidelines); and correct application of all structural and formatting rules detailed in this Section 3, including page references, handling of multi-part items, and placement of solutions/proofs within "details" sections. Reiterate this review and correction process as needed to ensure full compliance with this prompt, prioritizing [precision over speed](#1-precision-over-speed).
+
+
+
+
+
+
+
 ## 3. Extraction of exercises and tasks
 
 ### 3.1. Reusable terms
