@@ -2,13 +2,13 @@
 
 ## 0. Command
 
-Read this prompt carefully and follow the instructions.
+Read this prompt and follow the instructions according to specified command.
 
 Prioritize [precision over speed](#1-precision-over-speed).
 
 Adhere to the [style guidelines](#2-style-guidelines).
 
-Execute [extraction of exercises and tasks](#3-extraction-of-exercises-and-tasks) from the source text.
+Execute [extraction of exercises](#3-extraction-of-exercises) from the source text.
 
 If provided, focus on the content of the specific exercise(s), task(s), section(s), or chapter(s) of the source text, reading only the specified fragments and ignoring the rest of the source text.
 
@@ -521,38 +521,63 @@ $$
 
 ```
 
+## 3. Extraction of exercises
 
+### 3.1. Command
 
-## 3. Extraction and Formatting Guidelines
+#### 3.1.1. Instructions
 
-This section provides specific instructions for extracting and formatting definitions, tasks, and exercises from the source text. All extracted content must rigorously follow these guidelines and the global [Style Guidelines](#2-style-guidelines).
+Read the source text.
 
-### 3.1. General Principles
+Identify the exercises, embedded exercises, and definitions.
 
-The primary **Extraction Goal** is to capture exercises, tasks, and definitions that are essential for understanding or solving these problems. Problem statements and definitions should be presented in a clean, declarative, and mathematically compact form. To achieve this, verbose explanations or extended derivations present in the source should generally be omitted from the main visible body of the extracted items, unless they are integral to the problem statement itself. Solutions, proofs, and detailed explanations associated with an item must be placed within "details" sections, as specified in Section 3.3.5. Textual content from the source may be omitted if it is not directly relevant to the formal statement of an exercise, task, or definition, or if its inclusion would impede a compact and declarative presentation.
+Extract exercises, embedded exercises and definitions from the source text in required format.
 
-Regarding **Adherence to Prompt Style**, this document's guidelines, including those in [Section 2](#2-style-guidelines), take absolute precedence over the formatting, structure, or wording of the source text.
+Rewrite to follow the [style guidelines](#2-style-guidelines) and [extraction rules](#3-extraction-of-exercises). Reiterate as many times as necessary to ensure compliance.
 
-### 3.2. Reusable Components and Statement Definitions
+Provide the output as markdown file.
 
-The following components and specific **complex statement** types are integral to the extraction process.
+#### 3.1.2. Extraction goal
 
-#### 3.2.1. [Title] Component
+The main focus of the extraction is on the exercises, embedded exercises, and relevant definitions.
 
-A **`[Title]`** is a short, declarative, and descriptive phrase that captures the essence of the item (exercise, task, definition, or sub-part). It must contain no unnecessary wording.
-- If the source text provides a clear and concise title (e.g., for a named theorem or a specifically titled exercise), adapt it to meet these style guidelines.
-- If no title is provided, create one based on the item's content.
-- A `[Title]` is optional for Exercises and multi-part items under specific conditions detailed in Sections 3.2.5 and 3.3.3.
+**Solutions and proofs must be omitted and ellipsis used instead.**
 
-#### 3.2.2. Page Reference Statement
+Output must consist of sequence of statements as defined in this prompt.
 
-A **Page Reference Statement** is a specific type of statement used to indicate the location of the original content in the source text.
-It must use one of the following formats:
+Output must adhere to the [style guidelines](#2-style-guidelines) and [extraction rules](#3-extraction-of-exercises).
+
+### 3.2. Reusable terms
+
+#### 3.2.1. Source text
+
+The source text is the original text from which the exercises and relevant information are extracted.
+
+#### 3.2.2. "[Title]" statement
+
+"[Title]" is compact and declarative statement that captures the essence of the section.
+
+If "[Title]" is not provided and yet is required, create one based on the content of the section.
+
+If "[Title]" is provided, adapt it to the style guidelines.
+
+#### 3.2.3. "[Page-reference]" statement
+
+"[Page-reference]" is an statement used to indicate the location of the original content in the source text.
+
+In certain scenario, page reference might be used as an expression of the statement.
+
+It must follow the format:
 - `Reference page [Number]`
-- `Reference page [Number] (Task)` (This format is used specifically for exercises that duplicate an in-text task, as described in Section 3.3.4).
-Replace `[Number]` with the corresponding page number from the source text. This statement is considered a separate statement and must be followed by a double newline. Its placement is specified for each content type.
+- `Reference page [Number] ([Note])`
 
-#### 3.2.3. Definition Statement
+"[Number]" is the page number in the source text where the content is located.
+
+"[Note]" is an optional note that might be used to indicate the type of content. Depends on the context.
+
+### 3.3. Extraction items
+
+#### 3.2.4. Definition Statement
 
 A **Definition Statement** is a **complex statement** that introduces a mathematical definition.
 Definitions should be extracted if they are actively referenced in multiple exercises or tasks within the current section, or if they are crucial for understanding or stating the extracted problems.
