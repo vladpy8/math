@@ -10,7 +10,7 @@ Adhere to the [style guidelines](#2-style-guidelines).
 
 Execute [extraction of exercises and tasks](#3-extraction-of-exercises-and-tasks) from the source text.
 
-If provided, focus on the content of the specific exercise(s), task(s), section(s) or chapter(s) of the source text, reading only the specified fragments and ignoring the rest of the source text.
+If provided, focus on the content of the specific exercise(s), task(s), section(s), or chapter(s) of the source text, reading only the specified fragments and ignoring the rest of the source text.
 
 ## 1. Precision over speed
 
@@ -35,13 +35,13 @@ MathJax blocks might be incorporated into statements, but they must be presented
 
 MathJax inline expressions `$ ... $` might be incorporated into any part of the statement.
 
-An **expression** is a logically and syntactically separate piece of a statement.
+An **expression** is a logically and syntactically separate piece of a statement. Each statement consists of one or more expressions.
 
 Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub-statements, each of which is considered to be a separate statement.
 
-#### 2.1.2. Words
+#### 2.1.2. Plain text prose
 
-**Words** or **Wording** refers to plain text prose that is not part of MathJax or Markdown expressions or commands.
+**Plain text expressions**, **words**, or **wording** refer to plain text prose that is not part of MathJax or Markdown expressions or commands.
 
 #### 2.1.3. Math symbols
 
@@ -57,32 +57,48 @@ Some statements are *explicitly* defined in this prompt to be **complex statemen
 - `$ \quad $` for quad space
 - `$ \ $` for space
 
+Math symbols are an essential part of MathJax expressions.
+
+#### 2.1.4. Math symbols surrogates
+
+**Math symbols surrogates** refer to any math concept that is well known but doesn't have notation on its own or is too complex to be expressed promptly, such as, but not limited to:
+- Differentiability
+- Continuity
+- Vector space being a subspace of another vector space
+
+Incorporate them into expressions using the following format `$ \text{} $`. For example:
+- `$ \text{is differentiable} $`
+- `$ \text{is continuous} $`
+- `$ \text{is a subspace of} $`
+
+Consider this format as a proper math notation.
+
 ### 2.2. Syntax
 
-#### 2.2.1 Newlines
+#### 2.2.1. Newlines
 
 Put double newlines after every statement, except at the end of the document where a single newline should be used.
 
 Put a single newline before a MathJax block if it is part of a statement and appears at the end of it.
 
-If the rendered output of MathJax blocks is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This might be applied after such symbols as, but not limited to:
-- `$ : \\ $`
-- `$ , \\ $`
-- logical end of expression
-- or before `$ \\ = $ `
+If the rendered output of MathJax blocks is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This might be applied near symbols such as, but not limited to:
+- after `$ : \\ $`
+- after `$ , \\ $`
+- before `$ \\ = $ `, or `$ \\ &= $`
+- after the logical end of an expression
 
 Special notation might be used, such as `\begin{aligned} .. \end{aligned}` for better readability. Judge based on the context. The most frequent scenario might include long equations where the first and last lines are short and represent the essence of an equation.
 
-If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines after special symbols, such as, but not limited to:
-- `$$`
-- `\\`
-- `:`, `: \quad`, `: \`
-- `, `, `, \quad`, `, \ `
-- `\begin{...}`, `\begin{...} \`
-- last line of the MathJax block
+If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines near special symbols, such as, but not limited to:
+- after `$$`
+- after `\\`
+- after `:`, `: \quad`, `: \`
+- after `, `, `, \quad`, `, \ `
+- after `\begin{...}`, `\begin{...} \`
+- after the last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
-If the source code of a MathJax block consists of more than 7 lines, replace single newlines with double newlines inside it. Also, replace the newline with a double newline before a MathJax block if it is part of a statement and appears at the end of it.
+If the statement consists of more than 7 lines, replace single newlines with double newlines inside it.
 
 #### 2.2.2. Spacing and indentation
 
@@ -94,13 +110,13 @@ Place spaces inside MathJax block expressions between `$$` and the expression it
 
 Place spaces between MathJax symbols.
 
-Place rendered MathJax symbols for spacing to improve readability between special math symbols and the rest of the expression. This might include, but is not limited to:
+Use rendered MathJax symbols for spacing to improve readability between special math symbols and the rest of the expression. This might include, but is not limited to:
 - `$ \exist \ $`
 - `$ \forall \, $`
 - `$ : \quad $`
 - `$ , \quad $`
 
-For very special math terms, such as, but not limited to, the imaginary unit `$ i $`, use `$ \, $` between the unit and the rest of the expression in case of operations involving it.
+For very special math terms, such as, but not limited to, the imaginary unit `$ i $`, use `$ \, $` between the unit and the rest of the expression in the case of operations involving it.
 
 #### 2.2.3. Dots
 
@@ -111,7 +127,7 @@ Don't put dots after Markdown headings.
 #### 2.2.4. Capitalization
 
 Never capitalize words after the first word in a statement, except for proper nouns or words that are always capitalized, such as, but not limited to:
-- People names
+- People's names
 - Names of theorems
 
 #### 2.2.5. Details section
@@ -134,13 +150,12 @@ Consider a details section as a complex statement. The internals of the details 
 Possible details summary titles are, but not limited to:
 - Proof
 - Solution
-- Explanation
 
 #### 2.2.6. Ellipsis
 
 Use an ellipsis `...` to indicate that content is omitted.
 
-### 2.3. Compactness and declarative presentation.
+### 2.3. Compactness and declarative presentation
 
 #### 2.3.1. Compact symbols
 
@@ -150,11 +165,9 @@ Use math symbols instead of words wherever possible.
 
 Reduce the size and quantity of statements as much as possible.
 
-Merge statements if they are closely related and might be expressed in a single statement. Merge as many statements as possible.
+Merge statements if they are closely related and might be expressed in a single statement. Reiterate and merge as many statements as possible.
 
-Remove words from statements. Use math symbols and MathJax inline and block expressions instead. Few words are permitted at the beginning of a statement, or in the course of it if they are absolutely necessary.
-
-Consider a MathJax `$ \text{} $` expression as a plain text one.
+Remove words from statements. Use math symbols, notation, MathJax inline and block expressions instead. Few words are permitted at the beginning of a statement, or in the course of it if they are absolutely necessary.
 
 An ideal statement consists of no words or very few words at the beginning, and a MathJax block expression encompassing multiple interconnected expressions at the end.
 
@@ -170,12 +183,12 @@ An expression like "[Action] the [Result]" is less preferable than "[Result]". T
 
 The actual proof, solution, or explanation is or will be declared in the details section.
 
-However, imperative commands might be unavoidable wherever the final expression is not known yet, must stay hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. Then, "[Action] the [Result]" might still be rephrased to be as short as possible. This might include, but not limited to:
+However, imperative commands might be unavoidable wherever the final expression is not known yet, must stay hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. Then, "[Action] the [Result]" might still be rephrased to be as short as possible. This might include, but is not limited to:
 - "[Find] the solution for [Equation]" => "Solve [Equation]"
 - "[Find] the [Variables] when [Expression] is true" => "Solve for [Variables]: [Expression]"
 - "[Verify] if the [Property] holds" => "Verify [Property]"
 
-Some imperative commands might look declarative, but still must be avoided. This might include, but not limited to:
+Some imperative commands might look declarative, but still must be avoided. This might include, but is not limited to:
 - "[Proof] of the [Theorem]" => "[Theorem]"
 - "[Verification] of the [Property]" => "[Property]"
 
@@ -221,10 +234,86 @@ Declare variables using the following structures:
 
 "[Core-definition]", in the case of variables, might be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
 - `$ a = value $`
-- `$ a, b \in Set $`
-- `$ \forall c, d \in Set $`
-- `$ \exists e \in Set $`
+- `$ a, b \in S $`
+- `$ \forall c, d \in S $`
+- `$ \exists e \in S $`
 - `$ U \subseteq V $`
+
+#### 2.4.3. Derivations
+
+Derivations are statements that encapsulate the process of deriving new knowledge from existing statements.
+
+Each derivation statement should contain ideas that are closely interconnected and logically follow each other. Each derivation step should make it apparent how the next step follows from the previous ones.
+
+Most frequently, it is derivations that might contain a bit of imperative wording.
+
+Derivations should be a bit less prioritized with regard to the merging strategy described in [Section 2.3.2](#2-3-2-compact-statements).
+
+Derivations are expressed using the following structures:
+- "[Linker] [Core-derivation]"
+- "[Short-description] [Core-derivation]"
+- "[Long-description]"
+
+"[Core-derivation]" is a formal derivation of the concept using a MathJax block expression.
+
+"[Linker]" is short wording connecting previous and immediate results with the current one. It might be, but is not limited to:
+- "Thus,"
+- "Therefore,"
+- "Hence,"
+- "As a result"
+- "This leads to:"
+- "From the previous statement follows:"
+
+"[Short-description]" is a short plain text expression acting as a bridge between other statements and the core derivation itself. It might contain references to particular statements or concepts, as well as very short and apparent explanations of the ideas behind the derivation.
+
+"[Long-description]" is a longer and significantly more verbose version of "[Short-description]" combined with the derivation itself being described using plain text prose and math symbols. It should be preferred only if it is impossible to represent the derivation in a MathJax block expression of "[Core-derivation]".
+
+#### 2.4.4. Theorems
+
+This is a more general term encompassing theorems, lemmas, corollaries, and other similar statements.
+
+Consider a theorem as a complex statement consisting of a sequence of:
+1. "[Definitions]"
+2. "[Variable-declarations]"
+3. "[Theorem-declaration]"
+4. "[Proof]"
+
+"[Definitions]" consists of [Definitions](#2-4-1-definitions) statements. "[Variable-declarations]" consists of [Variables declarations](#2-4-2-variables-declarations) statements.
+
+"[Theorem-declaration]" is a statement that is expressed using the following structures:
+- "[Short-description]: [Core-theorem]"
+- "[Core-theorem]"
+- "Then [Core-theorem]", after "[Definitions]" and "[Variable-declarations]"
+
+"[Core-theorem]" is a formal expression of the theorem using a MathJax block expression. It might consist of a series of sub-expressions connected with punctuation or operators, such as, but not limited to:
+- `$ , $`
+- `$ : $`
+- `$ \implies $`
+- `$ \iff $`
+
+"[Short-description]" is a short plain text expression naming or framing the theorem. It might also contain a short explanation of the essence of the theorem and an inline version of variables definitions if "[Core-theorem]" is too long and complex to afford it as part of it.
+
+"[Proof]" of a theorem is a statement that is expressed using a details section. A proof consists of one or more internal statements such as variables declarations, derivations, and possibly other types of statements.
+
+#### 2.4.5. Tasks
+
+Tasks are statements that represent exercises, problems, specific instructions, or open questions.
+
+Theorems are a special case of tasks.
+
+By and large, tasks should be expressed as complex statements consisting of a sequence of:
+1. "[Definitions]"
+2. "[Variable-declarations]"
+3. "[Task-declaration]"
+4. "[Solution]"
+
+This structure is mirrored from theorems. Therefore, all the rules for theorems apply here as well.
+
+Certain tasks require an imperative command to be present in the statement. In this case, the imperative command should be placed at the beginning of the statement and should be as short as possible. This might include, but is not limited to:
+- "Solve [Equation]"
+- "Find [Variable]: [Expression]"
+
+If a task doesn't contain solutions and the context doesn't imply for it to be present, then the internal statement of the details section of "[Solution]" should be replaced by an ellipsis.
 
 ### 2.5. Examples
 
@@ -234,7 +323,7 @@ The good examples comply with the style guidelines. Use them as a reference and 
 
 ##### Good example
 
-This definition is compact and declarative.
+These definitions are compact and declarative.
 
 Each statement uses few words at the beginning and a MathJax block expression at the end.
 
@@ -242,7 +331,7 @@ The first MathJax block is the definition of the imaginary unit $ i $.
 
 The second MathJax block is a definition of complex numbers. It uses set builder notation to declare the set of complex numbers and their representation.
 
-The third MathJax block describes the operations of addition and multiplication of complex numbers.
+The third MathJax block defines the operations of addition and multiplication of complex numbers.
 
 ```markdown
 
@@ -251,7 +340,7 @@ The third MathJax block describes the operations of addition and multiplication 
 The imaginary unit $ i $ satisfies:
 $$ i^2 = -1 $$
 
-$ \mathbb{C} $ is set of complex numbers:
+$ \mathbb{C} $ is the set of complex numbers:
 $$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
 $ \forall \alpha, \beta \in \mathbb{C} $:
@@ -268,9 +357,7 @@ $$
 
 ##### Bad example
 
-This statement is too verbose and contains excessive wording.
-
-It is not declarative and contains unnecessary explanations.
+This statement is not compact, not declarative, is too verbose, and contains excessive wording.
 
 It does not follow the newline and spacing styles.
 
@@ -286,11 +373,13 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 ##### Good example
 
-This example is compact, declarative, and uses MathJax blocks to represent the mathematical statement. It also includes a details section for the proof.
+The statements of this example are compact and declarative.
 
-A long line in the first MathJax block is split by single newlines so that the source code fits the screen.
+This example includes a theorem declaration statement as well as a details section for the proof. The proof consists of one derivation statement.
 
-A long line in the second MathJax block is split by double newlines so that the rendered output fits the screen. Alignment is used to make it more readable and interconnected across lines.
+A long line in the first MathJax block is split by a single newline so that the source code fits the screen.
+
+A long line in the second MathJax block is split by double newlines so that both the rendered output and source code fit the screen. Alignment is used to make it more readable and interconnected across lines.
 
 ```markdown
 
@@ -342,11 +431,11 @@ Find distinct square roots of $ i $.
 
 ##### Good example
 
-The imperative command here is short, and most of the statement is written in a compact and declarative way.
+The entire statement represents a single task statement with declaration and solution.
 
-Many MathJax block expressions are natural continuations of the preceding sentences but are separated by a double newline.
+The solution in details section is comprised of a sequence of derivations statements one naturally following from the other.
 
-The title is compact and declarative and essentially contains the main statement of the exercise.
+The last statement is verification of the solution, which might be considered as evolved derivation.
 
 ```markdown
 
@@ -397,7 +486,9 @@ $$
 $$
 
 Verifying:
+
 $$
+
 \begin{aligned}
 
 \left( \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \right)^2
@@ -409,9 +500,11 @@ $$
 &= i
 
 \end{aligned}
+
 $$
 
 $$
+
 \begin{aligned}
 
 \left( -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i \right)^2 &= \left( -\frac{1}{\sqrt2} \right)^2 + 2 \left( -\frac{1}{\sqrt2} \right) \left( -\frac{1}{\sqrt2} \, i \right) + \left( -\frac{1}{\sqrt2} \, i \right)^2 \\
@@ -421,6 +514,7 @@ $$
 &= i
 
 \end{aligned}
+
 $$
 
 </details>
@@ -446,16 +540,16 @@ The following components and specific **complex statement** types are integral t
 #### 3.2.1. [Title] Component
 
 A **`[Title]`** is a short, declarative, and descriptive phrase that captures the essence of the item (exercise, task, definition, or sub-part). It must contain no unnecessary wording.
--   If the source text provides a clear and concise title (e.g., for a named theorem or a specifically titled exercise), adapt it to meet these style guidelines.
--   If no title is provided, create one based on the item's content.
--   A `[Title]` is optional for Exercises and multi-part items under specific conditions detailed in Sections 3.2.5 and 3.3.3.
+- If the source text provides a clear and concise title (e.g., for a named theorem or a specifically titled exercise), adapt it to meet these style guidelines.
+- If no title is provided, create one based on the item's content.
+- A `[Title]` is optional for Exercises and multi-part items under specific conditions detailed in Sections 3.2.5 and 3.3.3.
 
 #### 3.2.2. Page Reference Statement
 
 A **Page Reference Statement** is a specific type of statement used to indicate the location of the original content in the source text.
 It must use one of the following formats:
--   `Reference page [Number]`
--   `Reference page [Number] (Task)` (This format is used specifically for exercises that duplicate an in-text task, as described in Section 3.3.4).
+- `Reference page [Number]`
+- `Reference page [Number] (Task)` (This format is used specifically for exercises that duplicate an in-text task, as described in Section 3.3.4).
 Replace `[Number]` with the corresponding page number from the source text. This statement is considered a separate statement and must be followed by a double newline. Its placement is specified for each content type.
 
 #### 3.2.3. Definition Statement
@@ -508,8 +602,8 @@ The collection of all Exercise Statements from a particular numbered exercise se
 #### 3.3.3. Handling Multi-Part Items
 
 If a Task Statement or Exercise Statement consists of multiple distinct parts, each part must be presented as a separate item under its own subheading using the format `#### [Label]. [Optional Title]`.
--   **`[Label]`**: If the source provides labels (e.g., A, B, or 1, 2), use them. Letter labels must be capitalized and consist only of the letter itself. If no labels are provided in the source, use numeric enumeration (1, 2, ...) in order of appearance.
--   **`[Optional Title]`**: A title for a sub-part is optional and should be omitted if the part is a routine application or does not have a clear, unifying theme distinct from other parts. If omitted, the format is `#### [Label]`.
+- **`[Label]`**: If the source provides labels (e.g., A, B, or 1, 2), use them. Letter labels must be capitalized and consist only of the letter itself. If no labels are provided in the source, use numeric enumeration (1, 2, ...) in order of appearance.
+- **`[Optional Title]`**: A title for a sub-part is optional and should be omitted if the part is a routine application or does not have a clear, unifying theme distinct from other parts. If omitted, the format is `#### [Label]`.
 Each sub-part is a complete statement and must be followed by its own "details" section containing the extracted proof/solution (see Section 3.3.5). A task or exercise should be divided into parts if it contains clearly identifiable sub-tasks or distinct questions, such as distinguishable properties or statements to be proven, even if not explicitly labeled in the source. Each sub-part must comply with all style guidelines.
 
 #### 3.3.4. Avoiding Duplication (Tasks vs. Exercises)
@@ -754,11 +848,9 @@ Let $ V $ be a vector space over $ F $.
 Let $ V^S $ be a set of functions $ { S \to V } $.
 
 Define addition on $ V^S $:
-
 $$ \forall f, g \in V^S, \quad \forall x \in S, \quad (f + g)(x) = f(x) + g(x) $$
 
 Define scalar multiplication on $ V^S $:
-
 $$
 \forall \lambda \in F, \quad
 \forall f \in V^S, \quad
