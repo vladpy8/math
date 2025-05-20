@@ -78,6 +78,8 @@ Consider the `$ \text{} $` format as a proper math notation.
 
 #### 2.2.1. Newlines
 
+Distinguish between rendered newlines and source code newlines.
+
 Put double newlines after every statement, except at the end of the document where a single newline should be used.
 
 Put a single newline before a MathJax block if it is part of a statement and appears at the end of it.
@@ -95,7 +97,7 @@ If either the source code of a MathJax block is too wide to fit the screen or it
 - after `\\`
 - after `:`, `: \quad`, `: \ `
 - after `, `, `, \quad`, `, \ `
-- after `\begin{...}`, `\begin{...} \`
+- after `\begin{...}` and before `\end{...}`
 - after the last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
@@ -552,15 +554,15 @@ The scope of the extraction is the specific exercise(s), task(s), section(s), or
 
 The output document is a single Markdown file containing the extracted content.
 
-#### 3.2.4. "[Title]" statement
+#### 3.2.4. "[Title]" expressions
 
-"[Title]" is a compact and declarative statement that captures the essence of the content.
+"[Title]" is a compact and declarative expression that captures the essence of the content.
 
 If "[Title]" is not provided in the source text and yet is required, create one based on the content. If "[Title]" is provided, adapt it to the style guidelines.
 
-As any statement, "[Title]" must be a short, descriptive, compact, and declarative.
+As any expression, "[Title]" must be a short, descriptive, compact, and declarative.
 
-#### 3.2.5. "[Label]" expression
+#### 3.2.5. "[Label]" expressions
 
 "[Label]" is a numeric or symbolic identifier expression referencing particular parts of the content in the source text.
 
@@ -573,7 +575,7 @@ If "[Label]" is not provided and yet is required, prefer plain numerical labels.
 
 If "[Label]" is provided, adapt it to the style guidelines. Capitalize letters, remove punctuation and irrelevant symbols.
 
-#### 3.2.6. "[Page-reference]" statement
+#### 3.2.6. "[Page-reference]" statements
 
 "[Page-reference]" is a statement used to indicate the location of the original content in the source text.
 
@@ -584,6 +586,12 @@ It must follow the format:
 "[Page-number]" is the page number in the source text where the content is located.
 
 "[Note]" is an optional note that might be used to indicate the type of content. It depends on the context.
+
+#### 3.2.7. Headings
+
+Headings are Markdown heading statements that indicate the structure of the document.
+
+As headings are statements, they must be followed by double newlines.
 
 ### 3.3. Extraction content
 
@@ -613,7 +621,7 @@ All relevant definitions must be presented under the heading `### Relevant defin
 Each separate definition or group of relevant and interconnected definitions must be presented as a separate item under its own subheading using the format `#### Definition [Label]. [Title]`. Label definitions numerically.
 
 Each definition item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statement)
+1. [Page reference statement](#3-2-6-page-reference-statements)
 2. [Variables declarations](#2-4-2-variables-declarations) statements, if necessary
 3. [Definition](#2-4-1-definitions) statements
 
@@ -628,7 +636,7 @@ Put individual exercise items under the subheading `#### Exercise [Label]. [Titl
 "[Title]" is optional and should be omitted if the exercise is a routine application or lacks a single unifying theme.
 
 Each exercise item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statement)
+1. [Page reference statement](#3-2-6-page-reference-statements)
 2. [Task](#2-4-5-tasks) statement
 
 #### 3.3.4. Embedded exercises
@@ -662,7 +670,7 @@ Use the following structure for the duplicate embedded exercise:
 1. "[Page-reference]" statement
 2. "[Exercise-reference]: [Page-reference]" statement
 
-"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statement). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
+"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statements). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
 
 #### 3.4.4. Preserve multi-part exercises
 
@@ -692,8 +700,6 @@ Do not omit the details section of the unifying exercise. Omit the details secti
 Some exercises might contain references to pieces of content in the source text that are not part of any exercise or definition. In such cases, it is imperative to follow the references and extract the referenced content according to the rules of this prompt.
 
 Extracted content must be relevant to the exercise and must be placed according to the document structure.
-
----
 
 ### 3.5. Examples
 
