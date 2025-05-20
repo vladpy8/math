@@ -1,75 +1,70 @@
-# Chapter 1. Vector spaces. <br>Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $.
+# Chapter 1. Vector spaces
 
-## Definitions
+## Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $
 
-### Complex numbers
+### Relevant definitions
 
-Reference page 2
+#### Definition 1. Complex numbers
 
-$ \mathbb{C} $ is set of complex numbers:
+Page reference 2
 
-$$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
+$ \mathbb{C} $ is the set of complex numbers:
+$$ \mathbb{C} = \{ \alpha : \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r + a_i \, i \} $$
 
 The imaginary unit $ i $ satisfies:
-
 $$ i^2 = -1 $$
 
-$ \forall \alpha, \beta \in \mathbb{C} $
-
+$ \forall \alpha, \beta \in \mathbb{C} $:
 $$
 \begin{aligned}
-
 \alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
-
 \alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
-
 \end{aligned}
 $$
 
-### Coordinate vectors $ F^n $
+#### Definition 2. Coordinate vectors $ F^n $
 
-Reference page 6
+Page reference 6
 
 Let $ F $ be a field of numbers.
 
-$ F^n $ is set of coordinate vectors over field $ F $.
+$ F^n $ is the set of coordinate vectors over field $ F $:
+$$ F^n = \{ x : \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
 
-$$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
-
-$ \forall x, y \in F^n $ and $ \forall \lambda \in F $
-
+$ \forall x, y \in F^n $ and $ \forall \lambda \in F $:
 $$
 \begin{aligned}
-
 x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
-
 \lambda x &= (\lambda x_1, \lambda x_2, \ldots, \lambda x_n)
-
 \end{aligned}
 $$
 
-## Exercises 1A
+### Exercises 1A
 
-Reference page 10
+Page reference 10
 
-### Exercise 1A.1. Commutativity of addition of complex numbers
+#### Exercise 1A.1. Commutativity of addition of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
 $ \forall \alpha, \beta \in \mathbb{C} $:
-
 $$ \alpha + \beta = \beta + \alpha $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ \alpha = a_r + a_i \, i $ and $ \beta = b_r + b_i \, i $.
 
 $$
 \begin{aligned}
 
-\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
+\alpha + \beta &= (a_r + a_i \, i) + (b_r + b_i \, i) \\
+
+&= (a_r + b_r) + (a_i + b_i) \, i \\
 
 &= (b_r + a_r) + (b_i + a_i) \, i \\
+
+&= (b_r + b_i \, i) + (a_r + a_i \, i) \\
 
 &= \beta + \alpha
 
@@ -78,26 +73,30 @@ $$
 
 </details>
 
-### Exercise 1A.2. Associativity of addition of complex numbers
+#### Exercise 1A.2. Associativity of addition of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
-
 $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ \alpha = a_r + a_i \, i $, $ \beta = b_r + b_i \, i $, and $ \lambda = l_r + l_i \, i $.
 
 $$
 \begin{aligned}
 
-(\alpha + \beta) + \lambda &= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
+(\alpha + \beta) + \lambda &= ((a_r + a_i \, i) + (b_r + b_i \, i)) + (l_r + l_i \, i) \\
+
+&= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
 
 &= ((a_r + b_r) + l_r) + ((a_i + b_i) + l_i) \, i \\
 
 &= (a_r + (b_r + l_r)) + (a_i + (b_i + l_i)) \, i \\
+
+&= (a_r + a_i \, i) + ((b_r + b_i \, i) + (l_r + l_i \, i)) \\
 
 &= \alpha + (\beta + \lambda)
 
@@ -106,17 +105,17 @@ $$
 
 </details>
 
-### Exercise 1A.3. Associativity of multiplication of complex numbers
+#### Exercise 1A.3. Associativity of multiplication of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
-
 $$ (\alpha \beta) \lambda = \alpha (\beta \lambda) $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ \alpha = a_r + a_i \, i $, $ \beta = b_r + b_i \, i $, and $ \lambda = l_r + l_i \, i $.
 
 $$
 \begin{aligned}
@@ -142,17 +141,17 @@ $$
 
 </details>
 
-### Exercise 1A.4. Distributivity of multiplication over addition of complex numbers
+#### Exercise 1A.4. Distributivity of multiplication over addition of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $:
-
-$$\lambda  (\alpha + \beta) = \lambda \alpha + \lambda \beta $$
+$$ \lambda (\alpha + \beta) = \lambda \alpha + \lambda \beta $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ \alpha = a_r + a_i \, i $, $ \beta = b_r + b_i \, i $, and $ \lambda = l_r + l_i \, i $.
 
 $$
 \begin{aligned}
@@ -174,14 +173,13 @@ $$
 
 </details>
 
-### Exercise 1A.5. Additive inverse of complex numbers
+#### Exercise 1A.5. Additive inverse of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
-$$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
+$$ \forall \alpha \in \mathbb{C} , \quad \exist \ \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
 
 <details>
-
 <summary>Proof</summary>
 
 $$ \alpha + \beta = (a_r + b_r) + (a_i + b_i) \, i = 0 $$
@@ -198,14 +196,13 @@ $$ \beta = (-a_r) + (-a_i) \, i $$
 
 </details>
 
-### Exercise 1A.6. Multiplicative inverse of complex numbers
+#### Exercise 1A.6. Multiplicative inverse of complex numbers
 
-Reference page 3 (Task)
+Page reference 10
 
-$$ \forall \alpha \in \mathbb{C}, \quad \exist \  \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
+$$ \forall \alpha \in \mathbb{C} , \quad \alpha \neq 0 , \quad \exist \ \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
 
 <details>
-
 <summary>Proof</summary>
 
 $$ \alpha \beta = a_r b_r - a_i b_i + (a_r b_i + a_i b_r) \, i = 1 + 0 \, i $$
@@ -250,18 +247,17 @@ $$
 
 </details>
 
-### Exercise 1A.7
+#### Exercise 1A.7. Cube root of 1
+
+Page reference 10
 
 Let
-
 $$ \alpha = \frac{-1 + \sqrt{3} \, i}{2} $$
 
-Then
-
-$$ \alpha ^3 = 1 $$
+Then:
+$$ \alpha^3 = 1 $$
 
 <details>
-
 <summary>Proof</summary>
 
 $$
@@ -293,14 +289,14 @@ $$
 
 </details>
 
-### Exercise 1A.8. Square roots of $ i $
+#### Exercise 1A.8. Square roots of $ i $
 
-Solve for $ \alpha \in \mathbb{C} $
+Page reference 10
 
+Solve for $ \alpha \in \mathbb{C} $:
 $$ \alpha^2 = i $$
 
 <details>
-
 <summary>Solution</summary>
 
 $$
@@ -374,14 +370,14 @@ $$
 
 </details>
 
-### Exercise 1A.9
+#### Exercise 1A.9
 
-Solve for $ x \in {\R}^4 $
+Page reference 10
 
+Solve for $ x \in \R^4 $:
 $$ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $$
 
 <details>
-
 <summary>Solution</summary>
 
 $$
@@ -398,14 +394,14 @@ $$
 
 </details>
 
-### Exercise 1A.10
+#### Exercise 1A.10
 
-Explain why there doesn't exist $ \lambda \in \mathbb{C} $ such that
+Page reference 10
 
+Explain why $ \not\exist \ \lambda \in \mathbb{C} $:
 $$ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $$
 
 <details>
-
 <summary>Explanation</summary>
 
 One complex vector equation leads to three complex number equations
@@ -456,14 +452,14 @@ $$
 
 </details>
 
-### Exercise 1A.11. Associativity of addition of vectors
+#### Exercise 1A.11. Associativity of addition of vectors
 
-$ \forall x, y, z \in F^n $
+Page reference 11
 
+$ \forall x, y, z \in F^n $:
 $$ (x + y) + z = x + (y + z) $$
 
 <details>
-
 <summary>Proof</summary>
 
 $$
@@ -484,15 +480,17 @@ $$
 
 </details>
 
-### Exercise 1A.12. Associativity of scalar multiplication of vectors
+#### Exercise 1A.12. Associativity of scalar multiplication of vectors
 
-$ \forall x \in F^n $ and $ \forall a, b \in F $
+Page reference 11
 
-$$ (a b) x = a (bx) $$
+$ \forall x \in F^n $ and $ \forall a, b \in F $:
+$$ (a b) x = a (b x) $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ x = (x_1, \ldots, x_n) $.
 
 $$
 \begin{aligned}
@@ -510,15 +508,17 @@ $$
 
 </details>
 
-### Exercise 1A.13. Multiplicative identity of vectors
+#### Exercise 1A.13. Multiplicative identity of vectors
 
-$ \forall x \in F^n $
+Page reference 11
 
+$ \forall x \in F^n $:
 $$ 1 x = x $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ x = (x_1, \ldots, x_n) $.
 
 $$
 \begin{aligned}
@@ -534,14 +534,14 @@ $$
 
 </details>
 
-### Exercise 1A.14. Distributivity of scalar multiplication over addition of vectors
+#### Exercise 1A.14. Distributivity of scalar multiplication over addition of vectors
 
-$ \forall \lambda \in F $ and $ \forall x, y \in F^n $
+Page reference 11
 
+$ \forall \lambda \in F $ and $ \forall x, y \in F^n $:
 $$ \lambda (x + y) = \lambda x + \lambda y $$
 
 <details>
-
 <summary>Proof</summary>
 
 $$
@@ -562,15 +562,17 @@ $$
 
 </details>
 
-### Exercise 1A.15. Distributivity of addition over scalar multiplication of vectors
+#### Exercise 1A.15. Distributivity of addition over scalar multiplication of vectors
 
-$ \forall a, b \in F $ and $ \forall x \in F^n $
+Page reference 11
 
+$ \forall a, b \in F $ and $ \forall x \in F^n $:
 $$ (a + b) x = ax + bx $$
 
 <details>
-
 <summary>Proof</summary>
+
+Let $ x = (x_1, \ldots, x_n) $.
 
 $$
 \begin{aligned}
