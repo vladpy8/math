@@ -101,7 +101,7 @@ If either the source code of a MathJax block is too wide to fit the screen or it
 - after the last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
-If the statement consists of more than 7 lines, replace single newlines with double newlines inside it.
+If the source code of statement consists of more than 7 lines, replace single newlines with double newlines inside it.
 
 #### 2.2.2. Spacing and indentation
 
@@ -456,8 +456,8 @@ $$ \alpha^2 = i $$
 
 $$
 \begin{aligned}
-(a_r + a_i \, i)^2 = i \\
-a_r^2 - a_i^2 + 2 a_r a_i \, i = i \\
+(a_r + a_i \, i)^2 &= i \\
+a_r^2 - a_i^2 + 2 a_r a_i \, i &= i
 \end{aligned}
 $$
 
@@ -467,36 +467,33 @@ a_r^2 - a_i^2 = 0 \\
 2 a_r a_i \, i = i
 $$
 
-From the first equation follows
-$$
-|a_r| = |a_i|
-$$
+From the first equation follows:
+$$ |a_r| = |a_i| $$
 
-The second one leads to
+The second one leads to:
 $$
 a_r a_i > 0 \\
 2 |a_r| |a_i| = 1
 $$
 
 Thus,
-$$ |a_r| = |a_i| = \frac{1}{\sqrt2} \\ $$
+$$ |a_r| = |a_i| = \frac{1}{\sqrt2} $$
 
 And finally,
 $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sqrt2} $$
 
 The square roots of $ i $ are:
 $$
-\frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad \
+\frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad \\
 \text{or} \quad -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i
 $$
 
 Verifying:
 
 $$
-
 \begin{aligned}
 
-\left( \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \right)^2
+\left( \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \right)^2 \\
 
 &= \left( \frac{1}{\sqrt2} \right)^2 + 2 \left( \frac{1}{\sqrt2} \right) \left( \frac{1}{\sqrt2} \, i \right) + \left( \frac{1}{\sqrt2} \, i \right)^2 \\
 
@@ -505,21 +502,21 @@ $$
 &= i
 
 \end{aligned}
-
 $$
 
 $$
-
 \begin{aligned}
 
-\left( -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i \right)^2 &= \left( -\frac{1}{\sqrt2} \right)^2 + 2 \left( -\frac{1}{\sqrt2} \right) \left( -\frac{1}{\sqrt2} \, i \right) + \left( -\frac{1}{\sqrt2} \, i \right)^2 \\
+\left( -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i \right)^2 \\
+
+&= \left( -\frac{1}{\sqrt2} \right)^2 + 2 \left( -\frac{1}{\sqrt2} \right) \left( -\frac{1}{\sqrt2} \, i \right)
++ \left( -\frac{1}{\sqrt2} \, i \right)^2 \\
 
 &= \frac{1}{2} + \frac{2}{2} \, i - \frac{1}{2} \\
 
 &= i
 
 \end{aligned}
-
 $$
 
 </details>
@@ -621,7 +618,7 @@ All relevant definitions must be presented under the heading `### Relevant defin
 Each separate definition or group of relevant and interconnected definitions must be presented as a separate item under its own subheading using the format `#### Definition [Label]. [Title]`. Label definitions numerically.
 
 Each definition item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statements)
+1. [Page reference statement](#3-2-6-page-reference-statement)
 2. [Variables declarations](#2-4-2-variables-declarations) statements, if necessary
 3. [Definition](#2-4-1-definitions) statements
 
@@ -636,7 +633,7 @@ Put individual exercise items under the subheading `#### Exercise [Label]. [Titl
 "[Title]" is optional and should be omitted if the exercise is a routine application or lacks a single unifying theme.
 
 Each exercise item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statements)
+1. [Page reference statement](#3-2-6-page-reference-statement)
 2. [Task](#2-4-5-tasks) statement
 
 #### 3.3.4. Embedded exercises
@@ -670,7 +667,7 @@ Use the following structure for the duplicate embedded exercise:
 1. "[Page-reference]" statement
 2. "[Exercise-reference]: [Page-reference]" statement
 
-"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statements). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
+"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statement). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
 
 #### 3.4.4. Preserve multi-part exercises
 
@@ -755,7 +752,6 @@ Page reference 10
 Page reference 10
 
 $ \forall \alpha, \beta, \lambda \in \mathbb{C} $
-
 $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
 <details>
