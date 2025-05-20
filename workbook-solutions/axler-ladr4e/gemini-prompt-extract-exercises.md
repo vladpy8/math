@@ -2,7 +2,7 @@
 
 ## 0. Command
 
-Read this prompt and follow the instructions according to specified command.
+Read this prompt and follow the instructions according to the specified command.
 
 Execute either:
 1. [Extraction of exercises](#3-extraction-of-exercises) from the source text.
@@ -67,7 +67,7 @@ Some statements are *explicitly* defined in this prompt to be **complex statemen
 - Continuity
 - Vector space being a subspace of another vector space
 
-Incorporate them into math symbolic expressions using the following format `$ \text{} $`. For example:
+Incorporate them into math symbolic expressions using the following format: `$ \text{} $`. For example:
 - `$ \text{is differentiable} $`
 - `$ \text{is continuous} $`
 - `$ \text{is a subspace of} $`
@@ -93,7 +93,7 @@ Special notation might be used, such as `\begin{aligned} .. \end{aligned}` for b
 If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines near special symbols, such as, but not limited to:
 - after `$$`
 - after `\\`
-- after `:`, `: \quad`, `: \`
+- after `:`, `: \quad`, `: \ `
 - after `, `, `, \quad`, `, \ `
 - after `\begin{...}`, `\begin{...} \`
 - after the last line of the MathJax block
@@ -121,13 +121,13 @@ For very special math terms, such as, but not limited to, the imaginary unit `$ 
 
 #### 2.2.3. Punctuation
 
-Don't put dots after MathJax blocks.
+Do not put dots after MathJax blocks.
 
-Don't put dots after Markdown headings.
+Do not put dots after Markdown headings.
 
 Use special punctuation symbols to separate logically independent parts of long MathJax block expressions. This might include, but is not limited to:
-- `$ : $` with meaning "such that", "then", "therefore"
-- `$ , $` with meaning "and", "as well as"
+- `$ : $` with the meaning "such that", "then", or "therefore"
+- `$ , $` with the meaning "and" or "as well as"
 
 #### 2.2.4. Capitalization
 
@@ -152,7 +152,7 @@ Use details sections to hide proofs of theorems, solutions of exercises or tasks
 
 Consider a details section as a complex statement. The internals of the details section consist of one or more internal sub-statements.
 
-Possible details summary titles are, but not limited to:
+Possible details summary titles include, but are not limited to:
 - Proof
 - Solution
 
@@ -261,7 +261,7 @@ Derivations are expressed using the following structures:
 
 "[Core-derivation]" is a formal derivation of the concept using a MathJax block expression.
 
-"[Linker]" is short wording connecting previous and immediate results with the current one. It might be, but is not limited to:
+"[Linker]" is short wording connecting previous and immediate results with the current one. It might include, but is not limited to:
 - "Thus,"
 - "Therefore,"
 - "Hence,"
@@ -296,7 +296,7 @@ Consider a theorem as a complex statement consisting of a sequence of:
 - `$ \implies $`
 - `$ \iff $`
 
-"[Short-description]" is a short plain text expression naming or framing the theorem. It might also contain a short explanation of the essence of the theorem and an inline version of variables definitions if "[Core-theorem]" is too long and complex to afford it as part of it.
+"[Short-description]" is a short plain text expression naming or framing the theorem. It might also contain a short explanation of the essence of the theorem and an inline version of variables definitions if "[Core-theorem]" is too long and complex to include them.
 
 "[Proof]" of a theorem is a statement that is expressed using a details section. A proof consists of one or more internal statements such as variables declarations, derivations, and possibly other types of statements.
 
@@ -438,9 +438,9 @@ Find distinct square roots of $ i $.
 
 The entire statement represents a single task statement with declaration and solution.
 
-The solution in details section is comprised of a sequence of derivations statements one naturally following from the other.
+The solution in the details section is comprised of a sequence of derivation statements, one naturally following from the other.
 
-The last statement is verification of the solution, which might be considered as an evolved derivation, connecting the solution with the original task.
+The last statement is a verification of the solution, which might be considered an evolved derivation, connecting the solution with the original task.
 
 ```markdown
 
@@ -536,7 +536,7 @@ Extract the relevant [content](#3-3-extraction-content) from the source text.
 
 Rewrite and reiterate as many times as necessary to follow the [extraction rules](#3-extraction-of-exercises).
 
-Provide the [output document](#3-2-4-output-document) as markdown file.
+Provide the [output document](#3-2-3-output-document) as a Markdown file.
 
 ### 3.2. Reusable terms
 
@@ -546,7 +546,7 @@ The source text is the original text from which the exercises and relevant infor
 
 #### 3.2.2. Scope of the extraction
 
-The scope of the extraction is the specific exercise(s), task(s), section(s), or chapter(s) of the source text. Depends on the command and the context.
+The scope of the extraction is the specific exercise(s), task(s), section(s), or chapter(s) of the source text. It depends on the command and the context.
 
 #### 3.2.3. Output document
 
@@ -554,7 +554,7 @@ The output document is a single Markdown file containing the extracted content.
 
 #### 3.2.4. "[Title]" statement
 
-"[Title]" is compact and declarative statement that captures the essence of the content.
+"[Title]" is a compact and declarative statement that captures the essence of the content.
 
 If "[Title]" is not provided in the source text and yet is required, create one based on the content. If "[Title]" is provided, adapt it to the style guidelines.
 
@@ -571,11 +571,11 @@ As any statement, "[Title]" must be a short, descriptive, compact, and declarati
 
 If "[Label]" is not provided and yet is required, prefer plain numerical labels.
 
-If "[Label]" is provided, adapt it to the style guidelines. Capitalize letters, remove punctuation and non-relevant symbols.
+If "[Label]" is provided, adapt it to the style guidelines. Capitalize letters, remove punctuation and irrelevant symbols.
 
 #### 3.2.6. "[Page-reference]" statement
 
-"[Page-reference]" is an statement used to indicate the location of the original content in the source text.
+"[Page-reference]" is a statement used to indicate the location of the original content in the source text.
 
 It must follow the format:
 - "Page reference [Page-number]"
@@ -583,19 +583,19 @@ It must follow the format:
 
 "[Page-number]" is the page number in the source text where the content is located.
 
-"[Note]" is an optional note that might be used to indicate the type of content. Depends on the context.
+"[Note]" is an optional note that might be used to indicate the type of content. It depends on the context.
 
 ### 3.3. Extraction content
 
-The output document comprises from an ordered sequence of statements.
+The output document comprises an ordered sequence of statements.
 
 #### 3.3.1. Sections
 
-Each section content must be preceded by a corresponding heading statements of the format:
+The content of each section must be preceded by corresponding heading statements in the format:
 1. `# Chapter [Label]. [Title]`
-2. `## Section [Label]. [Title].`
+2. `## Section [Label]. [Title]`
 
-Don't adapt the title of the chapter or section to the style guidelines.
+Do not adapt the title of the chapter or section to the style guidelines.
 
 Each section block in the output document should consist of the following sub-blocks in order:
 1. [Relevant definitions](#3-3-2-relevant-definitions)
@@ -606,7 +606,7 @@ Each section block in the output document should consist of the following sub-bl
 
 Relevant definitions are complex statements containing definitions that are crucial for declaring or solving the extracted exercises.
 
-Don't extract non-relevant definitions.
+Do not extract non-relevant definitions.
 
 All relevant definitions must be presented under the heading `### Relevant definitions`.
 
@@ -619,23 +619,23 @@ Each definition item must consist of:
 
 #### 3.3.3. Exercises
 
-Exercise is a complex statement representing a problem, question or task from a formal numbered list at the end of a chapter or section in the source text.
+An exercise is a complex statement representing a problem, question, or task from a formal numbered list at the end of a chapter or section in the source text.
 
-Put all exercises under the heading `### Exercises [Label]`. Where `[Label]` is the label of the section in the source text.
+Put all exercises under the heading `### Exercises [Label]`, where `[Label]` is the label of the section in the source text.
 
-Put individual exercise items under the subheading `#### Exercise [Label]. [Title]`. Where `[Label]` is the label of the exercise in the source text.
+Put individual exercise items under the subheading `#### Exercise [Label]. [Title]`, where `[Label]` is the label of the exercise in the source text.
 
 "[Title]" is optional and should be omitted if the exercise is a routine application or lacks a single unifying theme.
 
 Each exercise item must consist of:
 1. [Page reference statement](#3-2-6-page-reference-statement)
-3. [Task](#2-4-5-tasks) statement
+2. [Task](#2-4-5-tasks) statement
 
 #### 3.3.4. Embedded exercises
 
 Embedded exercises are incorporated into the main narrative of the source text, rather than from a formal list of exercises. Otherwise, they are similar to exercises.
 
-Embedded exercises are often phrased in the source text as suggestions or checks for the reader using such phrases, but not limited to:
+Embedded exercises are often phrased in the source text as suggestions or checks for the reader using phrases such as, but not limited to:
 - "as you should verify..."
 - "the reader should check..."
 - "explain that..."
@@ -648,7 +648,7 @@ Put each embedded exercise item under the subheading `#### Embedded exercise [La
 
 #### 3.4.1. Omit solutions
 
-Solutions and proofs must be omitted. Put ellipsis under the details section.
+Solutions and proofs must be omitted. Put an ellipsis within the details section.
 
 #### 3.4.2. Do not imitate the source text
 
@@ -656,26 +656,26 @@ Do not follow the source text in terms of formatting, structure, or content. It 
 
 #### 3.4.3. Do not duplicate exercises
 
-If embedded exercise duplicates or has complete overlap with an exercise, omit the contents of the embedded exercise.
+If an embedded exercise duplicates or has complete overlap with an exercise, omit the contents of the embedded exercise.
 
-Use following structure for the duplicate embedded exercise:
+Use the following structure for the duplicate embedded exercise:
 1. "[Page-reference]" statement
 2. "[Exercise-reference]: [Page-reference]" statement
 
-"[Exercise-reference]" is [page reference](#3-2-6-page-reference-statement) "[Note]" expression. Use following format: "See exercise [Label]". Wrap it into markdown link to the specified exercise in the output document.
+"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statement). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
 
 #### 3.4.4. Preserve multi-part exercises
 
 Some exercises might consist of multiple parts. These might be either clear parts of the exercise labeled by the source text or distinguishable sub-theorem or sub-task statements to be proven or solved, according to the context.
 
-"[Multi-part-solution]" exercises are these which contain multiple interconnected parts relevant to a single unifying task statement of the exercise, such as, but not limited to:
+"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying task statement of the exercise, such as, but not limited to:
 - A set of properties to be proven for an object to belong to a certain class
 - A set of sub-statements of the theorem to be proven
 - A set of well-known steps to be followed in the solution of a task
 
 Each "[Multi-part-solution]" exercise must contain a single task statement. Details sections of such exercises must be split into sub-exercise items.
 
-"[Multi-task]" exercises contain clear labeling of the parts in source text, such as, but not limited to:
+"[Multi-task]" exercises contain clear labeling of their parts in the source text, such as, but not limited to:
 - A, B, C
 - 1, 2, 3
 
@@ -683,15 +683,15 @@ Each "[Multi-part-solution]" exercise must contain a single task statement. Deta
 
 Consider each sub-exercise item as a complex statement.
 
-Put each sub-exercise item wether it is in details section or in the body of unifying exercise under its own subheading using the format `##### [Label]. [Title]`.
+Put each sub-exercise item, whether it is in the details section or in the body of the unifying exercise, under its own subheading using the format `##### [Label]. [Title]`.
 
 Do not omit the details section of the unifying exercise. Omit the details section of the sub-exercise items.
 
 #### 3.4.5. Unwrap references
 
-Some exercises might contain references to pieces of contents of the source text, which are not part of any exercise or definition. In such cases, it's imperative to follow the references and extract the referenced content according to rules of this prompt.
+Some exercises might contain references to pieces of content in the source text that are not part of any exercise or definition. In such cases, it is imperative to follow the references and extract the referenced content according to the rules of this prompt.
 
-Extracted content must be relevant to the exercise and must be placed according the document structure.
+Extracted content must be relevant to the exercise and must be placed according to the document structure.
 
 ---
 
@@ -713,11 +713,11 @@ The key fragments presented here comply with the style guidelines. They are comp
 
 ### Relevant definitions
 
-#### 1. Complex numbers
+#### Definition 1. Complex numbers
 
 ... Definitions omitted ...
 
-#### 2. Coordinate vectors $ F^n $
+#### Definition 2. Coordinate vectors $ F^n $
 
 Page reference 6
 
@@ -754,7 +754,7 @@ $$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
 
 <details>
 <summary>Proof</summary>
-
+...
 </details>
 
 ... Rest of the exercises omitted ...
