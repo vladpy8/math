@@ -58,13 +58,9 @@ Let $ \alpha = a_r + a_i \, i $ and $ \beta = b_r + b_i \, i $.
 $$
 \begin{aligned}
 
-\alpha + \beta &= (a_r + a_i \, i) + (b_r + b_i \, i) \\
-
-&= (a_r + b_r) + (a_i + b_i) \, i \\
+\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
 
 &= (b_r + a_r) + (b_i + a_i) \, i \\
-
-&= (b_r + b_i \, i) + (a_r + a_i \, i) \\
 
 &= \beta + \alpha
 
@@ -88,9 +84,7 @@ Let $ \alpha = a_r + a_i \, i $, $ \beta = b_r + b_i \, i $, and $ \lambda = l_r
 $$
 \begin{aligned}
 
-(\alpha + \beta) + \lambda &= ((a_r + a_i \, i) + (b_r + b_i \, i)) + (l_r + l_i \, i) \\
-
-&= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
+(\alpha + \beta) + \lambda &= ((a_r + b_r) + (a_i + b_i) \, i) + (l_r + l_i \, i) \\
 
 &= ((a_r + b_r) + l_r) + ((a_i + b_i) + l_i) \, i \\
 
@@ -130,9 +124,9 @@ $$
 
 &= (a_r(b_r l_r - b_i l_i) - a_i(b_r l_i + b_i l_r)) + (a_r(b_r l_i + b_i l_r) + a_i(b_r l_r - b_i l_i)) \, i \\
 
-&= (a_r + a_i \, i)((b_r l_r - b_i l_i) + (b_r l_i + b_i l_r) \, i) \\
+&= (a_r + a_i \, i) ((b_r l_r - b_i l_i) + (b_r l_i + b_i l_r) \, i) \\
 
-&= (a_r + a_i \, i)((b_r + b_i \, i)(l_r + l_i \, i)) \\
+&= (a_r + a_i \, i) ((b_r + b_i \, i)(l_r + l_i \, i)) \\
 
 &= \alpha (\beta \lambda)
 
@@ -156,9 +150,9 @@ Let $ \alpha = a_r + a_i \, i $, $ \beta = b_r + b_i \, i $, and $ \lambda = l_r
 $$
 \begin{aligned}
 
-\lambda  (\alpha + \beta) &= (l_r + l_i \, i)((a_r + b_r) + (a_i + b_i) \, i) \\
+\lambda (\alpha + \beta) &= (l_r + l_i \, i) ((a_r + b_r) + (a_i + b_i) \, i) \\
 
-&= (l_r(a_r + b_r) - l_i(a_i + b_i)) + (l_r(a_i + b_i) + l_i(a_r + b_r)) \, i \\
+&= (l_r (a_r + b_r) - l_i (a_i + b_i)) + (l_r (a_i + b_i) + l_i (a_r + b_r)) \, i \\
 
 &= (l_r a_r - l_i a_i + l_r b_r - l_i b_i) + (l_r a_i + l_i a_r + l_r b_i + l_i b_r) \, i \\
 
@@ -182,17 +176,28 @@ $$ \forall \alpha \in \mathbb{C} , \quad \exist \ \beta \in \mathbb{C} : \quad \
 <details>
 <summary>Proof</summary>
 
-$$ \alpha + \beta = (a_r + b_r) + (a_i + b_i) \, i = 0 $$
+Let $ \alpha = a_r + a_i \, i $. Seek $ \beta = b_r + b_i \, i $.
 
-One complex number equation leads to two real number equations
+$$ (a_r + b_r) + (a_i + b_i) \, i = 0 + 0 \, i $$
 
-$$ a_r + b_r = 0 \\  a_i + b_i = 0 $$
+This yields a system of real equations:
+$$
+\begin{aligned}
+a_r + b_r &= 0 \\
+a_i + b_i &= 0
+\end{aligned}
+$$
 
-Resolving
+Solving for $ b_r $ and $ b_i $:
+$$
+\begin{aligned}
+b_r &= -a_r \\
+b_i &= -a_i
+\end{aligned}
+$$
 
-$$ b_r = -a_r, \quad b_i = -a_i $$
-
-$$ \beta = (-a_r) + (-a_i) \, i $$
+Thus,
+$$ \beta = -a_r - a_i \, i $$
 
 </details>
 
@@ -205,27 +210,28 @@ $$ \forall \alpha \in \mathbb{C} , \quad \alpha \neq 0 , \quad \exist \ \beta \i
 <details>
 <summary>Proof</summary>
 
-$$ \alpha \beta = a_r b_r - a_i b_i + (a_r b_i + a_i b_r) \, i = 1 + 0 \, i $$
+Let $ \alpha = a_r + a_i \, i , \ a_r \neq 0, \ a_i \neq 0 $. Let $ \beta = b_r + b_i \, i $.
 
-One complex number equation leads to two real number equations
+$$ (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i = 1 + 0 \, i $$
 
+This yields a system of real equations:
 $$
-a_r b_r - a_i b_i = 1 \\
-a_r b_i + a_i b_r = 0
+\begin{aligned}
+a_r b_r - a_i b_i &= 1 \\
+a_i b_r + a_r b_i &= 0
+\end{aligned}
 $$
 
-Adding this equations together after multiplication of the first one by $ a_r $ and the second one by $ a_i $
-
+Multiplying the first equation by $ a_r $, the second by $ a_i $, and adding them together:
 $$ a_r^2 b_r - a_r a_i b_i + a_i a_r b_i + a_i^2 b_r = a_r $$
 
-Resolving $ b_r $ and $ b_i $
-
+Resolving $ b_r $ and $ b_i $:
 $$
 b_r = \frac{a_r}{a_r^2 + a_i^2} \\
 b_i = -\frac{a_i}{a_r^2 + a_i^2}
 $$
 
-Verifying
+Verifying:
 
 $$
 \begin{aligned}
@@ -274,6 +280,7 @@ $$
 
 $$
 \begin{aligned}
+
 \alpha^3 &= \left( \frac{-1 - \sqrt{3} \, i}{2} \right) \left( \frac{-1 + \sqrt{3} \, i}{2} \right) \\
 
 &= \frac{(-1 - \sqrt{3} \, i)(-1 + \sqrt{3} \, i)}{4} \\
@@ -299,49 +306,42 @@ $$ \alpha^2 = i $$
 <details>
 <summary>Solution</summary>
 
+Let $ \alpha = a_r + a_i \, i $.
+
 $$
 \begin{aligned}
-
-(a_r + a_i \, i)^2 = i \\
-
-a_r^2 - a_i^2 + 2 a_r a_i \, i = i \\
-
+(a_r + a_i \, i)^2 &= i \\
+a_r^2 - a_i^2 + 2 a_r a_i \, i &= i \\
 \end{aligned}
 $$
 
 One complex number equation leads to two real number equations
-
 $$
 a_r^2 - a_i^2 = 0 \\
 2 a_r a_i \, i = i
 $$
 
 From the first equation follows
-
 $$
 |a_r| = |a_i|
 $$
 
 Second one leads to
-
 $$
 a_r a_i > 0 \\
 2 |a_r| |a_i| = 1
 $$
 
-Thus
-
+Thus,
 $$ |a_r| = |a_i| = \frac{1}{\sqrt2} \\ $$
 
-And finally
-
+And finally,
 $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sqrt2} $$
 
-The square roots of $ i $ are
-
+The square roots of $ i $ are:
 $$ \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad \ \text{or} \quad -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i $$
 
-Verifying
+Verifying each of the solutions.
 
 $$
 \begin{aligned}
@@ -354,7 +354,6 @@ $$
 
 \end{aligned}
 $$
-
 
 $$
 \begin{aligned}
@@ -379,6 +378,8 @@ $$ (4, -3, 1, 7) + 2x = (5, 9, -6, 8) $$
 
 <details>
 <summary>Solution</summary>
+
+Let $ x = (x_1, x_2, x_3, x_4) $.
 
 $$
 \begin{aligned}
@@ -462,6 +463,8 @@ $$ (x + y) + z = x + (y + z) $$
 <details>
 <summary>Proof</summary>
 
+Let $ x = (x_1, x_2, \ldots, x_n) $, $ y = (y_1, y_2, \ldots, y_n) $, and $ z = (z_1, z_2, \ldots, z_n) $.
+
 $$
 \begin{aligned}
 
@@ -490,7 +493,7 @@ $$ (a b) x = a (b x) $$
 <details>
 <summary>Proof</summary>
 
-Let $ x = (x_1, \ldots, x_n) $.
+Let $ x = (x_1, x_2, \ldots, x_n) $.
 
 $$
 \begin{aligned}
@@ -518,7 +521,7 @@ $$ 1 x = x $$
 <details>
 <summary>Proof</summary>
 
-Let $ x = (x_1, \ldots, x_n) $.
+Let $ x = (x_1, x_2, \ldots, x_n) $.
 
 $$
 \begin{aligned}
@@ -543,6 +546,8 @@ $$ \lambda (x + y) = \lambda x + \lambda y $$
 
 <details>
 <summary>Proof</summary>
+
+Let $ x = (x_1, x_2, \ldots, x_n) $ and $ y = (y_1, y_2, \ldots, y_n) $.
 
 $$
 \begin{aligned}
@@ -572,7 +577,7 @@ $$ (a + b) x = ax + bx $$
 <details>
 <summary>Proof</summary>
 
-Let $ x = (x_1, \ldots, x_n) $.
+Let $ x = (x_1, x_2, \ldots, x_n) $.
 
 $$
 \begin{aligned}
