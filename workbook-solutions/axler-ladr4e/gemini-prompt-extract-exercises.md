@@ -76,7 +76,7 @@ Consider the `$ \text{} $` format as proper mathematical notation.
 
 #### 2.1.5. Headings
 
-Headings are Markdown heading statements that indicate the structure of the document.
+Headings are Markdown heading [statements](#211-statements-and-expressions) that indicate the structure of the document.
 
 ### 2.2. Syntax and semantics
 
@@ -105,7 +105,7 @@ If either the source code of a MathJax block is too wide to fit the screen or it
 - after the last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
-If the source code of one statement consists of more than 7 lines, replace single newlines with double newlines inside it.
+If the source code of one [statement](#211-statements-and-expressions) consists of more than 7 lines, replace single newlines with double newlines inside it.
 
 #### 2.2.2. Spacing and indentation
 
@@ -164,7 +164,7 @@ Possible details summary titles include, but are not limited to:
 
 #### 2.2.6. Ellipsis
 
-Use an ellipsis `...` to indicate that content is omitted.
+Use an ellipsis `...` to indicate that content in a sequence of elements is omitted.
 
 ### 2.3. Compactness and declarative presentation
 
@@ -243,7 +243,7 @@ Declare variables using the following structures:
 - "Set [Core-definition]"
 - "[Core-definition]"
 
-"[Notation]" and "[Core-definition]" are the same as in the [Definitions](#2-4-1-definitions) section, except they are less general and thus more tied to the context.
+"[Notation]" and "[Core-definition]" are the same as in the [Definitions](#241-definitions) section, except they are less general and thus more tied to the context.
 
 "[Core-definition]", in the case of variables, may be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
 - `$ a = value $`
@@ -262,7 +262,7 @@ Each derivation statement should contain ideas that are closely interconnected a
 
 Most frequently, derivations are the statements that may contain some imperative wording.
 
-Derivations should be given lower priority with regard to the merging strategy described in [Section 2.3.2.](#2-3-2-compact-document).
+Derivations should be given lower priority with regard to the merging strategy described in [Section 2.3.2.](#232-compact-document).
 
 Derivations are expressed using the following structures:
 - "[Linker] [Core-derivation]"
@@ -288,12 +288,12 @@ Derivations are expressed using the following structures:
 This is a more general term encompassing theorems, lemmas, corollaries, and other similar statements.
 
 Consider a theorem as a complex statement consisting of a sequence of:
-1. "[Definitions]"
-2. "[Variable-declarations]"
+1. "[Definitions](#241-definitions)"
+2. "[Variable-declarations](#242-variables-declarations)"
 3. "[Theorem-declaration]"
 4. "[Proof]"
 
-"[Definitions]" consists of [Definitions](#2-4-1-definitions) statements. "[Variable-declarations]" consists of [Variables declarations](#2-4-2-variables-declarations) statements.
+"[Definitions]" consists of [Definitions](#241-definitions) statements. "[Variable-declarations]" consists of [Variables declarations](#242-variables-declarations) statements.
 
 "[Theorem-declaration]" is a statement that is expressed using the following structures:
 - "[Short-description]: [Core-theorem]"
@@ -314,7 +314,7 @@ Consider a theorem as a complex statement consisting of a sequence of:
 
 Tasks are statements that represent exercises, problems, specific instructions, or open questions.
 
-Theorems are a special case of tasks.
+Theorems are a special case of [tasks](#245-tasks).
 
 By and large, tasks should be expressed as complex statements consisting of a sequence of:
 1. "[Definitions]"
@@ -535,15 +535,15 @@ $$
 
 ### 3.1. Command
 
-Read the source text parts which are specified by the [extraction scope](#3-2-2-scope-of-the-extraction).
+Read the source text parts which are specified by the [extraction scope](#322-scope-of-the-extraction).
 
-Identify the [exercises](#3-3-exercises), [embedded exercises](#3-3-4-embedded-exercises), and [relevant definitions](#3-3-2-relevant-definitions).
+Identify the [exercises](#33-exercises), [embedded exercises](#334-embedded-exercises), and [relevant definitions](#332-relevant-definitions).
 
-Extract the relevant [content](#3-3-extraction-content) from the source text.
+Extract the relevant [content](#33-extraction-content) from the source text.
 
 Rewrite and reiterate as many times as necessary to ensure adherence to the [extraction rules](#3-extraction-of-exercises).
 
-Provide the [output document](#3-2-3-output-document) as a Markdown file.
+Provide the [output document](#323-output-document) as a Markdown file.
 
 ### 3.2. Reusable terms
 
@@ -605,9 +605,9 @@ The content of each section must be preceded by corresponding heading statements
 Do not adapt the title of the chapter or section to the style guidelines.
 
 Each section block in the output document should consist of the following sub-blocks in order:
-1. [Relevant definitions](#3-3-2-relevant-definitions)
-2. [Embedded exercises](#3-3-4-embedded-exercises)
-3. [Exercises](#3-3-3-exercises)
+1. [Relevant definitions](#332-relevant-definitions)
+2. [Embedded exercises](#334-embedded-exercises)
+3. [Exercises](#333-exercises)
 
 #### 3.3.2. Relevant definitions
 
@@ -620,9 +620,9 @@ All relevant definitions must be presented under the heading `### Relevant defin
 Each separate definition or group of relevant and interconnected definitions must be presented as a separate item under its own subheading using the format `#### Definition [Label]. [Title]`. Label definitions numerically.
 
 Each definition item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statement)
-2. [Variables declarations](#2-4-2-variables-declarations) statements, if necessary
-3. [Definition](#2-4-1-definitions) statements
+1. [Page reference statement](#326-page-reference-statement)
+2. [Variables declarations](#242-variables-declarations) statements, if necessary
+3. [Definition](#241-definitions) statements
 
 #### 3.3.3. Exercises
 
@@ -635,8 +635,8 @@ Put individual exercise items under the subheading `#### Exercise [Label]. [Titl
 "[Title]" is optional and should be omitted if the exercise is a routine application or lacks a single unifying theme.
 
 Each exercise item must consist of:
-1. [Page reference statement](#3-2-6-page-reference-statement)
-2. [Task](#2-4-5-tasks) statement
+1. [Page reference statement](#326-page-reference-statements)
+2. [Task](#245-tasks) statement
 
 #### 3.3.4. Embedded exercises
 
@@ -655,7 +655,7 @@ Put each embedded exercise item under the subheading `#### Embedded exercise [La
 
 #### 3.4.1. Omit solutions
 
-Solutions and proofs must be omitted. Put an ellipsis within the details section.
+Solutions and proofs must be omitted. Leave the details section empty.
 
 #### 3.4.2. Do not imitate the source text
 
@@ -669,98 +669,33 @@ Use the following structure for the duplicate embedded exercise:
 1. "[Page-reference]" statement
 2. "[Exercise-reference]: [Page-reference]" statement
 
-"[Exercise-reference]" is the [Note] expression from a [page reference statement](#3-2-6-page-reference-statement). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
+"[Exercise-reference]" is the [Note] expression from a [page reference statement](#326-page-reference-statements). Use the following format: "See exercise [Label]". Wrap it in a Markdown link to the specified exercise in the output document.
 
 #### 3.4.4. Preserve multi-part exercises
 
-Some exercises may consist of multiple parts. These may be either clear parts of the exercise labeled by the source text or distinguishable sub-theorem or sub-task statements to be proven or solved, according to the context.
+Some exercises may consist of multiple parts. These may be either distinct parts of the exercise, labeled as such in the source text, or distinguishable sub-theorem or sub-task statements requiring proof or solution.
 
-"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying task statement of the exercise, such as, but not limited to:
+Ultimately, two types of multi-part exercises are possible:
+1. "[Multi-part-solution]"
+2. "[Multi-task]"
+
+"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying [task](#245-tasks) [statement](#211-statements-and-expressions) of the exercise, such as, but not limited to:
 - A set of properties to be proven for an object to belong to a certain class
 - A set of sub-statements of the theorem to be proven
 - A set of well-known steps to be followed in the solution of a task
 
-Each "[Multi-part-solution]" exercise must contain a single task statement. Details sections of such exercises must be split into sub-exercise items.
+Each "[Multi-part-solution]" exercise must contain a single enclosing task statement and multiple sub-[task](#245-tasks) [statements](#211-statements-and-expressions) within the details section of that enclosing task statement.
 
-"[Multi-task]" exercises contain clear labeling of their parts in the source text, such as, but not limited to:
-- A, B, C
-- 1, 2, 3
+"[Multi-task]" exercises contain clear labeling of their parts in the source text, such as, but not limited to A, B, C, or 1, 2, 3.
 
-"[Multi-task]" exercises must be split into sub-exercise items. In this case, each sub-exercise item must contain its own task statement, as well as a details section.
+Each "[Multi-task]" exercise must contain multiple top-level task statements.
 
-Consider each sub-exercise item as a complex statement.
+Put each sub-task item, whether it is in the details section or in the body of the unifying exercise, under its own subheading using the format `##### [Label]. [Title]`.
 
-Put each sub-exercise item, whether it is in the details section or in the body of the unifying exercise, under its own subheading using the format `##### [Label]. [Title]`.
-
-Do not omit the details section of the unifying exercise. Omit the details section of the sub-exercise items.
+Do not omit the details section of the unifying exercise. Omit the details section of the sub-task statements.
 
 #### 3.4.5. Unwrap references
 
 Some exercises may contain references to pieces of content in the source text that are not part of any exercise or definition. In such cases, it is imperative to follow the references and extract the referenced content according to the rules of this prompt.
 
 Extracted content must be relevant to the exercise and must be placed according to the document structure.
-
-### 3.5. Examples
-
-The good examples comply with the style guidelines. Use them as a reference and for derivation of additional implicit guidelines and rules, if necessary.
-
-#### 3.5.1. Example. Key extraction content components
-
-##### Good example
-
-The key fragments presented here comply with the style guidelines. They are compact, declarative, and use MathJax blocks to represent the key mathematical statements.
-
-```markdown
-
-# Chapter 1. Vector spaces
-
-## Section 1A. $ \R^n $ and $ {\mathbb{C}}^n $
-
-### Relevant definitions
-
-#### Definition 1. Complex numbers
-
-... Definitions omitted ...
-
-#### Definition 2. Coordinate vectors $ F^n $
-
-Page reference 6
-
-Let $ F $ be a field of numbers.
-
-$ F^n $ is set of coordinate vectors over field $ F $:
-$$ F^n = \{ x: \quad \exist! \ x_1, x_2, \ldots, x_n \in F, \quad x = (x_1, x_2, \ldots, x_n) \} $$
-
-$ \forall x, y \in F^n $ and $ \forall \lambda \in F $
-
-$$
-\begin{aligned}
-
-x + y &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
-
-\lambda x &= (\lambda x_1, \lambda x_2, \ldots, \lambda x_n)
-
-\end{aligned}
-$$
-
-### Exercises 1A
-
-Page reference 10
-
-... Rest of the exercise omitted ...
-
-#### Exercise 1A.2. Associativity of addition of complex numbers
-
-Page reference 10
-
-$ \forall \alpha, \beta, \lambda \in \mathbb{C} $
-$$ (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) $$
-
-<details>
-<summary>Proof</summary>
-...
-</details>
-
-... Rest of the exercises omitted ...
-
-```
