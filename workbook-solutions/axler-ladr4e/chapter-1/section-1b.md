@@ -309,21 +309,13 @@ $$ -(-x) = x $$
 <summary>Proof</summary>
 
 $$
-
 \begin{aligned}
-
 -(-x) &= -(-x) + 0 \\
-
 &= -(-x) + (x + (-x)) \\
-
 &= (-(-x) + (-x)) + x \\
-
 &= 0 + x \\
-
 &= x
-
 \end{aligned}
-
 $$
 
 </details>
@@ -347,11 +339,8 @@ $$ \forall v \in V, \quad a v = 0 $$
 When $ a \ne 0 $, then according to page 15 (1.31)
 $$
 \begin{aligned}
-
 0 &= \frac{1}{a} \, 0 = \frac{1}{a} \, (a v) = (\frac{1}{a} \, a) \ v = 1 v \\
-
 &= v
-
 \end{aligned}
 $$
 
@@ -390,22 +379,16 @@ $$ \exist ! \ x \in V : \quad v + 3 x = w $$
 Let $ x, y \in V $
 $$
 \begin{aligned}
-
 v + 3 x &= w \\
-
 v + 3 y &= w
-
 \end{aligned}
 $$
 
 Then
 $$
 \begin{aligned}
-
 0 &= w - w = (v + 3 x) - (v + 3 y) = 3 x - 3 y \\
-
 &= 3 (x - y)
-
 \end{aligned}
 $$
 
@@ -450,11 +433,8 @@ $$ (V, +, \cdot) \vDash A_m \implies (V, +, \cdot) \vDash A $$
 $ \forall v \in V $
 $$
 \begin{aligned}
-
 0 &= 0 v = (1 + (-1)) v \\
-
 &= v + (-1) v
-
 \end{aligned}
 $$
 
@@ -474,13 +454,9 @@ Let addition on $ \R_{\infty} $ for $ \R \subseteq \R_{\infty} $ be defined as u
 $ \forall t \in \R $
 $$
 \begin{aligned}
-
 t + \infty &= \infty + t = \infty + \infty = \infty \\
-
 t + (-\infty) &= (-\infty) + t = (-\infty) + (-\infty) = -\infty \\
-
 \infty + (-\infty) &= (-\infty) + \infty = 0
-
 \end{aligned}
 $$
 
@@ -521,19 +497,12 @@ Then $ \R_{\infty} $ is not a vector space
 Associativity of addition doesn't hold
 
 $ \forall t \in \R $
-
 $$
-
 \begin{aligned}
-
 0 &= \infty + (-\infty) = (t + \infty) + (-\infty) \\
-
 &= t + (\infty + (-\infty)) = t + 0 \\
-
 &= t
-
 \end{aligned}
-
 $$
 
 </details>
@@ -574,13 +543,9 @@ $$ f + g = g + f $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 (f + g)(x) &= f(x) + g(x) \\
-
 &= g(x) + f(x) \\
-
 &= (g + f)(x)
-
 \end{aligned}
 $$
 
@@ -597,17 +562,11 @@ $$ (f + g) + h = f + (g + h) $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 ((f + g) + h)(x) &= (f + g)(x) + h(x) \\
-
 &= (f(x) + g(x)) + h(x) \\
-
 &= f(x) + (g(x) + h(x)) \\
-
 &= f(x) + (g + h)(x) \\
-
 &= (f + (g + h))(x)
-
 \end{aligned}
 $$
 
@@ -624,13 +583,9 @@ $$ (a b) f = a (b f) $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 ((a b) f)(x) &= (a b) f(x) \\
-
 &= a (b f(x)) \\
-
 &= (a (b f))(x)
-
 \end{aligned}
 $$
 
@@ -650,13 +605,9 @@ $$ f + 0 = f $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 (f + 0)(x) &= f(x) + 0(x) \\
-
 &= f(x) + 0 \\
-
 &= f(x)
-
 \end{aligned}
 $$
 
@@ -675,13 +626,9 @@ $$ g(x) = -f(x), \quad \forall x \in S $$
 Then
 $$
 \begin{aligned}
-
 (f + g)(x) &= f(x) + g(x) \\
-
 &= f(x) + (-f(x)) \\
-
 &= 0
-
 \end{aligned}
 $$
 
@@ -700,11 +647,8 @@ $$ 1 f = f $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 (1 f)(x) &= 1 \cdot f(x) \\
-
 &= f(x)
-
 \end{aligned}
 $$
 
@@ -721,15 +665,10 @@ $$ a (f + g) = a f + a g $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 (a (f + g))(x) &= a (f + g)(x) \\
-
 &= a (f(x) + g(x)) \\
-
 &= a f(x) + a g(x) \\
-
 &= (a f + a g)(x)
-
 \end{aligned}
 $$
 
@@ -746,13 +685,9 @@ $$ (a + b) f = a f + b f $$
 $ \forall x \in S $
 $$
 \begin{aligned}
-
 ((a + b) f)(x) &= (a + b) f(x) \\
-
 &= a f(x) + b f(x) \\
-
 &= (a f + b f)(x)
-
 \end{aligned}
 $$
 
@@ -792,17 +727,11 @@ $$ (u_1 + i \, v_1) + (u_2 + i \, v_2) = (u_2 + i \, v_2) + (u_1 + i \, v_1) $$
 <summary>Proof</summary>
 
 $$
-
 \begin{aligned}
-
 (u_1 + i \, v_1) + (u_2 + i \, v_2) &= (u_1 + u_2) + i \, (v_1 + v_2) \\
-
 &= (u_2 + u_1) + i \, (v_2 + v_1) \\
-
 &= (u_2 + i \, v_2) + (u_1 + i \, v_1)
-
 \end{aligned}
-
 $$
 
 </details>
@@ -878,13 +807,9 @@ $$ u + i \, v + 0 = u + i \, v $$
 
 $$
 \begin{aligned}
-
 (u + i \, v) + 0 &= (u + i \, v) + (0 + i \, 0) \\
-
 &= (u + 0) + i \, (v + 0) \\
-
 &= u + i \, v
-
 \end{aligned}
 $$
 
@@ -906,13 +831,9 @@ $$
 Then
 $$
 \begin{aligned}
-
 (u + i \, v) + ((-u) + i \, (-v)) &= (u - u) + i \, (v - v) \\
-
 &= 0 + i \, 0 \\
-
 &= 0
-
 \end{aligned}
 $$
 
@@ -928,11 +849,8 @@ $$ (1 + 0 \, i) (u + i \, v) = u + i \, v $$
 
 $$
 \begin{aligned}
-
 (1 + 0 \, i)(u + i \, v) &= (1 \cdot u - 0 \cdot v) + i \, (1 \cdot v + 0 \cdot u) \\
-
 &= u + i \, v
-
 \end{aligned}
 $$
 
