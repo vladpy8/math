@@ -238,13 +238,11 @@ $$
 
 \alpha \beta &= ( a_r + a_i \, i ) \left( \frac{a_r}{a_r^2 + a_i^2} - \frac{a_i}{a_r^2 + a_i^2} \, i \right) \\
 
-&= \left( a_r \cdot \frac{a_r}{a_r^2 + a_i^2} - a_r \cdot \frac{a_i}{a_r^2 + a_i^2} \, i + a_i \cdot \frac{a_r}{a_r^2 + a_i^2} \, i + a_i \cdot \frac{a_i}{a_r^2 + a_i^2} \, i^2 \right) \\
+&= \left( a_r \cdot \frac{a_r}{a_r^2 + a_i^2} - a_r \cdot \frac{a_i}{a_r^2 + a_i^2} \, i + a_i \cdot \frac{a_r}{a_r^2 + a_i^2} \, i - a_i \cdot \frac{a_i}{a_r^2 + a_i^2} \, i^2 \right) \\
 
-&= \left( \frac{a_r^2}{a_r^2 + a_i^2} - \frac{a_r a_i}{a_r^2 + a_i^2} \, i + \frac{a_r a_i}{a_r^2 + a_i^2} \, i - \frac{a_i^2}{a_r^2 + a_i^2} \right) \\
+&= \left( \frac{a_r^2}{a_r^2 + a_i^2} - \frac{a_r a_i}{a_r^2 + a_i^2} \, i + \frac{a_r a_i}{a_r^2 + a_i^2} \, i + \frac{a_i^2}{a_r^2 + a_i^2} \right) \\
 
-&= \left( \frac{a_r^2 - a_i^2}{a_r^2 + a_i^2} + \frac{a_r a_i - a_r a_i}{a_r^2 + a_i^2} \, i \right) \\
-
-&= \left( \frac{a_r^2 - a_i^2}{a_r^2 + a_i^2} \right) \\
+&= \left( \frac{a_r^2 + a_i^2}{a_r^2 + a_i^2} \right) \\
 
 &= 1
 

@@ -116,7 +116,7 @@ $$
 
 </details>
 
-#### Embedded exercise 2. Proof of $ F^∞ $ being vector space
+#### Embedded exercise 2. $ F^∞ $ is a vector space
 
 Page reference 13
 
