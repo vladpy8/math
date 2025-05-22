@@ -34,13 +34,13 @@ A **statement** refers to a piece of content, such as, but not limited to:
 - Plain text sentence with incorporated MathJax inline expressions `$ ... $`
 - One MathJax block expression `$$ ... $$`
 
-MathJax blocks might be incorporated into statements, but they must be presented at the end of the statement.
+MathJax blocks may be incorporated into statements, but they must be presented at the end of the statement.
 
-MathJax inline expressions `$ ... $` might be incorporated into any part of the statement.
+MathJax inline expressions `$ ... $` may be incorporated into any part of the statement.
 
 An **expression** is a logically and syntactically separate piece of a statement. Each statement consists of one or more expressions.
 
-Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub-statements, each of which is considered to be a separate statement.
+Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub-statements, each of which is considered a separate statement.
 
 #### 2.1.2. Plain text prose
 
@@ -62,7 +62,7 @@ Some statements are *explicitly* defined in this prompt to be **complex statemen
 
 #### 2.1.4. Math symbols surrogates
 
-**Math symbols surrogates** refer to any short and descriptive plain text prose representation of a math concept that is well known but doesn't have notation on its own or is too complex to be expressed promptly, such as, but not limited to:
+**Math symbols surrogates** refer to any short and descriptive plain text prose representation of a mathematical concept that is well-known but either lacks its own notation or is too complex for concise symbolic expression. Examples include, but are not limited to:
 - Differentiability
 - Continuity
 - Vector space being a subspace of another vector space
@@ -72,25 +72,29 @@ Incorporate them into math symbolic expressions using the following format: `$ \
 - `$ \text{is continuous} $`
 - `$ \text{is a subspace of} $`
 
-Consider the `$ \text{} $` format as a proper math notation.
+Consider the `$ \text{} $` format as proper mathematical notation.
+
+#### 2.1.5. Headings
+
+Headings are Markdown heading statements that indicate the structure of the document.
 
 ### 2.2. Syntax and semantics
 
 #### 2.2.1. Newlines
 
-Distinguish between rendered newlines and source code newlines.
+Distinguish between rendered newlines and source code newlines. If not directly specified, newlines refer to source code newlines.
 
 Put double newlines after every statement, except at the end of the document where a single newline should be used.
 
 Put a single newline before a MathJax block if it is part of a statement and appears at the end of it.
 
-If the rendered output of MathJax blocks is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This might be applied near symbols such as, but not limited to:
+If the rendered output of a MathJax block is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions. This rule may be applied near symbols such as, but not limited to:
 - after `$ : \\ $`
 - after `$ , \\ $`
 - before `$ \\ = $ `, or `$ \\ &= $`
 - after the logical end of an expression
 
-Special notation might be used, such as `\begin{aligned} .. \end{aligned}` for better readability. Judge based on the context. The most frequent scenario might include long equations where the first and last lines are short and represent the essence of an equation.
+Special notation, such as `\begin{aligned} .. \end{aligned}`, may be used for better readability. Judge based on the context. A frequent scenario might involve long equations where the first and last lines are short and represent the essence of the equation.
 
 If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple lines using single newlines near special symbols, such as, but not limited to:
 - after `$$`
@@ -101,7 +105,7 @@ If either the source code of a MathJax block is too wide to fit the screen or it
 - after the last line of the MathJax block
 - before `$$` if it is part of a statement at the end of it
 
-If the source code of statement consists of more than 7 lines, replace single newlines with double newlines inside it.
+If the source code of one statement consists of more than 7 lines, replace single newlines with double newlines inside it.
 
 #### 2.2.2. Spacing and indentation
 
@@ -113,13 +117,13 @@ Place spaces inside MathJax block expressions between `$$` and the expression it
 
 Place spaces between MathJax symbols.
 
-Use rendered MathJax symbols for spacing to improve readability between special math symbols and the rest of the expression. This might include, but is not limited to:
+Use rendered MathJax symbols for spacing to improve readability between mathematical symbols and the rest of the expression. This may include, but is not limited to:
 - `$ \exist \ $`
 - `$ \forall \, $`
 - `$ : \quad $`
 - `$ , \quad $`
 
-For very special math terms, such as, but not limited to, the imaginary unit `$ i $`, use `$ \, $` between the unit and the rest of the expression in the case of operations involving it.
+For certain mathematical terms, such as, but not limited to, the imaginary unit `$ i $`, use `$ \, $` between the unit and the rest of the expression in operations involving it.
 
 #### 2.2.3. Punctuation
 
@@ -127,7 +131,7 @@ Do not put dots after MathJax blocks.
 
 Do not put dots after Markdown headings.
 
-Use special punctuation symbols to separate logically independent parts of long MathJax block expressions. This might include, but is not limited to:
+Use special punctuation symbols to separate logically independent parts of long MathJax block expressions. This may include, but is not limited to:
 - `$ : $` with the meaning "such that", "then", or "therefore"
 - `$ , $` with the meaning "and" or "as well as"
 
@@ -164,25 +168,27 @@ Use an ellipsis `...` to indicate that content is omitted.
 
 ### 2.3. Compactness and declarative presentation
 
-#### 2.3.1. Compact symbols
+#### 2.3.1. Compact expressions and statements
 
-Use math symbols instead of words wherever possible.
+Avoid plain text prose wherever possible. Use math symbols, surrogates, MathJax inline and block expressions instead.
 
-#### 2.3.2. Compact statements
+A few words may be used at the beginning of a statement, or within it if they are absolutely necessary.
+
+An ideal compact statement consists of no words or very few words at the beginning, and a MathJax block expression encompassing multiple interconnected expressions at the end.
+
+#### 2.3.2. Compact document
 
 Reduce the size and quantity of statements as much as possible.
 
-Merge statements if they are closely related and might be expressed in a single statement. Reiterate and merge as many statements as possible.
+Merge statements if they are closely related and can be expressed in a single statement. Reiterate and merge as many statements as possible.
 
-Remove words from statements. Use math symbols, surrogates, notation, MathJax inline and block expressions instead. Few words are permitted at the beginning of a statement, or in the course of it if they are absolutely necessary.
-
-An ideal compact statement consists of no words or very few words at the beginning, and a MathJax block expression encompassing multiple interconnected expressions at the end.
+Put key ideas, milestones, theorem and task declarations, results, and final answers as standalone statements within MathJax block expressions.
 
 #### 2.3.3. Declarative statements and expressions
 
 Avoid imperative statements, expressions, and wording. The "imperative" usually conveys actions, commands, or instructions.
 
-An expression like "[Action] the [Result]" is less preferable than "[Result]". This might include, but is not limited to:
+An expression like "[Action] the [Result]" is less preferable than "[Result]". This may include, but is not limited to:
 - "[Prove] the [Theorem]" => "[Theorem]"
 - "[Show] that [Property] holds" => "[Property]"
 - "[Verify] the [Equality]" => "[Equality]"
@@ -190,12 +196,12 @@ An expression like "[Action] the [Result]" is less preferable than "[Result]". T
 
 The actual proof, solution, or explanation is or will be declared in the details section.
 
-However, imperative commands might be unavoidable wherever the final expression is not known yet, must stay hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. Then, "[Action] the [Result]" might still be rephrased to be as short as possible. This might include, but is not limited to:
+However, imperative commands may be unavoidable when the final expression is not yet known, must remain hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. In such cases, "[Action] the [Result]" should still be rephrased to be as short as possible. This may include, but is not limited to:
 - "[Find] the solution for [Equation]" => "Solve [Equation]"
 - "[Find] the [Variables] when [Expression] is true" => "Solve for [Variables]: [Expression]"
 - "[Verify] if the [Property] holds" => "Verify [Property]"
 
-Some imperative commands might look declarative, but still must be avoided. This might include, but is not limited to:
+Some imperative commands might appear declarative but must still be avoided. This may include, but is not limited to:
 - "[Proof] of the [Theorem]" => "[Theorem]"
 - "[Verification] of the [Property]" => "[Property]"
 
@@ -223,13 +229,13 @@ Express definitions of new concepts using the following structures:
 
 "[Short-description]" is a short plain text expression naming or framing the concept.
 
-"[Core-definition]" is a formal definition of the concept using a MathJax block expression. It might consist of set builder notation, declaring the set of objects along with their properties, representation, and possible operations.
+"[Core-definition]" is a formal definition of the concept using a MathJax block expression. It may consist of set builder notation, declaring the set of objects along with their properties, representation, and possible operations.
 
 Omit "[Core-definition]" for well-known concepts based on the context. For example, when key properties are not relevant and unlikely to be referenced.
 
 #### 2.4.2. Variables declarations
 
-Statements of this type introduce variables – symbolic representations of mathematical objects of interest. Variables might represent some auxiliary, intermediate, preconditioned, or scope objects.
+Statements of this type introduce variables – symbolic representations of mathematical objects of interest. Variables may represent auxiliary, intermediate, preconditioned, or scope-specific objects.
 
 Declare variables using the following structures:
 - "Let [Notation]: [Core-definition]"
@@ -239,22 +245,24 @@ Declare variables using the following structures:
 
 "[Notation]" and "[Core-definition]" are the same as in the [Definitions](#2-4-1-definitions) section, except they are less general and thus more tied to the context.
 
-"[Core-definition]", in the case of variables, might be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
+"[Core-definition]", in the case of variables, may be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
 - `$ a = value $`
 - `$ a, b \in S $`
 - `$ \forall c, d \in S $`
 - `$ \exists e \in S $`
 - `$ U \subseteq V $`
 
+If "[Core-definition]" contains multiple interconnected expressions, use a MathJax block expression.
+
 #### 2.4.3. Derivations
 
 Derivations are statements that encapsulate the process of deriving new knowledge from existing statements.
 
-Each derivation statement should contain ideas that are closely interconnected and logically follow each other. Each derivation step should make it apparent how the next step follows from the previous ones.
+Each derivation statement should contain ideas that are closely interconnected and logically follow each other. Each derivation step should clearly show how the next step follows from the previous ones.
 
-Most frequently, it is derivations that might contain a bit of imperative wording.
+Most frequently, derivations are the statements that may contain some imperative wording.
 
-Derivations should be a bit less prioritized with regard to the merging strategy described in [Section 2.3.2](#2-3-2-compact-statements).
+Derivations should be given lower priority with regard to the merging strategy described in [Section 2.3.2.](#2-3-2-compact-document).
 
 Derivations are expressed using the following structures:
 - "[Linker] [Core-derivation]"
@@ -263,7 +271,7 @@ Derivations are expressed using the following structures:
 
 "[Core-derivation]" is a formal derivation of the concept using a MathJax block expression.
 
-"[Linker]" is short wording connecting previous and immediate results with the current one. It might include, but is not limited to:
+"[Linker]" is a short phrase connecting previous and immediate results with the current one. It may include, but is not limited to:
 - "Thus,"
 - "Therefore,"
 - "Hence,"
@@ -271,7 +279,7 @@ Derivations are expressed using the following structures:
 - "This leads to:"
 - "From the previous statement follows:"
 
-"[Short-description]" is a short plain text expression acting as a bridge between other statements and the core derivation itself. It might contain references to particular statements or concepts, as well as very short and apparent explanations of the ideas behind the derivation.
+"[Short-description]" is a short plain text expression acting as a bridge between other statements and the core derivation itself. It may contain references to particular statements or concepts, as well as very short and clear explanations of the ideas behind the derivation.
 
 "[Long-description]" is a longer and significantly more verbose version of "[Short-description]" combined with the derivation itself being described using plain text prose and math symbols. It should be preferred only if it is impossible to represent the derivation in a MathJax block expression of "[Core-derivation]".
 
@@ -290,17 +298,17 @@ Consider a theorem as a complex statement consisting of a sequence of:
 "[Theorem-declaration]" is a statement that is expressed using the following structures:
 - "[Short-description]: [Core-theorem]"
 - "[Core-theorem]"
-- "Then [Core-theorem]", if "[Definitions]" and "[Variable-declarations]" are introduced
+- "Then [Core-theorem]", if "[Definitions]" and "[Variable-declarations]" have been introduced
 
-"[Core-theorem]" is a formal expression of the theorem using a MathJax block expression. It might consist of a series of sub-expressions connected with punctuation or operators, such as, but not limited to:
+"[Core-theorem]" is a formal expression of the theorem using a MathJax block expression. It may consist of a series of sub-expressions connected with punctuation or operators, such as, but not limited to:
 - `$ , $`
 - `$ : $`
 - `$ \implies $`
 - `$ \iff $`
 
-"[Short-description]" is a short plain text expression naming or framing the theorem. It might also contain a short explanation of the essence of the theorem and an inline version of variables definitions if "[Core-theorem]" is too long and complex to include them.
+"[Short-description]" is a short plain text expression naming or framing the theorem. It may also contain a short explanation of the essence of the theorem and an inline version of variable definitions if "[Core-theorem]" is too long and complex to include them.
 
-"[Proof]" of a theorem is a statement that is expressed using a details section. A proof consists of one or more internal statements such as variables declarations, derivations, and possibly other types of statements.
+"[Proof]" of a theorem is a statement that is expressed using a details section. A proof consists of one or more internal statements such as variable declarations, derivations, and possibly other types of statements.
 
 #### 2.4.5. Tasks
 
@@ -316,11 +324,11 @@ By and large, tasks should be expressed as complex statements consisting of a se
 
 This structure is mirrored from theorems. Therefore, all the rules for theorems apply here as well.
 
-Certain tasks require an imperative command to be present in the statement. In this case, the imperative command should be placed at the beginning of the "[Task-declaration]" statement and should be as short as possible. This might include, but is not limited to:
+Certain tasks require an imperative command to be present in the statement. In this case, the imperative command should be placed at the beginning of the "[Task-declaration]" statement and should be as short as possible. This may include, but is not limited to:
 - "Solve [Equation]"
 - "Find [Variable]: [Expression]"
 
-If a task doesn't contain solutions and the context doesn't imply for it to be present, then the internal statement of the details section of "[Solution]" should be replaced by an ellipsis.
+If a task doesn't contain a solution and the context doesn't imply that one should be present, then the internal statement of the details section of "[Solution]" should be left empty.
 
 ### 2.5. Examples
 
@@ -332,7 +340,7 @@ The good examples comply with the style guidelines. Use them as a reference and 
 
 These definitions are compact and declarative.
 
-Each statement uses few words at the beginning and a MathJax block expression at the end.
+Each statement uses a few words at the beginning and a MathJax block expression at the end.
 
 The first MathJax block is the definition of the imaginary unit $ i $.
 
@@ -380,7 +388,7 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 ##### Good example
 
-The statements of this example are compact and declarative. It contains no words, but only math symbols.
+The statements of this example are compact and declarative. They contain minimal plain text, relying primarily on math symbols.
 
 This example includes a theorem declaration statement as well as a details section for the proof. The proof consists of one derivation statement.
 
@@ -440,9 +448,9 @@ Find distinct square roots of $ i $.
 
 The entire statement represents a single task statement with declaration and solution.
 
-The solution in the details section is comprised of a sequence of derivation statements, one naturally following from the other.
+The solution in the details section is composed of a sequence of derivation statements, one naturally following from the other.
 
-The last statement is a verification of the solution, which might be considered an evolved derivation, connecting the solution with the original task.
+The last statement is a verification of the solution, which may be considered an evolved derivation, connecting the solution with the original task.
 
 ```markdown
 
@@ -533,7 +541,7 @@ Identify the [exercises](#3-3-exercises), [embedded exercises](#3-3-4-embedded-e
 
 Extract the relevant [content](#3-3-extraction-content) from the source text.
 
-Rewrite and reiterate as many times as necessary to follow the [extraction rules](#3-extraction-of-exercises).
+Rewrite and reiterate as many times as necessary to ensure adherence to the [extraction rules](#3-extraction-of-exercises).
 
 Provide the [output document](#3-2-3-output-document) as a Markdown file.
 
@@ -557,13 +565,13 @@ The output document is a single Markdown file containing the extracted content.
 
 If "[Title]" is not provided in the source text and yet is required, create one based on the content. If "[Title]" is provided, adapt it to the style guidelines.
 
-As any expression, "[Title]" must be a short, descriptive, compact, and declarative.
+Like any expression, "[Title]" must be short, descriptive, compact, and declarative.
 
 #### 3.2.5. "[Label]" expressions
 
-"[Label]" is a numeric or symbolic identifier expression referencing particular parts of the content in the source text.
+"[Label]" is a numeric or symbolic identifier expression that references particular parts of the content in the source text.
 
-"[Label]" might be provided in the source text, such as, but not limited to:
+"[Label]" may be provided in the source text, such as, but not limited to:
 - Exercise numbers
 - Exercise letters distinguishing sub-parts of an exercise
 - Section or chapter numbers
@@ -582,13 +590,7 @@ It must follow the format:
 
 "[Page-number]" is the page number in the source text where the content is located.
 
-"[Note]" is an optional note that might be used to indicate the type of content. It depends on the context.
-
-#### 3.2.7. Headings
-
-Headings are Markdown heading statements that indicate the structure of the document.
-
-As headings are statements, they must be followed by double newlines.
+"[Note]" is an optional note that may be used to indicate the type of content. It depends on the context.
 
 ### 3.3. Extraction content
 
@@ -671,7 +673,7 @@ Use the following structure for the duplicate embedded exercise:
 
 #### 3.4.4. Preserve multi-part exercises
 
-Some exercises might consist of multiple parts. These might be either clear parts of the exercise labeled by the source text or distinguishable sub-theorem or sub-task statements to be proven or solved, according to the context.
+Some exercises may consist of multiple parts. These may be either clear parts of the exercise labeled by the source text or distinguishable sub-theorem or sub-task statements to be proven or solved, according to the context.
 
 "[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying task statement of the exercise, such as, but not limited to:
 - A set of properties to be proven for an object to belong to a certain class
@@ -694,7 +696,7 @@ Do not omit the details section of the unifying exercise. Omit the details secti
 
 #### 3.4.5. Unwrap references
 
-Some exercises might contain references to pieces of content in the source text that are not part of any exercise or definition. In such cases, it is imperative to follow the references and extract the referenced content according to the rules of this prompt.
+Some exercises may contain references to pieces of content in the source text that are not part of any exercise or definition. In such cases, it is imperative to follow the references and extract the referenced content according to the rules of this prompt.
 
 Extracted content must be relevant to the exercise and must be placed according to the document structure.
 
