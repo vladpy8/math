@@ -59,6 +59,9 @@ Some statements are *explicitly* defined in this prompt to be **complex statemen
 - `$ : $` for "such that"
 - `$ \quad $` for quad space
 - `$ \ $` for space
+- `$ \implies $` for "implies"
+- `$ \iff $` for "if and only if"
+- `$ , $` for "and" or "as well as"
 
 #### 2.1.4. Math symbols surrogates
 
