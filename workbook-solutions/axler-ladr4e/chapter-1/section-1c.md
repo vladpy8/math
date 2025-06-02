@@ -8,7 +8,7 @@
 
 Page reference 20
 
-Let
+Let $ W $ and $ U $ be subspaces of $ F^3 $:
 $$
 U = \{ (x, 0, 0) \in F^3, \ x \in F \} \\
 W = \{ (0, y, 0) \in F^3, \ y \in F \}
@@ -20,19 +20,19 @@ $$ U + W = \{ (x, y, 0) \in F^3, \ x, y \in F \} $$
 <details>
 <summary>Proof</summary>
 
-Let
+Let arbitrary vectors $ u \in U $ and $ w \in W $ be defined as:
 $$
 u = (x, 0, 0) \in U, \ x \in F \\
 w = (0, y, 0) \in W, \ y \in F
 $$
 
-Each sum of vectors $ u + w $ can be expressed as:
+Sum of vectors $ u + w $ can be expressed as:
 $$ u + w = (x, 0, 0) + (0, y, 0) = (x, y, 0) $$
 
 Thus,
 $$ U + W \subseteq \{ (x, y, 0) \in F^3, \ x,y \in F \} $$
 
-Conversely, each coordinate vector in $ (x, y, 0) \in F^3 $ can be expressed as:
+Conversely, arbitrary coordinate vector in $ (x, y, 0) \in F^3 $ can be expressed as:
 $$ (x, y, 0) = (x, 0, 0) + (0, y, 0) = u + w $$
 
 Thus,
@@ -64,6 +64,11 @@ $$ 0 = 0 + 0 + \ldots + 0 \quad \in V_1 + V_2 + \ldots + V_n $$
 Let
 $$ v_1, u_1 \in V_1, \quad v_2, u_2 \in V_2, \quad \ldots, \quad v_n, u_n \in V_n $$
 
+$$
+(v_1 + v_2 + \ldots + v_n) \in (V_1 + V_2 + \ldots + V_n) \\
+(u_1 + u_2 + \ldots + u_n) \in (V_1 + V_2 + \ldots + V_n)
+$$
+
 Then,
 $$ (v_1 + v_2 + \ldots + v_n) + (u_1 + u_2 + \ldots + u_n) = (v_1 + u_1) + (v_2 + u_2) + \ldots + (v_n + u_n) $$
 
@@ -71,7 +76,7 @@ Since $ V_1, V_2, \ldots, V_n $ are subspaces of $ V $:
 $$ v_1 + u_1 \in V_1, \quad v_2 + u_2 \in V_2, \quad \ldots, \quad v_n + u_n \in V_n $$
 
 And
-$$ (v_1 + u_1) + (v_2 + u_2) + \ldots + (v_n + u_n) \quad \in V_1 + V_2 + \ldots + V_n $$
+$$ ((v_1 + u_1) + (v_2 + u_2) + \ldots + (v_n + u_n)) \in (V_1 + V_2 + \ldots + V_n) $$
 
 ##### 3. Closure under scalar multiplication
 
@@ -83,7 +88,7 @@ Since $ V_1, V_2, \ldots, V_n $ are subspaces of $ V $:
 $$ \lambda v_1 \in V_1, \quad \lambda v_2 \in V_2, \quad \ldots, \quad \lambda v_n \in V_n $$
 
 Then,
-$$ \lambda (v_1 + v_2 + \ldots + v_n) = \lambda v_1 + \lambda v_2 + \ldots + \lambda v_n \quad \in V_1 + V_2 + \ldots + V_n $$
+$$ (\lambda v_1 + \lambda v_2 + \ldots + \lambda v_n) \in (V_1 + V_2 + \ldots + V_n) $$
 
 </details>
 
@@ -91,7 +96,7 @@ $$ \lambda (v_1 + v_2 + \ldots + v_n) = \lambda v_1 + \lambda v_2 + \ldots + \la
 
 Page reference 22
 
-Let
+Let $ U $ and $ W $ be subspaces of $ F^3 $:
 $$
 U = \{ (x, y, 0) \in F^3, \ x, y \in F \} \\
 W = \{ (0, 0, z) \in F^3, \ z \in F \}
@@ -103,13 +108,13 @@ $$ F^3 = U \oplus W $$
 <details>
 <summary>Proof</summary>
 
-Let
+Let arbitrary vectors $ u \in U $ and $ w \in W $ be defined as:
 $$
 u = (x, y, 0) \in U, \ x, y \in F \\
 w = (0, 0, z) \in W, \ z \in F
 $$
 
-Then each sum of vectors $ u + w $ can be expressed as:
+Then sum of vectors $ u + w $ can be expressed as:
 $$ u + w = (x, y, 0) + (0, 0, z) = (x, y, z) $$
 
 Thus,
@@ -118,11 +123,13 @@ $$ U + W \subseteq F^3 $$
 Conversely, each coordinate vector in $ (x, y, z) \in F^3 $ can be *uniquely* expressed as:
 $$ (x, y, z) = (x, y, 0) + (0, 0, z) = u + w $$
 
+Uniqueness proof is obvious, if one assumes the opposite, and thus, not stated here.
+
 Thus,
 $$ F^3 \subseteq U + W $$
 
-Therefore,
-$$ F^3 = U + W $$
+Which, together with the uniqueness of representation, means that
+$$ F^3 = U \oplus W $$
 
 </details>
 
@@ -142,7 +149,7 @@ $$ F^n = V_1 \oplus V_2 \oplus \dots \oplus V_n $$
 <details>
 <summary>Proof</summary>
 
-Let
+Let arbitrary vectors $ v_1, v_2, \ldots, v_n $ be defined as:
 $$
 v_1 = (x_1, 0, \ldots, 0) \in V_1, \quad x_1 \in F \\
 v_2 = (0, x_2, 0, \ldots, 0) \in V_2, \quad x_2 \in F \\
@@ -150,7 +157,7 @@ v_2 = (0, x_2, 0, \ldots, 0) \in V_2, \quad x_2 \in F \\
 v_n = (0, 0, \ldots, 0, x_n) \in V_n, \quad x_n \in F
 $$
 
-Then each sum of vectors $ v_1 + v_2 + \ldots + v_n $ can be expressed as:
+Then sum of vectors $ v_1 + v_2 + \ldots + v_n $ can be expressed as:
 $$ v_1 + v_2 + \ldots + v_n = (x_1, x_2, \ldots, x_n) $$
 
 Thus,
@@ -159,11 +166,13 @@ $$ V_1 + V_2 + \ldots + V_n \subseteq F^n $$
 Conversely, each coordinate vector in $ (x_1, x_2, \ldots, x_n) \in F^n $ can be *uniquely* expressed as:
 $$ (x_1, x_2, \ldots, x_n) = (x_1, 0, \ldots, 0) + (0, x_2, \ldots, 0) + \ldots + (0, 0, \ldots, x_n) = v_1 + v_2 + \ldots + v_n $$
 
+Uniqueness proof is obvious, if one assumes the opposite, and thus, not stated here.
+
 Thus,
 $$ F^n \subseteq V_1 + V_2 + \ldots + V_n $$
 
-Therefore,
-$$ F^n = V_1 + V_2 + \ldots + V_n $$
+Which, together with the uniqueness of representation, means that
+$$ F^n = V_1 \oplus V_2 \oplus \ldots \oplus V_n $$
 
 </details>
 
@@ -177,7 +186,7 @@ Page reference 24
 
 $$ U_a = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2 x_2 + 3 x_3 = 0 \} $$
 
-Decide if $ U_a \ \text{is subspace of} F^3 $.
+Decide if $ U_a \ \text{is subspace of} \ F^3 $.
 
 <details>
 <summary>Solution</summary>
@@ -194,7 +203,7 @@ $$ 0 = 0 + 2 \cdot 0 + 3 \cdot 0 \quad \in U_a $$
 
 ###### 2. Closure under addition
 
-Let
+Let arbitrary vectors be defined as:
 $$
 u = (x_1, x_2, x_3) \in U_a \\
 v = (y_1, y_2, y_3) \in U_a
@@ -206,16 +215,15 @@ x_1 + 2 x_2 + 3 x_3 = 0 \\
 y_1 + 2 y_2 + 3 y_3 = 0
 $$
 
-Adding both equations:
+Adding both equations gives;
 $$ (x_1 + y_1) + 2 (x_2 + y_2) + 3 (x_3 + y_3) = 0 $$
 
 Thus,
-
 $$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \quad \in U_a $$
 
 ###### 3. Closure under scalar multiplication
 
-Let
+Let arbitrary vector and scalar be defined as:
 $$
 u = (x_1, x_2, x_3) \in U_a \\
 \lambda \in F
@@ -236,7 +244,7 @@ $$ \lambda x_1 + 2 \lambda x_2 + 3 \lambda x_3 = 0 \quad \in U_a $$
 
 $$ U_b = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2 x_2 + 3 x_3 = 4 \} $$
 
-Decide if $ U_b \ \text{is subspace of} F^3 $.
+Decide if $ U_b \ \text{is subspace of} \ F^3 $.
 
 <details>
 <summary>Solution</summary>
@@ -255,7 +263,7 @@ $$ 0 + 2 \cdot 0 + 3 \cdot 0 \neq 4  $$
 
 $$ U_c = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 x_2 x_3 = 0 \} $$
 
-Decide if $ U_c \ \text{is subspace of} F^3 $.
+Decide if $ U_c \ \text{is subspace of} \ F^3 $.
 
 <details>
 <summary>Solution</summary>
@@ -285,7 +293,7 @@ $$ u + v + w = (1, 1, 1) \notin U_c $$
 
 $$ U_d = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 = 5 x_3 \} $$
 
-Decide if $ U_d \ \text{is subspace of} F^3 $.
+Decide if $ U_d \ \text{is subspace of} \ F^3 $.
 
 <details>
 <summary>Solution</summary>
@@ -294,7 +302,7 @@ U_d is a subspace of $ F^3 $.
 
 ###### 1. Additive identity
 
-Let
+Let arbitrary vector be defined as:
 $$ u = (0, 0, 0) \in U_d $$
 
 Then,
@@ -302,7 +310,7 @@ $$ 0 = 5 \cdot 0 \quad \in U_d $$
 
 ###### 2. Closure under addition
 
-Let
+Let arbitrary vectors be defined as:
 $$
 u = (x_1, x_2, x_3) \in U_d \\
 v = (y_1, y_2, y_3) \in U_d
@@ -322,7 +330,7 @@ $$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \quad \in U_d $$
 
 ###### 3. Closure under scalar multiplication
 
-Let
+Let arbitrary vector and scalar be defined as:
 $$
 u = (x_1, x_2, x_3) \in U_d \\
 \lambda \in F
