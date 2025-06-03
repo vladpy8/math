@@ -120,7 +120,7 @@ $$
 
 Page reference 13
 
-Repeat proofs for $ F^n $ being vector space omitting the last element which comes after "$ \ldots $" everywhere explicit form of vector is used
+Repeat proofs for $ F^n $ being vector space omitting the last element which comes after "$ \ldots $" everywhere explicit form of vector is used.
 
 #### Embedded exercise 3. Proof of $ F^S $ being vector space
 
@@ -324,11 +324,11 @@ $$
 
 Page reference 16
 
-Let $ V $ be a vector space over field $ F $
+Let $ V $ be a vector space over field $ F $.
 
-Let $ v \in V $ and $ a \in F $
+Let $ v \in V $ and $ a \in F $.
 
-If $ a v = 0 $ then either $ a = 0 $ or $ v = 0 $ (or both)
+If $ a v = 0 $ then either $ a = 0 $ or $ v = 0 $ (or both).
 
 <details>
 <summary>Proof</summary>
@@ -406,7 +406,7 @@ Page reference 16
 
 Let $ V_{\empty} = \{ \} $
 
-Then $ V_{\empty} $ couldn't be a vector space because it doesn't contain an additive identity
+Then $ V_{\empty} $ couldn't be a vector space because it doesn't contain an additive identity.
 
 #### Exercise 1B.5
 
@@ -489,7 +489,7 @@ t \cdot (-\infty) &= \begin{cases}
 
 $$
 
-Then $ \R_{\infty} $ is not a vector space
+Then $ \R_{\infty} $ is not a vector space.
 
 <details>
 <summary>Proof</summary>
@@ -527,7 +527,7 @@ $$
 \forall x \in S, \quad (\lambda f)(x) = \lambda f(x)
 $$
 
-The $ V^S $ is a vector space over $ F $
+The $ V^S $ is a vector space over $ F $.
 
 <details>
 <summary>Proof</summary>

@@ -57,7 +57,7 @@ $$ V_1 + V_2 + \ldots + V_n \ \text{is subspace of} \ V $$
 ##### 1. Additive identity
 
 For $ 0 \in V_1, 0 \in V_2, \ldots, 0 \in V_n $:
-$$ 0 = 0 + 0 + \ldots + 0 \quad \in V_1 + V_2 + \ldots + V_n $$
+$$ 0 = (0 + 0 + \ldots + 0) \in V_1 + V_2 + \ldots + V_n $$
 
 ##### 2. Closure under addition
 
@@ -70,7 +70,10 @@ $$
 $$
 
 Then,
-$$ (v_1 + v_2 + \ldots + v_n) + (u_1 + u_2 + \ldots + u_n) = (v_1 + u_1) + (v_2 + u_2) + \ldots + (v_n + u_n) $$
+$$
+(v_1 + v_2 + \ldots + v_n) + (u_1 + u_2 + \ldots + u_n) =
+(v_1 + u_1) + (v_2 + u_2) + \ldots + (v_n + u_n)
+$$
 
 Since $ V_1, V_2, \ldots, V_n $ are subspaces of $ V $:
 $$ v_1 + u_1 \in V_1, \quad v_2 + u_2 \in V_2, \quad \ldots, \quad v_n + u_n \in V_n $$
@@ -123,7 +126,7 @@ $$ U + W \subseteq F^3 $$
 Conversely, each coordinate vector in $ (x, y, z) \in F^3 $ can be *uniquely* expressed as:
 $$ (x, y, z) = (x, y, 0) + (0, 0, z) = u + w $$
 
-Uniqueness proof is obvious, if one assumes the opposite, and thus, not stated here.
+Uniqueness proof is obvious, if one assumes the opposite. Thus, it is not stated here.
 
 Thus,
 $$ F^3 \subseteq U + W $$
@@ -153,7 +156,7 @@ Let arbitrary vectors $ v_1, v_2, \ldots, v_n $ be defined as:
 $$
 v_1 = (x_1, 0, \ldots, 0) \in V_1, \quad x_1 \in F \\
 v_2 = (0, x_2, 0, \ldots, 0) \in V_2, \quad x_2 \in F \\
-\vdots \\
+\ldots \\
 v_n = (0, 0, \ldots, 0, x_n) \in V_n, \quad x_n \in F
 $$
 
@@ -164,11 +167,13 @@ Thus,
 $$ V_1 + V_2 + \ldots + V_n \subseteq F^n $$
 
 Conversely, each coordinate vector in $ (x_1, x_2, \ldots, x_n) \in F^n $ can be *uniquely* expressed as:
-$$ (x_1, x_2, \ldots, x_n) = (x_1, 0, \ldots, 0) + (0, x_2, \ldots, 0) + \ldots + (0, 0, \ldots, x_n) = v_1 + v_2 + \ldots + v_n $$
+$$
+(x_1, x_2, \ldots, x_n) = (x_1, 0, \ldots, 0) + (0, x_2, \ldots, 0) + \ldots + (0, 0, \ldots, x_n) = v_1 + v_2 + \ldots + v_n
+$$
 
-Uniqueness proof is obvious, if one assumes the opposite, and thus, not stated here.
+Uniqueness proof is obvious, if one assumes the opposite. Thus, it is not stated here.
 
-Thus,
+Therefore,
 $$ F^n \subseteq V_1 + V_2 + \ldots + V_n $$
 
 Which, together with the uniqueness of representation, means that
@@ -182,7 +187,7 @@ $$ F^n = V_1 \oplus V_2 \oplus \ldots \oplus V_n $$
 
 Page reference 24
 
-##### A
+##### Part A
 
 $$ U_a = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2 x_2 + 3 x_3 = 0 \} $$
 
@@ -195,11 +200,10 @@ U_a is a subspace of $ F^3 $
 
 ###### 1. Additive identity
 
-Let
-$$ u = (0, 0, 0) \in U_a $$
+0 + 2 \cdot 0 + 3 \cdot 0 = 0
 
 Then,
-$$ 0 = 0 + 2 \cdot 0 + 3 \cdot 0 \quad \in U_a $$
+$$ 0 = (0, 0, 0) \in U_a $$
 
 ###### 2. Closure under addition
 
@@ -219,7 +223,7 @@ Adding both equations gives;
 $$ (x_1 + y_1) + 2 (x_2 + y_2) + 3 (x_3 + y_3) = 0 $$
 
 Thus,
-$$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \quad \in U_a $$
+$$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U_a $$
 
 ###### 3. Closure under scalar multiplication
 
@@ -236,11 +240,11 @@ Multiplying both sides by $ \lambda $:
 $$ \lambda (x_1 + 2 x_2 + 3 x_3) = \lambda x_1 + 2 \lambda x_2 + 3 \lambda x_3 = 0 $$
 
 Thus,
-$$ \lambda x_1 + 2 \lambda x_2 + 3 \lambda x_3 = 0 \quad \in U_a $$
+$$ \lambda u = (\lambda x_1, \lambda x_2, \lambda x_3) \in U_a $$
 
 </details>
 
-##### B
+##### Part B
 
 $$ U_b = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 + 2 x_2 + 3 x_3 = 4 \} $$
 
@@ -251,15 +255,14 @@ Decide if $ U_b \ \text{is subspace of} \ F^3 $.
 
 U_b is not a subspace of $ F^3 $, since additive identity does not belong to $ U_b $.
 
-Let
-$$ u = (0, 0, 0) \in U_b $$
+$$ 0 + 2 \cdot 0 + 3 \cdot 0 \neq 4 $$
 
-Then,
-$$ 0 + 2 \cdot 0 + 3 \cdot 0 \neq 4  $$
+Therefore,
+$$ 0 = (0, 0, 0) \notin U_b $$
 
 </details>
 
-##### C
+##### Part C
 
 $$ U_c = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 x_2 x_3 = 0 \} $$
 
@@ -289,7 +292,7 @@ $$ u + v + w = (1, 1, 1) \notin U_c $$
 
 </details>
 
-##### D
+##### Part D
 
 $$ U_d = \{ (x_1, x_2, x_3) \in F^3 : \quad x_1 = 5 x_3 \} $$
 
@@ -302,11 +305,10 @@ U_d is a subspace of $ F^3 $.
 
 ###### 1. Additive identity
 
-Let arbitrary vector be defined as:
-$$ u = (0, 0, 0) \in U_d $$
+$$ 0 = 5 \cdot 0 $$
 
 Then,
-$$ 0 = 5 \cdot 0 \quad \in U_d $$
+$$ 0 = (0, 0, 0) \in U_d $$
 
 ###### 2. Closure under addition
 
@@ -326,7 +328,7 @@ Adding both equations:
 $$ (x_1 + y_1) = 5 (x_3 + y_3) $$
 
 Thus,
-$$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \quad \in U_d $$
+$$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U_d $$
 
 ###### 3. Closure under scalar multiplication
 
@@ -343,7 +345,7 @@ Multiplying both sides by $ \lambda $:
 $$ \lambda x_1 = 5 \lambda x_3 $$
 
 Thus,
-$$ \lambda x_1 = 5 \lambda x_3 \quad \in U_d $$
+$$ \lambda u = (\lambda x_1, \lambda x_2, \lambda x_3) \in U_d $$
 
 </details>
 
@@ -353,54 +355,230 @@ Page reference 24
 
 Example 1.35.
 
-<details>
-<summary>Proof</summary>
-
-##### A
+##### Part A
 
 Let for $ b \in F $:
 $$ U_a = \{ (x_1, x_2, x_3, x_4) \in F^4 : \quad x_3 = 5 x_4 + b \} $$
 
 Then
-$$ U_a \ \text{is a subspace of} F^4 \iff b = 0 $$
+$$ U_a \ \text{is a subspace of} \ F^4 \iff b = 0 $$
 
 <details>
 <summary>Proof</summary>
 
+Backward implication proof is almost copy-paste of exercise 1C.1 part D with minor changes.
+
+(Put proper reference here)
+
+Forward implication is:
+$$ U_a \ \text{is a subspace of} \ F^4 \implies b = 0 $$
+
+Which is easy to prove by contradiction. Assume $ U_a $ is indeed a subspace, while $ b \neq 0 $.
+
+Let
+$$ 0 = (0, 0, 0, 0) $$
+
+Then,
+$$ 0 = 5 \cdot 0 + b = b \neq 0 $$
+
+By presumption $ U_a $ is a subspace, while $ 0 \notin U_a $. This is a contradiction, which proves the forward implication.
+
 </details>
 
-##### B
-Let $ C[0,1] = \{ f \in \mathbb{R}^{[0,1]} :\quad f \ \text{is continuous} \} $.
-$ C[0,1] \ \text{is a subspace of } \mathbb{R}^{[0,1]} $.
+##### Part B
+
+Let
+$$ U_b = \{ f \in \mathbb{R}^{[0,1]} :\quad f \ \text{is continuous} \} $$
+
+Then
+$$ U_b \ \text{is a subspace of} \ \mathbb{R}^{[0,1]} $$
+
 <details>
 <summary>Proof</summary>
 
+###### 1. Additive identity
+
+The zero function is:
+$$ 0(x) = 0 \quad \forall x \in [0,1] $$
+
+Then $ 0 \in U_b $ since constant function is continuous.
+
+###### 2. Closure under addition
+
+Let $ f, g \in U_b $.
+
+Then $ f + g $ is:
+$$ (f + g)(x) = f(x) + g(x) \quad \forall x \in [0,1] $$
+
+Since $ f $ and $ g $ are continuous functions, their sum is also continuous.
+
+Thus,
+$$ f + g \in U_b $$
+
+###### 3. Closure under scalar multiplication
+
+Let $ f \in U_b $ and $ \lambda \in \mathbb{R} $.
+
+Then $ \lambda f $ is:
+$$ (\lambda f)(x) = \lambda f(x) \quad \forall x \in [0,1] $$
+
+Since $ f $ is continuous, its scalar multiple is also continuous.
+
+Thus,
+$$ \lambda f \in U_b $$
+
 </details>
 
-##### C. Example 1.35(c)
-Let $ \mathcal{D}(\mathbb{R}) = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad f \ \text{is differentiable} \} $.
-$ \mathcal{D}(\mathbb{R}) \ \text{is a subspace of } \mathbb{R}^{\mathbb{R}} $.
+##### Part C
+
+Let
+$$ U_c = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad f \ \text{is differentiable} \} $$
+
+Then
+$$ U_c \ \text{is a subspace of} \ \mathbb{R}^{\mathbb{R}} $$
+
 <details>
 <summary>Proof</summary>
 
+Repeat the proof from part B, but with differentiability instead of continuity. And with a wider domain.
+
 </details>
 
-##### D. Example 1.35(d)
-For $ b \in \mathbb{R} $, let $ U_b = \{ f \in \mathbb{R}^{(0,3)} :\quad f \ \text{is differentiable and } f'(2) = b \} $.
-$ U_b \ \text{is a subspace of } \mathbb{R}^{(0,3)} \iff b = 0 $.
+##### Part D
+
+Let $ b \in \mathbb{R} $.
+
+Let
+$$ U_d = \{ f \in \mathbb{R}^{[0,3]} :\quad f \ \text{is differentiable}, \quad \ f'(2) = b \} $$
+
+Then
+$$ U_d \ \text{is a subspace of} \ \mathbb{R}^{[0,3]} \iff b = 0 $$
+
 <details>
 <summary>Proof</summary>
 
-</details>
+Backward implication is:
+$$ b = 0 \implies U_d \ \text{is a subspace of} \ \mathbb{R}^{[0,3]} $$
 
-##### E. Example 1.35(e)
-Let $ c_0 = \{ (x_k)_{k=1}^\infty \in \mathbb{C}^\infty :\quad \lim_{k \to \infty} x_k = 0 \} $.
-$ c_0 \ \text{is a subspace of } \mathbb{C}^\infty $.
 <details>
 <summary>Proof</summary>
 
+Let $ b = 0 $.
+
+###### 1. Additive identity
+
+Let zero function be defined as:
+$$ 0(x) = 0 \quad \forall x \in [0,3] $$
+
+Then $ 0 \in U_d $ since constant function is differentiable and its derivative is zero.
+
+###### 2. Closure under addition
+
+Let $ f, g \in U_d $.
+
+Then $ f + g $ is:
+$$ (f + g)(x) = f(x) + g(x) \quad \forall x \in [0,3] $$
+
+And $ f + g $ is differentiable since both $ f $ and $ g $ are differentiable.
+
+Considering the derivative at $ x = 2 $:
+$$ (f + g)'(2) = f'(2) + g'(2) = 0 + 0 = 0 $$
+
+Therefore,
+$$ f + g \in U_d $$
+
+###### 3. Closure under scalar multiplication
+
+Let $ f \in U_d $ and $ \lambda \in \mathbb{R} $.
+
+Then $ \lambda f $ is:
+$$ (\lambda f)(x) = \lambda f(x) \quad \forall x \in [0,3] $$
+
+And $ \lambda f $ is differentiable since $ f $ is differentiable.
+
+Considering the derivative at $ x = 2 $:
+$$ (\lambda f)'(2) = \lambda f'(2) = \lambda \cdot 0 = 0 $$
+
+Therefore,
+$$ \lambda f \in U_d $$
+
 </details>
 
+Forward implication is:
+$$ U_d \ \text{is a subspace of} \ \mathbb{R}^{[0,3]} \implies b = 0 $$
+
+It is easy to prove by contradiction. Assume $ U_d $ is indeed a subspace, while $ b \neq 0 $.
+
+The zero function is:
+$$ 0(x) = 0 \quad \forall x \in [0,3] $$
+
+Then,
+$$ 0'(2) = 0 \neq b $$
+
+By presumption $ U_d $ is a subspace, while $ 0 \notin U_d $. This is a contradiction, which proves the forward implication.
+
+</details>
+
+##### Part E
+
+Let
+$$ U_e = \{ (x_k)_{k=1}^\infty \in \mathbb{C}^\infty : \quad \lim_{k \to \infty} x_k = 0 \} $$
+
+Then
+$$ U_e \ \text{is a subspace of} \ \mathbb{C}^\infty $$
+
+<details>
+<summary>Proof</summary>
+
+###### 1. Additive identity
+
+The zero sequence is defined as:
+$$ 0 = (0, 0, 0, \ldots) $$
+
+Then,
+$$ \lim_{k \to \infty} 0 = 0 $$
+
+Therefore,
+$$ 0 \in U_e $$
+
+###### 2. Closure under addition
+
+Let arbitrary sequences be defined as:
+$$
+u = (x_k)_{k=1}^\infty \in U_e \\
+v = (y_k)_{k=1}^\infty \in U_e
+$$
+
+Since both $ u $ and $ v $ are in $ U_e $:
+$$
+\lim_{k \to \infty} x_k = 0 \\
+\lim_{k \to \infty} y_k = 0
+$$
+
+By the properties of limits:
+$$
+\lim_{k \to \infty} (x_k + y_k) = \lim_{k \to \infty} x_k + \lim_{k \to \infty} y_k = 0 + 0 = 0
+$$
+
+Thus,
+$$ u + v = (x_k + y_k)_{k=1}^\infty \in U_e $$
+
+###### 3. Closure under scalar multiplication
+
+Let arbitrary sequence and scalar be defined as:
+$$
+u = (x_k)_{k=1}^\infty \in U_e \\
+\lambda \in \mathbb{C}
+$$
+
+Since $u \in U_e$:
+$$ \lim_{k \to \infty} x_k = 0 $$
+
+By the properties of limits:
+$$ \lim_{k \to \infty} (\lambda x_k) = \lambda \cdot \lim_{k \to \infty} x_k = \lambda \cdot 0 = 0 $$
+
+Thus,
+$$ \lambda u = (\lambda x_k)_{k=1}^\infty \in U_e $$
 </details>
 
 #### Exercise 1C.3. Subspace of differentiable functions
