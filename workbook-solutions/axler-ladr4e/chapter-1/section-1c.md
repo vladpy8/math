@@ -851,11 +851,113 @@ $$
 Considering that:
 $$ \forall x, y \in \mathbb{R}, \quad x^3 = y^3 \iff x = y $$
 
+<details>
+<summary>Real values equality of cubes proof</summary>
+
+Backward implication is trivial.
+
+Forward implication is easily proven by contradiction. Assume $ x^3 = y^3 $ and $ x \neq y $. For definition, let $ x < y $, since the case $ x > y $ is symmetric.
+
+By proving that $ x^3 < y^3 $, we get a contradiction.
+
+###### Case 1. $ 0 < x < y $
+
+$$
+\begin{aligned}
+x &< y \\
+x \cdot x &< y \cdot x \\
+x^2 &< y \cdot x
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+x &< y \\
+x \cdot y &< y \cdot y \\
+x \cdot y &< y^2
+\end{aligned}
+$$
+
+Thus
+$$ x^2 < y \cdot x < y^2 $$
+
+Next
+$$
+\begin{aligned}
+x^2 &< y^2 \\
+x^2 \cdot x &< y^2 \cdot x \\
+x^3 &< y^2 \cdot x
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+x &< y \\
+x \cdot y^2 &< y \cdot y^2 \\
+x \cdot y^2 &< y^3
+\end{aligned}
+$$
+
+Therefore,
+$$
+x^3 < y^2 \cdot x < y^3 \\
+x^3 < y^3
+$$
+
+###### Case 2. $ x = 0, 0 < y $
+
+$$ x^3 = 0 $$
+
+$$
+\begin{aligned}
+0 &< y \\
+0 \cdot y &< y \cdot y \\
+0 &< y^2 \\
+0 \cdot y &< y^2 \cdot y \\
+0 &< y^3
+\end{aligned}
+$$
+
+###### Case 3. $ x < 0, y = 0 $
+
+$$
+\begin{aligned}
+x &< 0 \\
+x \cdot (-x) &< 0 \cdot (-x) \\
+-x^2 &< 0 \\
+-x^2 \cdot (-x) &< 0 \cdot (-x) \\
+x^3 &< 0
+\end{aligned}
+$$
+
+###### Case 4. $ x < 0 < y $
+
+Since $ x < 0 $ and $ y > 0 $, by applying the cases 2 and 3:
+$$ -x^3 < 0 < y^3 $$
+
+###### Case 5. $ x < y < 0 $
+
+$$ 0 < -y < -x $$
+
+Applying case 1:
+$$ 0 < (-y)^3 < (-x)^3 $$
+
+And,
+$$ 0 < -y^3 < -x^3 $$
+
+Therefore,
+$$ x^3 < y^3 < 0 $$
+
+</details>
+
 We can state that:
 $$
 a_1 = b_1 \\
 a_2 = b_2
 $$
+
+Adding both equations gives:
+$$ a_1 + a_2 = b_1 + b_2 $$
 
 Then, considering the defining equation of $ U_R $:
 $$ (a_1 + a_2)^3 = (b_1 + b_2)^3 $$
@@ -889,6 +991,79 @@ $$ U_C = \{ (a, b, c) \in \mathbb{C}^3 : \quad a^3 = b^3 \} $$
 <details>
 <summary>Solution</summary>
 
+$ U_C $ is not a subspace of $ \mathbb{C}^3 $. The closure under addition property does not hold, which can be proven by counterexample.
+
+Let arbitrary vectors be defined as:
+$$
+u = (r + i \, \sqrt{3} r, r - i \, \sqrt{3} r, 0) \in U_C \\
+v = (-r + i \, \sqrt{3} r, -r - i \, \sqrt{3} r, 0) \in U_C \\
+r \in \mathbb{R}, \ r > 0
+$$
+
+The formula for the cube of a complex number:
+$$
+\forall x = (x_r + i \, x_i) \in \mathbb{C}, \quad
+x_r, x_i \in \mathbb{R}, \quad
+x^3 = (x_r + i \, x_i)^3 = x_r^3 + i \, 3 x_r^2 x_i - 3 x_r x_i^2 - i \, x_i^3
+$$
+
+<details>
+<summary>Complex cube formula proof</summary>
+
+$$
+\begin{aligned}
+
+x^2 &= (x_r + i \, x_i)^2 = x_r^2 - x_i^2 + 2 i \, x_r x_i \\
+
+x^3 &= (x_r + i \, x_i)^3 = (x_r^2 - x_i^2 + 2 i \, x_r x_i) (x_r + i \, x_i) \\
+&= x_r^3 - x_i^2 x_r + 2 i \, x_r^2 x_i + i \, (x_r^2 x_i - x_i^3) - 2 x_r x_i^2 \\
+&= x_r^3 + i \, 3 x_r^2 x_i - 3 x_r x_i^2 - i \, x_i^3
+
+\end{aligned}
+$$
+
+</details>
+
+Using the formula for the cube of a complex number for vector components of $ u $ and $ v $:
+
+$$
+
+\begin{aligned}
+
+(r + i \, \sqrt{3} r)^3
+&= r^3 + i \, 3 r^2 \sqrt{3} r - 3 r (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
+= -8 r^3 \\
+
+(r - i \, \sqrt{3} r)^3
+&= r^3 - i \, 3 r^2 \sqrt{3} r - 3 r (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
+= -8 r^3 \\
+
+(-r + i \, \sqrt{3} r)^3
+&= -r^3 + i \, 3 (-r)^2 \sqrt{3} r - 3 (-r) (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
+= 8 r^3 \\
+
+(-r - i \, \sqrt{3} r)^3
+&= -r^3 - i \, 3 (-r)^2 \sqrt{3} r - 3 (-r) (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
+= 8 r^3 \\
+
+\end{aligned}
+$$
+
+Then,
+$$
+\begin{aligned}
+
+((r + i \, \sqrt{3} r) + (-r + i \, \sqrt{3} r))^3
+&= (i \, 2 \sqrt{3} r)^3 = - i \, 24 \sqrt{3} r^3 \\
+
+((r - i \, \sqrt{3} r) + (-r - i \, \sqrt{3} r))^3
+&= (-i \, 2 \sqrt{3} r)^3 = i \, 24 \sqrt{3} r^3 \\
+
+\end{aligned}
+$$
+
+Therefore, $ (u + v) \notin U_C $.
+
 </details>
 
 #### Exercise 1C.7. Closure properties and subspace criteria in $ \mathbb{R}^2 $
@@ -907,7 +1082,8 @@ If $ U \subseteq \mathbb{R}^2, \ U \neq \emptyset $, and $ (\forall u,v \in U, \
 
 Page reference 24
 
-Provide $ U \subseteq \mathbb{R}^2 $ such that $ U \neq \emptyset $, $ (\forall \lambda \in \mathbb{R}, \forall u \in U, \lambda u \in U) $, and $ U $ is not a subspace of $ \mathbb{R}^2 $.
+Provide $ U \subseteq \mathbb{R}^2 $ such that:
+$$ U \neq \emptyset, \quad (\forall \lambda \in \mathbb{R}, \forall u \in U, \lambda u \in U), \quad \text{and } U \text{ is not a subspace of } \mathbb{R}^2 $$
 
 <details>
 <summary>Solution</summary>
@@ -918,7 +1094,9 @@ Provide $ U \subseteq \mathbb{R}^2 $ such that $ U \neq \emptyset $, $ (\forall 
 
 Page reference 24
 
-Let $ P = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad (\exists p \in \mathbb{R}, p>0 \text{ such that } \forall x \in \mathbb{R}, f(x) = f(x+p)) \} $.
+Let
+$$ P = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad (\exists p \in \mathbb{R}, p>0 \text{ such that } \forall x \in \mathbb{R}, f(x) = f(x+p)) \} $$
+
 Is $ P $ a subspace of $ \mathbb{R}^{\mathbb{R}} $? Explain.
 
 <details>
@@ -930,6 +1108,8 @@ Is $ P $ a subspace of $ \mathbb{R}^{\mathbb{R}} $? Explain.
 
 Page reference 24
 
+Prove that:
+
 If $ V_1, V_2 \text{ are subspaces of } V $, then $ V_1 \cap V_2 \text{ is a subspace of } V $.
 
 <details>
@@ -940,6 +1120,8 @@ If $ V_1, V_2 \text{ are subspaces of } V $, then $ V_1 \cap V_2 \text{ is a sub
 #### Exercise 1C.11. Intersection of an arbitrary collection of subspaces
 
 Page reference 25
+
+Prove that:
 
 If $ \{ U_i \}_{i \in I} \text{ is a collection of subspaces of } V $, then $ \bigcap_{i \in I} U_i \text{ is a subspace of } V $.
 
@@ -953,7 +1135,9 @@ If $ \{ U_i \}_{i \in I} \text{ is a collection of subspaces of } V $, then $ \b
 Page reference 25
 
 Let $ U_1, U_2 $ be subspaces of $ V $.
-$ U_1 \cup U_2 \ \text{is a subspace of } V \iff (U_1 \subseteq U_2 \text{ or } U_2 \subseteq U_1) $.
+
+Prove that:
+$$ U_1 \cup U_2 \ \text{is a subspace of } V \iff (U_1 \subseteq U_2 \text{ or } U_2 \subseteq U_1) $$
 
 <details>
 <summary>Proof</summary>
@@ -965,7 +1149,9 @@ $ U_1 \cup U_2 \ \text{is a subspace of } V \iff (U_1 \subseteq U_2 \text{ or } 
 Page reference 25
 
 Let $ U_1, U_2, U_3 $ be subspaces of $ V $.
-$ U_1 \cup U_2 \cup U_3 \ \text{is a subspace of } V \iff ((U_2 \subseteq U_1 \land U_3 \subseteq U_1) \lor (U_1 \subseteq U_2 \land U_3 \subseteq U_2) \lor (U_1 \subseteq U_3 \land U_2 \subseteq U_3)) $.
+
+Prove that:
+$$ U_1 \cup U_2 \cup U_3 \ \text{is a subspace of } V \iff ((U_2 \subseteq U_1 \land U_3 \subseteq U_1) \lor (U_1 \subseteq U_2 \land U_3 \subseteq U_2) \lor (U_1 \subseteq U_3 \land U_2 \subseteq U_3)) $$
 
 This exercise is surprisingly harder than Exercise 12, possibly because this exercise is not true if we replace F with a field containing only two elements.
 
@@ -978,7 +1164,10 @@ This exercise is surprisingly harder than Exercise 12, possibly because this exe
 
 Page reference 25
 
-Let $ U = \{ (x, -x, 2x) :\quad x \in F \} \subseteq F^3 $ and $ W = \{ (y, y, 2y) :\quad y \in F \} \subseteq F^3 $.
+Let
+$$ U = \{ (x, -x, 2x) :\quad x \in F \} \subseteq F^3 $$
+$$ W = \{ (y, y, 2y) :\quad y \in F \} \subseteq F^3 $$
+
 Describe $ U+W $ symbolically and verbally.
 
 <details>
@@ -990,7 +1179,7 @@ Describe $ U+W $ symbolically and verbally.
 
 Page reference 25
 
-If $ U \ \text{is a subspace of } V $, find $ U+U $.
+If $ U $ is a subspace of $ V $, determine $ U+U $.
 
 <details>
 <summary>Solution</summary>
@@ -1001,7 +1190,8 @@ If $ U \ \text{is a subspace of } V $, find $ U+U $.
 
 Page reference 25
 
-Is $ U+W = W+U $ for all subspaces $ U, W $ of $ V $?
+Determine whether:
+$$ U+W = W+U \ \text{for all subspaces } U, W \text{ of } V $$
 
 <details>
 <summary>Solution</summary>
@@ -1012,7 +1202,8 @@ Is $ U+W = W+U $ for all subspaces $ U, W $ of $ V $?
 
 Page reference 25
 
-Is $ (U_1+U_2)+U_3 = U_1+(U_2+U_3) $ for all subspaces $ U_1, U_2, U_3 $ of $ V $?
+Determine whether:
+$$ (U_1+U_2)+U_3 = U_1+(U_2+U_3) \ \text{for all subspaces } U_1, U_2, U_3 \text{ of } V $$
 
 <details>
 <summary>Solution</summary>
@@ -1024,22 +1215,18 @@ Is $ (U_1+U_2)+U_3 = U_1+(U_2+U_3) $ for all subspaces $ U_1, U_2, U_3 $ of $ V 
 Page reference 25
 
 For the operation of addition on the set of subspaces of $ V $:
-<details>
-<summary>Solution</summary>
 
-##### 1. Existence of additive identity
+##### Part 1. Existence of additive identity
 Does an additive identity exist?
 <details>
 <summary>Solution</summary>
 
 </details>
 
-##### 2. Existence of additive inverses
+##### Part 2. Existence of additive inverses
 Which subspaces possess additive inverses?
 <details>
 <summary>Solution</summary>
-
-</details>
 
 </details>
 
@@ -1048,6 +1235,7 @@ Which subspaces possess additive inverses?
 Page reference 25
 
 Prove or give a counterexample:
+
 If $ V_1, V_2, U $ are subspaces of $ V $ such that $ V_1 + U = V_2 + U $, then $ V_1 = V_2 $.
 
 <details>
@@ -1059,7 +1247,10 @@ If $ V_1, V_2, U $ are subspaces of $ V $ such that $ V_1 + U = V_2 + U $, then 
 
 Page reference 25
 
-For $ U = \{ (x,x,y,y) \in F^4 :\quad x,y \in F \} $, find a subspace $ W $ of $ F^4 $ such that $ F^4 = U \oplus W $.
+For
+$$ U = \{ (x,x,y,y) \in F^4 :\quad x,y \in F \} $$
+
+Find a subspace $ W $ of $ F^4 $ such that $ F^4 = U \oplus W $.
 
 <details>
 <summary>Solution</summary>
@@ -1070,7 +1261,10 @@ For $ U = \{ (x,x,y,y) \in F^4 :\quad x,y \in F \} $, find a subspace $ W $ of $
 
 Page reference 25
 
-For $ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $, find a subspace $ W $ of $ F^5 $ such that $ F^5 = U \oplus W $.
+For
+$$ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $$
+
+Find a subspace $ W $ of $ F^5 $ such that $ F^5 = U \oplus W $.
 
 <details>
 <summary>Solution</summary>
@@ -1081,7 +1275,10 @@ For $ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $, find a subspace $ W
 
 Page reference 25
 
-For $ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $, find subspaces $ W_1, W_2, W_3 $ of $ F^5 $ such that $ W_k \neq \{0\} $ for $ k=1,2,3 $, and $ F^5 = U \oplus W_1 \oplus W_2 \oplus W_3 $.
+For
+$$ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $$
+
+Find subspaces $ W_1, W_2, W_3 $ of $ F^5 $ such that $ W_k \neq \{0\} $ for $ k=1,2,3 $, and $ F^5 = U \oplus W_1 \oplus W_2 \oplus W_3 $.
 
 <details>
 <summary>Solution</summary>
@@ -1093,6 +1290,7 @@ For $ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $, find subspaces $ W_
 Page reference 26
 
 Prove or give a counterexample:
+
 If $ V_1, V_2, U $ are subspaces of $ V $ such that $ V = V_1 \oplus U $ and $ V = V_2 \oplus U $, then $ V_1 = V_2 $.
 
 Hint: When trying to discover whether a conjecture in linear algebra is true or false, it is often useful to start by experimenting in $ F^2 $.
@@ -1106,11 +1304,67 @@ Hint: When trying to discover whether a conjecture in linear algebra is true or 
 
 Page reference 26
 
-Let $ V_e = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = f(x) \} $.
-Let $ V_o = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = -f(x) \} $.
-$ \mathbb{R}^{\mathbb{R}} = V_e \oplus V_o $.
+Let
+$$ V_e = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = f(x) \} $$
+$$ V_o = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = -f(x) \} $$
+
+Prove that:
+$$ \mathbb{R}^{\mathbb{R}} = V_e \oplus V_o $$
 
 <details>
 <summary>Proof</summary>
+
+To prove that $\mathbb{R}^{\mathbb{R}} = V_e \oplus V_o$, we need to show:
+
+1. $V_e$ and $V_o$ are subspaces of $\mathbb{R}^{\mathbb{R}}$
+2. $V_e \cap V_o = \{0\}$, where $0$ is the zero function
+3. $V_e + V_o = \mathbb{R}^{\mathbb{R}}$, meaning every function in $\mathbb{R}^{\mathbb{R}}$ can be written as a sum of a function in $V_e$ and a function in $V_o$
+
+**Step 1:** Show that $V_e$ and $V_o$ are subspaces of $\mathbb{R}^{\mathbb{R}}$.
+
+For $V_e$:
+- The zero function $f(x) = 0$ satisfies $f(-x) = 0 = f(x)$, so $0 \in V_e$.
+- If $f, g \in V_e$, then $(f+g)(-x) = f(-x) + g(-x) = f(x) + g(x) = (f+g)(x)$, so $f+g \in V_e$.
+- If $f \in V_e$ and $c \in \mathbb{R}$, then $(cf)(-x) = c \cdot f(-x) = c \cdot f(x) = (cf)(x)$, so $cf \in V_e$.
+
+Therefore, $V_e$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
+
+For $V_o$:
+- The zero function $f(x) = 0$ satisfies $f(-x) = 0 = -f(x)$, so $0 \in V_o$.
+- If $f, g \in V_o$, then $(f+g)(-x) = f(-x) + g(-x) = -f(x) + (-g(x)) = -(f(x) + g(x)) = -(f+g)(x)$, so $f+g \in V_o$.
+- If $f \in V_o$ and $c \in \mathbb{R}$, then $(cf)(-x) = c \cdot f(-x) = c \cdot (-f(x)) = -(cf)(x)$, so $cf \in V_o$.
+
+Therefore, $V_o$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
+
+**Step 2:** Show that $V_e \cap V_o = \{0\}$.
+
+Suppose $f \in V_e \cap V_o$. Then:
+- $f \in V_e \implies f(-x) = f(x)$ for all $x \in \mathbb{R}$
+- $f \in V_o \implies f(-x) = -f(x)$ for all $x \in \mathbb{R}$
+
+Therefore, $f(x) = f(-x) = -f(x)$ for all $x \in \mathbb{R}$, which implies $2f(x) = 0$, so $f(x) = 0$ for all $x \in \mathbb{R}$.
+
+This means $f$ is the zero function, and $V_e \cap V_o = \{0\}$.
+
+**Step 3:** Show that $V_e + V_o = \mathbb{R}^{\mathbb{R}}$.
+
+For any function $f \in \mathbb{R}^{\mathbb{R}}$, we need to show that it can be written as $f = f_e + f_o$ where $f_e \in V_e$ and $f_o \in V_o$.
+
+Define:
+$$f_e(x) = \frac{f(x) + f(-x)}{2}$$
+$$f_o(x) = \frac{f(x) - f(-x)}{2}$$
+
+Let's verify that $f_e \in V_e$:
+$$f_e(-x) = \frac{f(-x) + f(x)}{2} = \frac{f(x) + f(-x)}{2} = f_e(x)$$
+
+Let's verify that $f_o \in V_o$:
+$$f_o(-x) = \frac{f(-x) - f(x)}{2} = \frac{-(f(x) - f(-x))}{2} = -f_o(x)$$
+
+Finally, let's check that $f = f_e + f_o$:
+$$f_e(x) + f_o(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2} = \frac{2f(x)}{2} = f(x)$$
+
+Therefore, every function $f \in \mathbb{R}^{\mathbb{R}}$ can be written as the sum of an even function $f_e \in V_e$ and an odd function $f_o \in V_o$.
+
+Since we have shown that $V_e$ and $V_o$ are subspaces, $V_e \cap V_o = \{0\}$, and $V_e + V_o = \mathbb{R}^{\mathbb{R}}$, we conclude that $\mathbb{R}^{\mathbb{R}} = V_e \oplus V_o$.
 
 </details>
