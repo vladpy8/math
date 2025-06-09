@@ -1066,38 +1066,80 @@ Therefore, $ (u + v) \notin U_C $.
 
 </details>
 
-#### Exercise 1C.7. Closure properties and subspace criteria in $ \mathbb{R}^2 $
+#### Exercise 1C.7
 
 Page reference 24
 
-Prove or give a counterexample:
-If $ U \subseteq \mathbb{R}^2, \ U \neq \emptyset $, and $ (\forall u,v \in U, \ u+v \in U) \land (\forall u \in U, \ -u \in U) $, then $ U \text{ is a subspace of } \mathbb{R}^2 $.
+Prove or give a counterexample that $ \forall U \subseteq \mathbb{R}^2, U \neq \emptyset $:
+$$
+\forall u, v \in U, \quad u + v \in U, \quad \ -u \in U \implies U \ \text{is a subspace of} \ \mathbb{R}^2
+$$
 
 <details>
 <summary>Proof</summary>
 
+This is not true. Consider the grid of integer points in $ \mathbb{R}^2 $:
+$$ U = \{ (x, y) \in \mathbb{R}^2 : x, y \in \mathbb{Z} \} $$
+
+This set contains the additive identity $ (0, 0) $, and is closed under addition.
+
+However, it is not closed under scalar multiplication by any real number that is not an integer:
+$$
+\forall \lambda \in \mathbb{R} \setminus \mathbb{Z}, \quad \lambda (1, 0) = (\lambda, 0) \notin U
+$$
+
 </details>
 
-#### Exercise 1C.8. A set closed under scalar multiplication but not a subspace
+#### Exercise 1C.8
 
 Page reference 24
 
-Provide $ U \subseteq \mathbb{R}^2 $ such that:
-$$ U \neq \emptyset, \quad (\forall \lambda \in \mathbb{R}, \forall u \in U, \lambda u \in U), \quad \text{and } U \text{ is not a subspace of } \mathbb{R}^2 $$
+Give example of $ U \subseteq \mathbb{R}^2, U \neq \emptyset $:
+$$
+\forall \lambda \in \mathbb{R}, \forall u \in U, \lambda u \in U
+, \quad \ U \ \text{is not a subspace of} \ \mathbb{R}^2
+$$
 
 <details>
 <summary>Solution</summary>
 
+Let the set be defined as the one consisting of the first and third quadrants of the Cartesian plane:
+$$ U = \{ (x, y) \in \mathbb{R}^2 : x \cdot y \ge 0 \} $$
+
+This set contains the additive identity $ (0, 0) $, and is closed under scalar multiplication:
+$$
+\forall \lambda \in \mathbb{R}
+, \quad \forall (x, y) \in U, (x \cdot y) \ge 0
+, \quad (\lambda x \cdot \lambda y) = \lambda^2 (x y) \ge 0
+, \quad \lambda (x, y) \in U
+$$
+
+However, it is not closed under addition. Consider the sum of the following coordinate vectors:
+$$
+\forall r > 0, \quad u = (r, 0) \in U, \quad v = (0, -r) \in U
+, \quad u + v = (r, -r)
+, \quad r \cdot (-r) = -r^2 < 0
+, \quad u + v \notin U
+$$
+
 </details>
 
-#### Exercise 1C.9. Set of periodic functions as a subspace
+#### Exercise 1C.9
 
 Page reference 24
 
 Let
-$$ P = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad (\exists p \in \mathbb{R}, p>0 \text{ such that } \forall x \in \mathbb{R}, f(x) = f(x+p)) \} $$
+$$
+P = \{
+	f \in \mathbb{R}^{\mathbb{R}}
+	: \quad \left(
+		\exists p \in \mathbb{R}, p > 0
+		: \quad \forall x \in \mathbb{R}, f(x) = f(x + p)
+		\right)
+	\}
+$$
 
-Is $ P $ a subspace of $ \mathbb{R}^{\mathbb{R}} $? Explain.
+Decide if $ P $ is a subspace of $ \mathbb{R}^{\mathbb{R}} $.
 
 <details>
 <summary>Explanation</summary>
