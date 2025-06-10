@@ -1142,33 +1142,112 @@ $$
 Decide if $ P $ is a subspace of $ \mathbb{R}^{\mathbb{R}} $.
 
 <details>
-<summary>Explanation</summary>
+<summary>Solution</summary>
+
+$ P $ is not a subspace of $ \mathbb{R}^{\mathbb{R}} $. The closure under addition property does not hold, which can be proven by counterexample.
+
+Let $ f, g \in \mathbb{R}^{\mathbb{R}} $ be defined as:
+$$ f(x) = \sin(x), \quad g(x) = \sin(x \cdot \sqrt{2}) $$
+
+The sum of these functions is $ f + g $:
+$$ f(x) + g(x) = \sin(x) + \sin(x \cdot \sqrt{2}) $$
+
+For $ f + g $ to be in $ P $, it *must* have a period $ p > 0 $ such that:
+$$ p = n \cdot 2\pi = m \cdot \frac{2\pi}{\sqrt{2}}, \quad m, n \in \mathbb{Z} $$
+
+Direct proof of the statement above goes far beyond the scope of this exercise.
+
+The statement implies:
+$$ \frac{m}{n} = \sqrt{2}, \quad m, n \in \mathbb{Z} $$
+
+Which is not possible, since $ \sqrt{2} $ is irrational.
+
+Therefore, $ f + g \notin P $.
 
 </details>
 
-#### Exercise 1C.10. Intersection of two subspaces
+#### Exercise 1C.10
 
 Page reference 24
 
-Prove that:
-
-If $ V_1, V_2 \text{ are subspaces of } V $, then $ V_1 \cap V_2 \text{ is a subspace of } V $.
+$$ V_1, V_2 \ \text{are subspaces of} \ V \implies V_1 \cap V_2 \ \text{is a subspace of} \ V $$
 
 <details>
 <summary>Proof</summary>
+
+##### 1. Additive identity
+
+The zero vector is in both $ V_1 $ and $ V_2 $, since they are subspaces of $ V $.
+
+Then,
+$$ 0 \in V_1 \cap V_2 $$
+
+##### 2. Closure under addition
+
+Let $ u, v \in V_1 \cap V_2 $.
+
+Then
+$$
+u, v \in V_1, \ u, v \in V_2 \\
+u + v \in V_1, \ u + v \in V_2
+$$
+
+Therefore,
+$$ u + v \in V_1 \cap V_2 $$
+
+##### 3. Closure under scalar multiplication
+
+Let $ u \in V_1 \cap V_2 $ and $ \lambda \in F $.
+
+Then
+$$
+u \in V_1, \ u \in V_2 \\
+\lambda u \in V_1, \ \lambda u \in V_2
+$$
+
+Therefore,
+$$ \lambda u \in V_1 \cap V_2 $$
 
 </details>
 
-#### Exercise 1C.11. Intersection of an arbitrary collection of subspaces
+#### Exercise 1C.11
 
 Page reference 25
 
-Prove that:
-
-If $ \{ U_i \}_{i \in I} \text{ is a collection of subspaces of } V $, then $ \bigcap_{i \in I} U_i \text{ is a subspace of } V $.
+$$
+\forall i \in I, \quad U_i \ \text{is a subspace of} \ V
+\implies \bigcap_{i \in I} U_i \ \text{is a subspace of} \ V
+$$
 
 <details>
 <summary>Proof</summary>
+
+##### 1. Additive identity
+
+$$ \forall i \in I, \quad 0 \in U_i $$
+
+Therefore,
+$$ 0 \in \bigcap_{i \in I} U_i $$
+
+##### 2. Closure under addition
+
+Let $ u, v \in \bigcap_{i \in I} U_i $.
+
+Then
+$$ \forall i \in I, \quad u, v \in U_i, \quad u + v \in U_i $$
+
+Therefore,
+$$ u + v \in \bigcap_{i \in I} U_i $$
+
+##### 3. Closure under scalar multiplication
+
+Let $ u \in \bigcap_{i \in I} U_i $ and $ \lambda \in F $.
+
+Then
+$$ \forall i \in I, \quad u \in U_i, \quad \lambda u \in U_i $$
+
+Therefore,
+$$ \lambda u \in \bigcap_{i \in I} U_i $$
 
 </details>
 
@@ -1178,8 +1257,10 @@ Page reference 25
 
 Let $ U_1, U_2 $ be subspaces of $ V $.
 
-Prove that:
-$$ U_1 \cup U_2 \ \text{is a subspace of } V \iff (U_1 \subseteq U_2 \text{ or } U_2 \subseteq U_1) $$
+$$
+U_1 \cup U_2 \ \text{is a subspace of} \ V
+\iff (U_1 \subseteq U_2 \ \text{or} \ U_2 \subseteq U_1)
+$$
 
 <details>
 <summary>Proof</summary>
