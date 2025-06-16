@@ -83,7 +83,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall x \in F^n, \quad \exist y \in F^n, \quad x + y = 0 $$
+$$ \forall x \in F^n, \quad \exists y \in F^n, \quad x + y = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -214,7 +214,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall f \in F^S, \quad \exist g \in F^S, \quad f + g = 0 $$
+$$ \forall f \in F^S, \quad \exists g \in F^S, \quad f + g = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -371,7 +371,7 @@ Page reference 16
 Let $ V $ be a vector space over field $ F $
 
 Let $ v, w \in V $
-$$ \exist ! \ x \in V : \quad v + 3 x = w $$
+$$ \exists ! \ x \in V : \quad v + 3 x = w $$
 
 <details>
 <summary>Proof</summary>
@@ -439,7 +439,7 @@ $$
 $$
 
 Thus
-$$ \forall v \in V, \quad \exist \ w \in V, \quad w = (-1) v : \quad v + w = 0 $$
+$$ \forall v \in V, \quad \exists \ w \in V, \quad w = (-1) v : \quad v + w = 0 $$
 
 </details>
 
@@ -615,7 +615,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall f \in V^S, \quad \exist g \in V^S, \quad f + g = 0 $$
+$$ \forall f \in V^S, \quad \exists g \in V^S, \quad f + g = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -817,7 +817,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall u, v \in V, \quad \exist \, w, p \in V, \quad u + i \, v + w + i \, p = 0 $$
+$$ \forall u, v \in V, \quad \exists \, w, p \in V, \quad u + i \, v + w + i \, p = 0 $$
 
 <details>
 <summary>Proof</summary>

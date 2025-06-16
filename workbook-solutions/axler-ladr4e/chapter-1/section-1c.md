@@ -1134,7 +1134,7 @@ P = \{
 	f \in \mathbb{R}^{\mathbb{R}}
 	: \quad \left(
 		\exists p \in \mathbb{R}, p > 0
-		: \quad \forall x \in \mathbb{R}, f(x) = f(x + p)
+		: \quad \forall x \in \mathbb{R}, \quad f(x) = f(x + p)
 		\right)
 	\}
 $$
@@ -1166,7 +1166,7 @@ Therefore, $ f + g \notin P $.
 
 </details>
 
-#### Exercise 1C.10
+#### Exercise 1C.10. Intersection of subspaces
 
 Page reference 24
 
@@ -1210,7 +1210,7 @@ $$ \lambda u \in V_1 \cap V_2 $$
 
 </details>
 
-#### Exercise 1C.11
+#### Exercise 1C.11. Intersection of subspaces, arbitrary amount
 
 Page reference 25
 
@@ -1251,7 +1251,7 @@ $$ \lambda u \in \bigcap_{i \in I} U_i $$
 
 </details>
 
-#### Exercise 1C.12. Union of two subspaces
+#### Exercise 1C.12. Union of subspaces
 
 Page reference 25
 
@@ -1265,36 +1265,161 @@ $$
 <details>
 <summary>Proof</summary>
 
+##### Backward implication
+
+Backward implication is trivial to prove, since $ U_1 \cup U_2 $ in case of $ U_1 \subseteq U_2 \ \text{or} \ U_2 \subseteq U_1 $ is the biggest of the two sets, which is either $ U_2 $ or $ U_1 $. And both of them are subspaces of $ V $.
+
+##### Forward implication
+
+Forward implication is easy to prove by contradiction. However, it requires a setup.
+
+Let $ \bar{U_1} = U_1 \setminus U_2 $ and $ \bar{U_2} = U_2 \setminus U_1 $.
+
+If at least one of these sets is empty, then the second statement of the forward implication immediately follows. Since,
+$$
+\bar{U_1} = \emptyset \implies U_1 \subseteq U_2 \\
+\bar{U_2} = \emptyset \implies U_2 \subseteq U_1
+$$
+
+When both $ \bar{U_1} $ and $ \bar{U_2} $ are non-empty, the second expression of the forward implication cannot be true. This essentially forms the contradiction statement of the forward implication:
+$$
+U_1 \cup U_2 \ \text{is a subspace of} \ V,
+\quad \text{and yet,} \quad
+\bar{U_1} \neq \emptyset \ \text{and} \ \bar{U_2} \neq \emptyset
+$$
+
+Let arbitrary $ \bar{u_1} \in \bar{U_1} $ and $ \bar{u_2} \in \bar{U_2} $.
+
+According to the closure under addition property of $ U_1 \cup U_2 $:
+$$ \bar{u_1} + \bar{u_2} \in U_1 \cup U_2 $$
+
+Then, either $ \bar{u_1} + \bar{u_2} \in U_1 $ or $ \bar{u_1} + \bar{u_2} \in U_2 $.
+
+$$
+\begin{aligned}
+\bar{u_1} + \bar{u_2} \in U_1 \implies -\bar{u_1} + (\bar{u_1} + \bar{u_2}) \in U_1 \\
+&\implies (-\bar{u_1} + \bar{u_1}) + \bar{u_2} \in U_1 \\
+&\implies \bar{u_2} \in U_1
+\end{aligned}
+$$
+
+Which contradicts the definition of $ \bar{U_2} $.
+
+The same way goes for $ \bar{u_1} + \bar{u_2} \in U_2 $.
+
+Given the impossibility of the contradiction, we can conclude that the forward implication holds.
+
 </details>
 
-#### Exercise 1C.13. Union of three subspaces
+#### [TODO] Exercise 1C.13
 
 Page reference 25
 
 Let $ U_1, U_2, U_3 $ be subspaces of $ V $.
 
-Prove that:
-$$ U_1 \cup U_2 \cup U_3 \ \text{is a subspace of } V \iff ((U_2 \subseteq U_1 \land U_3 \subseteq U_1) \lor (U_1 \subseteq U_2 \land U_3 \subseteq U_2) \lor (U_1 \subseteq U_3 \land U_2 \subseteq U_3)) $$
-
-This exercise is surprisingly harder than Exercise 12, possibly because this exercise is not true if we replace F with a field containing only two elements.
+$$
+U_1 \cup U_2 \cup U_3 \ \text{is a subspace of} \ V
+\iff (U_j \subseteq U_i \ \text{and} \ U_k \subseteq U_i
+, \quad i, j, k \in \{1, 2, 3\}, i \neq j \neq k)
+$$
 
 <details>
 <summary>Proof</summary>
 
 </details>
 
-#### Exercise 1C.14. Sum of specific subspaces in $ F^3 $
+#### Exercise 1C.14
 
 Page reference 25
 
 Let
-$$ U = \{ (x, -x, 2x) :\quad x \in F \} \subseteq F^3 $$
-$$ W = \{ (y, y, 2y) :\quad y \in F \} \subseteq F^3 $$
+$$ U = \{ (x, -x, 2x) \in F^3 : x \in F \} $$
+$$ W = \{ (y, y, 2y) \in F^3 : y \in F \} $$
 
-Describe $ U+W $ symbolically and verbally.
+Describe $ U + W $ symbolically and verbally.
 
 <details>
 <summary>Solution</summary>
+
+First of all both $ U $ and $ W $ are subspaces of $ F^3 $, since they satisfy all the necessary criteria.
+
+<details>
+<summary>Proof of subspace criteria</summary>
+
+##### Additive identity
+
+The zero vector is:
+$$ 0 = (0, 0, 0) $$
+
+Then:
+$$ (0, -0, 2 \cdot 0) = (0, 0, 0) \in U $$
+$$ (0, 0, 2 \cdot 0) = (0, 0, 0) \in W $$
+
+##### Closure under addition
+
+Let,
+$$
+u_1 = (x_1, -x_1, 2 \cdot x_1) \in U \\
+u_2 = (x_2, -x_2, 2 \cdot x_2) \in U \\
+w_1 = (y_1, y_1, 2 \cdot y_1) \in W \\
+w_2 = (y_2, y_2, 2 \cdot y_2) \in W
+$$
+
+$$
+\begin{aligned}
+u_1 + u_2 &= (x_1, -x_1, 2 \cdot x_1) + (x_2, -x_2, 2 \cdot x_2) \\
+&= (x_1 + x_2, -(x_1 + x_2), 2 \cdot (x_1 + x_2))
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+w_1 + w_2 &= (y_1, y_1, 2 \cdot y_1) + (y_2, y_2, 2 \cdot y_2) \\
+&= (y_1 + y_2, y_1 + y_2, 2 \cdot (y_1 + y_2))
+\end{aligned}
+$$
+
+Therefore
+$$
+u_1 + u_2 \in U \\
+w_1 + w_2 \in W
+$$
+
+##### Closure under scalar multiplication
+
+Let
+$$
+\lambda \in F, \\
+u = (x, -x, 2 \cdot x) \in U \\
+w = (y, y, 2 \cdot y) \in W
+$$
+
+$$
+\begin{aligned}
+\lambda u &= \lambda(x, -x, 2 \cdot x) \\
+&= (\lambda x, -\lambda x, 2 \cdot \lambda x) \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\lambda w &= \lambda(y, y, 2 \cdot y) \\
+&= (\lambda y, \lambda y, 2 \cdot \lambda y) \\
+\end{aligned}
+$$
+
+Therefore,
+$$
+\lambda u \in U \\
+\lambda w \in W
+$$
+
+</details>
+
+The sum of the two subspaces $ U + W $ is a subspace of $ F^3 $:
+$$ U + W = \{ (x + y, -x + y, 2(x + y)) : x, y \in F \} $$
+
+Verbally, each subspace $ U $ and $ W $ can be described as a line in $ F^3 $ that passes through origin. The sum of the two subspaces is a plane in $ F^3 $ that passes through origin, and contains both lines.
 
 </details>
 
@@ -1302,71 +1427,144 @@ Describe $ U+W $ symbolically and verbally.
 
 Page reference 25
 
-If $ U $ is a subspace of $ V $, determine $ U+U $.
+If $ U $ is a subspace of $ V $, determine $ U + U $.
 
 <details>
 <summary>Solution</summary>
 
+$$ U + U = U $$
+
+<details>
+<summary>Proof</summary>
+
+$$ \forall u \in U, \quad u = u + 0 \in U + U \implies U \subseteq U + U $$
+
+$$
+\forall u_1, u_2 \in U, \quad u_1 + u_2 \in U + U
+\implies u_1 + u_2 \in U
+\implies U + U \subseteq U
+$$
+
 </details>
 
-#### Exercise 1C.16. Commutativity of subspace addition
+</details>
+
+#### Exercise 1C.16. Commutativity of addition of subspaces of vector spaces
 
 Page reference 25
 
 Determine whether:
-$$ U+W = W+U \ \text{for all subspaces } U, W \text{ of } V $$
+$$ \forall U, W \ \text{subspaces of} \ V, \quad U + W = W + U $$
 
 <details>
 <summary>Solution</summary>
 
+Let arbitrary $ u \in U $ and $ w \in W $.
+
+$$
+u + w \in U + W
+, \quad u + w = w + u \in W + U
+, \quad U + W \subseteq W + U
+$$
+
+$$
+w + u \in W + U
+, \quad w + u = u + w \in U + W
+, \quad W + U \subseteq U + W
+$$
+
+Therefore,
+$$ U + W = W + U $$
+
 </details>
 
-#### Exercise 1C.17. Associativity of subspace addition
+#### Exercise 1C.17. Associativity of addition of subspaces of vector spaces
 
 Page reference 25
 
 Determine whether:
-$$ (U_1+U_2)+U_3 = U_1+(U_2+U_3) \ \text{for all subspaces } U_1, U_2, U_3 \text{ of } V $$
+$$ \forall V_1, V_2, V_3 \ \text{subspaces of} \ V, \quad (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3) $$
 
 <details>
 <summary>Solution</summary>
+
+Let arbitrary $ v_1 \in V_1 $, $ v_2 \in V_2 $, and $ v_3 \in V_3 $.
+
+$$
+(v_1 + v_2) + v_3 \in (V_1 + V_2) + V_3
+, \quad (v_1 + v_2) + v_3 = v_1 + (v_2 + v_3) \in V_1 + (V_2 + V_3)
+$$
+$$ \quad (V_1 + V_2) + V_3 \subseteq V_1 + (V_2 + V_3) $$
+
+$$
+v_1 + (v_2 + v_3) \in V_1 + (V_2 + V_3)
+, \quad v_1 + (v_2 + v_3) = (v_1 + v_2) + v_3 \in (V_1 + V_2) + V_3
+$$
+
+$$ \quad V_1 + (V_2 + V_3) \subseteq (V_1 + V_2) + V_3 $$
+
+Therefore,
+$$ (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3) $$
 
 </details>
 
-#### Exercise 1C.18. Identity and inverses for subspace addition
+#### Exercise 1C.18. Identity and inverses of addition of subspaces of vector spaces
 
 Page reference 25
 
-For the operation of addition on the set of subspaces of $ V $:
+##### Part 1. Additive identity
 
-##### Part 1. Existence of additive identity
-Does an additive identity exist?
+There does exists an additive identity of addition of subspaces of $ V $.
+
 <details>
-<summary>Solution</summary>
+<summary>Proof</summary>
+
+Let additive identity be defined as:
+$$ \{ 0 \} $$
+
+Then,
+$$ \forall U \ \text{subspace of} \ V, \quad U + \{ 0 \} = \{ u + 0 = u : u \in U \} = U $$
 
 </details>
 
 ##### Part 2. Existence of additive inverses
-Which subspaces possess additive inverses?
+
+Additive inverse does not exist in general for addition of subspaces of $ V $.
+
 <details>
-<summary>Solution</summary>
+<summary>Proof</summary>
+
+Let arbitrary $ U \ \text{be subspace of} \ V $. We seek $ W \ \text{subspace of} \ V $ such that:
+$$ U + W = \{ 0 \} $$
+
+Additive inverse must be general enough, so the cases when $ V = \{ 0 \} $ or $ U = \{ 0 \} $ are not considered.
+
+$$ \forall u \in U, \quad u + 0 \in U + W, \quad u + 0 = u \in U + W, \quad U \subseteq U + W $$
+
+Therefore,
+$$ \forall W \subseteq V, \quad U + W \supseteq U \supsetneq \{ 0 \} $$
+
+Generally, it is impossible to find a subspace $ W $ such that the inclusion property would not hold. Not to mention the existence of such $ W $ that would satisfy the additive inverse property.
 
 </details>
 
-#### Exercise 1C.19. Cancellation in subspace addition
+Yet for particular cases, such as $ U = \{ 0 \} $, the additive inverse does exist:
+$$ \{ 0 \} + \{ 0 \} = \{ 0 \} $$
+
+#### Exercise 1C.19
 
 Page reference 25
 
 Prove or give a counterexample:
 
-If $ V_1, V_2, U $ are subspaces of $ V $ such that $ V_1 + U = V_2 + U $, then $ V_1 = V_2 $.
+$$ ( V_1, V_2, U \ \text{are subspaces of} \ V : \quad V_1 + U = V_2 + U ) \implies V_1 = V_2 $$
 
 <details>
 <summary>Proof</summary>
 
 </details>
 
-#### Exercise 1C.20. Direct sum complement in $ F^4 $
+#### Exercise 1C.20
 
 Page reference 25
 

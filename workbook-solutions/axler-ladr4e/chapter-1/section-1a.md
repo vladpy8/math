@@ -171,7 +171,7 @@ $$
 
 Page reference 10
 
-$$ \forall \alpha \in \mathbb{C} , \quad \exist \ \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
+$$ \forall \alpha \in \mathbb{C}, \quad \exists \ \beta \in \mathbb{C} : \quad \alpha + \beta = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -205,7 +205,12 @@ $$ \beta = -a_r - a_i \, i $$
 
 Page reference 10
 
-$$ \forall \alpha \in \mathbb{C} , \quad \alpha \neq 0 , \quad \exist \ \beta \in \mathbb{C} : \quad \alpha \, \beta = 1 $$
+$$
+\forall \alpha \in \mathbb{C}
+, \quad \alpha \neq 0
+, \quad \exists \ \beta \in \mathbb{C}
+: \quad \alpha \, \beta = 1
+$$
 
 <details>
 <summary>Proof</summary>
@@ -397,7 +402,7 @@ $$
 
 Page reference 10
 
-Explain why $ \not\exist \ \lambda \in \mathbb{C} $:
+Explain why $ \not\exists \ \lambda \in \mathbb{C} $:
 $$ \lambda (2 - 3 \, i, 5 + 4 \, i, -6 + 7 \, i) = (12 - 5 \, i, 7 + 22 \, i, -32 - 9 \, i) $$
 
 <details>
