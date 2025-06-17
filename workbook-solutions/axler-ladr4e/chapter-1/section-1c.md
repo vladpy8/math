@@ -10,8 +10,8 @@ Page reference 20
 
 Let $ W $ and $ U $ be subspaces of $ F^3 $:
 $$
-U = \{ (x, 0, 0) \in F^3, \ x \in F \} \\
-W = \{ (0, y, 0) \in F^3, \ y \in F \}
+U = \{ (x, 0, 0) \in F^3, \ x \in F \}
+\\ W = \{ (0, y, 0) \in F^3, \ y \in F \}
 $$
 
 Verify:
@@ -22,8 +22,8 @@ $$ U + W = \{ (x, y, 0) \in F^3, \ x, y \in F \} $$
 
 Let arbitrary vectors $ u \in U $ and $ w \in W $ be defined as:
 $$
-u = (x, 0, 0) \in U, \ x \in F \\
-w = (0, y, 0) \in W, \ y \in F
+u = (x, 0, 0) \in U, \ x \in F
+\\ w = (0, y, 0) \in W, \ y \in F
 $$
 
 Sum of vectors $ u + w $ can be expressed as:
@@ -65,8 +65,8 @@ Let
 $$ v_1, u_1 \in V_1, \quad v_2, u_2 \in V_2, \quad \ldots, \quad v_n, u_n \in V_n $$
 
 $$
-(v_1 + v_2 + \ldots + v_n) \in (V_1 + V_2 + \ldots + V_n) \\
-(u_1 + u_2 + \ldots + u_n) \in (V_1 + V_2 + \ldots + V_n)
+(v_1 + v_2 + \ldots + v_n) \in (V_1 + V_2 + \ldots + V_n)
+\\ (u_1 + u_2 + \ldots + u_n) \in (V_1 + V_2 + \ldots + V_n)
 $$
 
 Then,
@@ -101,8 +101,8 @@ Page reference 22
 
 Let $ U $ and $ W $ be subspaces of $ F^3 $:
 $$
-U = \{ (x, y, 0) \in F^3, \ x, y \in F \} \\
-W = \{ (0, 0, z) \in F^3, \ z \in F \}
+U = \{ (x, y, 0) \in F^3, \ x, y \in F \}
+\\ W = \{ (0, 0, z) \in F^3, \ z \in F \}
 $$
 
 Then
@@ -113,8 +113,8 @@ $$ F^3 = U \oplus W $$
 
 Let arbitrary vectors $ u \in U $ and $ w \in W $ be defined as:
 $$
-u = (x, y, 0) \in U, \ x, y \in F \\
-w = (0, 0, z) \in W, \ z \in F
+u = (x, y, 0) \in U, \ x, y \in F
+\\ w = (0, 0, z) \in W, \ z \in F
 $$
 
 Then sum of vectors $ u + w $ can be expressed as:
@@ -155,8 +155,8 @@ $$ F^n = V_1 \oplus V_2 \oplus \dots \oplus V_n $$
 Let arbitrary vectors $ v_1, v_2, \ldots, v_n $ be defined as:
 $$
 v_1 = (x_1, 0, \ldots, 0) \in V_1, \quad x_1 \in F \\
-v_2 = (0, x_2, 0, \ldots, 0) \in V_2, \quad x_2 \in F \\
-\ldots \\
+v_2 = (0, x_2, 0, \ldots, 0) \in V_2, \quad x_2 \in F
+\\ \ldots \\
 v_n = (0, 0, \ldots, 0, x_n) \in V_n, \quad x_n \in F
 $$
 
@@ -209,8 +209,8 @@ $$ 0 = (0, 0, 0) \in U_a $$
 
 Let arbitrary vectors be defined as:
 $$
-u = (x_1, x_2, x_3) \in U_a \\
-v = (y_1, y_2, y_3) \in U_a
+u = (x_1, x_2, x_3) \in U_a
+\\ v = (y_1, y_2, y_3) \in U_a
 $$
 
 Since both $ u $ and $ v $ are in $ U_a $:
@@ -229,8 +229,8 @@ $$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U_a $$
 
 Let arbitrary vector and scalar be defined as:
 $$
-u = (x_1, x_2, x_3) \in U_a \\
-\lambda \in F
+u = (x_1, x_2, x_3) \in U_a
+\\ \lambda \in F
 $$
 
 Since $ u \in U_a $:
@@ -275,9 +275,9 @@ $ U_c $ is not a subspace of $ F^3 $, since closure under addition does not hold
 
 Let
 $$
-u = (1, 0, 0) \in U_c \\
-v = (0, 1, 0) \in U_c \\
-w = (0, 0, 1) \in U_c
+u = (1, 0, 0) \in U_c
+\\ v = (0, 1, 0) \in U_c
+\\ w = (0, 0, 1) \in U_c
 $$
 
 Then
@@ -314,8 +314,8 @@ $$ 0 = (0, 0, 0) \in U_d $$
 
 Let arbitrary vectors be defined as:
 $$
-u = (x_1, x_2, x_3) \in U_d \\
-v = (y_1, y_2, y_3) \in U_d
+u = (x_1, x_2, x_3) \in U_d
+\\ v = (y_1, y_2, y_3) \in U_d
 $$
 
 Since both $ u $ and $ v $ are in $ U_d $:
@@ -334,8 +334,8 @@ $$ u + v = (x_1 + y_1, x_2 + y_2, x_3 + y_3) \in U_d $$
 
 Let arbitrary vector and scalar be defined as:
 $$
-u = (x_1, x_2, x_3) \in U_d \\
-\lambda \in F
+u = (x_1, x_2, x_3) \in U_d
+\\ \lambda \in F
 $$
 
 Since $ u \in U_d $:
@@ -554,14 +554,14 @@ $$ 0 \in U_e $$
 
 Let arbitrary sequences be defined as:
 $$
-u = (x_k)_{k=1}^\infty \in U_e \\
-v = (y_k)_{k=1}^\infty \in U_e
+u = (x_k)_{k=1}^\infty \in U_e
+\\ v = (y_k)_{k=1}^\infty \in U_e
 $$
 
 Since both $ u $ and $ v $ are in $ U_e $:
 $$
-\lim_{k \to \infty} x_k = 0 \\
-\lim_{k \to \infty} y_k = 0
+\lim_{k \to \infty} x_k = 0
+\\ \lim_{k \to \infty} y_k = 0
 $$
 
 By the properties of limits:
@@ -576,8 +576,8 @@ $$ u + v = (x_k + y_k)_{k=1}^\infty \in U_e $$
 
 Let arbitrary sequence and scalar be defined as:
 $$
-u = (x_k)_{k=1}^\infty \in U_e \\
-\lambda \in \mathbb{C}
+u = (x_k)_{k=1}^\infty \in U_e
+\\ \lambda \in \mathbb{C}
 $$
 
 Since $ u \in U_e $:
@@ -621,8 +621,8 @@ The constant function is differentiable.
 Considering the defining equation:
 $$
 \begin{aligned}
-0'(-1) &= 0 (-1) = 0 \\
-&= 3 \cdot 0(2) = 3 \cdot 0
+0'(-1) &= 0 (-1) = 0
+\\ &= 3 \cdot 0(2) = 3 \cdot 0
 \end{aligned}
 $$
 
@@ -640,18 +640,18 @@ And $ f + g $ is differentiable since both $ f $ and $ g $ are differentiable.
 Both $ f $ and $ g $ are in $ U $:
 $$
 \begin{aligned}
-f'(-1) &= 3 \, f(2) \\
-g'(-1) &= 3 \, g(2)
+f'(-1) &= 3 \, f(2)
+\\ g'(-1) &= 3 \, g(2)
 \end{aligned}
 $$
 
 Considering the defining equation:
 $$
 \begin{aligned}
-(f + g)'(-1) &= f'(-1) + g'(-1) \\
-&= 3 \, f(2) + 3 \, g(2) \\
-&= 3 \, (f(2) + g(2)) \\
-&= 3 \, (f + g)(2)
+(f + g)'(-1) &= f'(-1) + g'(-1)
+\\ &= 3 \, f(2) + 3 \, g(2)
+\\ &= 3 \, (f(2) + g(2))
+\\ &= 3 \, (f + g)(2)
 \end{aligned}
 $$
 
@@ -673,10 +673,10 @@ $$ f'(-1) = 3 \, f(2) $$
 Considering the defining equation:
 $$
 \begin{aligned}
-(\lambda f)'(-1) &= \lambda \, f'(-1) \\
-&= \lambda \, (3 \, f(2)) \\
-&= 3 \, (\lambda \, f(2)) \\
-&= 3 \, (\lambda f)(2)
+(\lambda f)'(-1) &= \lambda \, f'(-1)
+\\ &= \lambda \, (3 \, f(2))
+\\ &= 3 \, (\lambda \, f(2))
+\\ &= 3 \, (\lambda f)(2)
 \end{aligned}
 $$
 
@@ -725,8 +725,8 @@ Therefore, $ 0 \in U $.
 
 Let $ f, g \in U $. Then $ f $ and $ g $ are continuous and:
 $$
-\int_0^1 f(x) \, dx = 0 \\
-\int_0^1 g(x) \, dx = 0
+\int_0^1 f(x) \, dx = 0
+\\ \int_0^1 g(x) \, dx = 0
 $$
 
 Since $ f $ and $ g $ are continuous, $ f + g $ is also continuous.
@@ -734,9 +734,9 @@ Since $ f $ and $ g $ are continuous, $ f + g $ is also continuous.
 Using the properties of addition of integrals:
 $$
 \begin{aligned}
-\int_0^1 (f + g)(x) \, dx &= \int_0^1 (f(x) + g(x)) \, dx \\
-&= \int_0^1 f(x) \, dx + \int_0^1 g(x) \, dx \\
-&= 0 + 0 = 0
+\int_0^1 (f + g)(x) \, dx &= \int_0^1 (f(x) + g(x)) \, dx
+\\ &= \int_0^1 f(x) \, dx + \int_0^1 g(x) \, dx
+\\ &= 0 + 0 = 0
 \end{aligned}
 $$
 
@@ -755,9 +755,9 @@ Since $ f $ is continuous, $ \lambda f $ is also continuous.
 Using the properties of scalar multiplication of integrals:
 $$
 \begin{aligned}
-\int_0^1 (\lambda f)(x) \, dx &= \int_0^1 \lambda f(x) \, dx \\
-&= \lambda \int_0^1 f(x) \, dx \\
-&= \lambda \cdot 0 = 0
+\int_0^1 (\lambda f)(x) \, dx &= \int_0^1 \lambda f(x) \, dx
+\\ &= \lambda \int_0^1 f(x) \, dx
+\\ &= \lambda \cdot 0 = 0
 \end{aligned}
 $$
 
@@ -835,8 +835,8 @@ Clearly $ 0^3 = 0^3 $, so $ 0 \in U_R $.
 
 Let arbitrary vectors be defined as:
 $$
-u = (a_1, b_1, c_1) \in U_R \\
-v = (a_2, b_2, c_2) \in U_R
+u = (a_1, b_1, c_1) \in U_R
+\\ v = (a_2, b_2, c_2) \in U_R
 $$
 
 Sum of the vectors is $ (u + v) \in \mathbb{R}^3 $:
@@ -864,17 +864,17 @@ By proving that $ x^3 < y^3 $, we get a contradiction.
 
 $$
 \begin{aligned}
-x &< y \\
-x \cdot x &< y \cdot x \\
-x^2 &< y \cdot x
+x &< y
+\\ x \cdot x &< y \cdot x
+\\ x^2 &< y \cdot x
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-x &< y \\
-x \cdot y &< y \cdot y \\
-x \cdot y &< y^2
+x &< y
+\\ x \cdot y &< y \cdot y
+\\ x \cdot y &< y^2
 \end{aligned}
 $$
 
@@ -884,24 +884,24 @@ $$ x^2 < y \cdot x < y^2 $$
 Next
 $$
 \begin{aligned}
-x^2 &< y^2 \\
-x^2 \cdot x &< y^2 \cdot x \\
-x^3 &< y^2 \cdot x
+x^2 &< y^2
+\\ x^2 \cdot x &< y^2 \cdot x
+\\ x^3 &< y^2 \cdot x
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-x &< y \\
-x \cdot y^2 &< y \cdot y^2 \\
-x \cdot y^2 &< y^3
+x &< y
+\\ x \cdot y^2 &< y \cdot y^2
+\\ x \cdot y^2 &< y^3
 \end{aligned}
 $$
 
 Therefore,
 $$
-x^3 < y^2 \cdot x < y^3 \\
-x^3 < y^3
+x^3 < y^2 \cdot x < y^3
+\\ x^3 < y^3
 $$
 
 ###### Case 2. $ x = 0, 0 < y $
@@ -910,11 +910,11 @@ $$ x^3 = 0 $$
 
 $$
 \begin{aligned}
-0 &< y \\
-0 \cdot y &< y \cdot y \\
-0 &< y^2 \\
-0 \cdot y &< y^2 \cdot y \\
-0 &< y^3
+0 &< y
+\\ 0 \cdot y &< y \cdot y
+\\ 0 &< y^2
+\\ 0 \cdot y &< y^2 \cdot y
+\\ 0 &< y^3
 \end{aligned}
 $$
 
@@ -922,11 +922,11 @@ $$
 
 $$
 \begin{aligned}
-x &< 0 \\
-x \cdot (-x) &< 0 \cdot (-x) \\
--x^2 &< 0 \\
--x^2 \cdot (-x) &< 0 \cdot (-x) \\
-x^3 &< 0
+x &< 0
+\\ x \cdot (-x) &< 0 \cdot (-x)
+\\ -x^2 &< 0
+\\ -x^2 \cdot (-x) &< 0 \cdot (-x)
+\\ x^3 &< 0
 \end{aligned}
 $$
 
@@ -995,9 +995,9 @@ $ U_C $ is not a subspace of $ \mathbb{C}^3 $. The closure under addition proper
 
 Let arbitrary vectors be defined as:
 $$
-u = (r + i \, \sqrt{3} r, r - i \, \sqrt{3} r, 0) \in U_C \\
-v = (-r + i \, \sqrt{3} r, -r - i \, \sqrt{3} r, 0) \in U_C \\
-r \in \mathbb{R}, \ r > 0
+u = (r + i \, \sqrt{3} r, r - i \, \sqrt{3} r, 0) \in U_C
+\\ v = (-r + i \, \sqrt{3} r, -r - i \, \sqrt{3} r, 0) \in U_C
+\\ r \in \mathbb{R}, \ r > 0
 $$
 
 The formula for the cube of a complex number:
@@ -1013,11 +1013,11 @@ $$
 $$
 \begin{aligned}
 
-x^2 &= (x_r + i \, x_i)^2 = x_r^2 - x_i^2 + 2 i \, x_r x_i \\
+x^2 &= (x_r + i \, x_i)^2 = x_r^2 - x_i^2 + 2 i \, x_r x_i
 
-x^3 &= (x_r + i \, x_i)^3 = (x_r^2 - x_i^2 + 2 i \, x_r x_i) (x_r + i \, x_i) \\
-&= x_r^3 - x_i^2 x_r + 2 i \, x_r^2 x_i + i \, (x_r^2 x_i - x_i^3) - 2 x_r x_i^2 \\
-&= x_r^3 + i \, 3 x_r^2 x_i - 3 x_r x_i^2 - i \, x_i^3
+\\ x^3 &= (x_r + i \, x_i)^3 = (x_r^2 - x_i^2 + 2 i \, x_r x_i) (x_r + i \, x_i)
+\\ &= x_r^3 - x_i^2 x_r + 2 i \, x_r^2 x_i + i \, (x_r^2 x_i - x_i^3) - 2 x_r x_i^2
+\\ &= x_r^3 + i \, 3 x_r^2 x_i - 3 x_r x_i^2 - i \, x_i^3
 
 \end{aligned}
 $$
@@ -1032,21 +1032,21 @@ $$
 
 (r + i \, \sqrt{3} r)^3
 &= r^3 + i \, 3 r^2 \sqrt{3} r - 3 r (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
-= -8 r^3 \\
+= -8 r^3
 
-(r - i \, \sqrt{3} r)^3
+\\ (r - i \, \sqrt{3} r)^3
 &= r^3 - i \, 3 r^2 \sqrt{3} r - 3 r (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
-= -8 r^3 \\
+= -8 r^3
 
-(-r + i \, \sqrt{3} r)^3
+\\ (-r + i \, \sqrt{3} r)^3
 &= -r^3 + i \, 3 (-r)^2 \sqrt{3} r - 3 (-r) (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
-= 8 r^3 \\
+= 8 r^3
 
-(-r - i \, \sqrt{3} r)^3
+\\ (-r - i \, \sqrt{3} r)^3
 &= -r^3 - i \, 3 (-r)^2 \sqrt{3} r - 3 (-r) (\sqrt{3} r)^2 - i \, (\sqrt{3} r)^3
-= 8 r^3 \\
+= 8 r^3
 
-\end{aligned}
+\\ \end{aligned}
 $$
 
 Then,
@@ -1054,12 +1054,12 @@ $$
 \begin{aligned}
 
 ((r + i \, \sqrt{3} r) + (-r + i \, \sqrt{3} r))^3
-&= (i \, 2 \sqrt{3} r)^3 = - i \, 24 \sqrt{3} r^3 \\
+&= (i \, 2 \sqrt{3} r)^3 = - i \, 24 \sqrt{3} r^3
 
-((r - i \, \sqrt{3} r) + (-r - i \, \sqrt{3} r))^3
-&= (-i \, 2 \sqrt{3} r)^3 = i \, 24 \sqrt{3} r^3 \\
+\\ ((r - i \, \sqrt{3} r) + (-r - i \, \sqrt{3} r))^3
+&= (-i \, 2 \sqrt{3} r)^3 = i \, 24 \sqrt{3} r^3
 
-\end{aligned}
+\\ \end{aligned}
 $$
 
 Therefore, $ (u + v) \notin U_C $.
@@ -1188,8 +1188,8 @@ Let $ u, v \in V_1 \cap V_2 $.
 
 Then
 $$
-u, v \in V_1, \ u, v \in V_2 \\
-u + v \in V_1, \ u + v \in V_2
+u, v \in V_1, \ u, v \in V_2
+\\ u + v \in V_1, \ u + v \in V_2
 $$
 
 Therefore,
@@ -1201,8 +1201,8 @@ Let $ u \in V_1 \cap V_2 $ and $ \lambda \in F $.
 
 Then
 $$
-u \in V_1, \ u \in V_2 \\
-\lambda u \in V_1, \ \lambda u \in V_2
+u \in V_1, \ u \in V_2
+\\ \lambda u \in V_1, \ \lambda u \in V_2
 $$
 
 Therefore,
@@ -1277,8 +1277,8 @@ Let $ \bar{U_1} = U_1 \setminus U_2 $ and $ \bar{U_2} = U_2 \setminus U_1 $.
 
 If at least one of these sets is empty, then the second statement of the forward implication immediately follows. Since,
 $$
-\bar{U_1} = \emptyset \implies U_1 \subseteq U_2 \\
-\bar{U_2} = \emptyset \implies U_2 \subseteq U_1
+\bar{U_1} = \emptyset \implies U_1 \subseteq U_2
+\\ \bar{U_2} = \emptyset \implies U_2 \subseteq U_1
 $$
 
 When both $ \bar{U_1} $ and $ \bar{U_2} $ are non-empty, the second expression of the forward implication cannot be true. This essentially forms the contradiction statement of the forward implication:
@@ -1297,9 +1297,9 @@ Then, either $ \bar{u_1} + \bar{u_2} \in U_1 $ or $ \bar{u_1} + \bar{u_2} \in U_
 
 $$
 \begin{aligned}
-\bar{u_1} + \bar{u_2} \in U_1 \implies -\bar{u_1} + (\bar{u_1} + \bar{u_2}) \in U_1 \\
-&\implies (-\bar{u_1} + \bar{u_1}) + \bar{u_2} \in U_1 \\
-&\implies \bar{u_2} \in U_1
+\bar{u_1} + \bar{u_2} \in U_1 \implies -\bar{u_1} + (\bar{u_1} + \bar{u_2}) \in U_1
+\\ &\implies (-\bar{u_1} + \bar{u_1}) + \bar{u_2} \in U_1
+\\ &\implies \bar{u_2} \in U_1
 \end{aligned}
 $$
 
@@ -1367,15 +1367,15 @@ $$
 
 $$
 \begin{aligned}
-u_1 + u_2 &= (x_1, -x_1, 2 \cdot x_1) + (x_2, -x_2, 2 \cdot x_2) \\
-&= (x_1 + x_2, -(x_1 + x_2), 2 \cdot (x_1 + x_2))
+u_1 + u_2 &= (x_1, -x_1, 2 \cdot x_1) + (x_2, -x_2, 2 \cdot x_2)
+\\ &= (x_1 + x_2, -(x_1 + x_2), 2 \cdot (x_1 + x_2))
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-w_1 + w_2 &= (y_1, y_1, 2 \cdot y_1) + (y_2, y_2, 2 \cdot y_2) \\
-&= (y_1 + y_2, y_1 + y_2, 2 \cdot (y_1 + y_2))
+w_1 + w_2 &= (y_1, y_1, 2 \cdot y_1) + (y_2, y_2, 2 \cdot y_2)
+\\ &= (y_1 + y_2, y_1 + y_2, 2 \cdot (y_1 + y_2))
 \end{aligned}
 $$
 
@@ -1389,29 +1389,29 @@ $$
 
 Let
 $$
-\lambda \in F, \\
-u = (x, -x, 2 \cdot x) \in U \\
-w = (y, y, 2 \cdot y) \in W
+\lambda \in F,
+\\ u = (x, -x, 2 \cdot x) \in U
+\\ w = (y, y, 2 \cdot y) \in W
 $$
 
 $$
 \begin{aligned}
-\lambda u &= \lambda(x, -x, 2 \cdot x) \\
-&= (\lambda x, -\lambda x, 2 \cdot \lambda x) \\
-\end{aligned}
+\lambda u &= \lambda(x, -x, 2 \cdot x)
+\\ &= (\lambda x, -\lambda x, 2 \cdot \lambda x)
+\\ \end{aligned}
 $$
 
 $$
 \begin{aligned}
-\lambda w &= \lambda(y, y, 2 \cdot y) \\
-&= (\lambda y, \lambda y, 2 \cdot \lambda y) \\
-\end{aligned}
+\lambda w &= \lambda(y, y, 2 \cdot y)
+\\ &= (\lambda y, \lambda y, 2 \cdot \lambda y)
+\\ \end{aligned}
 $$
 
 Therefore,
 $$
-\lambda u \in U \\
-\lambda w \in W
+\lambda u \in U
+\\ \lambda w \in W
 $$
 
 </details>
@@ -1567,8 +1567,8 @@ The statement is not true.
 Let
 $$
 V_1 = \{ (x, 0) \in F^2 : x \in F \} \\
-V_2 = F^2 = \{ (x, y) \in F^2 : x, y \in F \} \\
-U = V_2
+V_2 = F^2 = \{ (x, y) \in F^2 : x, y \in F \}
+\\ U = V_2
 $$
 
 According to [Exercise 1C.15](#exercise-1c15-sum-of-a-subspace-with-itself):
@@ -1581,16 +1581,16 @@ $$
 
 Since, $ x_1 $ and $ x_2 $ are arbitrary:
 $$
-\forall x_1, x_2 \in F, \quad \exists \ x : \quad x = x_1 + x_2 \\
-\forall x \in F, \quad \exists \ x_1, x_2 \in F : \quad x = x_1 + x_2
+\forall x_1, x_2 \in F, \quad \exists \ x : \quad x = x_1 + x_2
+\\ \forall x \in F, \quad \exists \ x_1, x_2 \in F : \quad x = x_1 + x_2
 $$
 
 Then
 $$
 \begin{aligned}
-V_1 + U &= \{ (x_1 + x_2, y) \in F^2 : x_1, x_2, y \in F \} \\
-&= \{ (x, y) \in F^2 : x, y \in F \} \\
-&= F^2 = V_2
+V_1 + U &= \{ (x_1 + x_2, y) \in F^2 : x_1, x_2, y \in F \}
+\\ &= \{ (x, y) \in F^2 : x, y \in F \}
+\\ &= F^2 = V_2
 \end{aligned}
 $$
 
@@ -1618,8 +1618,8 @@ There are possibly many solutions. Yet one simple choice is:
 $$ W = \{ (0, z, 0, t) \in F^4 : z, t \in F \} $$
 
 $$
-U + W = \{ (x, x + z, y, y + t) \in F^4 : x, y, z, t \in F \} \\
-U + W \subseteq F^4
+U + W = \{ (x, x + z, y, y + t) \in F^4 : x, y, z, t \in F \}
+\\ U + W \subseteq F^4
 $$
 
 $$
@@ -1631,8 +1631,8 @@ $$
 $$
 \forall (a, b, c, d) \in F^4
 , \quad \exists \ (x, x + z, y, y + t) \in U + W
-: \quad (a, b, c, d) = (x, x + z, y, y + t) \\
-F^4 \subseteq U + W
+: \quad (a, b, c, d) = (x, x + z, y, y + t)
+\\ F^4 \subseteq U + W
 $$
 
 Therefore,
@@ -1668,8 +1668,8 @@ One possible choice is:
 $$ W = \{ (0, 0, z, t, s) \in F^5 : z, t, s \in F \} $$
 
 $$
-U + W = \{ (x, y, x + y + z, x - y + t, 2x + s) \in F^5 : x, y, z, t, s \in F \} \\
-U + W \subseteq F^5
+U + W = \{ (x, y, x + y + z, x - y + t, 2x + s) \in F^5 : x, y, z, t, s \in F \}
+\\ U + W \subseteq F^5
 $$
 
 $$
@@ -1681,8 +1681,8 @@ $$
 $$
 \forall (a, b, c, d, e) \in F^5
 , \quad \exists \ (x, y, x + y + z, x - y + t, 2x + s) \in U + W
-: \quad (a, b, c, d, e) = (x, y, x + y + z, x - y + t, 2x + s) \\
-F^5 \subseteq U + W
+: \quad (a, b, c, d, e) = (x, y, x + y + z, x - y + t, 2x + s)
+\\ F^5 \subseteq U + W
 $$
 
 Therefore,
