@@ -83,7 +83,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall x \in F^n, \quad \exists y \in F^n, \quad x + y = 0 $$
+$$ \forall x \in F^n, \quad \exists \ y \in F^n, \quad x + y = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -214,7 +214,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall f \in F^S, \quad \exists g \in F^S, \quad f + g = 0 $$
+$$ \forall f \in F^S, \quad \exists \ g \in F^S, \quad f + g = 0 $$
 
 <details>
 <summary>Proof</summary>
@@ -615,7 +615,7 @@ $$
 
 ##### 5. Additive inverse
 
-$$ \forall f \in V^S, \quad \exists g \in V^S, \quad f + g = 0 $$
+$$ \forall f \in V^S, \quad \exists \ g \in V^S, \quad f + g = 0 $$
 
 <details>
 <summary>Proof</summary>

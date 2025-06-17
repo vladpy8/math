@@ -1133,7 +1133,7 @@ $$
 P = \{
 	f \in \mathbb{R}^{\mathbb{R}}
 	: \quad \left(
-		\exists p \in \mathbb{R}, p > 0
+		\exists \ p \in \mathbb{R}, p > 0
 		: \quad \forall x \in \mathbb{R}, \quad f(x) = f(x + p)
 		\right)
 	\}
@@ -1548,7 +1548,7 @@ Generally, it is impossible to find a subspace $ W $ such that the inclusion pro
 
 </details>
 
-Yet for particular cases, such as $ U = \{ 0 \} $, the additive inverse does exist:
+Yet for particular case, when $ U = \{ 0 \} $, the additive inverse does exist:
 $$ \{ 0 \} + \{ 0 \} = \{ 0 \} $$
 
 #### Exercise 1C.19
@@ -1560,7 +1560,44 @@ Prove or give a counterexample:
 $$ ( V_1, V_2, U \ \text{are subspaces of} \ V : \quad V_1 + U = V_2 + U ) \implies V_1 = V_2 $$
 
 <details>
-<summary>Proof</summary>
+<summary>Solution</summary>
+
+The statement is not true.
+
+Let
+$$
+V_1 = \{ (x, 0) \in F^2 : x \in F \} \\
+V_2 = F^2 = \{ (x, y) \in F^2 : x, y \in F \} \\
+U = V_2
+$$
+
+According to [Exercise 1C.15](#exercise-1c15-sum-of-a-subspace-with-itself):
+$$ V_2 + U = V_2 + V_2 = V_2 = F^2 $$
+
+While,
+$$
+V_1 + U = V_1 + V_2 = \{ (x_1 + x_2, y) \in F^2 : x_1, x_2, y \in F \}
+$$
+
+Since, $ x_1 $ and $ x_2 $ are arbitrary:
+$$
+\forall x_1, x_2 \in F, \quad \exists \ x : \quad x = x_1 + x_2 \\
+\forall x \in F, \quad \exists \ x_1, x_2 \in F : \quad x = x_1 + x_2
+$$
+
+Then
+$$
+\begin{aligned}
+V_1 + U &= \{ (x_1 + x_2, y) \in F^2 : x_1, x_2, y \in F \} \\
+&= \{ (x, y) \in F^2 : x, y \in F \} \\
+&= F^2 = V_2
+\end{aligned}
+$$
+
+Thus
+$$ V_1 + U = V_2 + U = F^2 $$
+
+While clearly $$ V_1 \neq V_2 $$
 
 </details>
 
@@ -1568,41 +1605,136 @@ $$ ( V_1, V_2, U \ \text{are subspaces of} \ V : \quad V_1 + U = V_2 + U ) \impl
 
 Page reference 25
 
-For
-$$ U = \{ (x,x,y,y) \in F^4 :\quad x,y \in F \} $$
+Let
+$$ U = \{ (x, x, y, y) \in F^4 : x, y \in F \} $$
 
-Find a subspace $ W $ of $ F^4 $ such that $ F^4 = U \oplus W $.
+Find
+$$ W \ \text{subspace of} \ F^4 : \quad F^4 = U \oplus W $$
 
 <details>
 <summary>Solution</summary>
+
+There are possibly many solutions. Yet one simple choice is:
+$$ W = \{ (0, z, 0, t) \in F^4 : z, t \in F \} $$
+
+$$
+U + W = \{ (x, x + z, y, y + t) \in F^4 : x, y, z, t \in F \} \\
+U + W \subseteq F^4
+$$
+
+$$
+\forall (a, b, c, d) \in F^4
+, \quad \exists \ x, y, z, t \in F
+: \quad x = a, \ y = c, \ z = b - a, \ t = d - c
+$$
+
+$$
+\forall (a, b, c, d) \in F^4
+, \quad \exists \ (x, x + z, y, y + t) \in U + W
+: \quad (a, b, c, d) = (x, x + z, y, y + t) \\
+F^4 \subseteq U + W
+$$
+
+Therefore,
+$$ F^4 = U + W $$
+
+$$
+u = (x, x, y, y) \in U, \quad w = (0, z, 0, t) \in W
+, \quad u + w = (x, x + z, y, y + t) = (0, 0, 0, 0)
+\implies x = 0, \ y = 0, \ z = 0, \ t = 0
+$$
+
+$$ U \cap W = \{ (0, 0, 0, 0) \} $$
+
+Thus, using the theorem 1.45 for the condition of direct sum:
+$$ F^4 = U \oplus W $$
 
 </details>
 
-#### Exercise 1C.21. Direct sum complement in $ F^5 $
+#### Exercise 1C.21
 
 Page reference 25
 
-For
-$$ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $$
+Let
+$$ U = \{ (x, y, x + y, x - y, 2x) \in F^5 : \quad x, y \in F \} $$
 
-Find a subspace $ W $ of $ F^5 $ such that $ F^5 = U \oplus W $.
+Find
+$$ W \ \text{subspace of} \ F^5 : \quad F^5 = U \oplus W $$
 
 <details>
 <summary>Solution</summary>
+
+One possible choice is:
+$$ W = \{ (0, 0, z, t, s) \in F^5 : z, t, s \in F \} $$
+
+$$
+U + W = \{ (x, y, x + y + z, x - y + t, 2x + s) \in F^5 : x, y, z, t, s \in F \} \\
+U + W \subseteq F^5
+$$
+
+$$
+\forall (a, b, c, d, e) \in F^5
+, \quad \exists \ x, y, z, t, s \in F
+: \quad x = a, \ y = b, \ z = c - (a + b), \ t = d - (a - b), \ s = e - 2a
+$$
+
+$$
+\forall (a, b, c, d, e) \in F^5
+, \quad \exists \ (x, y, x + y + z, x - y + t, 2x + s) \in U + W
+: \quad (a, b, c, d, e) = (x, y, x + y + z, x - y + t, 2x + s) \\
+F^5 \subseteq U + W
+$$
+
+Therefore,
+$$ F^5 = U + W $$
+
+$$
+u = (x, y, x + y, x - y, 2x) \in U, \quad w = (0, 0, z, t, s) \in W
+, \\ \quad u + w = (x, y, x + y + z, x - y + t, 2x + s) = (0, 0, 0, 0, 0)
+\\ \implies x = 0, \ y = 0, \ z = 0, \ t = 0, \ s = 0
+$$
+
+$$ U \cap W = \{ (0, 0, 0, 0, 0) \} $$
+
+Thus, using the theorem 1.45 for the condition of direct sum:
+$$ F^5 = U \oplus W $$
 
 </details>
 
-#### Exercise 1C.22. Multiple direct sum complements in $ F^5 $
+#### Exercise 1C.22
 
 Page reference 25
 
-For
-$$ U = \{ (x,y,x+y,x-y,2x) \in F^5 :\quad x,y \in F \} $$
+Let
+$$ U = \{ (x, y, x + y, x - y, 2x) \in F^5 : \quad x, y \in F \} $$
 
-Find subspaces $ W_1, W_2, W_3 $ of $ F^5 $ such that $ W_k \neq \{0\} $ for $ k=1,2,3 $, and $ F^5 = U \oplus W_1 \oplus W_2 \oplus W_3 $.
+Find
+$$
+W_1, W_2, W_3 \ \text{subspaces of} \ F^5
+: \quad W_k \neq \{ 0 \}, \forall k \in \{ 1, 2, 3 \}
+, \quad F^5 = U \oplus W_1 \oplus W_2 \oplus W_3
+$$
 
 <details>
 <summary>Solution</summary>
+
+It is easy to leverage [exercise 1C.21](#exercise-1c21) solution:
+$$ W = \{ (0, 0, z, t, s) \in F^5 : z, t, s \in F \} $$
+
+To do so one requires to split the subspace $ W $ into three subspaces:
+$$
+W_1 = \{ (0, 0, z, 0, 0) \in F^5 : z \in F \} \\
+W_2 = \{ (0, 0, 0, t, 0) \in F^5 : t \in F \} \\
+W_3 = \{ (0, 0, 0, 0, s) \in F^5 : s \in F \}
+$$
+
+Then one can use the results from [example 1.43](#embedded-exercise-4-example-143) to prove that:
+$$ W = W_1 \oplus W_2 \oplus W_3 $$
+
+Therefore,
+$$ F^5 = U \oplus ( W_1 \oplus W_2 \oplus W_3 ) $$
+
+[TODO]
 
 </details>
 
@@ -1634,58 +1766,5 @@ $$ \mathbb{R}^{\mathbb{R}} = V_e \oplus V_o $$
 
 <details>
 <summary>Proof</summary>
-
-To prove that $\mathbb{R}^{\mathbb{R}} = V_e \oplus V_o$, we need to show:
-
-1. $V_e$ and $V_o$ are subspaces of $\mathbb{R}^{\mathbb{R}}$
-2. $V_e \cap V_o = \{0\}$, where $0$ is the zero function
-3. $V_e + V_o = \mathbb{R}^{\mathbb{R}}$, meaning every function in $\mathbb{R}^{\mathbb{R}}$ can be written as a sum of a function in $V_e$ and a function in $V_o$
-
-**Step 1:** Show that $V_e$ and $V_o$ are subspaces of $\mathbb{R}^{\mathbb{R}}$.
-
-For $V_e$:
-- The zero function $f(x) = 0$ satisfies $f(-x) = 0 = f(x)$, so $0 \in V_e$.
-- If $f, g \in V_e$, then $(f+g)(-x) = f(-x) + g(-x) = f(x) + g(x) = (f+g)(x)$, so $f+g \in V_e$.
-- If $f \in V_e$ and $c \in \mathbb{R}$, then $(cf)(-x) = c \cdot f(-x) = c \cdot f(x) = (cf)(x)$, so $cf \in V_e$.
-
-Therefore, $V_e$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
-
-For $V_o$:
-- The zero function $f(x) = 0$ satisfies $f(-x) = 0 = -f(x)$, so $0 \in V_o$.
-- If $f, g \in V_o$, then $(f+g)(-x) = f(-x) + g(-x) = -f(x) + (-g(x)) = -(f(x) + g(x)) = -(f+g)(x)$, so $f+g \in V_o$.
-- If $f \in V_o$ and $c \in \mathbb{R}$, then $(cf)(-x) = c \cdot f(-x) = c \cdot (-f(x)) = -(cf)(x)$, so $cf \in V_o$.
-
-Therefore, $V_o$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
-
-**Step 2:** Show that $V_e \cap V_o = \{0\}$.
-
-Suppose $f \in V_e \cap V_o$. Then:
-- $f \in V_e \implies f(-x) = f(x)$ for all $x \in \mathbb{R}$
-- $f \in V_o \implies f(-x) = -f(x)$ for all $x \in \mathbb{R}$
-
-Therefore, $f(x) = f(-x) = -f(x)$ for all $x \in \mathbb{R}$, which implies $2f(x) = 0$, so $f(x) = 0$ for all $x \in \mathbb{R}$.
-
-This means $f$ is the zero function, and $V_e \cap V_o = \{0\}$.
-
-**Step 3:** Show that $V_e + V_o = \mathbb{R}^{\mathbb{R}}$.
-
-For any function $f \in \mathbb{R}^{\mathbb{R}}$, we need to show that it can be written as $f = f_e + f_o$ where $f_e \in V_e$ and $f_o \in V_o$.
-
-Define:
-$$f_e(x) = \frac{f(x) + f(-x)}{2}$$
-$$f_o(x) = \frac{f(x) - f(-x)}{2}$$
-
-Let's verify that $f_e \in V_e$:
-$$f_e(-x) = \frac{f(-x) + f(x)}{2} = \frac{f(x) + f(-x)}{2} = f_e(x)$$
-
-Let's verify that $f_o \in V_o$:
-$$f_o(-x) = \frac{f(-x) - f(x)}{2} = \frac{-(f(x) - f(-x))}{2} = -f_o(x)$$
-
-Finally, let's check that $f = f_e + f_o$:
-$$f_e(x) + f_o(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2} = \frac{2f(x)}{2} = f(x)$$
-
-Therefore, every function $f \in \mathbb{R}^{\mathbb{R}}$ can be written as the sum of an even function $f_e \in V_e$ and an odd function $f_o \in V_o$.
-
-Since we have shown that $V_e$ and $V_o$ are subspaces, $V_e \cap V_o = \{0\}$, and $V_e + V_o = \mathbb{R}^{\mathbb{R}}$, we conclude that $\mathbb{R}^{\mathbb{R}} = V_e \oplus V_o$.
 
 </details>
