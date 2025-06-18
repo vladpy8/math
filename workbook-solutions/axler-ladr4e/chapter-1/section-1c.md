@@ -1646,7 +1646,7 @@ $$
 
 $$ U \cap W = \{ (0, 0, 0, 0) \} $$
 
-Thus, using the theorem 1.45 for the condition of direct sum:
+Thus, using the theorem 1.46 for the condition of direct sum:
 $$ F^4 = U \oplus W $$
 
 </details>
@@ -1696,7 +1696,7 @@ $$
 
 $$ U \cap W = \{ (0, 0, 0, 0, 0) \} $$
 
-Thus, using the theorem 1.45 for the condition of direct sum:
+Thus, using the theorem 1.46 for the condition of direct sum:
 $$ F^5 = U \oplus W $$
 
 </details>
@@ -1728,13 +1728,26 @@ W_2 = \{ (0, 0, 0, t, 0) \in F^5 : t \in F \} \\
 W_3 = \{ (0, 0, 0, 0, s) \in F^5 : s \in F \}
 $$
 
-Then one can use the results from [example 1.43](#embedded-exercise-4-example-143) to prove that:
+One can use the results from [example 1.43](#embedded-exercise-4-example-143) to prove the division:
 $$ W = W_1 \oplus W_2 \oplus W_3 $$
 
 Therefore,
 $$ F^5 = U \oplus ( W_1 \oplus W_2 \oplus W_3 ) $$
 
-[TODO]
+Using the associativity of sum of subspaces from [exercise 1C.17](#exercise-1c17-associativity-of-addition-of-subspaces-of-vector-spaces):
+$$ F^5 = U + W_1 + W_2 + W_3 $$
+
+Finally, using the theorem 1.45 and the uniqueness of zero vector in direct sum:
+$$
+\forall u \in U, \forall w \in W, \quad u + w = 0 \implies u = 0, \ w = 0
+\\ \forall w_1 \in W_1, \forall w_2 \in W_2, \forall w_3 \in W_3
+, \quad w_1 + w_2 + w_3 = 0 \implies w_1 = 0, \ w_2 = 0, \ w_3 = 0
+\\ \therefore \forall u \in U, \forall w_1 \in W_1, \forall w_2 \in W_2, \forall w_3 \in W_3
+, \quad u + w = u + (w_1 + w_2 + w_3) = 0 \implies u = 0, \ w_1 = 0, \ w_2 = 0, \ w_3 = 0
+$$
+
+Therefore,
+$$ F^5 = U \oplus W_1 \oplus W_2 \oplus W_3 $$
 
 </details>
 
@@ -1744,12 +1757,13 @@ Page reference 26
 
 Prove or give a counterexample:
 
-If $ V_1, V_2, U $ are subspaces of $ V $ such that $ V = V_1 \oplus U $ and $ V = V_2 \oplus U $, then $ V_1 = V_2 $.
-
-Hint: When trying to discover whether a conjecture in linear algebra is true or false, it is often useful to start by experimenting in $ F^2 $.
+$$
+\forall \ V_1, V_2, U \ \text{subspaces of} \ V
+: \quad V = V_1 \oplus U, \ V = V_2 \oplus U \implies V_1 = V_2
+$$
 
 <details>
-<summary>Proof</summary>
+<summary>Solution</summary>
 
 </details>
 
@@ -1758,10 +1772,10 @@ Hint: When trying to discover whether a conjecture in linear algebra is true or 
 Page reference 26
 
 Let
-$$ V_e = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = f(x) \} $$
-$$ V_o = \{ f \in \mathbb{R}^{\mathbb{R}} :\quad \forall x \in \mathbb{R}, \ f(-x) = -f(x) \} $$
+$$ V_e = \{ f \in \mathbb{R}^{\mathbb{R}} : \quad \forall x \in \mathbb{R}, \quad f(-x) = f(x) \} $$
+$$ V_o = \{ f \in \mathbb{R}^{\mathbb{R}} : \quad \forall x \in \mathbb{R}, \quad f(-x) = -f(x) \} $$
 
-Prove that:
+Then,
 $$ \mathbb{R}^{\mathbb{R}} = V_e \oplus V_o $$
 
 <details>
