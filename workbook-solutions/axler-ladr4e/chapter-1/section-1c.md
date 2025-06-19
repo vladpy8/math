@@ -1170,7 +1170,7 @@ Therefore, $ f + g \notin P $.
 
 Page reference 24
 
-$$ V_1, V_2 \ \text{are subspaces of} \ V \implies V_1 \cap V_2 \ \text{is a subspace of} \ V $$
+$$ \forall \ V_1, V_2 \ \text{subspaces of} \ V \implies V_1 \cap V_2 \ \text{is a subspace of} \ V $$
 
 <details>
 <summary>Proof</summary>
@@ -1454,7 +1454,7 @@ $$
 Page reference 25
 
 Determine whether:
-$$ \forall U, W \ \text{subspaces of} \ V, \quad U + W = W + U $$
+$$ \forall \ U, W \ \text{subspaces of} \ V, \quad U + W = W + U $$
 
 <details>
 <summary>Solution</summary>
@@ -1483,7 +1483,7 @@ $$ U + W = W + U $$
 Page reference 25
 
 Determine whether:
-$$ \forall V_1, V_2, V_3 \ \text{subspaces of} \ V, \quad (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3) $$
+$$ \forall \ V_1, V_2, V_3 \ \text{subspaces of} \ V, \quad (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3) $$
 
 <details>
 <summary>Solution</summary>
@@ -1557,7 +1557,7 @@ Page reference 25
 
 Prove or give a counterexample:
 
-$$ ( V_1, V_2, U \ \text{are subspaces of} \ V : \quad V_1 + U = V_2 + U ) \implies V_1 = V_2 $$
+$$ \forall \ V_1, V_2, U \ \text{subspaces of} \ V : \quad V_1 + U = V_2 + U \implies V_1 = V_2 $$
 
 <details>
 <summary>Solution</summary>
@@ -1571,7 +1571,7 @@ V_2 = F^2 = \{ (x, y) \in F^2 : x, y \in F \}
 \\ U = V_2
 $$
 
-According to [Exercise 1C.15](#exercise-1c15-sum-of-a-subspace-with-itself):
+According to the [Exercise 1C.15](#exercise-1c15-sum-of-a-subspace-with-itself):
 $$ V_2 + U = V_2 + V_2 = V_2 = F^2 $$
 
 While,
@@ -1751,7 +1751,7 @@ $$ F^5 = U \oplus W_1 \oplus W_2 \oplus W_3 $$
 
 </details>
 
-#### Exercise 1C.23. Uniqueness of direct sum complements
+#### Exercise 1C.23
 
 Page reference 26
 
@@ -1764,6 +1764,118 @@ $$
 
 <details>
 <summary>Solution</summary>
+
+This statement is not true in general.
+
+Let
+$$
+V = F^2
+\\ U = \{ (x, 0) \in F^2 : x \in F \}
+\\ V_1 = \{ (y, y) \in F^2 : y \in F \}
+\\ V_2 = \{ (-y, y) \in F^2 : y \in F \}
+$$
+
+The sets $ U, V_1, V_2 $ are subspaces of $ F^2 $.
+
+<details>
+<summary>Proof</summary>
+
+##### 1. Additive identity
+
+$$
+\exists \ x = 0 \in F: \quad (x, 0) = (0, 0) \in U
+\\ \exists \ y = 0 \in F: \quad (y, y) = (0, 0) \in V_1
+\\ \exists \ y = 0 \in F: \quad (-y, y) = (0, 0) \in V_2
+$$
+
+##### 2. Closure under addition
+
+$$
+\forall x_1, x_2 \in F, \quad (x_1, 0) + (x_2, 0) = (x_1 + x_2, 0) \in U
+\\ \forall y_1, y_2 \in F, \quad (y_1, y_1) + (y_2, y_2) = (y_1 + y_2, y_1 + y_2) \in V_1
+\\ \forall y_1, y_2 \in F, \quad (-y_1, y_1) + (-y_2, y_2) = (- (y_1 + y_2), y_1 + y_2) \in V_2
+$$
+
+##### 3. Closure under scalar multiplication
+
+$$
+\forall x \in F, \forall \lambda \in F, \quad \lambda (x, 0) = (\lambda x, 0) \in U
+\\ \forall y \in F, \forall \lambda \in F, \quad \lambda (y, y) = (\lambda y, \lambda y) \in V_1
+\\ \forall y \in F, \forall \lambda \in F, \quad \lambda (-y, y) = (-\lambda y, \lambda y) \in V_2
+$$
+
+</details>
+
+Then,
+$$
+F^2 = V = V_1 \oplus U
+\\ F^2 = V = V_2 \oplus U
+$$
+
+<details>
+<summary>Proof</summary>
+
+$$
+V_1 + U = \{ (y + x, y) : y \in F, x \in F \} \subseteq F^2
+\\ V_2 + U = \{ (-y + x, y) : y \in F, x \in F \} \subseteq F^2
+$$
+
+$$
+\forall (a, b) \in F^2, \quad \exists \ y, x \in F: \quad y = b, \ x = a - b
+, \quad (a, b) = (y + x, y) \in V_1 + U
+\\ \forall (a, b) \in F^2, \quad \exists \ y, x \in F: \quad y = b, \ x = a + b
+, \quad (a, b) = (-y + x, y) \in V_2 + U
+$$
+
+$$
+F^2 \subseteq V_1 + U
+\\ F^2 \subseteq V_2 + U
+$$
+
+Thus,
+$$
+F^2 = V = V_1 + U
+\\ F^2 = V = V_2 + U
+$$
+
+$$
+\forall v \in V_1 \cap U, \quad v = (y, y) \in V_1, y \in F, \quad v = (x, 0) \in U, x \in F
+\\ \implies (y, y) = (x, 0), \quad y = 0, \ x = y, \quad v = (0, 0)
+\\ \implies V_1 \cap U = \{ 0 \}
+$$
+
+$$
+\forall v \in V_2 \cap U, \quad v = (-y, y) \in V_2, y \in F, \quad v = (x, 0) \in U, x \in F
+\\ \implies (-y, y) = (x, 0), \quad y = 0, \ x = -y, \quad v = (0, 0)
+\\ \implies V_2 \cap U = \{ 0 \}
+$$
+
+Therefore, using the theorem 1.46 for the condition of direct sum:
+$$ F^2 = V = V_1 \oplus U $$
+$$ F^2 = V = V_2 \oplus U $$
+
+</details>
+
+Yet $ V_1 \neq V_2 $.
+
+<details>
+<summary>Proof</summary>
+
+It is easy to see once we assume the opposite.
+
+Let
+$$ v_1 = (y, y) \in V_1, y \in F, \quad y > 0 $$
+
+Then, given the assumption $ V_1 = V_2 $, there should:
+$$
+\exists \ v_2 \in V_2 : \quad v_1 = v_2
+\\ \implies \exists \ y' \in F : \quad (y, y) = (-y', y'), \quad y = -y', \quad y = y'
+\\ \implies y = -y
+$$
+
+Which produces a contradiction, since $ y > 0 $.
+
+</details>
 
 </details>
 
