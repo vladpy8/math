@@ -10,7 +10,7 @@ Execute either:
 
 Prioritize [precision over speed](#1-precision-over-speed).
 
-Adhere to the [style guidelines](#2-style-guidelines).
+Adhere to the [style guidelines](/markdown-math-style-guidelines.md).
 
 If provided, focus on the content of the specific exercise(s), task(s), section(s), or chapter(s) of the source text, reading only the specified fragments and ignoring the rest of the source text.
 
@@ -112,8 +112,8 @@ Each separate definition or group of relevant and interconnected definitions mus
 
 Each definition item must consist of:
 1. [Page reference statement](#326-page-reference-statement)
-2. [Variables declarations](#242-variables-declarations) statements, if necessary
-3. [Definition](#241-definitions) statements
+2. [Variables declarations](/markdown-math-style-guidelines.md#242-variables-declarations) statements, if necessary
+3. [Definition](/markdown-math-style-guidelines.md#241-definitions) statements
 
 #### 3.3.3. Exercises
 
@@ -127,7 +127,7 @@ Put individual exercise items under the subheading `#### Exercise [Label]. [Titl
 
 Each exercise item must consist of:
 1. [Page reference statement](#326-page-reference-statements)
-2. [Task](#245-tasks) statement
+2. [Task](/markdown-math-style-guidelines.md#245-tasks) statement
 
 #### 3.3.4. Embedded exercises
 
@@ -150,7 +150,7 @@ Solutions and proofs must be omitted. Leave the details section empty.
 
 #### 3.4.2. Do not imitate the source text
 
-Do not follow the source text in terms of formatting, structure, or content. It is a top priority to follow the [style guidelines](#2-style-guidelines) and [extraction rules](#3-extraction-of-exercises).
+Do not follow the source text in terms of formatting, structure, or content. It is a top priority to follow the [style guidelines](/markdown-math-style-guidelines.md) and [extraction rules](#3-extraction-of-exercises).
 
 #### 3.4.3. Do not duplicate exercises
 
@@ -170,12 +170,12 @@ Ultimately, two types of multi-part exercises are possible:
 1. "[Multi-part-solution]"
 2. "[Multi-task]"
 
-"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying [task](#245-tasks) [statement](#211-statements-and-expressions) of the exercise, such as, but not limited to:
+"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying [task](/markdown-math-style-guidelines.md#245-tasks) [statement](/markdown-math-style-guidelines.md#211-statements-and-expressions) of the exercise, such as, but not limited to:
 - A set of properties to be proven for an object to belong to a certain class
 - A set of sub-statements of the theorem to be proven
 - A set of well-known steps to be followed in the solution of a task
 
-Each "[Multi-part-solution]" exercise must contain a single enclosing task statement and multiple sub-[task](#245-tasks) [statements](#211-statements-and-expressions) within the details section of that enclosing task statement.
+Each "[Multi-part-solution]" exercise must contain a single enclosing task statement and multiple sub-[task](/markdown-math-style-guidelines.md#245-tasks) [statements](/markdown-math-style-guidelines.md#211-statements-and-expressions) within the details section of that enclosing task statement.
 
 "[Multi-task]" exercises contain clear labeling of their parts in the source text, such as, but not limited to A, B, C, or 1, 2, 3.
 
