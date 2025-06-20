@@ -112,8 +112,8 @@ Each separate definition or group of relevant and interconnected definitions mus
 
 Each definition item must consist of:
 1. [Page reference statement](#326-page-reference-statement)
-2. [Variables declarations](/markdown-math-style-guidelines.md#242-variables-declarations) statements, if necessary
-3. [Definition](/markdown-math-style-guidelines.md#241-definitions) statements
+2. [Variables declarations](/markdown-math-style-guidelines.md#42-variables-declarations) statements, if necessary
+3. [Definition](/markdown-math-style-guidelines.md#41-definitions) statements
 
 #### 3.3.3. Exercises
 
@@ -127,7 +127,7 @@ Put individual exercise items under the subheading `#### Exercise [Label]. [Titl
 
 Each exercise item must consist of:
 1. [Page reference statement](#326-page-reference-statements)
-2. [Task](/markdown-math-style-guidelines.md#245-tasks) statement
+2. [Task](/markdown-math-style-guidelines.md#45-tasks) statement
 
 #### 3.3.4. Embedded exercises
 
@@ -170,12 +170,12 @@ Ultimately, two types of multi-part exercises are possible:
 1. "[Multi-part-solution]"
 2. "[Multi-task]"
 
-"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying [task](/markdown-math-style-guidelines.md#245-tasks) [statement](/markdown-math-style-guidelines.md#211-statements-and-expressions) of the exercise, such as, but not limited to:
+"[Multi-part-solution]" exercises are those that contain multiple interconnected parts relevant to a single unifying [task](/markdown-math-style-guidelines.md#45-tasks) [statement](/markdown-math-style-guidelines.md#211-statements-and-expressions) of the exercise, such as, but not limited to:
 - A set of properties to be proven for an object to belong to a certain class
 - A set of sub-statements of the theorem to be proven
 - A set of well-known steps to be followed in the solution of a task
 
-Each "[Multi-part-solution]" exercise must contain a single enclosing task statement and multiple sub-[task](/markdown-math-style-guidelines.md#245-tasks) [statements](/markdown-math-style-guidelines.md#211-statements-and-expressions) within the details section of that enclosing task statement.
+Each "[Multi-part-solution]" exercise must contain a single enclosing task statement and multiple sub-[task](/markdown-math-style-guidelines.md#45-tasks) [statements](/markdown-math-style-guidelines.md#211-statements-and-expressions) within the details section of that enclosing task statement.
 
 "[Multi-task]" exercises contain clear labeling of their parts in the source text, such as, but not limited to A, B, C, or 1, 2, 3.
 
