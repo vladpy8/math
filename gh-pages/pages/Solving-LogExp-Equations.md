@@ -26,7 +26,7 @@ Considering two ranges of $ \alpha $
 
 For $ \alpha > 0 $ and $ \forall x > 0, \ D_x \, F(\alpha, \beta, x) > 0 $, the function $ F $ is strictly monotonous by x
 
-Let $ \lambda \in \R, \ \lambda > 0, \ \lambda < \inf(\alpha, 1) $
+Let $ \lambda \in \R, \ \lambda > 0, \ \lambda < \min(\alpha, 1) $
 
 $$ \lambda \, e^{-1 -|\beta|} < 1 $$
 
@@ -50,7 +50,7 @@ $$
 
 Considering continuity of the function $ F $, its strict monotonicity, as well as two points, in which function results in negative and positive values, one may conclude that there indeed exists a unique solution of the equation
 
-$$ \forall \alpha > 0, \ \forall \lambda \in \R, \ \lambda > 0, \ \lambda < \inf(\alpha, 1) \ \ \exist! \, x \in \R, \ x \in \left( \frac{\lambda \, e^{-1 -|\beta|}}{\alpha}, e^{1 + |\beta|} \right): F(\alpha, \beta, x) = 0 $$
+$$ \forall \alpha > 0, \ \forall \lambda \in \R, \ \lambda > 0, \ \lambda < \min(\alpha, 1) \ \ \exist! \, x \in \R, \ x \in \left( \frac{\lambda \, e^{-1 -|\beta|}}{\alpha}, e^{1 + |\beta|} \right): F(\alpha, \beta, x) = 0 $$
 
 #### Negative $ \alpha $
 
@@ -155,7 +155,7 @@ There exists an unique solution if $ \alpha > 0 $ or $ \alpha < 0, \frac{1}{|\al
 
 Since the function $ F $ is continuously differentiable and monotonous under certain conditions, there do exist solutions of the equation $ F(\alpha, \beta, x) = 0 $, it might be further investigated that the equation determines implicit function $ x_{sol} $ as function of $ \alpha, \beta $
 
-$$ \exist \, x_{sol} \in \{ \R^2 \rightarrow \R \}: \ F(\alpha, \beta, x_{sol}(\alpha, \beta)) = 0 $$
+$$ \exists \, x_{sol} \in \{ \R^2 \rightarrow \R \}: \ F(\alpha, \beta, x_{sol}(\alpha, \beta)) = 0 $$
 
 #### Positive $ \alpha $
 
@@ -192,3 +192,7 @@ D_{\beta} \, x_{sol}(\alpha, \beta) &= - \frac{D_{\beta} \, F(\alpha, \beta, x)}
 
 \end{aligned}
 $$
+
+TODO
+
+$$ \frac{\partial}{\partial x} $$

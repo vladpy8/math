@@ -7,7 +7,7 @@ title: "Uncommon Limits"
 
 ---
 
-#### <cite>Фихтенгольц, Том 1, Глава вторая, параграф 77, страница 184</cite>
+#### <cite>Фихтенгольц Г. М. (2003) Курс дифференциального и интегрального исчисления 1 Том 1, Глава вторая, параграф 77, страница 184</cite>
 
 <br/>
 
@@ -24,7 +24,7 @@ By moving power inside the logarithm one gets
 
 $$
 	\lim_{\alpha \to 0}{\frac{\log_{b}{(1 + \alpha)}}{\alpha}}
-	= \lim_{\alpha \to 0}{\log_{b}((1 + \alpha)^{1 / \alpha})}
+	= \lim_{\alpha \to 0}{\log_{b}(1 + \alpha)^{1 / \alpha}}
 $$
 
 The well-known limit manifestation is
