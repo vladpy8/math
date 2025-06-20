@@ -43,7 +43,7 @@ page 30
 Given the field $ F $, vector space $ F^F = \{ f : F \rightarrow F \} $ and the subset of all polynomial functions
 
 $$
-P = \{ \ p(x) \in F^F : \quad \exist \ n \in N, \quad \exist ! \ a_0, a_1, ..., a_n \in F, \quad \forall x \in F, \quad \ p(x) = \sum_{i = 0}^{n}{a_i x^i} \}
+P = \{ \ p(x) \in F^F : \quad \exists \ n \in N, \quad \exists ! \ a_0, a_1, ..., a_n \in F, \quad \forall x \in F, \quad \ p(x) = \sum_{i = 0}^{n}{a_i x^i} \}
 $$
 
 Prove that this subset is a subspace of $ F^F $
@@ -59,7 +59,7 @@ $$
 Additive identity holds
 
 $$
-\exist \ c_0 = 0 : \quad \forall x \in F, \quad 0(x) = c_0 = 0
+\exists \ c_0 = 0 : \quad \forall x \in F, \quad 0(x) = c_0 = 0
 $$
 
 $$
