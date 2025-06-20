@@ -1879,7 +1879,7 @@ Which produces a contradiction, since $ y > 0 $.
 
 </details>
 
-#### Exercise 1C.24. Decomposition of $ \mathbb{R}^{\mathbb{R}} $ into even and odd functions
+#### [TODO] Exercise 1C.24. Decomposition of $ \mathbb{R}^{\mathbb{R}} $ into even and odd functions
 
 Page reference 26
 
