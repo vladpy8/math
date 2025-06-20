@@ -8,7 +8,7 @@
 !*/**/
 !gh-pages/
 !gh-pages/*
-!workbook-solutions/
+!books-solutions/
 
 !*/**/*.md
 !*/**/*.html
