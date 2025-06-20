@@ -390,7 +390,7 @@ The third MathJax block defines the operations of addition and multiplication of
 
 ### Complex numbers
 
-The imaginary unit $ i $ satisfies:
+The imaginary unit $ i $ is defined as:
 $$ i^2 = -1 $$
 
 $ \mathbb{C} $ is the set of complex numbers:
@@ -399,26 +399,10 @@ $$ \mathbb{C} = \{ \alpha: \quad \exist! \ a_r, a_i \in \R, \quad \alpha = a_r +
 $ \forall \alpha, \beta \in \mathbb{C} $:
 $$
 \begin{aligned}
-\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i \\
-\alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
+\alpha + \beta &= (a_r + b_r) + (a_i + b_i) \, i
+\\ \alpha \beta &= (a_r b_r - a_i b_i) + (a_r b_i + a_i b_r) \, i
 \end{aligned}
 $$
-
-```
-
-#### 5.1.2. Bad example
-
-This statement is not compact, not declarative, is too verbose, and contains excessive wording.
-
-It does not follow the newline and spacing styles.
-
-```markdown
-
-### Prove that addition of complex numbers is distributive
-
-Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) = \lambda\alpha +\lambda\beta$.
-
-... (proof omitted) ...
 
 ```
 
@@ -429,6 +413,10 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 This statement is not compact, not declarative, is too verbose, and contains excessive wording.
 
 It does not follow the newline and spacing styles.
+
+It mixes plain text prose with MathJax expressions.
+
+The header is imperative.
 
 ```markdown
 
@@ -442,9 +430,9 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 #### 5.2.2. Good example
 
-The statements of this example are compact and declarative. They contain minimal plain text, relying primarily on math symbols.
+The statements of this example are [compact and declarative](#3-compactness-and-declarative-presentation). They contain minimal plain text, relying primarily on math symbols.
 
-This example includes a theorem declaration statement as well as a details section for the proof. The proof consists of one derivation statement.
+This example includes a [theorem declaration statement](#44-theorems) as well as a details section for the proof. The proof consists of one derivation statement.
 
 A long line in the first MathJax block is split by a single newline so that the source code fits the screen.
 
@@ -464,19 +452,13 @@ $$
 
 $$
 \begin{aligned}
-
-\lambda  (\alpha + \beta) &= (l_r + l_i \, i)((a_r + b_r) + (a_i + b_i) \, i) \\
-
-&= (l_r(a_r + b_r) - l_i(a_i + b_i)) + (l_r(a_i + b_i) + l_i(a_r + b_r)) \, i \\
-
-&= (l_r a_r - l_i a_i + l_r b_r - l_i b_i) + (l_r a_i + l_i a_r + l_r b_i + l_i b_r) \, i \\
-
-&= (l_r a_r - l_i a_i) + (l_r b_r - l_i b_i) + (l_r a_i + l_i a_r) \, i + (l_r b_i + l_i b_r) \, i \\
-
-&= ((l_r a_r - l_i a_i) + (l_r a_i + l_i a_r) \, i) + ((l_r b_r - l_i b_i) + (l_r b_i + l_i b_r) \, i) \\
-
-&= \lambda \alpha + \lambda \beta
-
+\lambda  (\alpha + \beta) &= (l_r + l_i \, i)((a_r + b_r) + (a_i + b_i) \, i)
+\\ &= (l_r(a_r + b_r) - l_i(a_i + b_i)) + (l_r(a_i + b_i) + l_i(a_r + b_r)) \, i
+\\ &= (l_r a_r - l_i a_i + l_r b_r - l_i b_i) + (l_r a_i + l_i a_r + l_r b_i + l_i b_r) \, i
+\\ &= (l_r a_r - l_i a_i) + (l_r b_r - l_i b_i) + (l_r a_i + l_i a_r) \, i + (l_r b_i + l_i b_r) \, i
+\\ &= ((l_r a_r - l_i a_i) + (l_r a_i + l_i a_r) \, i)
+	+ ((l_r b_r - l_i b_i) + (l_r b_i + l_i b_r) \, i)
+\\ &= \lambda \alpha + \lambda \beta
 \end{aligned}
 $$
 
@@ -500,7 +482,7 @@ Find distinct square roots of $ i $.
 
 #### 5.3.2. Good example
 
-The entire statement represents a single task statement with declaration and solution.
+The entire statement represents a single [task statement](#45-tasks) with declaration and solution.
 
 The solution in the details section is composed of a sequence of derivation statements, one naturally following from the other.
 
@@ -518,15 +500,15 @@ $$ \alpha^2 = i $$
 
 $$
 \begin{aligned}
-(a_r + a_i \, i)^2 &= i \\
-a_r^2 - a_i^2 + 2 a_r a_i \, i &= i
+(a_r + a_i \, i)^2 &= i
+\\ a_r^2 - a_i^2 + 2 a_r a_i \, i &= i
 \end{aligned}
 $$
 
 One complex number equation leads to two real number equations:
 $$
-a_r^2 - a_i^2 = 0 \\
-2 a_r a_i \, i = i
+a_r^2 - a_i^2 = 0
+\\ 2 a_r a_i \, i = i
 $$
 
 From the first equation follows:
@@ -534,8 +516,8 @@ $$ |a_r| = |a_i| $$
 
 The second one leads to:
 $$
-a_r a_i > 0 \\
-2 |a_r| |a_i| = 1
+a_r a_i > 0
+\\ 2 |a_r| |a_i| = 1
 $$
 
 Thus,
@@ -546,38 +528,31 @@ $$ a_r = a_i = \frac{1}{\sqrt2} \quad \text{or} \quad a_r = a_i = - \frac{1}{\sq
 
 The square roots of $ i $ are:
 $$
-\frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad \\
-\text{or} \quad -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i
+\frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \quad
+\\ \text{or} \quad -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i
 $$
 
 Verifying:
 
 $$
 \begin{aligned}
-
-\left( \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \right)^2 \\
-
-&= \left( \frac{1}{\sqrt2} \right)^2 + 2 \left( \frac{1}{\sqrt2} \right) \left( \frac{1}{\sqrt2} \, i \right) + \left( \frac{1}{\sqrt2} \, i \right)^2 \\
-
-&= \frac{1}{2} + \frac{2}{2} \, i - \frac{1}{2} \\
-
-&= i
-
+\left( \frac{1}{\sqrt2} + \frac{1}{\sqrt2} \, i \right)^2
+\\ &= \left( \frac{1}{\sqrt2} \right)^2
+	+ 2 \left( \frac{1}{\sqrt2} \right) \left( \frac{1}{\sqrt2} \, i \right)
+	+ \left( \frac{1}{\sqrt2} \, i \right)^2
+\\ &= \frac{1}{2} + \frac{2}{2} \, i - \frac{1}{2}
+\\ &= i
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-
-\left( -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i \right)^2 \\
-
-&= \left( -\frac{1}{\sqrt2} \right)^2 + 2 \left( -\frac{1}{\sqrt2} \right) \left( -\frac{1}{\sqrt2} \, i \right)
-+ \left( -\frac{1}{\sqrt2} \, i \right)^2 \\
-
-&= \frac{1}{2} + \frac{2}{2} \, i - \frac{1}{2} \\
-
-&= i
-
+\left( -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} \, i \right)^2
+\\ &= \left( -\frac{1}{\sqrt2} \right)^2
+	+ 2 \left( -\frac{1}{\sqrt2} \right) \left( -\frac{1}{\sqrt2} \, i \right)
+	+ \left( -\frac{1}{\sqrt2} \, i \right)^2
+\\ &= \frac{1}{2} + \frac{2}{2} \, i - \frac{1}{2}
+\\ &= i
 \end{aligned}
 $$
 

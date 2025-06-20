@@ -6,9 +6,9 @@
 !markdown-math-style-guidelines.md
 
 !*/**/
+!books-solutions/
 !gh-pages/
 !gh-pages/*
-!books-solutions/
 
 !*/**/*.md
 !*/**/*.html
