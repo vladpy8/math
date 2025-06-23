@@ -22,6 +22,8 @@ If there is ambiguity in the text encountered, take the time to clarify.
 
 Reiterate as many times as necessary to ensure compliance with the guidelines and rules.
 
+TODO the style of the book has nothing to do with the style of the output document.
+
 ## 3. Extraction of exercises
 
 ### 3.1. Command

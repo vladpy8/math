@@ -1,24 +1,24 @@
 # Markdown math style guidelines
 
-This style guidelines must be used for writing, correcting and refactoring mathematical content in Markdown format, particularly when it involves MathJax expressions.
+These style guidelines must be used for writing, correcting, and refactoring mathematical content in Markdown format, particularly when it involves MathJax expressions.
 
 ## 1. Reusable terms
 
 ### 1.1. Statements and expressions
 
 A **statement** refers to a piece of content, such as, but not limited to:
-- Markdown heading
-- One plain text sentence, or a sequence of such sentences
-- Plain text sentence with incorporated MathJax inline expressions `$ ... $`
-- One MathJax block expression `$$ ... $$`
+- a Markdown heading
+- one plain text sentence, or a sequence of such sentences
+- a plain text sentence with incorporated MathJax inline expressions `$ ... $`
+- one MathJax block expression `$$ ... $$`
 
-MathJax blocks may be incorporated into statements together with a plain text, but they must be presented at the end of the statement after plain text ends.
+MathJax blocks may be incorporated into statements together with plain text, but they must be presented at the end of the statement after the plain text ends.
 
 MathJax inline expressions `$ ... $` may be incorporated into any part of the statement.
 
 An **expression** is a logically and syntactically separate piece of a statement. Each statement consists of one or more expressions.
 
-Some statements are *explicitly* defined in this prompt to be **complex statements**. They are composed of multiple sub-statements, each of which must be considered as a separate statement.
+Some statements are *explicitly* defined in this document to be **complex statements**. They are composed of multiple sub-statements, each of which must be considered a separate statement.
 
 Each statement inside a complex statement must follow the same rules as a regular statement.
 
@@ -35,7 +35,7 @@ Each statement inside a complex statement must follow the same rules as a regula
 - `$ \exists $` for "there exists"
 - `$ \in $` for "is an element of"
 - `$ \subseteq $` for "is a subset of"
-- `$ \{ .. \} $` for a set notation
+- `$ \{ .. \} $` for set notation
 - `$ : $` for "such that"
 - `$ \quad $` for quad space
 - `$ \ $` for space
@@ -46,9 +46,9 @@ Each statement inside a complex statement must follow the same rules as a regula
 ### 1.4. Math symbols surrogates
 
 **Math symbols surrogates** refer to any short and descriptive plain text prose representation of a mathematical concept that is well-known but either lacks its own notation or is too complex for concise symbolic expression. Examples include, but are not limited to:
-- Differentiability
-- Continuity
-- Vector space being a subspace of another vector space
+- differentiability
+- continuity
+- a vector space being a subspace of another vector space
 
 Math symbols surrogates must be incorporated into MathJax expressions using the following format: `$ \text{} $`. For example:
 - `$ \text{is differentiable} $`
@@ -75,26 +75,29 @@ Distinguish between **source code** newlines, **MathJax rendered** newlines, and
 
 #### 2.1.1. Source code newlines
 
-Put double newlines after every statement, except at the end of the document where a single newline should be used.
+Put double newlines after every statement, except at the end of the document, where a single newline should be used.
 
 Put a single newline before a MathJax block if it is part of a statement and appears at the end of it.
 
-If either the source code of a MathJax block is too wide to fit the screen or it already contains `\\` or similar rendered newline expressions, split it into multiple source code lines using single newlines near special logical breakpoint symbols, such as, but not limited to:
-- after `$$`
+Consider a source code line extensively wide if it exceeds 110 characters, counting every character.
+
+If either the source code of a MathJax block is extensively wide or it already contains `\\` or similar rendered newline expressions, split it into multiple source code lines using single newlines near special logical breakpoint symbols, such as, but not limited to:
+- after the first `$$` and before the last `$$`
 - before `\\`
 - before `:`, `: \quad`, `: \ `, `: \,`
 - before `, `, `, \quad`, `, \ `, `, \,`
 - after `\begin{...}` and before `\end{...}`
-- after the last line of the MathJax block
-- before `$$` if it is part of a statement at the end of it
+- before the first `$$` if MathJax block is part of a statement at the end of it
 
-If an expression doesn't contain logical breakpoint symbols for newlines to split on, but is still too wide to fit the screen, it might be considered for refactoring in strict adherence to the other rules of this style guide and in order to split it into multiple lines afterwards.
+If an expression doesn't contain logical breakpoint symbols for newlines to split on, but is still extensively wide, it might be considered for refactoring in strict adherence to the other rules of this style guide and in order to split it into multiple lines afterwards.
 
 #### 2.1.2. MathJax rendered newlines
 
 MathJax rendered newlines are the newlines that visually appear in the rendered output of MathJax expressions. They are created using `\\` or similar expressions inside MathJax blocks.
 
-If the rendered output of a MathJax block is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions near certain logical breakpoint symbols, such as, but not limited to:
+Consider a rendered line extensively wide if it exceeds 130 characters after rendering, counting every character.
+
+If the rendered line of a MathJax block is too wide to fit the screen, split it into multiple lines using `\\` or similar rendered newline expressions near certain logical breakpoint symbols, such as, but not limited to:
 - before `$ : $`
 - before `$ , $`
 - before `$ = $ `, or `$ &= $`
@@ -103,9 +106,9 @@ Special notation, such as `\begin{aligned} .. \end{aligned}` might be employed t
 
 #### 2.1.3. Markdown rendered newlines
 
-Markdown rendered newlines are the newlines that visually appear in the rendered output of Markdown. They are created using either a plain source code newlines or `<br>` expression.
+Markdown rendered newlines are the newlines that visually appear in the rendered output of Markdown. They are created using either plain source code newlines or the `<br>` expression.
 
-There are no specific rules yet for Markdown rendered newlines.
+There are no specific rules for Markdown rendered newlines.
 
 ### 2.2. Spacing and indentation
 
@@ -119,37 +122,39 @@ Place spaces inside MathJax inline expressions between `$` and the expression it
 
 Place spaces inside MathJax block expressions between `$$` and the expression itself, if newline rules are not applied.
 
-Ensure spacing around most symbols or logically separate pieces of MathJax expressions such as, but not limited to:
-- any variable, value or constant, such as `$ a $`, `$ 1 $`, `$ \pi $`
+Ensure spacing around most symbols or logically separate pieces of MathJax expressions, such as, but not limited to:
+- any variable, value, or constant, such as `$ a $`, `$ 1 $`, `$ \pi $`
 - any operator, such as `$ + $`, `$ - $`, `$ \cdot $`, `$ / $`, `$ = $`, `$ \neq $`, `$ < $`, `$ > $`, `$ \leq $`, `$ \geq $`
 - any logical connector, such as `$ \implies $`, `$ \iff $`, `$ \exists $`, `$ \forall $`
 - any punctuation symbol, such as `$ : $`, `$ , $`, `$ ; $`, `$ . $`
 - any rendered newline expression or space, such as `$ \\ $`, `$ \quad $`, `$ \ $`,  `$ \, $`
 
-Use spaces outside brackets and parentheses in MathJax expression, such as `$ ( $`, `$ ) $`, `$ [ $`, `$ ] $`, `$ \{ $`, `$ \} $`. If internal expression of brackets or parentheses, is long and complex, use spaces between the brackets or parentheses and the expression itself.
+Use spaces outside brackets and parentheses in MathJax expressions, such as `$ ( $`, `$ ) $`, `$ [ $`, `$ ] $`, `$ \{ $`, `$ \} $`. If the internal expression of brackets or parentheses is long and complex, use spaces between the brackets or parentheses and the expression itself.
 
 #### 2.2.2. MathJax rendered spacing and indentation
 
-Use rendered MathJax symbols for spacing after special symbols, which are rendered too close to the following expression, such as, but is not limited to:
+Use rendered MathJax symbols for spacing after special symbols that are rendered too close to the following expression, such as, but not limited to:
 - use `$ \ $` after `$ \exists $`, `$ \exists ! $`
 - use `$ \, $` after `$ \forall $`
 
-Use rendered MathJax symbols for spacing after logical breakpoint symbols if following expression is long and complex, and newline rules are not applied, such as, but is not limited to:
+Use rendered MathJax symbols for spacing after logical breakpoint symbols if the following expression is long and complex, and rendered newline rules are not applied, such as, but not limited to:
 - `$ : \quad $`
 - `$ , \quad $`
 
-If there are many logical breakpoint symbols and some pieces of the expression might be grouped together, then use `$ \, $` or `$ \ $` instead of `$ \quad $` inside this logical groupings. This may include, but is not limited to:
-- consecutive variables declarations, such as `$ a \in A, \, b \in B, \, c \in C $`
+If there are many logical breakpoint symbols and some pieces of the expression might be grouped together, then use `$ \, $` or `$ \ $` instead of `$ \quad $` inside these logical groupings. This may include, but is not limited to:
+- consecutive variable declarations, such as `$ a \in A, \, b \in B, \, c \in C $`
 
-For very special mathematical variables or constants, which might be mixed with other variables or constants use `$ \, $` between the special variable and the rest of the expression in operations involving it. This may include, but is not limited to:
+For very special mathematical variables or constants, which might be mixed with other variables or constants, use `$ \, $` between the special variable and the rest of the expression in operations involving it. This may include, but is not limited to:
 - the imaginary unit `$ i $`
-- the Euler's number `$ e $`, if it is not used in power expressions, such as `$ e^x $`
+- Euler's number `$ e $`, if it is not used in power expressions, such as `$ e^x $`
+
+TODO use mathjax `\` instead of `$ \text{ ... } $`.
 
 ### 2.3. Punctuation
 
-Do not put dots after MathJax blocks.
+Do not put periods after MathJax blocks.
 
-Do not put dots after Markdown headings.
+Do not put periods after Markdown headings.
 
 Use special punctuation symbols to separate logically independent parts of long MathJax block expressions. This may include, but is not limited to:
 - `$ : $` with the meaning "such that", "then", or "therefore"
@@ -158,19 +163,19 @@ Use special punctuation symbols to separate logically independent parts of long 
 ### 2.4. Capitalization
 
 Never capitalize words after the first word in a statement, except for proper nouns or words that are always capitalized, such as, but not limited to:
-- People's names
-- Names of theorems
+- people's names
+- names of theorems
 
 ### 2.5. Details section
 
-Use details sections to hide proofs of theorems, solutions of exercises or tasks, explanations, etc.
+Use details sections to hide proofs of theorems, solutions to exercises or tasks, explanations, etc.
 
 ```markdown
 
 <details>
 <summary>Proof</summary>
 
-... one or more internal sub statements ...
+... one or more internal sub-statements ...
 
 </details>
 
@@ -190,29 +195,31 @@ Use an ellipsis `...` to indicate that content in a sequence of elements is omit
 
 ### 3.1. Compact expressions and statements
 
-Use [math symbols](#13-math-symbols), [math symbols surrogates](#14-math-symbols-surrogates), MathJax inline and block expressions instead of [plain text prose](#12-plain-text-prose) if possible. If an idea might be expressed using math notation, rewrite it accordingly.
+Reduce the size and number of expressions if possible.
 
-Avoid plain text prose in between MathJax inline expressions. Such presence is a strong indicator of a need to refactor the statement. Rewrite, merge and compress statement into a MathJax block expression.
+Use [math symbols](#13-math-symbols), [math symbols surrogates](#14-math-symbols-surrogates), and MathJax inline and block expressions instead of [plain text prose](#12-plain-text-prose) if achievable. If an idea can be expressed using math notation, rewrite it accordingly.
 
-Prefer clear distinction between plain text prose and MathJax expressions. If a statement contains both, prefer to put plain text prose at the beginning of the statement and MathJax expressions at the end of it.
+Avoid interleaving of plain text prose and MathJax inline expressions. Such occurrence is a strong indicator of a need to refactor the statement. Rewrite, merge, and compress the statement into a MathJax block expression.
+
+Prefer a clear distinction between plain text prose and MathJax expressions. If a statement contains both, prefer to put plain text prose at the beginning of the statement and MathJax expressions at the end of it.
 
 ### 3.2. Compact document
 
-Reduce the size and quantity of statements if possible.
+Reduce the size and number of statements if possible.
 
-For major ideas, milestones, concepts and results, use standalone statements, which mean they should encapsulate a single idea or a result. This may include, but is not limited to:
-- Definitions of major complex concepts
-- Declaration of complex variables, which span multiple expressions
-- Key theorem statements
-- Key results
-- Final answers to tasks or exercises
+For major ideas, milestones, concepts, and results, use standalone statements, which means they should encapsulate a single idea or result. This may include, but is not limited to:
+- definitions of major complex concepts
+- declaration of complex variables, which span multiple expressions
+- key theorem statements
+- key results
+- final answers to tasks or exercises
 
-Intermediate results, and derivations might be merged multiple into one statement, but should conclude on a major intermediate result, which might be referenced further. This includes, but is not limited to:
-- Derivations of intermediate results
-- Intermediate steps in proofs of theorems
-- Intermediate steps in solutions of tasks or exercises
-- Auxiliary variable declarations
-- Auxiliary definitions of concepts
+Intermediate statements might be merged into one, but should conclude with a major intermediate result, which might be referenced further. This includes, but is not limited to:
+- derivations of intermediate results
+- intermediate steps in proofs of theorems
+- intermediate steps in solutions to tasks or exercises
+- auxiliary variable declarations
+- auxiliary definitions of concepts
 
 ### 3.3. Declarative statements and expressions
 
@@ -237,9 +244,9 @@ Some imperative commands might appear declarative but must still be avoided. Thi
 
 ### 3.4. Main focus of the presentation
 
-Clarity is never a goal. Verbosity is never a goal. Strive for compactness, declarativeness and generality. Yet accuracy must be preserved.
+Clarity is never a goal. Verbosity is never a goal. Strive for compactness, declarativeness, and generality. Yet accuracy must be preserved.
 
-If there is an opportunity to opt out details and particulars in favor of a more general statement, do so.
+If there is an opportunity to opt out of details and particulars in favor of a more general statement, do so.
 
 Obscure the information, omit unnecessary details if it allows for better alignment with the style guidelines.
 
@@ -254,8 +261,8 @@ Evolve new types of statements, modify existing ones, and change wording, punctu
 Statements of this type introduce either a new concept or reference well-known ones.
 
 Express references to well-known concepts using the following structures:
-- "[Notation] [Short-description]: [Core-definition]"
-- "[Notation] [Short-description]"
+- "[Notation] is [Short-description]: [Core-definition]"
+- "[Notation] is [Short-description]"
 - "[Short-description]: [Core-definition]"
 
 Express definitions of new concepts using the following structures:
@@ -283,7 +290,7 @@ Declare variables using the following structures:
 
 "[Notation]" and "[Core-definition]" are the same as in the [Definitions](#41-definitions) section, except they are less general and thus more tied to the context.
 
-"[Core-definition]", in the case of variables, may be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
+"[Core-definition]", in the case of [Variables](#42-variables-declarations), may be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
 - `$ a = value $`
 - `$ a, b \in S $`
 - `$ \forall c, d \in S $`
@@ -298,7 +305,7 @@ Derivations are statements that encapsulate the process of deriving new knowledg
 
 Each derivation statement should contain ideas that are closely interconnected and logically follow each other. Each derivation step should clearly show how the next step follows from the previous ones.
 
-Most frequently, derivations are the statements that may contain some imperative wording.
+Most frequently, derivations are statements that may contain some imperative wording.
 
 Derivations should be given lower priority with regard to the merging strategy described in [Section 3.2.](#32-compact-document).
 
@@ -370,7 +377,7 @@ If a task doesn't contain a solution and the context doesn't imply that one shou
 
 ## 5. Examples
 
-The good examples comply with the style guidelines. Use them as a reference and for derivation of additional implicit guidelines and rules, if necessary.
+The good examples comply with these style guidelines. Use them as a reference and for the derivation of additional implicit guidelines and rules, if necessary.
 
 ### 5.1. Example. Definition of complex numbers
 
@@ -430,7 +437,7 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 #### 5.2.2. Good example
 
-The statements of this example are [compact and declarative](#3-compactness-and-declarative-presentation). They contain minimal plain text, relying primarily on math symbols.
+The statements in this example are [compact and declarative](#3-compactness-and-declarative-presentation). They contain minimal plain text, relying primarily on math symbols.
 
 This example includes a [theorem declaration statement](#44-theorems) as well as a details section for the proof. The proof consists of one derivation statement.
 
