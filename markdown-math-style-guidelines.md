@@ -148,7 +148,7 @@ For very special mathematical variables or constants, which might be mixed with 
 - the imaginary unit `$ i $`
 - Euler's number `$ e $`, if it is not used in power expressions, such as `$ e^x $`
 
-TODO use mathjax `\` instead of `$ \text{ ... } $`.
+Do not put spaces around expressions inside `$ \text{ expressions } $`. Always use `$ \ \text{expressions} \ $` instead.
 
 ### 2.3. Punctuation
 
@@ -199,7 +199,7 @@ Reduce the size and number of expressions if possible.
 
 Use [math symbols](#13-math-symbols), [math symbols surrogates](#14-math-symbols-surrogates), and MathJax inline and block expressions instead of [plain text prose](#12-plain-text-prose) if achievable. If an idea can be expressed using math notation, rewrite it accordingly.
 
-Avoid interleaving of plain text prose and MathJax inline expressions. Such occurrence is a strong indicator of a need to refactor the statement. Rewrite, merge, and compress the statement into a MathJax block expression.
+Avoid interleaving of plain text prose and MathJax inline expressions. Such occurrence is a strong indicator of a need to refactor the statement. Rewrite, merge, and compress the statement into a MathJax block expression if possible.
 
 Prefer a clear distinction between plain text prose and MathJax expressions. If a statement contains both, prefer to put plain text prose at the beginning of the statement and MathJax expressions at the end of it.
 
@@ -252,9 +252,11 @@ Obscure the information, omit unnecessary details if it allows for better alignm
 
 ## 4. Common types of statements
 
-This section describes only the most common types of statements. It is not exhaustive and does not cover all possible cases.
+This section describes structures of the most common types of [statements](#11-statements-and-expressions). It is not exhaustive and does not cover all possible cases.
 
-Evolve new types of statements, modify existing ones, and change wording, punctuation, spacing, newlines, and formatting according to the context and these style guidelines.
+Structures in this section are not styled according to these style guidelines, and are meant to convey high-level meaning. Apply these structures when suitable, and adapt results to these style guidelines afterwards.
+
+Generally, it is preferable to evolve these structures, rather than inventing new ones. Yet, new ones might be invented if absolutely necessary, as long as they follow the same principles as described in these style guidelines.
 
 ### 4.1. Definitions
 
