@@ -191,7 +191,7 @@ Possible details summary titles include, but are not limited to:
 
 Use an ellipsis `...` to indicate that content in a sequence of elements is omitted.
 
-## 3. Compactness and declarative presentation
+## 3. Compactness and declarative representation
 
 ### 3.1. Compact expressions and statements
 
@@ -202,6 +202,8 @@ Use [math symbols](#13-math-symbols), [math symbols surrogates](#14-math-symbols
 Avoid interleaving of plain text prose and MathJax inline expressions. Such occurrence is a strong indicator of a need to refactor the statement. Rewrite, merge, and compress the statement into a MathJax block expression if possible.
 
 Prefer a clear distinction between plain text prose and MathJax expressions. If a statement contains both, prefer to put plain text prose at the beginning of the statement and MathJax expressions at the end of it.
+
+When referencing a name of math entity, place it inside either MathJax inline or block expressions. An acceptable scenario of interleaving plain text prose and MathJax inline expressions is when MathJax inline expressions consist solely of names of math entities.
 
 ### 3.2. Compact document
 
@@ -242,7 +244,7 @@ Some imperative commands might appear declarative but must still be avoided. Thi
 - "[Proof] of the [Theorem]" => "[Theorem]"
 - "[Verification] of the [Property]" => "[Property]"
 
-### 3.4. Main focus of the presentation
+### 3.4. Main focus of the representation
 
 Clarity is never a goal. Verbosity is never a goal. Strive for compactness, declarativeness, and generality. Yet accuracy must be preserved.
 
@@ -258,58 +260,83 @@ Structures in this section are not styled according to these style guidelines, a
 
 Generally, it is preferable to evolve these structures, rather than inventing new ones. Yet, new ones might be invented if absolutely necessary, as long as they follow the same principles as described in these style guidelines.
 
-### 4.1. Definitions
+### 4.1. Variables declarations
 
-Statements of this type introduce either a new concept or reference well-known ones.
-
-Express references to well-known concepts using the following structures:
-- "[Notation] is [Short-description]: [Core-definition]"
-- "[Notation] is [Short-description]"
-- "[Short-description]: [Core-definition]"
-
-Express definitions of new concepts using the following structures:
-- "Define [Notation] [Short-description]: [Core-definition]"
-- "Define [Notation]: [Core-definition]"
-- "[Short-description]: [Core-definition]"
-
-"[Notation]" is a symbolic representation of the concept using a MathJax inline expression.
-
-"[Short-description]" is a short plain text expression naming or framing the concept.
-
-"[Core-definition]" is a formal definition of the concept using a MathJax block expression. It may consist of set builder notation, declaring the set of objects along with their properties, representation, and possible operations.
-
-Omit "[Core-definition]" for well-known concepts based on the context. For example, when key properties are not relevant and unlikely to be referenced.
-
-### 4.2. Variables declarations
-
-Statements of this type introduce variables – symbolic representations of mathematical objects of interest. Variables may represent auxiliary, intermediate, preconditioned, or scope-specific objects.
+[Statements](#11-statements-and-expressions) of this type introduce variables – symbolic representations of mathematical objects of interest. Variables may represent auxiliary, intermediate, preconditioned, or context-specific objects.
 
 Declare variables using the following structures:
-- "Let [Notation]: [Core-definition]"
-- "Let [Core-definition]"
-- "Set [Core-definition]"
-- "[Core-definition]"
+- "[Introduction] [Notation]: [Core-Declaration]"
+- "[Introduction] [Core-Declaration]"
+- "[Core-Declaration]"
 
-"[Notation]" and "[Core-definition]" are the same as in the [Definitions](#41-definitions) section, except they are less general and thus more tied to the context.
+"[Introduction]" is a short plain text expression, meant to frame the context of the declaration or visually distinguish it. In it simplest form, it may consist of such words as, but not limited to:
+- "Let"
+- "Consider"
+- "Assume"
+- "Define"
+- "Declare"
 
-"[Core-definition]", in the case of [Variables](#42-variables-declarations), may be represented by a MathJax inline expression if it is very short and simple, such as, but not limited to:
+When there is context for the variable to be referenced or previous statements to be linked to, use a more complex "[Introduction]" expression, such as, but not limited to:
+- "In order to achieve this, define"
+- "To proceed, let"
+- "In this context, declare"
+
+In case there is no connection with previous statements and there is no need to visually distinguish the statement from the previous ones, "[Introduction]" may be completely omitted.
+
+"[Notation]" is an auxiliary and short MathJax inline expression, meant to introduce variables symbolic names. It may as well contain plain text prose for names clarification.
+
+"[Core-Declaration]" is a formal declaration of the variables. There are simple and complex types of declarations.
+
+Simple "[Core-Declaration]" is a short expression introducing variables names, their scope and immediate properties. Use MathJax inline expressions in this case. This may include such expressions as, but not limited to:
 - `$ a = value $`
 - `$ a, b \in S $`
 - `$ \forall c, d \in S $`
 - `$ \exists e \in S $`
 - `$ U \subseteq V $`
 
-If "[Core-definition]" contains multiple interconnected expressions, use a MathJax block expression.
+Complex "[Core-Declaration]" introduce object declarations that spans multiple interconnected expressions, often divided by `$ , $` or `$ : $` symbols. Complex declarations might consist of, but are not limited to:
+- Set builder notation, declaring the set of objects along with their properties, representation, and possible operations
+- Complex object requiring declaration of their internal structure, such as vectors with interconnected components
+
+If the variable is completely defined by the "[Core-Declaration]" and doesn't require naming clarification, the "[Notation]" may be omitted.
+
+### 4.2. Definitions
+
+[Statements](#11-statements-and-expressions) of this type introduce either a new concept or reference well-known ones.
+
+Examples of definitions include, but are not limited to:
+- Fields
+- Vector spaces
+- Topological spaces
+- Algebraic structures
+- Operations with the above concepts or other mathematical objects
+
+Express references to well-known concepts using statements of the following structures:
+- "[Notation] is [Short-Description]: [Core-Definition]"
+- "[Notation] is [Short-Description]"
+
+Express definitions of new concepts using statements the following structures:
+- "[Introduction] [Notation] [Short-Description]: [Core-Definition]"
+- "[Introduction] [Notation]: [Core-Definition]"
+- "[Introduction] [Core-Definition]"
+
+"[Introduction]" and "[Notation]" are equal to the "[Introduction]" and "[Notation]" in [variables declarations](#41-variables-declarations).
+
+"[Core-Definition]" is a formal definition of the concept using a MathJax block expression. It is similar to the "[Core-Declaration]" in [variables declarations](#41-variables-declarations), except being more general and declaring an entire concept.
+
+"[Short-Description]" is an auxiliary plain text prose, meant to provide additional clarification of the concept being defined. It may be omitted, in case the concept is well-known or is self-explanatory, or completely defined by the "[Core-Definition]".
+
+Omit "[Core-Definition]" for well-known concepts based on the context. For example, when key properties are not relevant and unlikely to be referenced.
+
+Omit "[Notation]" when it is part of the "[Core-Definition]" in use.
 
 ### 4.3. Derivations
 
-Derivations are statements that encapsulate the process of deriving new knowledge from existing statements.
+Derivations are [statements](#11-statements-and-expressions), that encapsulate the process of deriving new knowledge from existing statements.
 
-Each derivation statement should contain ideas that are closely interconnected and logically follow each other. Each derivation step should clearly show how the next step follows from the previous ones.
+Each derivation statement should contain ideas that are interconnected and logically follow each other. Each derivation step should show how the next step follows from the previous ones.
 
 Most frequently, derivations are statements that may contain some imperative wording.
-
-Derivations should be given lower priority with regard to the merging strategy described in [Section 3.2.](#32-compact-document).
 
 Derivations are expressed using the following structures:
 - "[Linker] [Core-derivation]"
@@ -439,7 +466,7 @@ Suppose that $\alpha,\beta,\lambda \in \mathbb{C}$. Then $\lambda(\alpha+\beta) 
 
 #### 5.2.2. Good example
 
-The statements in this example are [compact and declarative](#3-compactness-and-declarative-presentation). They contain minimal plain text, relying primarily on math symbols.
+The statements in this example are [compact and declarative](#3-compactness-and-declarative-representation). They contain minimal plain text, relying primarily on math symbols.
 
 This example includes a [theorem declaration statement](#44-theorems) as well as a details section for the proof. The proof consists of one derivation statement.
 
