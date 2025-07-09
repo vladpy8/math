@@ -1,26 +1,26 @@
 # Markdown math style guidelines
 
-These style guidelines must be used for writing, correcting, and refactoring mathematical content in Markdown format, particularly when it involves MathJax expressions.
+These style guidelines must be used for writing, correcting, or refactoring mathematical content in Markdown format, particularly when it involves MathJax expressions.
 
 ## 1. Reusable terms
 
 ### 1.1. Statements and expressions
 
-A **statement** refers to a piece of content, such as, but not limited to:
+A **statement** refers to a piece of content, including but not limited to:
 - a Markdown heading
 - one plain text sentence, or a sequence of such sentences
 - a plain text sentence with incorporated MathJax inline expressions `$ ... $`
 - one MathJax block expression `$$ ... $$`
 
-MathJax blocks may be incorporated into statements together with plain text, but they must be presented at the end of the statement after the plain text ends.
+MathJax blocks may be incorporated into statements together with plain text, but they must be presented at the end of the statement, after the plain text ends.
 
 MathJax inline expressions `$ ... $` may be incorporated into any part of the statement.
 
-An **expression** is a logically and syntactically separate piece of a statement. Each statement consists of one or more expressions.
+An **expression** is a logically and syntactically separate part of a statement. Each statement consists of one or more expressions.
 
-Some statements are *explicitly* defined in this document to be **complex statements**. They are composed of multiple sub-statements, each of which must be considered a separate statement.
+Some statements are *explicitly* defined in this document as **complex statements**. They are composed of multiple sub-statements, each of which must be considered a separate statement.
 
-Each statement inside a complex statement must follow the same rules as a regular statement.
+Each statement within a complex statement must follow the same rules as a regular statement.
 
 ### 1.2. Plain text prose
 
@@ -28,7 +28,7 @@ Each statement inside a complex statement must follow the same rules as a regula
 
 ### 1.3. Math symbols
 
-**Math symbols** refer to any sequences of characters representing mathematical notation, primarily with MathJax. This includes, but is not limited to:
+**Math symbols** refer to any sequence of characters representing mathematical notation, primarily with MathJax. This includes, but is not limited to:
 - `$ \mathbb{C} $` for complex numbers
 - `$ \mathbb{R} $` for real numbers
 - `$ \forall $` for "for all"
@@ -45,7 +45,7 @@ Each statement inside a complex statement must follow the same rules as a regula
 
 ### 1.4. Math symbols surrogates
 
-**Math symbols surrogates** refer to any short and descriptive plain text prose representation of a mathematical concept that is well-known but either lacks its own notation or is too complex for concise symbolic expression. Examples include, but are not limited to:
+**Math symbols surrogates** refer to any short and descriptive plain text representation of a mathematical concept that is well-known but either lacks its own notation or is too complex for concise symbolic expression. Examples include, but are not limited to:
 - differentiability
 - continuity
 - a vector space being a subspace of another vector space
@@ -59,7 +59,7 @@ Consider the `$ \text{} $` format as proper mathematical notation.
 
 ### 1.5. Headings
 
-Headings are Markdown heading [statements](#11-statements-and-expressions) that indicate the structure of the document.
+Headings are Markdown [statements](#11-statements-and-expressions) that indicate the structure of the document.
 
 ### 1.6. Documents and blocks
 
@@ -89,7 +89,7 @@ If either the source code of a MathJax block is extensively wide or it already c
 - after `\begin{...}` and before `\end{...}`
 - before the first `$$` if MathJax block is part of a statement at the end of it
 
-If an expression doesn't contain logical breakpoint symbols for newlines to split on, but is still extensively wide, it might be considered for refactoring in strict adherence to the other rules of this style guide and in order to split it into multiple lines afterwards.
+If an expression does not contain logical breakpoint symbols for newlines to split on, but is still extensively wide, it might be considered for refactoring in order to split it into multiple lines afterwards and in strict adherence to the other rules of this style guide.
 
 #### 2.1.2. MathJax rendered newlines
 
@@ -141,7 +141,7 @@ Use rendered MathJax symbols for spacing after logical breakpoint symbols if the
 - `$ : \quad $`
 - `$ , \quad $`
 
-If there are many logical breakpoint symbols and some pieces of the expression might be grouped together, then use `$ \, $` or `$ \ $` instead of `$ \quad $` inside these logical groupings. This may include, but is not limited to:
+If there are many logical breakpoint symbols and some parts of the expression might be grouped together, then use `$ \, $` or `$ \ $` instead of `$ \quad $` inside these logical groupings. This may include, but is not limited to:
 - consecutive variable declarations, such as `$ a \in A, \, b \in B, \, c \in C $`
 
 For very special mathematical variables or constants, which might be mixed with other variables or constants, use `$ \, $` between the special variable and the rest of the expression in operations involving it. This may include, but is not limited to:
@@ -187,10 +187,6 @@ Possible details summary titles include, but are not limited to:
 - Proof
 - Solution
 
-### 2.6. Ellipsis
-
-Use an ellipsis `...` to indicate that content in a sequence of elements is omitted.
-
 ## 3. Compactness and declarative representation
 
 ### 3.1. Compact expressions and statements
@@ -216,7 +212,7 @@ For major ideas, milestones, concepts, and results, use standalone statements, w
 - key results
 - final answers to tasks or exercises
 
-Intermediate statements might be merged into one, but should conclude with a major intermediate result, which might be referenced further. This includes, but is not limited to:
+Intermediate statements may be merged into one, but should conclude with a major intermediate result, which might be referenced further. This includes, but is not limited to:
 - derivations of intermediate results
 - intermediate steps in proofs of theorems
 - intermediate steps in solutions to tasks or exercises
@@ -227,13 +223,13 @@ Intermediate statements might be merged into one, but should conclude with a maj
 
 Avoid imperative statements, expressions, and wording. The "imperative" usually conveys actions, commands, or instructions.
 
-An expression like "[Action] the [Result]" is less preferable than "[Result]". This may include, but is not limited to:
+An expression like "[Action] the [Result]" is less preferable to "[Result]". This may include, but is not limited to:
 - "[Prove] the [Theorem]" => "[Theorem]"
 - "[Show] that [Property] holds" => "[Property]"
 - "[Verify] the [Equality]" => "[Equality]"
 - "[Explain] the [Result]" => "[Result]"
 
-The actual proof, solution, or explanation is or will be declared in the details section.
+The actual proof, solution, or explanation is or will be provided in the details section.
 
 However, imperative commands may be unavoidable when the final expression is not yet known, must remain hidden in the details section, or is extremely long, spanning multiple statements that are hard to merge. In such cases, "[Action] the [Result]" should still be rephrased to be as short as possible. This may include, but is not limited to:
 - "[Find] the solution for [Equation]" => "Solve [Equation]"
@@ -250,7 +246,7 @@ Clarity is never a goal. Verbosity is never a goal. Strive for compactness, decl
 
 If there is an opportunity to opt out of details and particulars in favor of a more general statement, do so.
 
-Obscure the information, omit unnecessary details if it allows for better alignment with the style guidelines.
+Obscure information and omit unnecessary details if it allows for better alignment with these style guidelines.
 
 ## 4. Common types of statements
 
@@ -269,83 +265,76 @@ Declare variables using the following structures:
 - "[Introduction] [Core-Declaration]"
 - "[Core-Declaration]"
 
-"[Introduction]" is a short plain text expression, meant to frame the context of the declaration or visually distinguish it. In it simplest form, it may consist of such words as, but not limited to:
-- "Let"
-- "Consider"
-- "Assume"
-- "Define"
-- "Declare"
-
-When there is context for the variable to be referenced or previous statements to be linked to, use a more complex "[Introduction]" expression, such as, but not limited to:
+"[Introduction]" is a plain text expression, meant to frame the context of the declaration or visually distinguish it. It may consist of such words as, but not limited to:
+- "Let", "Consider", "Assume", "Define" or "Declare"
 - "In order to achieve this, define"
 - "To proceed, let"
 - "In this context, declare"
 
-In case there is no connection with previous statements and there is no need to visually distinguish the statement from the previous ones, "[Introduction]" may be completely omitted.
+Omit "[Introduction]" in case there is no connection with previous statements and there is no need to visually distinguish the statement from the previous ones.
 
-"[Notation]" is an auxiliary and short MathJax inline expression, meant to introduce variables symbolic names. It may as well contain plain text prose for names clarification.
+"[Notation]" is an auxiliary and short MathJax inline expression, meant to introduce variables symbolic names. It may as well contain additional plain text prose expression for names clarification.
+
+If variables are completely defined by the "[Core-Declaration]" and do not require naming clarification, the "[Notation]" may be omitted.
 
 "[Core-Declaration]" is a formal declaration of the variables. There are simple and complex types of declarations.
 
-Simple "[Core-Declaration]" is a short expression introducing variables names, their scope and immediate properties. Use MathJax inline expressions in this case. This may include such expressions as, but not limited to:
+Simple "[Core-Declaration]" is a short expression introducing variables names, their values, scope or set membership. Use MathJax inline expressions in this case. This may include such expressions as, but not limited to:
 - `$ a = value $`
 - `$ a, b \in S $`
 - `$ \forall c, d \in S $`
 - `$ \exists e \in S $`
 - `$ U \subseteq V $`
 
-Complex "[Core-Declaration]" introduce object declarations that spans multiple interconnected expressions, often divided by `$ , $` or `$ : $` symbols. Complex declarations might consist of, but are not limited to:
+Complex "[Core-Declaration]" introduces object declarations that span multiple interconnected expressions, often divided by `$ , $`, `$ : $`, rendered MathJax newlines, or other separators. Use MathJax block expressions for these declarations. Complex declarations might consist of, but are not limited to:
 - Set builder notation, declaring the set of objects along with their properties, representation, and possible operations
 - Complex object requiring declaration of their internal structure, such as vectors with interconnected components
-
-If the variable is completely defined by the "[Core-Declaration]" and doesn't require naming clarification, the "[Notation]" may be omitted.
 
 ### 4.2. Definitions
 
 [Statements](#11-statements-and-expressions) of this type introduce either a new concept or reference well-known ones.
 
-Examples of definitions include, but are not limited to:
+Examples of [definitions](#42-definitions) include, but are not limited to:
 - Fields
 - Vector spaces
 - Topological spaces
 - Algebraic structures
-- Operations with the above concepts or other mathematical objects
+- Operations with the above or other mathematical objects
 
 Express references to well-known concepts using statements of the following structures:
-- "[Notation] is [Short-Description]: [Core-Definition]"
-- "[Notation] is [Short-Description]"
+- "[Notation] [Short-Description]"
+- "[Notation] [Short-Description]: [Core-Definition]"
 
-Express definitions of new concepts using statements the following structures:
+Express definitions of new concepts using statements of the following structures:
 - "[Introduction] [Notation] [Short-Description]: [Core-Definition]"
 - "[Introduction] [Notation]: [Core-Definition]"
+- "[Introduction] [Short-Description]: [Core-Definition]"
 - "[Introduction] [Core-Definition]"
+- "[Core-Definition]"
 
-"[Introduction]" and "[Notation]" are equal to the "[Introduction]" and "[Notation]" in [variables declarations](#41-variables-declarations).
+"[Introduction]" and "[Notation]" are similar to those in [variables declarations](#41-variables-declarations), except the "[Notation]" is meant to provide a concise label for the concept being defined. They may be omitted in similar cases as well.
 
-"[Core-Definition]" is a formal definition of the concept using a MathJax block expression. It is similar to the "[Core-Declaration]" in [variables declarations](#41-variables-declarations), except being more general and declaring an entire concept.
+"[Short-Description]" is an auxiliary plain text expression, meant to provide additional clarification of the concept being defined. It may be omitted if the concept is well-known, self-explanatory, or completely defined by the "[Core-Definition]".
 
-"[Short-Description]" is an auxiliary plain text prose, meant to provide additional clarification of the concept being defined. It may be omitted, in case the concept is well-known or is self-explanatory, or completely defined by the "[Core-Definition]".
+"[Core-Definition]" is a formal definition of the concept using a MathJax block expression. It is similar to the "[Core-Declaration]" of complex [variables declarations](#41-variables-declarations), except it is more general and declares an entire concept.
 
-Omit "[Core-Definition]" for well-known concepts based on the context. For example, when key properties are not relevant and unlikely to be referenced.
-
-Omit "[Notation]" when it is part of the "[Core-Definition]" in use.
+Omit "[Core-Definition]" for well-known concepts based on the context. For example, when key properties are well known, simple, not relevant, or unlikely to be referenced.
 
 ### 4.3. Derivations
 
-Derivations are [statements](#11-statements-and-expressions), that encapsulate the process of deriving new knowledge from existing statements.
+Derivations are [statements](#11-statements-and-expressions) that encapsulate the process of deriving new knowledge from existing.
 
-Each derivation statement should contain ideas that are interconnected and logically follow each other. Each derivation step should show how the next step follows from the previous ones.
+Each derivation statement should contain ideas that are interconnected and logically follow each other. Yet, it is important for derivations to maintain [compactness](#31-compact-expressions-and-statements) and not be overly verbose.
 
-Most frequently, derivations are statements that may contain some imperative wording.
+Most frequently, it is derivation statements that may contain some imperative wording.
 
 Derivations are expressed using the following structures:
-- "[Linker] [Core-derivation]"
-- "[Short-description] [Core-derivation]"
-- "[Long-description]"
+- "[Introduction] [Core-Derivation]"
+- "[Introduction] [Short-Description] [Core-Derivation]"
+- "[Short-Description] [Core-Derivation]"
+- "[Long-Description]"
 
-"[Core-derivation]" is a formal derivation of the concept using a MathJax block expression.
-
-"[Linker]" is a short phrase connecting previous and immediate results with the current one. It may include, but is not limited to:
+"[Introduction]" is a plain text expression connecting previous and immediate results with the current one. It may include such words as, but not limited to:
 - "Thus,"
 - "Therefore,"
 - "Hence,"
@@ -353,60 +342,79 @@ Derivations are expressed using the following structures:
 - "This leads to:"
 - "From the previous statement follows:"
 
-"[Short-description]" is a short plain text expression acting as a bridge between other statements and the core derivation itself. It may contain references to particular statements or concepts, as well as very short and clear explanations of the ideas behind the derivation.
+"[Introduction]" may be omitted if "[Short-Description]" is present and together they do not form a coherent and sound statement.
 
-"[Long-description]" is a longer and significantly more verbose version of "[Short-description]" combined with the derivation itself being described using plain text prose and math symbols. It should be preferred only if it is impossible to represent the derivation in a MathJax block expression of "[Core-derivation]".
+"[Short-Description]" is a short plain text expression acting as a bridge between other statements and the core derivation itself. It may contain references to particular statements or concepts, as well as very short and clear explanations of the ideas behind the derivation.
 
-### 4.4. Theorems
+"[Core-Derivation]" is a formal derivation of the concept using a MathJax block expression.
 
-This is a more general term encompassing theorems, lemmas, corollaries, and other similar statements.
+"[Long-Description]" is a longer and significantly more verbose version of "[Short-Description]" combined with the "[Core-Derivation]", described using plain text prose and math symbols. Use it if and only if it is impossible to represent the derivation in a MathJax block expression inside "[Core-Derivation]".
 
-Consider a theorem as a complex statement consisting of a sequence of:
-1. "[Definitions](#41-definitions)"
-2. "[Variable-declarations](#42-variables-declarations)"
-3. "[Theorem-declaration]"
+Each [derivation](#43-derivations) statement must conclude with a compact result expression, which is likely to be referenced later, or conclude the derivation process.
+
+### 4.4. Lemmas
+
+This is a more general [statement](#11-statements-and-expressions) encompassing lemmas, theorems, corollaries, properties, and other similar statements.
+
+Consider a lemma as a [complex statement](#11-statements-and-expressions) with the following structure:
+1. "[Definitions](#42-definitions)"
+2. "[Variable-Declarations](#41-variables-declarations)"
+3. "[Lemma-Result]"
 4. "[Proof]"
 
-"[Definitions]" consists of [Definitions](#41-definitions) statements. "[Variable-declarations]" consists of [Variables declarations](#42-variables-declarations) statements.
+"[Definitions]" consists of [definitions](#42-definitions) statements. "[Variable-Declarations]" consists of [variables declarations](#41-variables-declarations) statements. These statements may be omitted if the lemma does not require them.
 
-"[Theorem-declaration]" is a statement that is expressed using the following structures:
-- "[Short-description]: [Core-theorem]"
-- "[Core-theorem]"
-- "Then [Core-theorem]", if "[Definitions]" and "[Variable-declarations]" have been introduced
+"[Lemma-Result]" is the core statement of the lemma introducing the main result. It is expressed using the following structures:
+- "[Introduction] [Short-Description]: [Core-Lemma-Result]"
+- "[Short-Description]: [Core-Lemma-Result]"
+- "[Core-Lemma-Result]"
 
-"[Core-theorem]" is a formal expression of the theorem using a MathJax block expression. It may consist of a series of sub-expressions connected with punctuation or operators, such as, but not limited to:
+"[Introduction]" is a plain text prose expression meant to frame the context of the lemma, connect it with the previous statements as well as visually distinguish it. It may consist of such words as, but not limited to:
+- "The following lemma states that"
+- "The theorem states that"
+- "The following property holds"
+
+Use "[Introduction]" to provide the proper name of the lemma, theorem, or property.
+
+Omit "[Introduction]" if there is no connection with previous statements, no need to provide a proper name, and no need to visually distinguish the statement from the previous ones.
+
+"[Short-Description]" is a short plain text expression naming or framing the lemma. It may also contain a short explanation of the essence of the lemma and an inline version of variable definitions if "[Core-Lemma-Result]" is too long and complex to include them.
+
+"[Core-Lemma-Result]" is a formal expression of the main lemma result using a MathJax block expression. It may consist of a series of expressions connected with punctuation or operators, such as, but not limited to:
 - `$ , $`
 - `$ : $`
 - `$ \implies $`
 - `$ \iff $`
+- `$ \therefore $`
+- rendered MathJax spaces `$ \quad $`, `$ \ $`, `$ \, $`
+- rendered MathJax newlines `$ \\ $`
 
-"[Short-description]" is a short plain text expression naming or framing the theorem. It may also contain a short explanation of the essence of the theorem and an inline version of variable definitions if "[Core-theorem]" is too long and complex to include them.
-
-"[Proof]" of a theorem is a statement that is expressed using a details section. A proof consists of one or more internal statements such as variable declarations, derivations, and possibly other types of statements.
+"[Proof]" is a [details section statement](#26-details-section) of the lemma, encapsulating one or more internal statements such as variable declarations, derivations, and possibly other types of statements which together form a proof of the lemma.
 
 ### 4.5. Tasks
 
 Tasks are statements that represent exercises, problems, specific instructions, or open questions.
 
-Theorems are a special case of [tasks](#45-tasks).
+[Tasks](#45-tasks) are a direct generalization of [lemmas](#44-lemmas).
 
-By and large, tasks should be expressed as complex statements consisting of a sequence of:
+[Tasks](#45-tasks) structure is mirrored from [lemmas](#44-lemmas). Therefore, all the corresponding rules for [lemmas](#44-lemmas) apply here as well.
+
+By and large, tasks should be expressed as complex statements consisting of the following sequence:
 1. "[Definitions]"
-2. "[Variable-declarations]"
-3. "[Task-declaration]"
-4. "[Solution]"
+2. "[Variable-Declarations]"
+3. "[Task-Result]" mirrors "[Lemma-Result]" from [lemmas](#44-lemmas)
+4. "[Solution]" mirrors "[Proof]" from [lemmas](#44-lemmas)
 
-This structure is mirrored from theorems. Therefore, all the rules for theorems apply here as well.
-
-Certain tasks require an imperative command to be present in the statement. In this case, the imperative command should be placed at the beginning of the "[Task-declaration]" statement and should be as short as possible. This may include, but is not limited to:
+Certain tasks require an imperative command to be present in the statement. In this case, the imperative command should be placed at the beginning of the "[Task-Result]" as part of an "[Introduction]" and "[Short-Description]" expressions and should be as short as possible. This may include, but is not limited to:
 - "Solve [Equation]"
 - "Find [Variable]: [Expression]"
+- "Seek solution: [Expression]"
 
-If a task doesn't contain a solution and the context doesn't imply that one should be present, then the internal statement of the details section of "[Solution]" should be left empty.
+If a task does not contain a solution and the context does not imply that one should be present, then the internal statement of the details section of "[Solution]" should be left empty.
 
 ## 5. Examples
 
-The good examples comply with these style guidelines. Use them as a reference and for the derivation of additional implicit guidelines and rules, if necessary.
+The good examples comply with these style guidelines. Use them as a reference and for the clarification of these guidelines and rules, if necessary.
 
 ### 5.1. Example. Definition of complex numbers
 
